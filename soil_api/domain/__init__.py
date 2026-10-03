@@ -1,0 +1,46 @@
+"""Typed domain contract for soil layer generation."""
+
+from .models import (
+    ArtifactKind,
+    ArtifactReference,
+    CoordinateBounds,
+    DepthRange,
+    ErrorCode,
+    GeoJsonFeature,
+    GeoJsonFeatureCollection,
+    GeoJsonMultiPolygon,
+    GeoJsonPolygon,
+    GridDefinition,
+    LayerData,
+    LayerError,
+    LayerRequest,
+    LayerResult,
+    LayerStatistics,
+    Parameter,
+    ProcessingLimits,
+    ResultStatus,
+    Source,
+)
+
+__all__ = [
+    "ArtifactKind",
+    "ArtifactReference",
+    "CoordinateBounds",
+    "DepthRange",
+    "ErrorCode",
+    "GeoJsonFeature",
+    "GeoJsonFeatureCollection",
+    "GeoJsonMultiPolygon",
+    "GeoJsonPolygon",
+    "GridDefinition",
+    "LayerData",
+    "LayerError",
+    "LayerRequest",
+    "LayerResult",
+    "LayerStatistics",
+    "Parameter",
+    "ProcessingLimits",
+    "ResultStatus",
+    "Source",
+]
+

@@ -602,12 +602,12 @@
      "geotiff_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/yield_potential__derived.tif",
      "stats": {
       "mean": 100.0,
-      "std": 2.06,
-      "min": 95.25,
-      "p10": 95.99,
-      "p50": 100.68,
-      "p90": 102.18,
-      "max": 102.56,
+      "std": 1.0,
+      "min": 97.58,
+      "p10": 98.77,
+      "p50": 99.83,
+      "p90": 101.26,
+      "max": 101.91,
       "n_px": 91,
       "zone": "inner_10m"
      },
@@ -649,25 +649,32 @@
      "confidence": {
       "level": "medium",
       "interval_90": [
-       93.13,
-       106.87
+       98.32,
+       101.68
       ],
       "drivers": [
        "ndvi_proxy_not_yield",
        "no_harvest_data_for_validation",
-       "edge_strip_10m_not_mapped"
+       "edge_strip_soil_model_weighted"
       ],
       "pixel_shares": {
-       "low": 0.132,
-       "medium": 0.857,
-       "high": 0.011
+       "low": 0.143,
+       "medium": 0.791,
+       "high": 0.066
       },
       "raster_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/yield_potential__derived.tif#band=4",
       "png_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/yield_potential__derived__conf.png"
      },
      "provenance": {
       "native_resolution_m": 10,
-      "grid": "EPSG:32632 10 m"
+      "grid": "EPSG:32632 10 m",
+      "model": "yield_v1",
+      "scenario": "normal",
+      "scenarios_mm": {
+       "normal": -133.9,
+       "dry": -184.7,
+       "wet": -89.7
+      }
      }
     }
    ]
@@ -1107,12 +1114,12 @@
      "geotiff_url": "/static/runs/poc-2026-10-03/fields/SEo2xyfcqiAjoec8ZXXa/yield_potential__derived.tif",
      "stats": {
       "mean": 100.0,
-      "std": 2.26,
-      "min": 89.51,
-      "p10": 96.86,
-      "p50": 100.33,
-      "p90": 102.6,
-      "max": 104.14,
+      "std": 1.51,
+      "min": 94.82,
+      "p10": 98.0,
+      "p50": 100.02,
+      "p90": 101.93,
+      "max": 103.28,
       "n_px": 5133,
       "zone": "inner_10m"
      },
@@ -1154,25 +1161,32 @@
      "confidence": {
       "level": "medium",
       "interval_90": [
-       94.27,
-       105.73
+       98.39,
+       101.61
       ],
       "drivers": [
        "ndvi_proxy_not_yield",
        "no_harvest_data_for_validation",
-       "edge_strip_10m_not_mapped"
+       "edge_strip_soil_model_weighted"
       ],
       "pixel_shares": {
        "low": 0.14,
-       "medium": 0.818,
-       "high": 0.042
+       "medium": 0.526,
+       "high": 0.334
       },
       "raster_url": "/static/runs/poc-2026-10-03/fields/SEo2xyfcqiAjoec8ZXXa/yield_potential__derived.tif#band=4",
       "png_url": "/static/runs/poc-2026-10-03/fields/SEo2xyfcqiAjoec8ZXXa/yield_potential__derived__conf.png"
      },
      "provenance": {
       "native_resolution_m": 10,
-      "grid": "EPSG:32632 10 m"
+      "grid": "EPSG:32632 10 m",
+      "model": "yield_v1",
+      "scenario": "normal",
+      "scenarios_mm": {
+       "normal": -133.9,
+       "dry": -184.7,
+       "wet": -89.7
+      }
      }
     }
    ]
@@ -1612,10 +1626,91 @@
     {
      "parameter": "yield_potential",
      "source": "derived",
-     "status": "unavailable",
-     "reason": "field_excluded_from_ndvi_stats:sliver_or_overlap",
-     "coverage": 0.0,
-     "unit": "index (field mean = 100)"
+     "status": "ok",
+     "reason": null,
+     "coverage": 1.0,
+     "unit": "index (field mean = 100)",
+     "png_url": "/static/runs/poc-2026-10-03/fields/xtMqrquNCdC21lZ0NMYI/yield_potential__derived.png",
+     "geotiff_url": "/static/runs/poc-2026-10-03/fields/xtMqrquNCdC21lZ0NMYI/yield_potential__derived.tif",
+     "stats": {
+      "mean": 100.0,
+      "std": 0.0,
+      "min": 100.0,
+      "p10": 100.0,
+      "p50": 100.0,
+      "p90": 100.0,
+      "max": 100.0,
+      "n_px": 1,
+      "zone": "full_field_fallback"
+     },
+     "colormap": {
+      "type": "diverging",
+      "unit": "index (field mean = 100)",
+      "center": 100,
+      "stops": [
+       [
+        80,
+        "#a50026"
+       ],
+       [
+        90,
+        "#f46d43"
+       ],
+       [
+        97,
+        "#fee08b"
+       ],
+       [
+        100,
+        "#ffffbf"
+       ],
+       [
+        103,
+        "#d9ef8b"
+       ],
+       [
+        110,
+        "#66bd63"
+       ],
+       [
+        120,
+        "#006837"
+       ]
+      ]
+     },
+     "confidence": {
+      "level": "low",
+      "interval_90": [
+       93.75,
+       106.25
+      ],
+      "drivers": [
+       "ndvi_proxy_not_yield",
+       "no_harvest_data_for_validation",
+       "soil_model_only",
+       "no_ndvi_history",
+       "no_inner_zone_edge_pixels_only",
+       "unstable_or_edge_pixels"
+      ],
+      "pixel_shares": {
+       "low": 1.0,
+       "medium": 0.0,
+       "high": 0.0
+      },
+      "raster_url": "/static/runs/poc-2026-10-03/fields/xtMqrquNCdC21lZ0NMYI/yield_potential__derived.tif#band=4",
+      "png_url": "/static/runs/poc-2026-10-03/fields/xtMqrquNCdC21lZ0NMYI/yield_potential__derived__conf.png"
+     },
+     "provenance": {
+      "native_resolution_m": 10,
+      "grid": "EPSG:32632 10 m",
+      "model": "yield_v1",
+      "scenario": "normal",
+      "scenarios_mm": {
+       "normal": -133.9,
+       "dry": -184.7,
+       "wet": -89.7
+      }
+     }
     }
    ]
   },

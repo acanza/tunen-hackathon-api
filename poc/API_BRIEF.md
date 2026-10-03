@@ -23,7 +23,7 @@ The store is ~12 MB, 87 fields, 1,530 files.
 LuF Seggerde has 87 fields (885 ha) straddling the Niedersachsen / Sachsen-Anhalt border.
 - **The 43 western fields (`state = 'NI'`)** have state soil data from LBEG (NIBIS): Bodenzahl and soil class.
 - **The 44 eastern fields (`ST`)** only have global data, so the LBEG layers there are `unavailable` with a reason. That's a feature, not a bug: the API must always say *why* a layer is missing.
-- **7 sliver fields** (`use_for_stats = 0`) have no yield potential.
+- **7 sliver fields** (`use_for_stats = 0`) have no usable NDVI history. Their yield potential comes from the soil/terrain model alone: a near-flat map with `low` confidence.
 
 ## Parameters and sources
 
@@ -34,7 +34,7 @@ LuF Seggerde has 87 fields (885 ha) straddling the Niedersachsen / Sachsen-Anhal
 | `soc` | ✓ | – | – | – |
 | `nfk` | ✓ (mm, 0–100 cm) | always `unavailable` (not in downloaded data / outside NI) | – | – |
 | `bodenzahl` | – | – | ✓ (west only) | – |
-| `yield_potential` | – | – | – | ✓ index, 100 = field mean |
+| `yield_potential` | – | – | – | ✓ index, 100 = field mean (model `yield_v1`, normal-spring scenario) |
 
 "–" means `not_applicable`. The table `source_parameters` holds exactly the ✓ cells and the `lbeg_bk50` row; any other pair is `not_applicable`.
 
@@ -126,7 +126,7 @@ Geometries are GeoJSON text in EPSG:4326, so no SpatiaLite is needed. Use shapel
 |---|---|---|
 | `ok` | source covers ≥ 95 % of the field | – |
 | `partial` | covers some of it | `only_parcels_at_sample_point_downloaded`, `partial_source_coverage` |
-| `unavailable` | source should provide it but doesn't here | `outside_source_region:niedersachsen`, `attribute_not_in_downloaded_data`, `no_parcel_downloaded_for_field`, `field_excluded_from_ndvi_stats:sliver_or_overlap`, `outside_coverage_area`, `insufficient_ndvi_history`, `no_data_in_source` |
+| `unavailable` | source should provide it but doesn't here | `outside_source_region:niedersachsen`, `attribute_not_in_downloaded_data`, `no_parcel_downloaded_for_field`, `outside_coverage_area`, `no_data_in_source` |
 | `not_applicable` | the source never has this parameter | `source_does_not_provide_parameter` (not stored in the DB; you generate it) |
 
 Only `ok` and `partial` layers have files, stats, colormap and confidence.
@@ -151,7 +151,9 @@ Driver codes:
 - `no_inner_zone_edge_pixels_only`
 - `ndvi_proxy_not_yield`
 - `no_harvest_data_for_validation`
-- `edge_strip_10m_not_mapped`
+- `edge_strip_soil_model_weighted`
+- `soil_model_only`
+- `no_ndvi_history`
 - `few_ndvi_seasons`
 - `unstable_or_edge_pixels`
 
@@ -210,7 +212,7 @@ Clip `regional_rasters` with rasterio. The same 4 bands, same grid and same colo
 
 - `samples/request.json` → `samples/response.json`.
 - An east field never shows LBEG data. A west field shows Bodenzahl with `ok` or `partial`.
-- The sliver `Sandberg - 2` returns `yield_potential` as `unavailable`, and its soil stats use `full_field_fallback`.
+- The sliver `Sandberg - 2` returns `yield_potential` as `ok` with `low` confidence and drivers `soil_model_only`, `no_ndvi_history`. Its stats use `full_field_fallback`.
 - The Hildesheim polygon returns 200 with every layer `unavailable` / `outside_coverage_area`. It must not return 404 or 500.
 - PNG overlays line up with the field outlines in Leaflet.
 - No outbound network calls during a request. You can check this by running with the network disabled.

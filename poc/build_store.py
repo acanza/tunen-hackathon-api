@@ -1,6 +1,6 @@
 # /// script
 # requires-python = ">=3.11"
-# dependencies = ["rasterio", "numpy", "pandas", "geopandas", "shapely", "pyproj", "pillow", "scipy"]
+# dependencies = ["rasterio", "numpy", "pandas", "geopandas", "shapely", "pyproj", "pillow", "scipy", "scikit-learn"]
 # ///
 """Build the POC store the API serves: regional rasters, per-field COG/PNG, stats,
 confidence and a SQLite DB. Uses only files already in data/seggerde/ (no downloads).
@@ -46,7 +46,9 @@ from rasterio.windows import Window, from_bounds
 from shapely import affinity
 from shapely.geometry import box, mapping, shape
 
+from lib import yield_model as ym
 from lib.dem import terrain
+from lib.derived_soil import buek_unit_raster
 
 warnings.filterwarnings("ignore", category=RuntimeWarning)  # nanmean of empty slices
 
@@ -56,6 +58,7 @@ POC = ROOT / "poc"
 STORE = POC / "store"
 RUN_ID = "poc-2026-10-03"
 RUN_DIR = STORE / "runs" / RUN_ID
+YIELD_META: dict = {}
 
 UTM = "EPSG:32632"
 PNG_GROUND_RES_M = 2.5  # PNG pixel size on the ground; nearest-neighbour, so 10 m blocks stay crisp
@@ -110,7 +113,8 @@ SOURCE_PARAMETERS = [
     ("lbeg_bk50", "nfk", "nFKWe exists in BK50 but was not in the downloaded attributes"),
     ("lbeg_bodenschaetzung", "texture", "Bodenart from Klassenzeichen (categorical)"),
     ("lbeg_bodenschaetzung", "bodenzahl", "BODENZ of each parcel"),
-    ("derived", "yield_potential", "Smoothed multi-year relative peak NDVI, rescaled to field mean = 100"),
+    ("derived", "yield_potential", "yield_v1: water-scaled multi-year relative peak NDVI (normal spring) blended "
+                                   "with a soil/terrain model; rescaled to field mean = 100"),
 ]
 
 
@@ -302,20 +306,46 @@ def build_regional(transform, h, w, parcels):
         conf=np.where(np.isfinite(ba), HIGH, np.nan).astype("float32"),
         kind="categorical", cmap="bodenart", unit="class", zone_m=20, native_m=None)
 
-    # Yield potential v0: smoothed relative peak NDVI, ×100. Rescaled to field mean = 100 per field later.
-    rp = SEG / "sentinel2" / "relative_productivity.tif"
-    with rasterio.open(rp) as src:
-        rel, sd, nseas = src.read(1), src.read(2), src.read(5)
-    with rasterio.open(SEG / "sentinel2" / "yield_potential_zones.tif") as src:
-        zones = src.read(1)
-    yp = nanmedian3(rel) * 100
-    ysd = sd * 100
-    conf = np.where((zones == 3) | (nseas < 4), LOW, HIGH).astype("float32")  # refined per field (threshold 100)
-    conf[~np.isfinite(yp)] = np.nan
-    out[("yield_potential", "derived")] = dict(
-        value=yp, lo=yp - Z90 * ysd, hi=yp + Z90 * ysd, conf=conf, kind="continuous", cmap="yield_potential",
-        unit="index", zone_m=10, native_m=10, nseas=nseas)
     return out
+
+
+def build_yield(layers, fields_utm, dem, transform, h, w):
+    """Yield potential v1 (see poc/lib/yield_model.py). Adds the layer and returns model metadata."""
+    shape = (h, w)
+    seasons = ym.season_rel(fields_utm, SEG / "sentinel2", transform, shape)
+    cwb = ym.cwb_apr_jun(SEG / "era5_history" / "daily.csv", SEG / "era5_history" / "cells.csv")
+    scen = ym.scenarios(cwb)
+    nd = ym.ndvi_component(seasons, cwb)
+    yp_ndvi = {k: nanmedian3(nd.at(v)) for k, v in scen.items()}   # 3×3 median removes S2 striping
+
+    fall, _ = ym.field_index(fields_utm, transform, shape)
+    buek = buek_unit_raster(SEG / "buek200_points.csv", transform, h, w, UTM)
+    covs = {"clay": layers[("texture", "soilgrids")]["value"], "sand": layers["_sand"],
+            "soc": layers[("soc", "soilgrids")]["value"], "nfk": layers[("nfk", "soilgrids")]["value"],
+            "bodenzahl": layers[("bodenzahl", "lbeg_bodenschaetzung")]["value"],
+            "twi": dem["twi"], "slope": dem["slope"], "rel_elev": dem["rel_elev"]}
+    soil = ym.soil_model(covs, nd.level, fall, seasons.fid)
+    yp, sigma, wgt = ym.blend(nd, yp_ndvi["normal"], soil, seasons.fid)
+
+    unstable = np.nan_to_num(nd.sd_z) > 1.0
+    conf = np.where(unstable | (wgt < 0.25), LOW, HIGH).astype("float32")   # refined per field (threshold 100)
+    conf[~np.isfinite(yp)] = np.nan
+    v = yp * 100
+    layers[("yield_potential", "derived")] = dict(
+        value=v, lo=v - Z90 * sigma * 100, hi=v + Z90 * sigma * 100, conf=conf, kind="continuous",
+        cmap="yield_potential", unit="index", zone_m=10, native_m=10, nseas=nd.n, weight=wgt)
+    write_cog(RUN_DIR / "covariates" / "yield_components.tif",
+              np.round(np.stack([yp_ndvi["normal"], yp_ndvi["dry"], yp_ndvi["wet"], soil.pred, wgt, sigma,
+                                 nd.slope * 100, buek]), 4), transform,
+              ["ndvi_normal", "ndvi_dry", "ndvi_wet", "soil_model", "ndvi_weight", "sigma", "slope_per_100mm",
+               "buek_unit"], dict(run_id=RUN_ID, note="relative to field mean = 1; not API layers"),
+              overviews="NONE")
+    meta = dict(model="yield_v1", scenario="normal", cwb_apr_jun_mm={str(k): round(v, 1) for k, v in cwb.loc[2019:].items()},
+                scenarios_mm={k: round(v, 1) for k, v in scen.items()}, climate_years=list(ym.CLIMATE_YEARS),
+                soil_model=dict(r2_oof=round(soil.r2_oof, 3), resid_sd=round(soil.resid_sd, 4),
+                                n_train_px=soil.n_train, coef_per_sd=soil.coef))
+    (RUN_DIR / "covariates" / "yield_model.json").write_text(json.dumps(meta, indent=1))
+    return meta
 
 
 # ---------------------------------------------------------------- per-field products
@@ -400,6 +430,9 @@ def build_field(f, layers, transform, H, W, parcels, nibis_row, conn):
                    colormap_id=L["cmap"], status=None, reason=None, coverage=0.0, stats_zone=None,
                    stats_json=None, confidence_json=None, geotiff_path=None, png_path=None, conf_png_path=None,
                    provenance_json=json.dumps({"native_resolution_m": L["native_m"], "grid": "EPSG:32632 10 m"}))
+        if param == "yield_potential":
+            row["provenance_json"] = json.dumps({"native_resolution_m": 10, "grid": "EPSG:32632 10 m",
+                                                 **{k: YIELD_META[k] for k in ("model", "scenario", "scenarios_mm")}})
         val, lo, hi, conf = (L[k][sl].copy() for k in ("value", "lo", "hi", "conf"))
         zone, zone_name = zone_mask(g, L["zone_m"], wt, shp, centres, inside)
         drivers = []
@@ -414,18 +447,14 @@ def build_field(f, layers, transform, H, W, parcels, nibis_row, conn):
         else:
             # NDVI-based values exist only in the inner zone (edge pixels mix crop and hedges), so
             # coverage is measured there; the excluded edge strip is reported as a driver instead.
-            ref = zone if param == "yield_potential" else inside
-            valid = np.isfinite(val) & ref
-            row["coverage"] = round(float(valid.sum() / max(ref.sum(), 1)), 3)
+            valid = np.isfinite(val) & inside
+            row["coverage"] = round(float(valid.sum() / max(inside.sum(), 1)), 3)
 
         if param == "yield_potential":
-            if not f.use_for_stats:
-                row.update(status="unavailable", reason="field_excluded_from_ndvi_stats:sliver_or_overlap")
-                rows.append(row)
-                continue
-            zmean = np.nanmean(val[zone & np.isfinite(val)]) if (zone & np.isfinite(val)).any() else np.nan
+            zv_ = zone & np.isfinite(val)
+            zmean = np.nanmean(val[zv_]) if zv_.any() else np.nanmean(val[inside]) if (inside & np.isfinite(val)).any() else np.nan
             if not np.isfinite(zmean):
-                row.update(status="unavailable", reason="insufficient_ndvi_history")
+                row.update(status="unavailable", reason="no_data_in_source")
                 rows.append(row)
                 continue
             scale = 100 / zmean
@@ -435,10 +464,14 @@ def build_field(f, layers, transform, H, W, parcels, nibis_row, conn):
             edge = inside & ~inner10
             conf[edge & np.isfinite(conf)] = np.maximum(conf[edge & np.isfinite(conf)] - 1, LOW)
             conf[~np.isfinite(val)] = np.nan
-            nseas = L["nseas"][sl][zone]
-            drivers += ["ndvi_proxy_not_yield", "no_harvest_data_for_validation", "edge_strip_10m_not_mapped"]
-            if np.nanmedian(nseas) < 6:
-                drivers.append("few_ndvi_seasons")
+            wz = L["weight"][sl][inside]
+            drivers += ["ndvi_proxy_not_yield", "no_harvest_data_for_validation"]
+            if (wz > 0).sum() == 0:
+                drivers += ["soil_model_only", "no_ndvi_history"]
+            else:
+                drivers.append("edge_strip_soil_model_weighted")
+                if np.nanmedian(L["nseas"][sl][zone & (L["weight"][sl] > 0)]) < 6:
+                    drivers.append("few_ndvi_seasons")
 
         if row["coverage"] == 0 or not (inside & np.isfinite(val)).any():
             row.update(status="unavailable", reason="no_parcel_downloaded_for_field"
@@ -490,8 +523,11 @@ def build_field(f, layers, transform, H, W, parcels, nibis_row, conn):
         if zone_name != f"inner_{L['zone_m']}m":
             drivers.append("no_inner_zone_edge_pixels_only")
             level = max(LOW, level - 1)
-        if param == "yield_potential" and shares.get("low", 0) > 0.25:
-            drivers.append("unstable_or_edge_pixels")
+        if param == "yield_potential":
+            if shares.get("low", 0) > 0.25:
+                drivers.append("unstable_or_edge_pixels")
+            if "soil_model_only" in drivers:
+                level = LOW
         interval = [r(np.nanmean(lo[zv])), r(np.nanmean(hi[zv]))] if L["kind"] == "continuous" else None
         row["confidence_json"] = json.dumps(dict(level=LEVEL_NAME[level], interval_90=interval, drivers=drivers,
                                                  pixel_shares=shares))
@@ -571,6 +607,16 @@ def main():
     print(f"{len(fields)} fields, {len(parcels)} Bodenschätzung parcels")
 
     layers = build_regional(transform, H, W, parcels)
+    # bare-ground pixels: field interiors (10 m in from the edge, away from hedges and tree lines)
+    ground = rasterize(fields.to_crs(UTM).buffer(-10).loc[lambda g: ~g.is_empty], out_shape=(H, W),
+                       transform=transform, fill=0, dtype="uint8").astype(bool)
+    dem = terrain(SEG / "raw" / "dem" / "farm_window.tif", transform, H, W, UTM, ground)
+    global YIELD_META
+    YIELD_META = build_yield(layers, fields.to_crs(UTM), dem, transform, H, W)
+    print("yield model:", YIELD_META["soil_model"], YIELD_META["scenarios_mm"])
+    write_cog(RUN_DIR / "covariates" / "dem__copernicus.tif", np.round(np.stack(list(dem.values())), 2), transform, list(dem),
+              dict(source="Copernicus DEM GLO-30 surface model; ground = field interiors, rest interpolated; smoothed ~50 m", run_id=RUN_ID,
+                   units="elev m, slope deg, twi ln(m), rel_elev m vs 210 m box mean, ground_mask 1 = measured ground"), overviews="NONE")
     regional_rows = []
     for key, L in layers.items():
         if not isinstance(key, tuple):
@@ -583,13 +629,6 @@ def main():
                        note="yield_potential: divide by the field's inner-10 m mean and ×100 to get the field index"
                        if param == "yield_potential" else ""))
         regional_rows.append((RUN_ID, param, source, str(p.relative_to(STORE)), L["kind"], COLORMAPS[L["cmap"]]["unit"], L["cmap"]))
-    # bare-ground pixels: field interiors (10 m in from the edge, away from hedges and tree lines)
-    ground = rasterize(fields.to_crs(UTM).buffer(-10).loc[lambda g: ~g.is_empty], out_shape=(H, W),
-                       transform=transform, fill=0, dtype="uint8").astype(bool)
-    dem = terrain(SEG / "raw" / "dem" / "farm_window.tif", transform, H, W, UTM, ground)
-    write_cog(RUN_DIR / "covariates" / "dem__copernicus.tif", np.round(np.stack(list(dem.values())), 2), transform, list(dem),
-              dict(source="Copernicus DEM GLO-30 surface model; ground = field interiors, rest interpolated; smoothed ~50 m", run_id=RUN_ID,
-                   units="elev m, slope deg, twi ln(m), rel_elev m vs 500 m box mean, ground_mask 1 = measured ground"), overviews="NONE")
     parcels.to_crs("EPSG:4326").to_file(RUN_DIR / "regional" / "bodenschaetzung_parcels.geojson", driver="GeoJSON")
 
     db = STORE / "soil.sqlite"

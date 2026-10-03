@@ -4,6 +4,13 @@ Use these criteria when implementing or reviewing. Report known limitations;
 do not treat them as fulfilled criteria. Tests are not needed for a purely
 documentation change.
 
+Apply these criteria through the bounded
+[implementation units](../../../docs/implementation-units.md). Each unit records
+its own checks and evidence; a milestone closes only when its required units and
+overall acceptance gate pass. A skipped real-provider check remains pending,
+even when deterministic tests pass. Capabilities and provenance accompany each
+integration; enforce workload limits and timeouts from the first live layer.
+
 ## Functional core
 
 - The API accepts multiple GeoJSON fields and validates geometries, coordinates,

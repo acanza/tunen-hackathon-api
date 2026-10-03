@@ -7,9 +7,13 @@ The definition is versioned in this project; it does not require installing a
 global skill or running an AI service. It does not apply to tasks outside the backend.
 
 For API planning, implementation, and review, also read the shared
-[architecture and phased implementation plan](docs/implementation-plan.md).
-Consult the relevant phase when resuming work; the plan is context, not automatic
+[architecture and implementation milestones](docs/implementation-plan.md).
+Consult the relevant milestone when resuming work; the plan is context, not automatic
 authorization to implement or evidence of completed milestones.
+
+The former phases are milestones. Read the relevant bounded
+[implementation units](docs/implementation-units.md) for dependencies, scope,
+and required verification evidence before working on a milestone.
 
 ## Codex integration
 

@@ -1,4 +1,4 @@
-# Soil Aggregation REST API: Architecture and Phased Implementation Plan
+# Soil Aggregation REST API: Architecture and Implementation Milestones
 
 Date: 2026-10-03
 
@@ -93,7 +93,9 @@ A total provider outage must not become an empty success response. Distinguish
 unsupported parameters, missing coverage, missing data, and provider failures.
 
 Finalize schemas, status codes, grid orientation, and numeric request limits
-during the first implementation phases; the endpoint list is the design baseline.
+in unit 1A, before the first integration. Enforce initial limits and timeouts in
+1B; extend workload budgets before enabling multiple fields in 2A. The endpoint
+list is the design baseline.
 
 ## Source feasibility and expected coverage
 
@@ -101,7 +103,7 @@ The official SoilGrids access documentation reviewed for this plan reports a
 temporary pause of its REST API and recommends alternatives, including WCS for
 map subsets. The architecture must support raster access without depending on
 REST point queries. This was a documentation review, not a successful live data
-retrieval. Recheck service availability in Phase 0.
+retrieval. Recheck service availability in unit 0A and each relevant 0B check.
 
 LBEG publishes WMS services, but usable attributes and coverage must be verified
 for each required layer. A rendered map alone does not establish access to
@@ -116,8 +118,9 @@ underlying numeric values.
 | Bodenzahl | LBEG Bodenschätzung | Access to the actual value and geographic coverage. |
 
 This matrix is a working hypothesis based on the requirements, not verified
-availability. Phase 0 must resolve access to values, formats, units, depths,
-coverage, restrictions, and attribution requirements. Do not infer values from
+availability. Units 0A and 0B must resolve access to values, formats, units,
+depths, coverage, restrictions, and attribution requirements before the
+corresponding integration. Do not infer values from
 map colors or silently substitute fixtures if access fails.
 
 Official references consulted:
@@ -125,71 +128,43 @@ Official references consulted:
 - [SoilGrids access documentation](https://docs.isric.org/globaldata/soilgrids/SoilGrids_faqs_02.html)
 - [LBEG official WMS services](https://www.lbeg.niedersachsen.de/kartenserver/web_map_services_wms/kartendienste-web-map-services-des-lbeg-91769.html)
 
-## Implementation phases
+## Implementation milestones
 
-### Phase 0: Data feasibility
+The former phases are milestones, not single implementation tasks. Their
+bounded work units, dependencies, and evidence requirements are defined in
+[Implementation units](implementation-units.md). All units are initially
+planned; this reorganization records no completed implementation or live checks.
 
-Test a SoilGrids subset retrieval and LBEG queries for a reference field. Confirm
-attributes, units, depth, coverage, access restrictions, and usable retrieval
-methods. Record evidence and identify blockers.
+| Milestone | Required units | Acceptance gate |
+| --- | --- | --- |
+| M0: Initial data feasibility | 0A | One real source/parameter has reproducible spatial value access and sufficient metadata for the first integration. |
+| M1: First end-to-end integration | 1A, 1B after M0 | One field and one real layer yield downloadable PNG and JSON, correct clipping, statistics, provenance, and enforced limits. This is a technical demonstration. |
+| M2: Functional backend MVP | 2A–2F and their 0B checks, after M1 | Multiple fields and all five parameters work through SoilGrids and the necessary LBEG sources; capabilities, provenance, and partial failures are verified. Any missing required parameter keeps M2 incomplete. |
+| M3: Reproducible demo and freshness | 3A–3C after M2 | Cache reuse, explicit refresh, and a clean-environment demo are verified; failures remain visible. |
+| M4: Cross-source derived layers | 4A–4C after M2 | Compatible aggregation, source counts, spread, and separately identified provider uncertainty meet their documented data requirements and tests. |
 
-Exit criterion: Real values and a viable access method exist for the required
-sources. If a required source or parameter is inaccessible, document the gap and
-its impact before committing to the corresponding integration.
+0B is a repeatable feasibility gate for each expansion, not a requirement to
+verify every source before M1. A blocked combination blocks its dependent unit,
+not unrelated work. M2 still requires every necessary integration gate to pass.
+M3 and M4 are independent after M2; cache integration for derived layers must be
+checked when both are present.
 
-### Phase 1: First end-to-end integration
+Capabilities, provenance, and startup instructions begin in M1 and evolve with
+each unit. Parameter-specific nFK derivation belongs to M2; cross-source
+aggregation belongs to M4. Limits and timeouts are prerequisites for querying
+providers, not additions deferred until the demo milestone.
 
-Create FastAPI, input models, and one SoilGrids adapter. Process one field and
-one straightforward parameter, such as clay. Produce a PNG, JSON grid, and
-statistics from real data.
+### Former Phase 5: Evidence-driven extension backlog
 
-Exit criterion: One request produces a correctly located and clipped real layer,
-including correct handling of geometry holes and `nodata`.
-
-This is a technical demonstration, not the complete backend MVP.
-
-### Phase 2: Backend MVP
-
-Support multiple fields, expand parameter coverage, and integrate the necessary
-LBEG sources. Implement capabilities, provenance, and partial failures.
-
-Exit criterion: The five parameters are covered using the necessary sources,
-and unavailable source/parameter combinations are documented. If a required
-parameter remains unavailable, report the MVP as incomplete.
-
-Parameter-specific calculations necessary for nFK belong here; cross-source
-aggregation belongs in Phase 4.
-
-### Phase 3: Reproducible demo
-
-Add a disk cache, refresh through `refresh: true` on the layer request, workload
-limits, timeouts, and startup documentation. Cache keys account for geometry,
-parameters, source, depth, resolution, and processing method/version.
-
-Exit criterion: The demo is repeatable, refresh queries the sources again and
-invalidates affected results, and failures remain visible.
-
-### Phase 4: Derived layers
-
-Add aggregation across compatible sources, source counts per cell, spread, and
-separately identified uncertainty. Document formulas and weighting. Combine only
-values comparable in unit, depth, spatial support, and meaning.
-
-Exit criterion: Formulas and insufficient-data behavior are documented and tested.
-A single source does not yield zero spread as evidence of agreement. Provider
-uncertainty remains distinct from disagreement between sources.
-
-### Phase 5: Evidence-driven extensions
-
-Evaluate downloadable GeoTIFF, asynchronous jobs, remote storage, and additional
-sources only when needed.
-
-Exit criterion: Each extension addresses a demonstrated need and remains within
-the user's requested scope.
+Downloadable GeoTIFF, asynchronous jobs, remote storage, and additional sources
+are candidates, not a scheduled milestone or a condition for completing M2–M4.
+Before starting an authorized extension, define a separate bounded unit with a
+demonstrated need, dependencies, exclusions, and measurable acceptance evidence.
+Split extensions that contain multiple independently verifiable behaviors.
 
 ## Validation and delivery
 
-Add meaningful checks during each phase: conversions, georeferencing, masks,
+Add meaningful checks during each unit: conversions, georeferencing, masks,
 PNG/value correspondence, and external failure handling. Keep deterministic
 fixture tests separate from real-provider integration checks.
 
@@ -197,8 +172,10 @@ Use the agent's [acceptance criteria](../skills/soil-api-engineer/references/acc
 for implementation reviews and delivery. Report what was tested and any remaining
 limitations, rather than treating mocked results as proof of provider availability.
 
-The recommended first milestone is Phases 0 and 1. The functional backend MVP is
-reached in Phase 2; Phase 3 makes its demonstration reproducible.
+The recommended first delivery is M0 plus M1. M2 is the functional backend MVP;
+M3 verifies a reproducible demo and freshness. Use the unit completion record in
+[Implementation units](implementation-units.md#completion-record) to distinguish
+local test results, real-provider evidence, blockers, and pending verification.
 
 ## Maintaining this plan
 

@@ -1,0 +1,57 @@
+{
+  "unit": "0A",
+  "status": "blocked",
+  "requests": [
+    {
+      "url": "https://maps.isric.org/mapserv?map=%2Fmap%2Fclay.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCapabilities",
+      "file": "capabilities.xml",
+      "retrieved_at": "2026-10-03T10:12:26.183638+00:00",
+      "elapsed_seconds": 0.184,
+      "exit_code": 0,
+      "bytes": 12503,
+      "sha256": "ebb673cd78ce4373441c835d5e7fe79f7d8173e244bcaee9645316851e6116f4"
+    },
+    {
+      "url": "https://maps.isric.org/mapserv?map=%2Fmap%2Fclay.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=DescribeCoverage&COVERAGEID=clay_0-5cm_mean%2Cclay_5-15cm_mean%2Cclay_15-30cm_mean",
+      "file": "description.xml",
+      "retrieved_at": "2026-10-03T10:12:26.370101+00:00",
+      "elapsed_seconds": 0.169,
+      "exit_code": 0,
+      "bytes": 6505,
+      "sha256": "4cc0c07f18136f45296e06bd626c7e55ca982d1dd7e3ffb25b24567b3af18792"
+    },
+    {
+      "url": "https://files.isric.org/soilgrids/latest/data/clay/clay_0-5cm_mean.vrt",
+      "file": "clay_0-5cm_mean.vrt",
+      "retrieved_at": "2026-10-03T10:12:26.539928+00:00",
+      "elapsed_seconds": 4.349,
+      "exit_code": 0,
+      "bytes": 5929079,
+      "sha256": "ad1a77d56090bf543e3600bc48d4cd6fa80f8e1a9eb37177044de65a64848ede",
+      "stored_file": "clay_0-5cm_mean.vrt.gz"
+    }
+  ],
+  "field_sha256": "2383ce11015753fdb9f66577bc7e8b7d0b88cf77d35e1ac029f7dc9d71076061",
+  "budget": {
+    "requests": 8,
+    "concurrency": 1,
+    "retries": 0,
+    "seconds_per_request": 45,
+    "bytes_per_response": 8388608,
+    "pixels_per_depth": 4096
+  },
+  "field_id": "Hk3aYz9j56wbQD4u3rAC",
+  "field_bounds_wsen": [
+    11.045702,
+    52.344595,
+    11.054692,
+    52.348776
+  ],
+  "error": "ValueError: Unexpected VRT CRS or nodata",
+  "elapsed_seconds": 4.864,
+  "environment": {
+    "rasterio": "1.4.3",
+    "gdal": "3.9.3",
+    "numpy": "2.0.2"
+  }
+}

@@ -2,7 +2,8 @@
 
 Date: 2026-10-03
 
-Status: Planning only. All units below are planned, not implemented or verified.
+Status: Unit 0A complete on 2026-10-03; [evidence](verification/0a/README.md).
+All remaining units are planned, not implemented or verified.
 This document does not authorize implementation, deployment, or scope expansion.
 
 The [architecture and milestones](implementation-plan.md) define the shared
@@ -32,6 +33,8 @@ remain the overall validation baseline.
 ## M0: Initial feasibility
 
 ### 0A — First real spatial sample
+
+**Status:** Complete; [verification record](verification/0a/README.md).
 
 **Dependencies:** None.
 
@@ -309,8 +312,8 @@ and refreshing inputs invalidates affected derived outputs.
 ## Completion record
 
 When work starts, create one record per unit (and one per 0B combination) under
-`docs/verification/`. This directory and its records are future deliverables;
-their mention here is not evidence that checks ran. Use this template:
+`docs/verification/`. Unit 0A already has a [record](verification/0a/README.md); other records remain
+future deliverables. Their mention here is not evidence that checks ran. Use this template:
 
 ```text
 Unit / source-parameter combination:

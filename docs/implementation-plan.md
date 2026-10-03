@@ -2,8 +2,9 @@
 
 Date: 2026-10-03
 
-Status: Planning baseline. No API implementation has started as part of creating
-this document. Implementation proceeds when requested by the user.
+Status: M0 / unit 0A verified on 2026-10-03; see the
+[feasibility evidence](verification/0a/README.md). M1–M4 remain planned.
+No API implementation has started.
 
 ## Objective and scope
 
@@ -102,8 +103,10 @@ list is the design baseline.
 The official SoilGrids access documentation reviewed for this plan reports a
 temporary pause of its REST API and recommends alternatives, including WCS for
 map subsets. The architecture must support raster access without depending on
-REST point queries. This was a documentation review, not a successful live data
-retrieval. Recheck service availability in unit 0A and each relevant 0B check.
+REST point queries. Unit 0A subsequently verified live WCS clay retrieval at
+three depths. Its [record](verification/0a/README.md) documents omitted TIFF
+metadata and the official VRT metadata used to interpret it. REST was not tested.
+Recheck availability for each relevant 0B check.
 
 LBEG publishes WMS services, but usable attributes and coverage must be verified
 for each required layer. A rendered map alone does not establish access to
@@ -117,8 +120,8 @@ underlying numeric values.
 | nFK | Derived from SoilGrids; BK50 as additional data | Do not equate root-zone values with 0–30 cm values. |
 | Bodenzahl | LBEG Bodenschätzung | Access to the actual value and geographic coverage. |
 
-This matrix is a working hypothesis based on the requirements, not verified
-availability. Units 0A and 0B must resolve access to values, formats, units,
+This matrix remains a working hypothesis except for clay, verified for the
+reference field in [0A](verification/0a/README.md). Units 0A and 0B resolve access to values, formats, units,
 depths, coverage, restrictions, and attribution requirements before the
 corresponding integration. Do not infer values from
 map colors or silently substitute fixtures if access fails.
@@ -132,8 +135,8 @@ Official references consulted:
 
 The former phases are milestones, not single implementation tasks. Their
 bounded work units, dependencies, and evidence requirements are defined in
-[Implementation units](implementation-units.md). All units are initially
-planned; this reorganization records no completed implementation or live checks.
+[Implementation units](implementation-units.md). Unit 0A is complete with
+[recorded live evidence](verification/0a/README.md); all other units remain planned.
 
 | Milestone | Required units | Acceptance gate |
 | --- | --- | --- |

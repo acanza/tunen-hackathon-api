@@ -1,6 +1,7 @@
 """Bounded, standalone SoilGrids clay feasibility probe (not an API adapter)."""
 
 import argparse
+import gzip
 from datetime import datetime, timezone
 import hashlib
 import json
@@ -24,7 +25,7 @@ WCS_CRS = "http://www.opengis.net/def/crs/EPSG/0/152160"
 DEPTHS = ("0-5cm", "5-15cm", "15-30cm")
 IDS = [f"clay_{depth}_mean" for depth in DEPTHS]
 NS = {"wcs": "http://www.opengis.net/wcs/2.0", "gml": "http://www.opengis.net/gml/3.2"}
-MAX_BYTES = 2 * 1024 * 1024
+MAX_BYTES = 8 * 1024 * 1024
 MAX_PIXELS = 4096
 
 
@@ -36,8 +37,8 @@ def sha256(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def fetch(directory, name, parameters, requests):
-    url = ENDPOINT + "?" + urlencode([
+def fetch(directory, name, parameters, requests, direct_url=None):
+    url = direct_url or ENDPOINT + "?" + urlencode([
         ("map", "/map/clay.map"), ("SERVICE", "WCS"), ("VERSION", "2.0.1"),
         *parameters,
     ])
@@ -101,7 +102,7 @@ def run(directory):
     start = time.monotonic()
     report = {"unit": "0A", "status": "in_progress", "requests": [],
               "field_sha256": sha256(INPUT / "field.geojson"),
-              "budget": {"requests": 5, "concurrency": 1, "retries": 0,
+              "budget": {"requests": 8, "concurrency": 1, "retries": 0,
                          "seconds_per_request": 45, "bytes_per_response": MAX_BYTES,
                          "pixels_per_depth": MAX_PIXELS}}
     try:
@@ -118,7 +119,7 @@ def run(directory):
         ], report["requests"])
         ox, oy = describe_grid(description)
         west, south, east, north = bounds(geometry)
-        # Snap to native pixel edges; request pixel centers to avoid extra border cells.
+        # WCS uses these subset coordinates as output edges; align to native edges.
         x0, y0 = ox - 125, oy - 125
         left = x0 + math.floor((west - x0) / 250) * 250
         right = x0 + math.ceil((east - x0) / 250) * 250
@@ -130,19 +131,32 @@ def run(directory):
         layers, metadata = [], []
         reference = None
         for coverage_id in IDS:
+            vrt = fetch(directory, coverage_id + ".vrt", [], report["requests"],
+                        f"https://files.isric.org/soilgrids/latest/data/clay/{coverage_id}.vrt")
+            source = ET.parse(vrt)
+            source_crs = rasterio.crs.CRS.from_wkt(source.findtext("SRS"))
+            source_nodata = float(source.findtext("VRTRasterBand/NoDataValue"))
+            source_metadata = {n.attrib["key"]: n.text for n in source.findall("Metadata/MDI")}
+            if source_crs.to_dict() != rasterio.crs.CRS.from_string(CRS).to_dict() or source_nodata != -32768:
+                raise ValueError("Unexpected VRT CRS or nodata")
+            # Keep exact upstream XML compressed; never open the global mosaic in GDAL.
+            compressed = vrt.with_suffix(".vrt.gz")
+            compressed.write_bytes(gzip.compress(vrt.read_bytes(), mtime=0))
+            report["requests"][-1]["stored_file"] = compressed.name
+            vrt.unlink()
             path = fetch(directory, coverage_id + ".tif", [
                 ("REQUEST", "GetCoverage"), ("COVERAGEID", coverage_id),
-                ("FORMAT", "GEOTIFF_INT16"), ("SUBSETTINGCRS", WCS_CRS), ("OUTPUTCRS", WCS_CRS),
-                ("SUBSET", f"X({left + 125},{right - 125})"),
-                ("SUBSET", f"Y({bottom + 125},{top - 125})"),
+                ("FORMAT", "image/tiff"), ("SUBSETTINGCRS", WCS_CRS), ("OUTPUTCRS", WCS_CRS),
+                ("SUBSET", f"X({left},{right})"),
+                ("SUBSET", f"Y({bottom},{top})"),
             ], report["requests"])
             with rasterio.open(path) as dataset:
                 if dataset.width * dataset.height > MAX_PIXELS or dataset.count != 1:
                     raise ValueError("Unexpected raster dimensions")
-                if dataset.crs != rasterio.crs.CRS.from_string(CRS) or dataset.res != (250, 250):
+                if (dataset.crs is not None and dataset.crs != source_crs) or dataset.res != (250, 250):
                     raise ValueError("Unexpected raster CRS/resolution")
-                if dataset.nodata is None:
-                    raise ValueError("No nodata convention supplied")
+                if dataset.nodata is not None and dataset.nodata != source_nodata:
+                    raise ValueError("Conflicting nodata conventions")
                 if tuple(dataset.bounds) != (left, bottom, right, top):
                     raise ValueError("Returned raster does not match native requested extent")
                 key = (dataset.shape, dataset.transform, dataset.crs)
@@ -151,15 +165,18 @@ def run(directory):
                 reference = key
                 values = dataset.read(1, masked=True)
                 outside = geometry_mask([geometry], dataset.shape, dataset.transform, all_touched=False)
-                values.mask = np.ma.getmaskarray(values) | outside
+                values.mask = np.ma.getmaskarray(values) | outside | (values.data == source_nodata)
                 if values.count() == 0:
                     raise ValueError("No valid pixel centers inside reference field")
                 if values.min() < 0 or values.max() > 1000:
                     raise ValueError("Clay outside physical g/kg range")
                 layers.append(values)
                 metadata.append({"coverage_id": coverage_id, "shape": dataset.shape,
-                                 "crs_wkt": dataset.crs.to_wkt(), "transform": list(dataset.transform)[:6],
-                                 "nodata": dataset.nodata, "dtype": dataset.dtypes[0],
+                                 "crs_wkt": source_crs.to_wkt(), "transform": list(dataset.transform)[:6],
+                                 "nodata": source_nodata, "dtype": dataset.dtypes[0],
+                                 "tiff_embeds_crs": dataset.crs is not None,
+                                 "tiff_embeds_nodata": dataset.nodata is not None,
+                                 "metadata_source": compressed.name, "source_metadata": source_metadata,
                                  "tags": dataset.tags(), "valid_field_cells": int(values.count()),
                                  "raw_g_kg_grid": json_grid(values)})
         derived = depth_mean_percent(layers)

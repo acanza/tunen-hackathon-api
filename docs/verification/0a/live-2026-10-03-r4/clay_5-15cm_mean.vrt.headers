@@ -1,0 +1,10 @@
+HTTP/2 200 
+date: Sat, 03 Oct 2026 10:14:16 GMT
+content-type: application/octet-stream
+content-length: 5941912
+last-modified: Tue, 02 Jun 2020 15:55:56 GMT
+etag: "10771435853-1591113356-5941912"
+accept-ranges: bytes
+access-control-allow-origin: *
+strict-transport-security: max-age=31536000; includeSubDomains
+

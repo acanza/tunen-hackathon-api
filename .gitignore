@@ -224,6 +224,9 @@ data/raw/
 data/interim/
 data/features/
 data/out/
+data/*/cache/
+data/*/raw/
+data/**/review_*.md
 outputs/
 *.tif
 *.nc

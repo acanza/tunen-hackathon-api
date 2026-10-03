@@ -16,9 +16,12 @@ Steps
    farm window; the first is read, the next only fills its nodata gaps.
 3. Windowed COG reads (HTTP range requests) of SCL (20 m) first; scenes below
    MIN_VALID are dropped without reading red/nir. Then B04 + B08 (10 m).
-4. BOA offset: subtract 1000 DN only when baseline >= 04.00 AND
-   `earthsearch:boa_offset_applied` is False (see README: on Earth Search the offset is
-   already applied in the COG pixels, despite raster:bands offset = -0.1).
+4. BOA offset: subtract 1000 DN only when metadata (baseline >= 04.00 and
+   boa_offset_applied False) AND pixels (0.5th percentile of raw red DN in the window >= 1000)
+   agree. Pixels-only bright floor -> scene dropped as snow/haze suspect.
+   On Earth Search the offset is already removed from the COG pixels (raster:bands still
+   says offset -0.1, and `earthsearch:boa_offset_applied` is False on some items whose
+   pixels are nevertheless harmonised). See README.
 5. NDVI = (nir - red)/(nir + red) on masked pixels; per-season int16 stacks
    (ndvi_stack_<year>.tif, NDVI*10000, nodata -32768, band description = obs id),
    per-season peak composite ndvi_peak_<year>.tif (p90, max, n_obs over May-Jul),
@@ -104,12 +107,23 @@ def baseline_num(item) -> float:
         return 0.0
 
 
-def dn_offset(item) -> int:
-    """DN to subtract before scaling by 1e-4 (0 or 1000)."""
+def dn_offset_by_metadata(item) -> int:
+    """What the STAC metadata implies (0 or 1000). NOT trusted on its own, see dn_offset_by_data."""
     applied = item.properties.get("earthsearch:boa_offset_applied")
     if baseline_num(item) >= 4.0 and applied is False:
         return 1000
     return 0
+
+
+def dn_offset_by_data(item, red_dn: np.ndarray) -> int:
+    """Empirical check: if the +1000 BOA offset were still in the pixels, (almost) no valid
+    pixel could be < 1000 DN. Over this window there is always water/shadow/dark vegetation
+    with red reflectance < 0.1, so the 0.5th percentile of red DN is far below 1000 when the
+    offset has already been removed. Only baseline >= 04.00 can carry the offset at all."""
+    v = red_dn[red_dn > 0]
+    if baseline_num(item) < 4.0 or v.size == 0:
+        return 0
+    return 1000 if np.percentile(v, 0.5) >= 1000 else 0
 
 
 def search(cat, year: int):
@@ -186,7 +200,7 @@ def process(ob):
     rec.update(items=";".join(u[1].id for u in used), tiles=";".join(u[0] for u in used),
                baselines=";".join(u[1].properties.get("s2:processing_baseline", "") for u in used),
                boa_offset_applied=";".join(str(u[1].properties.get("earthsearch:boa_offset_applied")) for u in used),
-               dn_offset_subtracted=";".join(str(dn_offset(u[1])) for u in used),
+               dn_offset_by_metadata=";".join(str(dn_offset_by_metadata(u[1])) for u in used),
                eo_cloud_cover=";".join(f"{u[1].properties.get('eo:cloud_cover', float('nan')):.1f}" for u in used),
                tile_coverage=";".join(f"{c:.3f}" for c, *_ in ob["tiles"]))
     n = scl.size
@@ -200,13 +214,25 @@ def process(ob):
         return rec, None
     red = np.zeros((H, W), np.float32)
     nir = np.zeros((H, W), np.float32)
+    offs, red_p05 = [], []
     for tile, it, fill20 in used:
         fill = np.repeat(np.repeat(fill20, 2, 0), 2, 1)
-        off = dn_offset(it)
         r = read_window(it.assets["red"].href, 10).astype(np.float32)
         n_ = read_window(it.assets["nir"].href, 10).astype(np.float32)
+        by_data, by_meta = dn_offset_by_data(it, r), dn_offset_by_metadata(it)
+        if by_data and not by_meta:
+            # pixels are bright everywhere but metadata says the offset is already removed:
+            # snow / frost / haze misclassified by SCL (seen on 2024-03-04) -> drop the scene
+            rec.update(used=False, reason="bright_dn_floor_suspect_snow_or_haze",
+                       red_dn_p05_raw=f"{np.percentile(r[r > 0], 0.5):.0f}", seconds=round(time.time() - t0, 2))
+            return rec, None
+        off = by_data if (by_data and by_meta) else 0  # subtract only when pixels AND metadata agree
+        offs.append(str(off))
+        red_p05.append(f"{np.percentile(r[r > 0], 0.5):.0f}" if (r > 0).any() else "")
         red[fill] = np.where(r[fill] > 0, r[fill] - off, 0)
         nir[fill] = np.where(n_[fill] > 0, n_[fill] - off, 0)
+    rec["dn_offset_subtracted"] = ";".join(offs)
+    rec["red_dn_p05_raw"] = ";".join(red_p05)
     clear10 = np.repeat(np.repeat(clear, 2, 0), 2, 1) & (red > 0) & (nir > 0)
     ndvi = np.full((H, W), np.nan, np.float32)
     ndvi[clear10] = (nir[clear10] - red[clear10]) / (nir[clear10] + red[clear10])

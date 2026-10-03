@@ -51,6 +51,9 @@ MIN_SEASON_PEAK = 0.40     # field-season skipped for normalisation if inner-zon
 MIN_PEAK_OBS = 2           # pixel needs >= 2 clear May-Jul observations for its peak value
 MIN_SEASONS = 3            # pixel needs >= 3 usable seasons for a zone
 UNSTABLE_SD_Z = 1.0        # SD across seasons of the within-field z-score above which a pixel is "unstable"
+ZONE_INNER_M = 10          # zoning uses pixels whose centre is >= 10 m inside the field (drops mixed edge pixels)
+MIN_ZONE_PX = 20           # fields with < 20 such pixels (0.2 ha) get no zones
+SD_FLOOR = 0.02            # NDVI; floor on the within-field SD so near-uniform (saturated) seasons don't turn noise into big z
 ZONES = {0: "none", 1: "stable_high", 2: "stable_low", 3: "unstable"}
 
 
@@ -116,10 +119,15 @@ def productivity(g):
         prof, shape, tr = r.profile, r.shape, r.transform
     gs = g[g["use_for_stats"]].reset_index(drop=True)
     ids = np.arange(1, len(gs) + 1)
-    # field id per pixel (pixel centre inside). Smaller fields drawn last so they win overlaps.
+    # field id per pixel (pixel centre inside the 10 m inner buffer). Smaller fields drawn last so they win overlaps.
     order = gs["field_area_ha"].sort_values(ascending=False).index
-    fid = rasterize([(gs.geometry[i], ids[i]) for i in order], out_shape=shape, transform=tr, fill=0, dtype="int32")
-    fin = rasterize([(gs["zone_geom"][i], ids[i]) for i in order], out_shape=shape, transform=tr, fill=0, dtype="int32")
+    inner10 = gs.geometry.buffer(-ZONE_INNER_M)
+    fin = rasterize([(inner10[i], ids[i]) for i in order if not inner10[i].is_empty],
+                    out_shape=shape, transform=tr, fill=0, dtype="int32")
+    fid = np.where(fin > 0, fin, 0)  # zoning / normalisation pixel set = inner 10 m
+    for k in ids:
+        if (fid == k).sum() < MIN_ZONE_PX:
+            fid[fid == k] = 0; fin[fin == k] = 0
     rels, zs, seasons, per_fs = [], [], [], []
     for p in peaks:
         year = int(p.stem.split("_")[-1])
@@ -147,8 +155,7 @@ def productivity(g):
             per_fs.append(rec)
             sel = fid == k
             rel[sel] = p90[sel] / mu
-            if sd > 0:
-                z[sel] = (p90[sel] - mu) / sd
+            z[sel] = (p90[sel] - mu) / max(sd, SD_FLOOR)
         rels.append(rel); zs.append(z); seasons.append(year)
     R, Z = np.stack(rels), np.stack(zs)
     n = np.isfinite(Z).sum(0)
@@ -179,8 +186,10 @@ def productivity(g):
         sel = fid == k
         zz = zone[sel]
         tot = max(int(sel.sum()), 1)
+        if sel.sum() == 0:
+            pix.append(dict(plotId=gs.plotId[i], n_zone_px=0)); continue
         mr = mean_rel[sel]
-        pix.append(dict(plotId=gs.plotId[i], n_field_px=int(sel.sum()),
+        pix.append(dict(plotId=gs.plotId[i], n_zone_px=int(sel.sum()),
                         share_stable_high=round((zz == 1).sum() / tot, 3),
                         share_stable_low=round((zz == 2).sum() / tot, 3),
                         share_unstable=round((zz == 3).sum() / tot, 3),
@@ -220,8 +229,9 @@ def quicklooks(g, ts, s, prod):
     for ax, (_, f) in zip(axs, big.iterrows()):
         d = ts[(ts["plotId"] == f["plotId"]) & ts["valid_obs"]].copy()
         d["date"] = pd.to_datetime(d["date"])
-        ax.fill_between(d["date"], d["ndvi_p10"], d["ndvi_p90"], color="#9ec5f4", alpha=0.6, lw=0, step=None)
-        ax.plot(d["date"], d["ndvi_mean"], color="#2a78d6", lw=1.2, marker="o", ms=2.5)
+        for _, seg in d.groupby(d["date"].dt.year):  # one segment per season, no line across winter
+            ax.fill_between(seg["date"], seg["ndvi_p10"], seg["ndvi_p90"], color="#9ec5f4", alpha=0.6, lw=0)
+            ax.plot(seg["date"], seg["ndvi_mean"], color="#2a78d6", lw=1.2, marker="o", ms=2.5)
         ax.set_title(f"{f['fieldName']}  ({f['field_area_ha']:.1f} ha)", loc="left", fontsize=9, color=INK)
         ax.grid(axis="y", color=GRID, lw=0.6); ax.set_ylim(-0.1, 1.0); ax.set_ylabel("NDVI")
     axs[0].text(1, 1.15, "line = zone mean, band = p10–p90 within field; clear observations only (Mar–Oct)",
@@ -277,6 +287,7 @@ def main():
                    full_field_fallback=g.loc[g.stat_zone == "full_field_fallback", "fieldName"].tolist(),
                    inner_buffer_m=INNER_M, min_field_valid=MIN_FIELD_VALID, min_season_peak=MIN_SEASON_PEAK,
                    min_peak_obs=MIN_PEAK_OBS, min_seasons=MIN_SEASONS, unstable_sd_z=UNSTABLE_SD_Z,
+                   zone_inner_m=ZONE_INNER_M, min_zone_px=MIN_ZONE_PX, sd_floor=SD_FLOOR,
                    seasons=prod["seasons"], run=time.strftime("%Y-%m-%dT%H:%M:%S")),
               open(HERE / "field_stats_meta.json", "w"), indent=1, ensure_ascii=False)
     print("done")

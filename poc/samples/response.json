@@ -80,12 +80,13 @@
      "confidence": {
       "level": "low",
       "interval_90": [
-       0.45,
-       53.36
+       0.0,
+       10.98
       ],
       "drivers": [
        "single_coarse_source",
        "pixel_larger_than_field",
+       "error_calibrated_west",
        "range_wider_than_texture_class"
       ],
       "pixel_shares": {
@@ -883,11 +884,12 @@
      "confidence": {
       "level": "low",
       "interval_90": [
-       0.58,
-       68.77
+       3.59,
+       15.81
       ],
       "drivers": [
        "single_coarse_source",
+       "error_calibrated_west",
        "range_wider_than_texture_class"
       ],
       "pixel_shares": {
@@ -1527,12 +1529,13 @@
      "confidence": {
       "level": "low",
       "interval_90": [
-       0.8,
-       72.82
+       7.82,
+       20.04
       ],
       "drivers": [
        "single_coarse_source",
        "pixel_larger_than_field",
+       "error_calibrated_west",
        "range_wider_than_texture_class",
        "no_inner_zone_edge_pixels_only"
       ],

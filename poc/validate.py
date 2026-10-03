@@ -12,6 +12,7 @@
 3. Bodenzahl (west): between fields and, where the downloaded parcels split a field, within fields.
 4. Soil/terrain model: grouped-CV R² over all fields and the west only.
 5. Derived soil layers: Bodenzahl model scores (grouped by parcel) and the nFK lookup per BÜK200 unit.
+6. Measured error of SoilGrids texture against the Bodenschätzung class of each parcel.
 """
 from __future__ import annotations
 
@@ -180,15 +181,18 @@ def main():
     bm = ds["bodenzahl_model"]
     for name, sc in bm["scores"].items():
         rows.append((RUN_ID, "bodenzahl_derived_rmse_grouped_by_parcel", name, sc["rmse_parcel"], bm["n_parcels"], json.dumps(sc)))
+    cal = json.loads((RUN_DIR / "covariates" / "calibration.json").read_text())["texture_soilgrids"]
+    for k in ("bias", "rmse", "share_in_class_range", "spearman_class_vs_clay"):
+        rows.append((RUN_ID, f"texture_soilgrids_{k}", "west_parcels", cal[k], cal["n_parcels"], None))
     for r in sweep:
         rows.append((RUN_ID, "loyo_shrink_sweep", f"k={r['k']:g}", r["rho_v1"], len(lo), json.dumps(r)))
     write_db(rows)
-    md = render_md(lo, by_season, overall, win_all, win_dry, v1_vs_flat, bz, sm, cwb, sweep, ds)
+    md = render_md(lo, by_season, overall, win_all, win_dry, v1_vs_flat, bz, sm, cwb, sweep, ds, cal)
     (POC / "VALIDATION.md").write_text(md)
     print(md)
 
 
-def render_md(lo, by_season, overall, win_all, win_dry, v1_vs_flat, bz, sm, cwb, sweep, ds) -> str:
+def render_md(lo, by_season, overall, win_all, win_dry, v1_vs_flat, bz, sm, cwb, sweep, ds, cal) -> str:
     f2 = lambda x: f"{x:.2f}"
     f3 = lambda x: f"{x:.3f}"
     season_rows = "\n".join(
@@ -204,6 +208,8 @@ def render_md(lo, by_season, overall, win_all, win_dry, v1_vs_flat, bz, sm, cwb,
                          for k, v in bm["scores"].items())
     nfk_rows = "\n".join(f"| {u} | {v['nfkwe_mm']:.0f} | {v['sd_between_profiles_mm']:.0f} | {v['n_profiles']} |"
                           for u, v in ds["nfk_units"].items())
+    cal_rows = "\n".join(f"| {c} | {v['n']} | {v['class_clay_range'][0]}–{v['class_clay_range'][1]} | {v['sg_clay_mean']:.1f} |"
+                          for c, v in cal["by_class"].items())
     within = bz["within"]
     within_rows = "\n".join(f"| {p['field']} | {p['bz_low']:.0f} → {p['bz_high']:.0f} | {p['yp_low']:.1f} → {p['yp_high']:.1f} | "
                             f"{'yes' if p['agrees'] else 'no'} |" for p in within["pairs"]) or "| – | – | – | – |"
@@ -309,6 +315,38 @@ area-weighted. No capillary rise (as in BK50 nFKWe).
 There is no nFK reference on disk (the downloaded BK50 attributes don't include nFKWe), so this layer is
 not validated. It is far more discriminating than SoilGrids, which gives ~160–215 mm everywhere on this
 sandy farm. Its interval combines the spread between profiles with ±30 mm (90 %) for the lookup itself.
+
+## 5. Measured error of the coarse sources (west as reference)
+
+### SoilGrids texture vs Bodenschätzung
+
+Each downloaded parcel's Bodenschätzung class (Bodenart) is mapped to a typical clay range and compared
+with the SoilGrids clay mean over the parcel. The survey classes are defined by "abschlämmbare Teile"
+(clay + fine silt), so the clay ranges are approximate.
+
+| Bodenart | Parcels | Typical clay (%) | SoilGrids clay, mean (%) |
+|---|---|---|---|
+{cal_rows}
+
+- Bias **{cal['bias']:+.1f}** % clay, RMSE **{cal['rmse']:.1f}** % clay, n = {cal['n_parcels']} parcels.
+- Only **{cal['share_in_class_range']:.0%}** of parcels have SoilGrids clay inside their class's range.
+- Rank correlation between class and SoilGrids clay: **{cal['spearman_class_vs_clay']:.2f}**. SoilGrids
+  does not separate S, Sl and lS on this farm at all.
+
+The API's interval for SoilGrids texture is now value ± 1.645 × this RMSE (driver `error_calibrated_west`),
+replacing SoilGrids' own 90 % range (which spanned roughly 0.5–55 % clay). It stays low confidence,
+because the error is larger than a texture class.
+
+### Bodenzahl
+
+- The **derived** Bodenzahl interval already uses a measured error (section 4).
+- The **official** Bodenschätzung value keeps an assumed ±5 points (driver `interval_assumed_not_calibrated`):
+  it is the reference itself, and nothing on disk can measure its error.
+
+### Not calibratable with data on disk
+
+pH, SOC and nFK have no reference in the west (the BK50 attributes we downloaded have no nFKWe), so
+they keep their source's own uncertainty.
 
 ## What is not validated
 

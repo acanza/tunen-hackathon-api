@@ -120,6 +120,40 @@ There is no nFK reference on disk (the downloaded BK50 attributes don't include 
 not validated. It is far more discriminating than SoilGrids, which gives ~160–215 mm everywhere on this
 sandy farm. Its interval combines the spread between profiles with ±30 mm (90 %) for the lookup itself.
 
+## 5. Measured error of the coarse sources (west as reference)
+
+### SoilGrids texture vs Bodenschätzung
+
+Each downloaded parcel's Bodenschätzung class (Bodenart) is mapped to a typical clay range and compared
+with the SoilGrids clay mean over the parcel. The survey classes are defined by "abschlämmbare Teile"
+(clay + fine silt), so the clay ranges are approximate.
+
+| Bodenart | Parcels | Typical clay (%) | SoilGrids clay, mean (%) |
+|---|---|---|---|
+| S | 15 | 0–5 | 6.6 |
+| Sl | 9 | 5–8 | 6.8 |
+| lS | 13 | 8–12 | 5.9 |
+
+- Bias **+0.3** % clay, RMSE **3.7** % clay, n = 37 parcels.
+- Only **24%** of parcels have SoilGrids clay inside their class's range.
+- Rank correlation between class and SoilGrids clay: **-0.22**. SoilGrids
+  does not separate S, Sl and lS on this farm at all.
+
+The API's interval for SoilGrids texture is now value ± 1.645 × this RMSE (driver `error_calibrated_west`),
+replacing SoilGrids' own 90 % range (which spanned roughly 0.5–55 % clay). It stays low confidence,
+because the error is larger than a texture class.
+
+### Bodenzahl
+
+- The **derived** Bodenzahl interval already uses a measured error (section 4).
+- The **official** Bodenschätzung value keeps an assumed ±5 points (driver `interval_assumed_not_calibrated`):
+  it is the reference itself, and nothing on disk can measure its error.
+
+### Not calibratable with data on disk
+
+pH, SOC and nFK have no reference in the west (the BK50 attributes we downloaded have no nFKWe), so
+they keep their source's own uncertainty.
+
 ## What is not validated
 
 - **Yield itself.** NDVI is a proxy for vigour; validating yield needs yield-monitor or harvest data.

@@ -156,6 +156,7 @@ Driver codes:
 - `no_harvest_data_for_validation`
 - `edge_strip_soil_model_weighted`
 - `soil_model_only`
+- `error_calibrated_west`
 - `buek200_1to200000_nearest_point`
 - `lookup_table_approximate`
 - `model_trained_on_38_parcels`

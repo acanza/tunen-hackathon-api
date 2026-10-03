@@ -49,7 +49,7 @@ from shapely.geometry import box, mapping, shape
 
 from lib import yield_model as ym
 from lib.dem import terrain
-from lib.derived_soil import bodenzahl_model, buek_unit_raster, unit_nfk
+from lib.derived_soil import bodenzahl_model, buek_unit_raster, calibrate_texture, unit_nfk
 
 warnings.filterwarnings("ignore", category=RuntimeWarning)  # nanmean of empty slices
 
@@ -317,6 +317,20 @@ def build_regional(transform, h, w, parcels):
 NFK_LOOKUP_SIGMA_MM = 30 / Z90   # ±30 mm at 90 % for the approximate KA5 lookup itself
 
 
+def apply_texture_calibration(layers, parcels, transform, h, w) -> dict:
+    """Replace SoilGrids' own clay interval with the error measured against Bodenschätzung (west)."""
+    pid = rasterize(((g, i + 1) for i, g in enumerate(parcels.geometry)), out_shape=(h, w), transform=transform,
+                    fill=0, dtype="int32")
+    L = layers[("texture", "soilgrids")]
+    cal = calibrate_texture(L["value"], layers[("texture", "lbeg_bodenschaetzung")]["value"], pid, BODENART_CODES)
+    L["lo"] = np.maximum(L["value"] - Z90 * cal["rmse"], 0)
+    L["hi"] = L["value"] + Z90 * cal["rmse"]
+    L["conf"] = soil_confidence("texture", L["value"], L["lo"], L["hi"])
+    L["calibrated"] = True
+    (RUN_DIR / "covariates" / "calibration.json").write_text(json.dumps(dict(texture_soilgrids=cal), indent=1))
+    return cal
+
+
 def build_derived_soil(layers, dem, buek, parcels, fall, transform, h, w):
     """Derived nFK (BÜK200 unit → KA5) and Bodenzahl (model trained on the west). Returns metadata."""
     units = unit_nfk(SEG / "raw" / "buek200")
@@ -550,6 +564,8 @@ def build_field(f, layers, transform, H, W, parcels, nibis_row, conn):
             if small:
                 drivers.append("pixel_larger_than_field")
                 level = LOW
+            if L.get("calibrated"):
+                drivers.append("error_calibrated_west")
             if shares.get("low", 0) > 0.5:
                 drivers.append({"ph": "range_crosses_threshold:liming_ph_5.5", "nfk": "range_crosses_threshold:nfk_90_140_mm",
                                 "texture": "range_wider_than_texture_class", "soc": "range_wider_than_half_value"}[param])
@@ -663,6 +679,8 @@ def main():
     ground = rasterize(fields.to_crs(UTM).buffer(-10).loc[lambda g: ~g.is_empty], out_shape=(H, W),
                        transform=transform, fill=0, dtype="uint8").astype(bool)
     dem = terrain(SEG / "raw" / "dem" / "farm_window.tif", transform, H, W, UTM, ground)
+    cal = apply_texture_calibration(layers, parcels, transform, H, W)
+    print("texture calibration:", {k: v for k, v in cal.items() if k != "by_class"})
     buek = buek_unit_raster(SEG / "buek200_points.csv", transform, H, W, UTM)
     fall, _ = ym.field_index(fields.to_crs(UTM), transform, (H, W))
     global DERIVED_META, YIELD_META

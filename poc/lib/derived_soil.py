@@ -147,3 +147,37 @@ def bodenzahl_model(numeric: dict[str, np.ndarray], unit: np.ndarray, bz: np.nda
     pred[predict_mask] = fitters[best](Xt, yt)(X[predict_mask])
     return dict(pred=pred, best=best, scores=scores, n_parcels=n_groups, n_px=int(tr.sum()),
                 rmse=scores[best]["rmse_parcel"], features=names + ["buek_unit"])
+
+
+# ---------------------------------------------------------------- calibration against Bodenschätzung (west)
+
+# Approximate clay range (%) per Bodenschätzung Bodenart. The survey classes are defined by
+# "abschlämmbare Teile" (< 0.01 mm: clay + fine silt), so these clay ranges are an approximation.
+BODENART_CLAY = {"S": (0, 5), "Sl": (5, 8), "lS": (8, 12), "SL": (12, 17), "sL": (17, 25), "L": (25, 35),
+                 "LT": (35, 50), "T": (50, 100)}
+
+
+def calibrate_texture(clay: np.ndarray, bodenart_code: np.ndarray, parcel_id: np.ndarray,
+                      codes: list[str]) -> dict:
+    """Parcel-level error of SoilGrids clay against the Bodenschätzung class of each parcel."""
+    from scipy.stats import spearmanr
+    rows = []
+    for k in np.unique(parcel_id[parcel_id > 0]):
+        sel = (parcel_id == k) & np.isfinite(clay) & np.isfinite(bodenart_code)
+        if not sel.any():
+            continue
+        cls = codes[int(np.median(bodenart_code[sel])) - 1]
+        if cls not in BODENART_CLAY:
+            continue
+        lo, hi = BODENART_CLAY[cls]
+        sg = float(clay[sel].mean())
+        rows.append(dict(parcel=int(k), cls=cls, sg_clay=sg, mid=(lo + hi) / 2, in_range=lo <= sg < hi,
+                         order=list(BODENART_CLAY).index(cls)))
+    d = pd.DataFrame(rows)
+    err = d.sg_clay - d.mid
+    return dict(n_parcels=len(d), bias=float(err.mean()), rmse=float(np.sqrt((err ** 2).mean())),
+                share_in_class_range=float(d.in_range.mean()),
+                spearman_class_vs_clay=float(spearmanr(d.order, d.sg_clay).statistic),
+                by_class={c: dict(n=int(len(g)), sg_clay_mean=round(float(g.sg_clay.mean()), 2),
+                                  class_clay_range=list(BODENART_CLAY[c]))
+                          for c, g in d.groupby("cls")})

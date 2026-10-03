@@ -10,7 +10,7 @@ this document. Implementation proceeds when requested by the user.
 Build a single FastAPI application that accepts GeoJSON farm fields and returns
 soil layers by field, parameter, and source. Start with one field and one real
 layer, then expand to the backend MVP required by the
-[project specification](../project-raw-specs.md).
+[project specification](project-raw-specs.md).
 
 The backend MVP covers texture, pH, soil organic carbon, plant-available water
 (nFK), and Bodenzahl, using SoilGrids and the necessary LBEG sources. Not every

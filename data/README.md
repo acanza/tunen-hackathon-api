@@ -14,6 +14,8 @@ Each source has its own folder with a fetch script, the pulled data (raw respons
 **Real farm:** [`seggerde/`](seggerde/README.md) runs every source against the 87 active fields of `../LuF-Seggerde-Dev-fields.geojson` and lists coverage and missing values per field (`field_coverage.csv`).
 - [`seggerde/clean/`](seggerde/clean/README.md): cleaned field layer (`fields_clean.geojson`, 87 fields, no overlaps, `use_for_stats` flag) and an audit of every original feature. **Use this file for all field statistics.**
 - [`seggerde/soilgrids/`](seggerde/soilgrids/README.md): SoilGrids as analysis-ready rasters (one multi-band GeoTIFF per property, display units), at 250 m in UTM and on the Sentinel-2 10 m grid.
+- [`seggerde/nibis/`](seggerde/nibis/README.md): NIBIS coverage of the farm: it straddles the state border, 40 western fields (~240 ha) have BK50 + Bodenschätzung.
+- [`seggerde/weather/`](seggerde/weather/README.md): daily weather and season indicators 2019–2026 for the farm's 4 ERA5 cells.
 - [`seggerde/sentinel2/`](seggerde/sentinel2/README.md): Sentinel-2 NDVI 2019–2026 for the farm: per-field time series, peak NDVI per season, multi-year relative productivity and yield-potential zones (stable-high / stable-low / unstable).
 - [`seggerde/era5_history/`](seggerde/era5_history/README.md): how soil moisture and temperature on the farm changed 1950–2026 (ERA5-Land daily): trends, drought years, monthly shifts, link to NDVI.
 - [`overlap/`](overlap/README.md): data repeated across sources (texture, carbon, soil type, geology, elevation, moisture) and files that store the same values twice, with agreement checks.

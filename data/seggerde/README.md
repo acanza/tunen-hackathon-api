@@ -50,7 +50,7 @@ Overlapping fields count the same ground twice in any farm total.
 | BÜK200 (1:200k) | 87 / 87 | none | 8 soil units on the farm; 20 fields contain 2–3 units |
 | Copernicus DEM (30 m) | 87 / 87 | none | 2 fields cover less than 1 pixel |
 | Open-Meteo ERA5 (~9 km) | 87 / 87 | **last ~5 days null** (archive lag, last value 2026-09-27 23:00 UTC) | All 87 fields fall in **4 cells**; ICON forecast: 16 cells, no nulls |
-| NIBIS BK50 + Bodenschätzung | **unknown** | not queried | See below |
+| NIBIS BK50 + Bodenschätzung | **40 / 87** (238 ha) | 47 fields in Sachsen-Anhalt | The farm straddles the state border; see [`nibis/`](nibis/README.md) |
 
 ### SoilGrids
 - Fetched with the **WCS raster service**, not the REST API: 268 rasters (11 properties × 6 depths × 4 statistics + `ocs`) in about 1.5 minutes, instead of 30–45 s per point.
@@ -97,11 +97,11 @@ SoilGrids' fairly uniform sandy-loam picture hides this mix of dry sand, stagnan
 - Last 30 days: 23–32 mm rain vs ~60 mm ET₀.
 - The last 6 days of the archive window are null.
 
-### NIBIS (BK50 + Bodenschätzung): unresolved
-- The farm is outside Niedersachsen, so we expected empty results. A direct test at `11.07, 52.35` did return an empty `FeatureCollection` within 0.4 s.
-- But the point inside `Nachthude 2` (`11.0669, 52.3587`) **returned a BK50 polygon after 22 s**. So NIBIS has *some* data over at least part of the farm, maybe a polygon that crosses the state border.
-- Further requests timed out (8 s, then 80 s) or were refused. The server probably throttled us after the retries. Nothing was saved, and `field_coverage.csv` marks NIBIS as not queried.
-- To do: retry later, sequentially, with a 60 s timeout and pauses. Check the `BL_NAME` (federal state) attribute of what comes back.
+### NIBIS (BK50 + Bodenschätzung): resolved, partial coverage
+- **The farm straddles the Niedersachsen / Sachsen-Anhalt border.** 39 fields are fully covered by BK50 and 40 by Bodenschätzung (~240 ha, the western fields, lon < ~11.06); `Silbersee` is 21 % covered, `Saalsdorfer Breite` 2 %; the other 46 fields have no NIBIS data.
+- Bodenzahl/Ackerzahl on the covered fields: 17–49 (poor sandy soils; floodplain fields around Nachthude are the best at 41–49).
+- The earlier timeouts were the server's concurrent-request limit (`Error 503.2`, returned as HTTP 200 + XML). Details and the retry recipe in [`nibis/README.md`](nibis/README.md).
+- `field_coverage.csv` still says "not queried"; use `nibis/nibis_fields.csv` instead.
 
 ## Missing values: summary
 
@@ -113,13 +113,15 @@ SoilGrids' fairly uniform sandy-loam picture hides this mix of dry sand, stagnan
 | DEM < 1 pixel | 2 fields (`Sandberg - 2`, `Parkwiese`) |
 | BÜK200 unit share from 1–2 points only | about 30 fields (small fields) |
 | Open-Meteo archive | last ~5 days null for every field |
-| NIBIS BK50 / Bodenschätzung | all 87 unknown |
+| NIBIS BK50 / Bodenschätzung | 47 fields (Sachsen-Anhalt side of the border) |
 | Sachsen-Anhalt state soil data (LAGB) | not explored |
-| Satellite data | not explored |
+| Satellite data | done: Sentinel-2 NDVI 2019–2026 in [`sentinel2/`](sentinel2/README.md) |
+| Multi-year weather | done: 2019–2026 in [`weather/`](weather/README.md) |
+| Crop type per field and year, actual yields | not available (farm records needed) |
 
 ## What this means for the challenge
 
-- **This farm is SoilGrids + BÜK200 territory** unless NIBIS turns out to cover it. The equivalent detailed state source would be Sachsen-Anhalt's (LAGB), which we haven't looked at.
+- **This farm is a two-state case:** BK50 + Bodenschätzung for the western ~240 ha, only SoilGrids + BÜK200 for the eastern ~645 ha unless Sachsen-Anhalt's state soil data (LAGB) is usable. That's the challenge's "different portal in every country" problem on a single farm.
 - **Field geometry is a data-quality problem in itself:** archived duplicates, overlaps, slivers, stated areas that don't match the polygons. Clean it before computing any statistic, and use only active fields.
 - **Soil maps can't resolve differences inside a field here.** Half the fields are smaller than one SoilGrids pixel, and BÜK200 is 1:200k. Within-field variation has to come from satellite history and the DEM.
 - **Use the 20 m inner buffer for statistics**, and fall back to the full field only when the buffer leaves nothing.

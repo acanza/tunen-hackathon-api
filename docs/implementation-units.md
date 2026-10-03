@@ -20,104 +20,189 @@ backlog in [`docs/implementation-plan.md`](implementation-plan.md).
 
 ## P1 — Application bootstrap and contract models
 
+P1 is split into four units. Each unit should be implementable and testable
+without also implementing an HTTP endpoint.
+
+### P1.1 — Application package, settings, and read-only SQLite connection
+
 **Dependencies:** None.
 
-**Scope:** Create the minimal FastAPI application, Pydantic v2 request and
-response models, read-only SQLite access, and configuration for the frozen
-store. Validate a FeatureCollection, supported parameters/sources, and the
-200-feature limit before database or file work.
+**Scope:** Create the FastAPI application object, store-root configuration, and
+a connection factory that opens `poc/store/soil.sqlite` in read-only mode.
+Do not add request models or route handlers.
 
-**Deliverable:**
+**Verification:** The application imports, the configured store resolves inside
+the repository, a read-only connection can query `sqlite_master`, and an
+attempted write fails.
 
-- application startup instructions;
-- typed request/response models matching the sample shape;
-- read-only access to `runs`, `source_parameters`, `colormaps`, `fields`,
-  `field_layers`, and `coverage_areas`;
-- safe configuration of the store root.
+### P1.2 — Store metadata query functions
 
-**Verification:**
+**Dependencies:** P1.1.
 
-- valid sample input is accepted;
-- missing `parameters` or `sources` means all supported values;
-- unknown values are rejected with `422`;
-- more than 200 features is rejected with `413`;
-- malformed or unsupported GeoJSON is rejected without provider or file work;
-- the current run and frozen data-as-of metadata are read from the store.
+**Scope:** Add typed query functions for `runs`, `source_parameters`,
+`colormaps`, `fields`, `field_layers`, and `coverage_areas`. Keep SQL and row
+conversion outside route handlers.
+
+**Verification:** Queries return the current run, supported pairs, colour maps,
+field records, layer records, and farm coverage using the frozen store. No
+query writes or accepts a client-provided path.
+
+### P1.3 — GeoJSON request validation and request models
+
+**Dependencies:** P1.1.
+
+**Scope:** Define the request-side Pydantic models for the API brief's
+FeatureCollection, feature identifiers, Polygon/MultiPolygon geometry,
+optional `parameters`, optional `sources`, and the 200-feature limit. Do not
+assemble a response.
+
+**Verification:** Valid sample input is accepted; omitted filters are
+represented as defaults to be expanded later; malformed/unsupported GeoJSON,
+unknown values, and more than 200 features produce the documented errors
+without store or file access.
+
+### P1.4 — Response and layer models
+
+**Dependencies:** P1.1.
+
+**Scope:** Define typed response models for run metadata, field matching,
+bounds, layer statuses/reasons, statistics, colormaps, confidence, provenance,
+and artifact URLs. Models must preserve `null` values and the API brief's JSON
+names.
+
+**Verification:** A fixture response validates and serializes to the sample
+shape without recomputing or normalizing stored values.
 
 ## P2 — Matching and layer response assembly
 
-**Dependencies:** P1.
+P2 is split so field selection, coverage classification, and response mapping
+can be verified independently of endpoint wiring.
 
-**Scope:** Implement `POST /soil/layers` and the API brief's matching order:
+### P2.1 — Requested parameter/source matrix expansion
 
-1. `properties.plotId` matching a known field;
-2. geometry hash or IoU matching;
-3. known farm coverage with Phase B explicitly unavailable;
-4. outside farm coverage.
+**Dependencies:** P1.2, P1.3, P1.4.
 
-Build the layer list from the requested parameter/source matrix and database
-metadata. Add static URLs, parsed statistics/confidence/provenance, colormaps,
-and explicit reasons without calculating new soil values.
+**Scope:** Expand omitted filters to the store-supported values and produce a
+stable ordered list of requested parameter/source pairs. Mark pairs absent
+from `source_parameters` as `not_applicable`.
 
-**Deliverable:**
+**Verification:** Every requested pair is emitted exactly once, including
+unsupported pairs with `source_does_not_provide_parameter`.
 
-- one response field per input feature;
-- stable field matching metadata and bounds;
-- one layer entry for every requested pair;
-- correct status, reason, coverage, unit, URLs, and metadata;
-- explicit `not_applicable` entries generated from `source_parameters`.
+### P2.2 — `plotId` and geometry field matching
 
-**Verification:**
+**Dependencies:** P1.2, P1.3.
 
-- the sample request matches the reference response;
-- a western field exposes its available Bodenzahl layer;
-- an eastern field never exposes LBEG data as available;
-- the sliver keeps its unavailable yield potential and stored fallback stats;
-- an outside polygon returns `200` with unavailable layers, not `404` or `500`;
-- posted geometry differences follow the documented matching result.
+**Scope:** Implement matching precedence for `properties.plotId`, exact
+geometry hash, and documented IoU matching. Return only a match record; do not
+build layers.
+
+**Verification:** Known `plotId` wins over geometry, geometry matching works
+without `plotId`, and unmatched input is explicitly reported.
+
+### P2.3 — Coverage classification and match metadata
+
+**Dependencies:** P2.2, P1.2.
+
+**Scope:** Classify unmatched geometries as known farm coverage with Phase B
+unavailable or outside coverage. Produce `match`, `matched_plot_id`,
+`field_name`, and documented bounds in the required order.
+
+**Verification:** Known fields, Phase B polygons, and outside polygons receive
+the correct classification without fabricated layer values.
+
+### P2.4 — Stored layer metadata and URL mapping
+
+**Dependencies:** P1.2, P1.4.
+
+**Scope:** Convert one `field_layers` row plus its colormap into one response
+layer. Parse stored statistics, confidence, and provenance; generate only
+run-relative `/static/` URLs.
+
+**Verification:** Available, partial, unavailable, and stored missing-data
+rows map to their documented status/reason/unit/metadata. Missing values remain
+`null`.
+
+### P2.5 — `POST /soil/layers` orchestration
+
+**Dependencies:** P2.1, P2.3, P2.4.
+
+**Scope:** Add the route that validates the request, reads the current run,
+matches every feature, creates one layer entry per requested pair, and returns
+the complete response. It must not call providers or write the store.
+
+**Verification:** The sample request returns one response field per input
+feature and the exact expected top-level and nested shape.
 
 ## P3 — Static artifact serving
 
-**Dependencies:** P1.
+P3 is split between path safety and HTTP delivery.
 
-**Scope:** Mount the store below `/static/` and serve only files that resolve
-inside `poc/store/`. Preserve the run-relative URLs generated by P2.
+### P3.1 — Safe artifact path resolution
 
-**Deliverable:**
+**Dependencies:** P1.1.
 
-- PNG, confidence PNG, and GeoTIFF retrieval;
-- correct content types;
-- `Cache-Control: public, max-age=31536000, immutable`;
-- safe rejection of traversal and paths outside the store.
+**Scope:** Implement a resolver that accepts only a store-relative path and
+returns a file inside `poc/store/`. Reject traversal, absolute paths, and
+missing files.
 
-**Verification:**
+**Verification:** Valid PNG, confidence PNG, and GeoTIFF paths resolve;
+traversal and absolute-path attempts cannot escape the store.
 
-- every available sample layer URL retrieves its corresponding file;
-- missing files return a normal not-found response;
-- traversal or absolute-path attempts cannot escape the store;
-- static serving does not mutate the database or generated artifacts.
+### P3.2 — Static artifact route and immutable headers
+
+**Dependencies:** P3.1.
+
+**Scope:** Mount `/static/` using the safe resolver, return the correct media
+types, and set
+`Cache-Control: public, max-age=31536000, immutable`.
+
+**Verification:** Every available sample URL retrieves its file; missing files
+return not-found; serving does not mutate the database or artifacts.
 
 ## P4 — Contract and acceptance verification
 
-**Dependencies:** P2 and P3.
+P4 contains only regression and acceptance evidence; it must not introduce new
+runtime behavior.
 
-**Scope:** Add the smallest regression suite proving the POC contract and its
-  no-network behavior.
+### P4.1 — Exact sample request/response regression
 
-**Deliverable:**
+**Dependencies:** P2.5, P3.2.
 
-- exact sample request/response contract test;
-- focused matching and status tests;
-- static artifact and path-safety tests;
-- documented command and result summary.
+**Scope:** Compare the sample request with the reference response, allowing
+only key-order differences and the documented float tolerance.
 
-**Verification:**
+**Verification:** The exact contract passes and returned artifact URLs are
+retrievable.
 
-- JSON comparison ignores key order and only the documented float noise;
-- PNG URLs line up with the returned field bounds;
-- missing values remain `null` and are not converted to zero;
-- all requested combinations remain represented;
-- the application makes no outbound request while handling the sample request.
+### P4.2 — Matching, status, and missing-value regressions
+
+**Dependencies:** P2.5.
+
+**Scope:** Cover western, eastern, sliver, and outside-coverage examples,
+including all requested combinations and `null` values.
+
+**Verification:** LBEG coverage, unavailable yield potential, outside coverage,
+and `not_applicable` statuses remain explicit.
+
+### P4.3 — Static safety and read-only store regressions
+
+**Dependencies:** P3.2.
+
+**Scope:** Test content types, immutable caching, missing files, traversal
+protection, and the absence of database/artifact mutation.
+
+**Verification:** All static safety criteria pass.
+
+### P4.4 — No-network verification and startup documentation
+
+**Dependencies:** P4.1, P4.2, P4.3.
+
+**Scope:** Add a network-disabled request test and document the exact startup
+and verification commands.
+
+**Verification:** The sample request completes without an outbound request and
+the documented commands reproduce the acceptance results.
 
 ## Deferred units
 

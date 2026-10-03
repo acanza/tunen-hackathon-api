@@ -61,10 +61,21 @@ The bounded units and their evidence are defined in
 
 | Unit | Scope | Depends on |
 | --- | --- | --- |
-| P1 | Application bootstrap, read-only store access, and request/response models | None |
-| P2 | Field matching and `POST /soil/layers` response assembly | P1 |
-| P3 | Static artifact serving and safe immutable caching headers | P1 |
-| P4 | Contract and acceptance verification | P2, P3 |
+| P1.1 | Application package, settings, and read-only SQLite connection | None |
+| P1.2 | Store metadata query functions | P1.1 |
+| P1.3 | GeoJSON request validation and request models | P1.1 |
+| P1.4 | Response and layer models | P1.1 |
+| P2.1 | Requested parameter/source matrix expansion | P1.2, P1.3, P1.4 |
+| P2.2 | `plotId` and geometry field matching | P1.2, P1.3 |
+| P2.3 | Coverage classification and match metadata | P2.2 |
+| P2.4 | Stored layer metadata and URL mapping | P1.2, P1.4 |
+| P2.5 | `POST /soil/layers` orchestration | P2.1, P2.3, P2.4 |
+| P3.1 | Safe artifact path resolution | P1.1 |
+| P3.2 | Static artifact route and immutable headers | P3.1 |
+| P4.1 | Exact sample request/response regression | P2.5, P3.2 |
+| P4.2 | Matching, status, and missing-value regressions | P2.5 |
+| P4.3 | Static safety and read-only store regressions | P3.2 |
+| P4.4 | No-network verification and startup documentation | P4.1, P4.2, P4.3 |
 
 ## Completion gate
 

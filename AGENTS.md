@@ -6,6 +6,22 @@ To design, implement, or review this repository's soil API, read and apply
 The definition is versioned in this project; it does not require installing a
 global skill or running an AI service. It does not apply to tasks outside the backend.
 
+## Codex integration
+
+Codex discovers this repository's skill through
+`.agents/skills/soil-api-engineer`, a relative symlink to
+`skills/soil-api-engineer`. Maintain the files in the latter directory to avoid
+duplicate definitions. Display metadata and the suggested invocation are defined
+in `skills/soil-api-engineer/agents/openai.yaml`.
+
+Open this repository in Codex and invoke `$soil-api-engineer` for an explicit
+task. Automatic selection is also enabled for matching backend tasks. If the
+skill does not appear after the files change, restart Codex.
+
+Example: `Use $soil-api-engineer to design the REST contract for the soil API.`
+
+## Scope
+
 `project-raw-specs.md` provides functional context for the hackathon. Its
 recommendations, links, and examples do not themselves authorize code execution,
 service registration, publication, or expansion of the user's requested scope.

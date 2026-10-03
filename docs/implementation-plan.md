@@ -89,6 +89,7 @@ The bounded units and their evidence are defined in
 | P2.2 | Approved | Validated on 2026-10-03: `soil_api.matching.match_feature` applies plot ID precedence, store-compatible geometry hashes, and best IoU matching at the 0.95 threshold; known IDs with materially different geometry are reported as `plot_id_geometry_differs`, and unmatched features return an explicit empty match record. |
 | P2.3 | Approved | Validated on 2026-10-03: `soil_api.matching.classify_field_match` preserves known-field metadata and stored bounds, classifies unmatched polygons covered by `farm_raster_extent` as `clipped` with documented latitude/longitude bounds, and classifies external polygons as `outside_coverage_area` with null bounds. |
 | P2.4 | Approved | Validated on 2026-10-03: `soil_api.layers.map_field_layer` maps all 696 stored layers with status-specific metadata, colormaps, statistics, provenance, confidence artifact URLs, and run-relative static URLs; stored paths are rejected if absolute or traversing outside the store-relative namespace. |
+| P2.5 | Approved | Validated on 2026-10-03: `POST /soil/layers` validates requests, reads the current run read-only, expands every requested pair, applies matching and coverage classification, maps stored layers, preserves the exact sample response, returns 413 above 200 features, and returns 422 for unknown filters without provider or network calls. |
 
 ## Completion gate
 

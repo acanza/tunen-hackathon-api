@@ -37,3 +37,13 @@ Run the contract regression with:
 ```sh
 .venv/bin/python -m unittest tests.test_contract
 ```
+
+Run the complete POC regression suite with:
+
+```sh
+.venv/bin/python -m unittest discover -s tests -v
+```
+
+The suite includes the exact sample contract, matching and status cases,
+static safety, read-only store checks, and a request with outbound socket
+connections blocked.

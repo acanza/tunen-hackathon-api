@@ -95,6 +95,7 @@ The bounded units and their evidence are defined in
 | P4.1 | Approved | Validated on 2026-10-03: `tests.test_contract` posts `poc/samples/request.json`, compares the complete JSON response with `poc/samples/response.json`, and retrieves every referenced PNG/GeoTIFF URL successfully. |
 | P4.2 | Approved | Validated on 2026-10-03: `tests.test_matching_statuses` verifies the complete requested matrix, western LBEG availability, eastern missing coverage, sliver yield unavailability and fallback stats, outside-coverage behavior, and a real stored partial layer without fabricated values or URLs. |
 | P4.3 | Approved | Validated on 2026-10-03: `tests.test_static_safety` verifies MIME/cache headers, missing and traversal rejection, unsupported-extension rejection, SQLite write failure in read-only mode, and byte-for-byte preservation of the database and served artifact after requests. |
+| P4.4 | Approved | Validated on 2026-10-03: `tests.test_no_network` completes the sample request while socket connection methods are blocked; the README documents the uvicorn startup command, focused contract command, and complete `unittest` discovery command. |
 
 ## Completion gate
 

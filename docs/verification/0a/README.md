@@ -1,26 +1,10 @@
-# Unit 0A — First real spatial sample
+# Unit 0A — First real spatial sample (historical)
 
 Status: **complete**. Acceptance date: 2026-10-03 (Europe/Madrid).
 Combination: SoilGrids clay mean, 0–5 / 5–15 / 15–30 cm. Dependencies: none.
-M0 is complete; M1 and the API remain unimplemented.
-
-## Reproduce
-
-From the repository root, with Python 3.9+ and curl:
-
-```sh
-python3 -m venv .venv
-.venv/bin/python -m pip install -r requirements-feasibility.txt
-.venv/bin/python -m unittest discover -s tests -v
-.venv/bin/python scripts/soilgrids_0a.py --output /tmp/soilgrids-0a-new-run
-```
-
-Use a new output directory. Network access to maps.isric.org and files.isric.org
-is required. Exit 0 means retrieval and checks passed; exit 1 records a blocker
-in report.json. There is no fixture fallback. Exact URLs, UTC timestamps,
-durations, response hashes, headers, original TIFFs and compressed original VRT
-XML are retained. Hashes refer to uncompressed response bytes. VRTs are parsed
-as metadata only: no global tiles are downloaded. The field is stored locally.
+M0 is complete; M1 and the API were unimplemented at the time of this evidence.
+The live probe and its feasibility dependencies are no longer part of the
+frozen-store POC and are not reproducible from the current runtime.
 
 ## Field provenance
 
@@ -116,7 +100,8 @@ guarantee. Protocol reference: [official WCS guide](https://docs.isric.org/globa
   Three tests pass: independent conversion/depth calculation and missing interval;
   valid zero and required depths; polygon hole and exterior mask. These synthetic
   test grids are not provider evidence.
-- Live command: `.venv/bin/python scripts/soilgrids_0a.py --output docs/verification/0a/live-2026-10-03-r4`.
+- Historical live command: the probe used a temporary script that is no longer
+  part of the frozen-store POC.
   Exit 0. All depths downloaded and checked; requests, metadata and values are
   recorded in the accepted report. Python 3.9.6, rasterio 1.4.3, GDAL 3.9.3,
   numpy 2.0.2 on macOS arm64.

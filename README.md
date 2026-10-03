@@ -1,8 +1,9 @@
 # Tunen soil API
 
-The repository currently contains the verified M0 feasibility probe and the
-complete M1 single-field SoilGrids clay integration. It does not expose an HTTP
-API yet; public routes belong to M5.
+This repository contains the frozen-store POC for `POST /soil/layers`. The API
+reads precomputed metadata from `docs/poc/store/soil.sqlite` and serves the
+referenced artifacts below `/static/`. It does not call SoilGrids or LBEG,
+recompute raster values, or refresh the store during a request.
 
 ## Local setup and checks
 
@@ -10,12 +11,11 @@ Python 3.9 or newer is required.
 
 ```sh
 python3 -m venv .venv
-.venv/bin/python -m pip install -r requirements-feasibility.txt -r requirements.txt
-.venv/bin/python -m unittest discover -s tests -v
+.venv/bin/python -m pip install -r requirements.txt
 ```
 
-The M1 service accepts one GeoJSON `Polygon` or `MultiPolygon` field, with a
-required `id`, and returns a real SoilGrids clay layer at 0–30 cm through
-`SoilLayerService.create_layer`. It stores PNG and JSON artifacts locally.
-Provider access requires network access to SoilGrids. Public FastAPI routes,
-additional parameters, multiple fields, and cache reuse belong to later units.
+The implementation is organized into the bounded units in
+[`docs/implementation-units.md`](docs/implementation-units.md). The store is
+an input artifact for this POC; live provider integrations, raster generation,
+refresh, and Phase B clipping are deferred. The application entrypoint and
+startup command will be added by unit P1.1.

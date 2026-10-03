@@ -1,4 +1,4 @@
-# Unit 1B — One complete real layer
+# Unit 1B — One complete real layer (historical)
 
 Status: **complete**. Acceptance date: 2026-10-03 (Europe/Madrid).
 
@@ -6,7 +6,7 @@ Dependencies and feasibility evidence: unit 1A is complete and unit 0A
 contains accepted live SoilGrids clay evidence for the reference field and its
 0–5, 5–15, and 15–30 cm coverages.
 
-Implemented scope:
+Historical implemented scope:
 
 - `SoilGridsAdapter` and single-field coordination through
   `SoilLayerService.create_layer`.
@@ -39,11 +39,9 @@ Decisions and limitations:
 
 Deterministic checks:
 
-- Command: `.venv/bin/python -m unittest discover -s tests -v`.
 - Actual: **19 tests passed** on 2026-10-03.
-- Evidence: [test_layer_service.py](../../../tests/test_layer_service.py),
-  [test_domain_models.py](../../../tests/test_domain_models.py), and the
-  existing 0A regression tests.
+- The source tests and provider implementation were removed when the project
+  moved to the frozen-store POC; this document remains historical evidence.
 - Checks cover known depth math, axis/orientation metadata, JSON artifact
   retrieval, PNG generation, `nodata` to JSON null, transparent PNG pixels,
   all-nodata handling, and explicit timeout errors.
@@ -66,4 +64,5 @@ to later units.
 
 Acceptance decision: **complete**. The real-provider, artifact, masking,
 statistics, provenance, timeout, and deterministic verification gates passed.
-M1 is complete after 1A and 1B.
+M1 was complete after 1A and 1B. It is not an active implementation path for
+the frozen-store POC.

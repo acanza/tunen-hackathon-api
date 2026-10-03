@@ -60,7 +60,8 @@ Deterministic checks:
   bounds order, explicit failures, and rejection of empty success.
 - Compilation check: `PYTHONPYCACHEPREFIX=/tmp/tunen-python-cache
   .venv/bin/python -m compileall -q soil_api tests scripts`; exit 0.
-- Evidence: [`tests/test_domain_models.py`](../../../tests/test_domain_models.py)
+- Evidence: the historical domain-model test suite (removed when the project
+  moved to the frozen-store POC).
   and the executable contract in
   [`soil_api/domain/models.py`](../../../soil_api/domain/models.py).
 

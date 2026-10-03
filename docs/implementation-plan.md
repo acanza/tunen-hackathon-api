@@ -86,6 +86,7 @@ The bounded units and their evidence are defined in
 | P1.3 | Approved | Validated on 2026-10-03: `soil_api.models` accepts the sample FeatureCollection, validates Polygon/MultiPolygon GeoJSON in EPSG:4326 longitude/latitude order, rejects unsupported types and filters, duplicate filters, malformed geometries, and more than 200 features without store or file access. |
 | P1.4 | Approved | Validated on 2026-10-03: `soil_api.models` validates the sample response with typed run, field, layer, status, match, confidence, and metadata models; preserves stored `null` values and round-trips `poc/samples/response.json` exactly, including status-specific optional fields. |
 | P2.1 | Approved | Validated on 2026-10-03: `soil_api.matrix.expand_requested_layer_pairs` expands omitted filters from the frozen `source_parameters` order, preserves explicit filter order, emits the complete parameter-major Cartesian matrix exactly once, and marks unsupported pairs as `not_applicable` with `source_does_not_provide_parameter`. |
+| P2.2 | Approved | Validated on 2026-10-03: `soil_api.matching.match_feature` applies plot ID precedence, store-compatible geometry hashes, and best IoU matching at the 0.95 threshold; known IDs with materially different geometry are reported as `plot_id_geometry_differs`, and unmatched features return an explicit empty match record. |
 
 ## Completion gate
 

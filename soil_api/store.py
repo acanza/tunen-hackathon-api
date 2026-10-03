@@ -191,6 +191,15 @@ def get_field_by_geometry_hash(connection: sqlite3.Connection, geom_hash: str) -
     return _field_from_row(rows[0]) if rows else None
 
 
+def get_all_fields(connection: sqlite3.Connection) -> Tuple[FieldRecord, ...]:
+    """Return all known fields for geometry-based matching."""
+
+    return tuple(
+        _field_from_row(row)
+        for row in _query_rows(connection, "SELECT * FROM fields ORDER BY rowid")
+    )
+
+
 def get_field_layers(
     connection: sqlite3.Connection,
     run_id: str,

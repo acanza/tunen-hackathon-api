@@ -1,6 +1,6 @@
 # /// script
 # requires-python = ">=3.11"
-# dependencies = ["rasterio", "numpy", "pandas", "geopandas", "shapely", "pyproj", "pillow"]
+# dependencies = ["rasterio", "numpy", "pandas", "geopandas", "shapely", "pyproj", "pillow", "scipy"]
 # ///
 """Build the POC store the API serves: regional rasters, per-field COG/PNG, stats,
 confidence and a SQLite DB. Uses only files already in data/seggerde/ (no downloads).
@@ -18,6 +18,7 @@ Outputs (poc/store/)
 - soil.sqlite                                     schema in poc/schema.sql
 - runs/<run_id>/regional/<param>__<source>.tif    farm-wide, EPSG:32632 10 m, bands value/lo90/hi90/confidence
 - runs/<run_id>/fields/<plotId>/<param>__<source>.tif / .png / __conf.png
+- runs/<run_id>/covariates/dem__copernicus.tif   model inputs, not API layers: elev, slope, twi, rel_elev, ground_mask
 - poc/samples/request.json, response.json         example request and the response the API must return
 """
 from __future__ import annotations
@@ -44,6 +45,8 @@ from rasterio.warp import Resampling, reproject
 from rasterio.windows import Window, from_bounds
 from shapely import affinity
 from shapely.geometry import box, mapping, shape
+
+from lib.dem import terrain
 
 warnings.filterwarnings("ignore", category=RuntimeWarning)  # nanmean of empty slices
 
@@ -191,7 +194,7 @@ def r(x, nd=2):
     return None if x is None or not np.isfinite(x) else round(float(x), nd)
 
 
-def write_cog(path: Path, arr: np.ndarray, transform, names: list[str], tags: dict):
+def write_cog(path: Path, arr: np.ndarray, transform, names: list[str], tags: dict, **cog_opts):
     path.parent.mkdir(parents=True, exist_ok=True)
     profile = dict(driver="GTiff", height=arr.shape[1], width=arr.shape[2], count=arr.shape[0],
                    dtype="float32", crs=UTM, transform=transform, nodata=float("nan"))
@@ -202,7 +205,7 @@ def write_cog(path: Path, arr: np.ndarray, transform, names: list[str], tags: di
                 dst.set_band_description(i, n)
             dst.update_tags(**{k: str(v) for k, v in tags.items()})
         with mem.open() as src:
-            rasterio.shutil.copy(src, path, driver="COG", compress="DEFLATE", overview_resampling="nearest")
+            rasterio.shutil.copy(src, path, driver="COG", compress="DEFLATE", predictor=3, overview_resampling="nearest", **cog_opts)
 
 
 # ---------------------------------------------------------------- regional layers
@@ -580,6 +583,13 @@ def main():
                        note="yield_potential: divide by the field's inner-10 m mean and ×100 to get the field index"
                        if param == "yield_potential" else ""))
         regional_rows.append((RUN_ID, param, source, str(p.relative_to(STORE)), L["kind"], COLORMAPS[L["cmap"]]["unit"], L["cmap"]))
+    # bare-ground pixels: field interiors (10 m in from the edge, away from hedges and tree lines)
+    ground = rasterize(fields.to_crs(UTM).buffer(-10).loc[lambda g: ~g.is_empty], out_shape=(H, W),
+                       transform=transform, fill=0, dtype="uint8").astype(bool)
+    dem = terrain(SEG / "raw" / "dem" / "farm_window.tif", transform, H, W, UTM, ground)
+    write_cog(RUN_DIR / "covariates" / "dem__copernicus.tif", np.round(np.stack(list(dem.values())), 2), transform, list(dem),
+              dict(source="Copernicus DEM GLO-30 surface model; ground = field interiors, rest interpolated; smoothed ~50 m", run_id=RUN_ID,
+                   units="elev m, slope deg, twi ln(m), rel_elev m vs 500 m box mean, ground_mask 1 = measured ground"), overviews="NONE")
     parcels.to_crs("EPSG:4326").to_file(RUN_DIR / "regional" / "bodenschaetzung_parcels.geojson", driver="GeoJSON")
 
     db = STORE / "soil.sqlite"

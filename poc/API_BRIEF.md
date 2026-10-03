@@ -12,6 +12,7 @@ The data is frozen as of 2026-10-03 (run `poc-2026-10-03`) and there is no refre
 | `poc/store/runs/poc-2026-10-03/fields/<plotId>/` | Per field and layer: `<param>__<source>.tif` (values), `.png` (map overlay), `__conf.png` (low-confidence hatch); for `best` also `__source.png` (which source won where) |
 | `poc/store/runs/poc-2026-10-03/regional/` | Farm-wide rasters, one per layer, for clipping polygons that are not known fields (phase B) + `bodenschaetzung_parcels.geojson` |
 | `poc/store/runs/poc-2026-10-03/covariates/` | Model inputs (terrain: elevation, slope, wetness index, relative elevation). **Not API layers; ignore them** |
+| `poc/UI_BRIEF.md` | What the app will show and the proposed additions it needs (masked PNG, signals, sampling plan, crop suitability) |
 | `poc/samples/request.json` | Example request: a west field, an east field, a sliver, a polygon outside the farm |
 | `poc/samples/response.json` | **The exact response that request must produce.** Use it as your contract test |
 | `poc/build_store.py` | How the store was built (`uv run poc/build_store.py` rebuilds it in ~40 s). `assemble_response()` at the bottom is a reference for the response logic |

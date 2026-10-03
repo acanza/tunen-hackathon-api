@@ -31,3 +31,9 @@ through P2.5 and returns the frozen-store response contract. P1.3 request
 models are available from `soil_api.models`; they validate FeatureCollection
 payloads, Polygon and MultiPolygon GeoJSON, supported filters, and the
 200-feature limit.
+
+Run the contract regression with:
+
+```sh
+.venv/bin/python -m unittest tests.test_contract
+```

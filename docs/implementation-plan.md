@@ -92,6 +92,7 @@ The bounded units and their evidence are defined in
 | P2.5 | Approved | Validated on 2026-10-03: `POST /soil/layers` validates requests, reads the current run read-only, expands every requested pair, applies matching and coverage classification, maps stored layers, preserves the exact sample response, returns 413 above 200 features, and returns 422 for unknown filters without provider or network calls. |
 | P3.1 | Approved | Validated on 2026-10-03: `soil_api.artifacts.resolve_store_artifact` resolves existing store-relative files, rejects absolute paths, traversal, backslashes, NUL bytes, and missing files, and confirms the resolved path remains inside the configured store after symlink resolution. |
 | P3.2 | Approved | Validated on 2026-10-03: `GET /static/{path}` serves all 32 unique sample PNG/GeoTIFF artifacts with correct media types and `Cache-Control: public, max-age=31536000, immutable`; missing, traversal, unsupported-extension, and database paths return 404. |
+| P4.1 | Approved | Validated on 2026-10-03: `tests.test_contract` posts `poc/samples/request.json`, compares the complete JSON response with `poc/samples/response.json`, and retrieves every referenced PNG/GeoTIFF URL successfully. |
 
 ## Completion gate
 

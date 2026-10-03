@@ -29,6 +29,7 @@ from soil_api.domain import (
 )
 from soil_api.providers.soilgrids import (
     SoilGridsAdapter,
+    SoilGridsOutsideCoverage,
     SoilGridsProviderError,
     SoilGridsProviderTimeout,
 )
@@ -230,6 +231,11 @@ class SoilLayerService:
                 error=LayerError(
                     code="provider_timeout", message=str(error), retryable=True
                 ),
+            )
+        except SoilGridsOutsideCoverage as error:
+            return LayerResult(
+                status=ResultStatus.OUTSIDE_COVERAGE,
+                error=LayerError(code="outside_coverage", message=str(error)),
             )
         except SoilGridsProviderError as error:
             return LayerResult(

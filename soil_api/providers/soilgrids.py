@@ -47,6 +47,10 @@ class SoilGridsProviderTimeout(SoilGridsProviderError):
     """A provider request exceeded its configured timeout."""
 
 
+class SoilGridsOutsideCoverage(SoilGridsProviderError):
+    """The requested field is outside the provider's supported coverage."""
+
+
 @dataclass(frozen=True)
 class SoilGridsRaster:
     """One native SoilGrids depth raster with its source metadata."""

@@ -17,6 +17,7 @@ from soil_api.domain import (
 )
 from soil_api.layer_service import ArtifactStore, SoilLayerService
 from soil_api.providers.soilgrids import (
+    SoilGridsOutsideCoverage,
     SoilGridsProviderError,
     SoilGridsProviderTimeout,
     SoilGridsRaster,
@@ -112,6 +113,33 @@ def fixture_rasters(all_masked=False):
 
 
 class LayerServiceChecks(unittest.TestCase):
+    def test_missing_coverage_is_distinct_from_missing_data(self):
+        class CoverageAdapter(FakeAdapter):
+            def retrieve(self, layer_request):
+                field_id = layer_request.fields.features[0].id
+                if field_id == "field-2":
+                    raise SoilGridsOutsideCoverage("field is outside SoilGrids coverage")
+                return super().retrieve(layer_request)
+
+        with tempfile.TemporaryDirectory() as directory:
+            service = SoilLayerService(
+                CoverageAdapter(fixture_rasters(all_masked=True)),
+                ArtifactStore(Path(directory)),
+            )
+            result = service.create_layers(multi_field_request())
+
+            self.assertEqual(result.status.value, "failed")
+            self.assertEqual(result.results[0].result.status, ResultStatus.NO_DATA)
+            self.assertEqual(result.results[0].result.error.code.value, "no_data")
+            self.assertEqual(
+                result.results[1].result.status,
+                ResultStatus.OUTSIDE_COVERAGE,
+            )
+            self.assertEqual(
+                result.results[1].result.error.code.value,
+                "outside_coverage",
+            )
+
     def test_multiple_fields_keep_isolated_artifacts_and_ids(self):
         class FieldAdapter(FakeAdapter):
             def retrieve(self, layer_request):

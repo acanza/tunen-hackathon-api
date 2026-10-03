@@ -218,3 +218,13 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Tunen project caches / large binary data
+data/raw/
+data/interim/
+data/features/
+data/out/
+outputs/
+*.tif
+*.nc
+*Seggerde*

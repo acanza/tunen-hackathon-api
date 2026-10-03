@@ -1,0 +1,7 @@
+grupo,property,op,threshold,fuente
+arena,clay_pct,>=,25,"propio, indicativo"
+arena,sand_pct,<=,45,"propio, indicativo"
+loess_limo,sand_pct,>=,70,"propio, indicativo"
+loess_limo,silt_pct,<=,20,"propio, indicativo"
+arcilla_marga,clay_pct,<=,12,"propio, indicativo"
+arcilla_marga,sand_pct,>=,70,"propio, indicativo"

@@ -1,0 +1,7 @@
+Germany outline (data/ref/germany_outline.geojson)
+
+Approximate simplified polygon for centroid-in-Germany checks during the hackathon.
+Replace with Natural Earth Admin 0 (1:10m) countries — public domain — when available:
+https://www.naturalearthdata.com/
+
+License of this approximation: public domain / no rights reserved (hackathon utility).

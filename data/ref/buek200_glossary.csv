@@ -1,0 +1,22 @@
+de,en_gloss,kind,notes
+Pseudogley-Braunerden,Pseudogley-Brown earths (Leitboden),soil_type,seen on Braunschweig sheet sample
+Pseudogley-Braunerde-Fahlerden,,soil_type,compound Leitboden; gloss TODO
+Pseudogleye,Pseudogleys,soil_type,
+Gleye,Gleys,soil_type,
+Erd-Niedermoore,Earthified fen peat soils,soil_type,
+Niedermoore,Fen peat soils (Niedermoor),soil_type,
+Niedermoor,Fen peat (Niedermoor),soil_type,
+Hochmoor,Raised bog peat (Hochmoor),soil_type,
+Moor,Peat / bog (generic),soil_type,
+Moorgleye,Peat gleys,soil_type,
+Geschiebedecksand,Till cover sand,parent_material,
+Geschiebelehm,Till loam (Geschiebelehm),parent_material,
+Niederungssand,Valley / lowland sand,parent_material,
+Sandlöss,Sandy loess,parent_material,
+Lehm,Loam,parent_material,generic keyword from legend text
+Sand,Sand,parent_material,generic keyword from legend text
+Ton,Clay,parent_material,generic keyword from legend text
+Löss,Loess,parent_material,generic keyword from legend text
+4.1,,bgl_code,BGL code as delivered; landscape meaning TODO
+4.3,,bgl_code,BGL code as delivered; landscape meaning TODO
+6.1,,bgl_code,BGL code as delivered; landscape meaning TODO

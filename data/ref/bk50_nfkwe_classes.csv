@@ -1,0 +1,6 @@
+stufe,label_de,min_mm,max_mm,width_mm,fuente
+1,sehr gering,,50,50,"leyenda WMS LBEG L839 GetLegendGraphic"
+2,gering,50,90,40,"leyenda WMS LBEG L839 GetLegendGraphic"
+3,mittel,90,140,50,"leyenda WMS LBEG L839 GetLegendGraphic"
+4,hoch,140,200,60,"leyenda WMS LBEG L839 GetLegendGraphic"
+5,sehr hoch,200,,60,"leyenda WMS LBEG L839 GetLegendGraphic; open class uses previous width"

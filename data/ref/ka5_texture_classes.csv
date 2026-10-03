@@ -1,0 +1,32 @@
+ka5_class,name,clay_min,clay_max,silt_min,silt_max,sand_min,sand_max,clay_center,silt_center,sand_center,clay_sd,silt_sd,sand_sd,source
+Ss,reiner Sand,0.0,5.0,0.0,10.0,85.0,100.0,2.5,5.0,92.5,1.4,2.9,3.2,KA4/KA5 Feinbodenartendiagramm via R soiltexture DE.BK94.TT
+Su2,schwach schluffiger Sand,0.0,5.0,10.0,25.0,70.0,90.0,2.5,17.5,80.0,1.4,4.3,4.6,KA4/KA5 Feinbodenartendiagramm via R soiltexture DE.BK94.TT
+Sl2,schwach lehmiger Sand,5.0,8.0,10.0,25.0,67.0,85.0,6.5,17.5,76.0,0.9,4.3,4.4,KA4/KA5 Feinbodenartendiagramm via R soiltexture DE.BK94.TT
+Sl3,mittel lehmiger Sand,8.0,12.0,10.0,40.0,48.0,82.0,10.0,25.0,65.0,1.2,8.6,8.7,KA4/KA5 Feinbodenartendiagramm via R soiltexture DE.BK94.TT
+St2,schwach toniger Sand,5.0,17.0,0.0,10.0,73.0,95.0,11.0,5.0,84.0,3.5,2.9,4.5,KA4/KA5 Feinbodenartendiagramm via R soiltexture DE.BK94.TT
+Su3,mittel schluffiger Sand,0.0,8.0,25.0,40.0,52.0,75.0,4.0,32.5,63.5,2.3,4.3,4.9,KA4/KA5 Feinbodenartendiagramm via R soiltexture DE.BK94.TT
+Su4,stark schluffiger Sand,0.0,8.0,40.0,50.0,42.0,60.0,4.0,45.0,51.0,2.3,2.9,3.7,KA4/KA5 Feinbodenartendiagramm via R soiltexture DE.BK94.TT
+Slu,schluffig-lehmiger Sand,8.0,17.0,40.0,50.0,33.0,52.0,12.5,45.0,42.5,2.6,2.9,3.9,KA4/KA5 Feinbodenartendiagramm via R soiltexture DE.BK94.TT
+Sl4,stark lehmiger Sand,12.0,17.0,10.0,40.0,43.0,78.0,14.5,25.0,60.5,1.4,8.7,8.8,KA4/KA5 Feinbodenartendiagramm via R soiltexture DE.BK94.TT
+St3,mittel toniger Sand,17.0,25.0,0.0,15.0,60.0,83.0,21.0,7.5,71.5,2.3,4.3,4.9,KA4/KA5 Feinbodenartendiagramm via R soiltexture DE.BK94.TT
+Ls2,schwach sandiger Lehm,17.0,25.0,40.0,50.0,25.0,43.0,21.0,45.0,34.0,2.3,2.9,3.7,KA4/KA5 Feinbodenartendiagramm via R soiltexture DE.BK94.TT
+Ls3,mittel sandiger Lehm,17.0,25.0,30.0,40.0,35.0,53.0,21.0,35.0,44.0,2.3,2.9,3.7,KA4/KA5 Feinbodenartendiagramm via R soiltexture DE.BK94.TT
+Ls4,stark sandiger Lehm,17.0,25.0,15.0,30.0,45.0,68.0,21.0,22.5,56.5,2.3,4.3,4.9,KA4/KA5 Feinbodenartendiagramm via R soiltexture DE.BK94.TT
+Lt2,schwach toniger Lehm,25.0,35.0,30.0,50.0,15.0,45.0,30.0,40.0,30.0,2.9,5.8,6.4,KA4/KA5 Feinbodenartendiagramm via R soiltexture DE.BK94.TT
+Lts,sandig-toniger Lehm,25.0,45.0,15.0,30.0,25.0,60.0,35.0,22.5,42.5,5.7,4.3,7.2,KA4/KA5 Feinbodenartendiagramm via R soiltexture DE.BK94.TT
+Ts4,stark sandiger Ton,25.0,35.0,0.0,15.0,50.0,75.0,30.0,7.5,62.5,2.9,4.3,5.2,KA4/KA5 Feinbodenartendiagramm via R soiltexture DE.BK94.TT
+Ts3,mittel sandiger Ton,35.0,45.0,0.0,15.0,40.0,65.0,40.0,7.4,52.6,2.9,4.3,5.2,KA4/KA5 Feinbodenartendiagramm via R soiltexture DE.BK94.TT
+Uu,reiner Schluff,0.0,8.0,80.0,100.0,0.0,20.0,3.7,88.2,8.1,2.3,4.9,4.9,KA4/KA5 Feinbodenartendiagramm via R soiltexture DE.BK94.TT
+Us,sandiger Schluff,0.0,8.0,50.0,80.0,12.0,50.0,4.0,64.9,31.1,2.3,8.6,8.9,KA4/KA5 Feinbodenartendiagramm via R soiltexture DE.BK94.TT
+Ut2,schwach toniger Schluff,8.0,12.0,65.0,92.0,0.0,27.0,10.0,77.6,12.5,1.2,7.2,7.2,KA4/KA5 Feinbodenartendiagramm via R soiltexture DE.BK94.TT
+Ut3,mittel toniger Schluff,12.0,17.0,65.0,88.0,0.0,23.0,14.4,75.3,10.4,1.4,6.0,6.0,KA4/KA5 Feinbodenartendiagramm via R soiltexture DE.BK94.TT
+Uls,sandig-lehmiger Schluff,8.0,17.0,50.0,65.0,18.0,42.0,12.5,57.5,30.0,2.6,4.3,5.0,KA4/KA5 Feinbodenartendiagramm via R soiltexture DE.BK94.TT
+Ut4,stark toniger Schluff,17.0,25.0,65.0,83.0,0.0,18.0,20.6,72.2,7.2,2.3,4.4,4.4,KA4/KA5 Feinbodenartendiagramm via R soiltexture DE.BK94.TT
+Lu,schluffiger Lehm,17.0,30.0,50.0,65.0,5.0,33.0,23.6,57.5,18.9,3.8,4.3,5.7,KA4/KA5 Feinbodenartendiagramm via R soiltexture DE.BK94.TT
+Lt3,mittel toniger Lehm,35.0,45.0,30.0,50.0,5.0,35.0,40.0,40.0,20.0,2.9,5.8,6.5,KA4/KA5 Feinbodenartendiagramm via R soiltexture DE.BK94.TT
+Tu3,mittel schluffiger Ton,30.0,45.0,50.0,65.0,0.0,20.0,36.3,56.3,7.4,4.0,4.0,4.6,KA4/KA5 Feinbodenartendiagramm via R soiltexture DE.BK94.TT
+Tu4,stark schluffiger Ton,25.0,35.0,65.0,75.0,0.0,10.0,28.3,68.3,3.3,2.3,2.4,2.3,KA4/KA5 Feinbodenartendiagramm via R soiltexture DE.BK94.TT
+Ts2,schwach sandiger Ton,45.0,65.0,0.0,15.0,20.0,55.0,55.1,7.5,37.4,5.8,4.3,7.2,KA4/KA5 Feinbodenartendiagramm via R soiltexture DE.BK94.TT
+Tl,lehmiger Ton,45.0,65.0,15.0,30.0,5.0,40.0,55.0,22.5,22.5,5.8,4.3,7.2,KA4/KA5 Feinbodenartendiagramm via R soiltexture DE.BK94.TT
+Tu2,schwach schluffiger Ton,45.0,65.0,30.0,55.0,0.0,25.0,52.8,38.7,8.6,5.3,5.9,5.9,KA4/KA5 Feinbodenartendiagramm via R soiltexture DE.BK94.TT
+Tt,reiner Ton,65.0,100.0,0.0,35.0,0.0,35.0,76.7,11.6,11.7,8.3,8.3,8.3,KA4/KA5 Feinbodenartendiagramm via R soiltexture DE.BK94.TT

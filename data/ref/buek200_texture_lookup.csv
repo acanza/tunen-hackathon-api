@@ -1,0 +1,16 @@
+keyword,ka5_group,fuente
+Sand,Ss,keyword→KA5 group; centres/SD from ka5_texture_classes.csv; BÜK200 applies sigma×1.5
+Geschiebedecksand,Ss,TODO: verify mapping; cover sand over till
+Niederungssand,Ss,TODO: verify mapping
+Lehm,Ls3,keyword→KA5 group; centres/SD from ka5_texture_classes.csv; BÜK200 applies sigma×1.5
+Geschiebelehm,Ls3,TODO: verify mapping to KA5 group
+fluviatilem Lehm,Ls3,TODO: verify mapping
+Löss,Ut3,keyword→KA5 group; centres/SD from ka5_texture_classes.csv; BÜK200 applies sigma×1.5
+Sandlöss,Su3,TODO: verify mapping
+Ton,Tt,keyword→KA5 group; centres/SD from ka5_texture_classes.csv; BÜK200 applies sigma×1.5
+Tonsteinzersatz,Tt,TODO: verify mapping
+Moor,,TODO: peat — mineral texture not applicable
+Hochmoor,,TODO: peat — mineral texture not applicable
+Niedermoor,,TODO: peat — mineral texture not applicable
+Niedermoore,,TODO: peat — mineral texture not applicable
+Erd-Niedermoore,,TODO: peat — mineral texture not applicable

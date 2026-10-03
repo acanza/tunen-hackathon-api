@@ -1,0 +1,7 @@
+grupo,property,op,threshold,fuente
+arena,clay_pct,>=,25,"propio, indicativo"
+arena,sand_pct,<=,45,"propio, indicativo"
+franco,clay_pct,>=,45,"propio, indicativo"
+franco,sand_pct,>=,70,"propio, indicativo"
+arcilla,clay_pct,<=,12,"propio, indicativo"
+arcilla,sand_pct,>=,70,"propio, indicativo"

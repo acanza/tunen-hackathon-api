@@ -1,0 +1,303 @@
+# Configuración. Todo lo que dependa del brief se cambia aquí, no en el código.
+
+data_dir: data
+workers: 4
+# Soft timeout per parcel × source adapter (seconds). On expiry: [] + failure_reason.
+parcel_timeout_s: 60
+
+# CRS y rejilla comunes (Alemania / ETRS89 UTM 32N).
+crs: "EPSG:25832"
+grid_resolution_m: 10          # configurable a 25 si va lento
+
+# Interruptor por fuente. Apagadas = el pipeline las salta y lo registra.
+sources:
+  worldcover: true
+  soilgrids: true
+  dem: true
+  lgln_dgm1: true            # LGLN DGM1 (1 m) via adapter; fallback GLO-30
+  dgm1_niedersachsen: true   # legacy alias of lgln_dgm1 (same switch)
+  sentinel2_timeseries: false
+  weather: false
+  buek200: true
+  guek200: true
+  lbeg_bk50: true
+  lbeg_bodenschaetzung: true
+
+# BGR GÜK200 ArcGIS REST MapServer (covariate / map context — not soil properties).
+# Probed 2026-10-03: layer 4 = Flächen; copyrightText "(C) BGR: 2026".
+guek200:
+  url: https://services.bgr.de/arcgis/rest/services/geologie/guek200/MapServer
+  layer_id: 4                    # GÜK200 - Flächen
+  sheet_index_layer_id: 0        # Blattübersicht (Jahr_E / Jahr_R)
+  max_record_count: 2000
+  fields:
+    unit_code: Kuerzel
+    unit_desc: T1_GenTxt
+    lithology: T1_PethTxt
+    age_system: T1_System
+    age_serie: T1_Serie
+    age_stufe: T1_Stufe
+    age_label: T1_MatBez
+    object_id: OBJECTID
+  lithology_groups: data/ref/guek_lithology_groups.csv
+  texture_conflicts: data/ref/geology_texture_conflicts.csv
+  dominant_frac_min: 0.7         # coverage before coherence / peat hints fire
+  export_buffer_m: 1000          # geology.geojson clip = parcels + 1 km
+  citation: "GÜK200, (C) BGR, Hannover, 2026"
+  license: "Nutzungsbestimmungen für die Bereitstellung von Geodaten des Bundes"
+  scale: "1:200.000"
+
+# LBEG NIBIS WMS PkgId=24 (layers from GetCapabilities 2026-10-03; docs/lbeg.md).
+lbeg:
+  url: https://nibis.lbeg.de/net3/public/ogc.ashx?PkgId=24
+  layers:
+    bodenschaetzung: L849   # BS5 — BODENZ, ACKERZ, KLASSENZEICHEN_SEP
+    nfkwe: L839             # BK50 nFKWe (mm, effective root zone)
+    bk50_karte: L816        # BOTYP → soil_type_bk50 (audit/map only)
+  spacing_m:
+    bodenschaetzung: 20
+    bk50: 40
+  max_points_per_parcel: 150
+  peat_frac_min: 0.5
+  dominant_frac_min: 0.7    # Bodenart vs fused texture coherence
+  sigma_base:
+    bodenzahl: 5.0          # propio, indicativo
+  # GetMap: one image per farm bbox (all parcels + margin), then sample each parcel.
+  farm_getmap_pad_m: 50
+  getmap_m_per_px: 2.0
+  getmap_max_side_px: 1800   # NIBIS MaxWidth/MaxHeight
+  parcel_timeout_s: 60       # per parcel × adapter; overrides global parcel_timeout_s
+  bodenart_groups: data/ref/bodenschaetzung_bodenart_groups.csv
+  texture_conflicts: data/ref/bodenart_texture_conflicts.csv
+  nfkwe_classes: data/ref/bk50_nfkwe_classes.csv
+  cache_dir: data/cache/lbeg
+  scale_bodenschaetzung: "1:5.000"
+  scale_bk50: "1:50.000"
+  # TODO: verify — see docs/lbeg.md metadata URLs (Ikx NodeId per layer)
+  citation: "TODO: verify — LBEG NIBIS Bodenkarten WMS (PkgId=24)"
+  license: "TODO: verify"
+
+# BGR BÜK200 ArcGIS REST MapServer (field names from tools/probe_arcgis.py).
+buek200:
+  url: https://services.bgr.de/arcgis/rest/services/boden/buek200/MapServer
+  sheet_index_layer_id: 0          # Blattschnitt → resolve sheet layer ids
+  # Optional fixed sheet layer (e.g. 18 = CC3926 BRAUNSCHWEIG) if index query skipped in tests.
+  layer_id: null
+  max_record_count: 2000
+  fields:
+    soil_unit: NRKART
+    soil_unit_label: Legende
+    legend_text: LEG_TEXT
+    parent_material_code: BGL
+    object_id: OBJECTID
+  glossary: data/ref/buek200_glossary.csv
+  texture_lookup: data/ref/buek200_texture_lookup.csv
+  citation: "BÜK200, (C) BGR, Hannover"
+  # TODO: verify current BGR licence terms
+  license: "TODO: verify BGR Geodaten Nutzungsbestimmungen"
+  scale: "1:200.000"
+
+parcels:
+  id_field: null
+  buffer_m: -10
+  min_pixels: 50              # umbral parcela_pequena: área exacta tras buffer < 50×res²
+  min_parcel_ha: 0.05         # por debajo → astilla_geometria
+  max_overlap_frac: 0.5       # solape mayoritario + área < umbral pequeña → astilla
+  max_area_ha: 500
+  area_rel_tol: 0.05          # |calculada - declarada| / declarada
+  overlap_m2: 10              # solape mínimo para flag solapa_con
+  land_default: "DE"
+
+sentinel2:
+  stac_url: https://earth-search.aws.element84.com/v1
+  collection: sentinel-2-l2a
+  bands:
+    red: red
+    nir: nir
+    scl: scl
+  months: [3, 4, 5, 6, 7, 8, 9, 10]
+  max_scene_cloud: 40
+  keep_scl: [4, 5]
+  min_valid_fraction: 0.8
+  resolution: 10
+  pad_m: 30
+  load_threads: 16
+  global_search_max_deg: 3.0
+  save_cube: true
+  best_per_window: true
+  window_days: 14
+  update_lookback_days: 5
+
+dem:
+  stac_url: https://earth-search.aws.element84.com/v1
+  collection: cop-dem-glo-30
+  asset: data
+  resolution: 10
+  terrain_buffer_m: 500          # margen para TWI sin efecto borde
+
+# LGLN DGM1 — single entry via tunen/adapters/lgln_dgm1.py (@register).
+# Probed 2026-10-03: CoverageId=ni_dgm1, CRS EPSG:25832, format image/tiff,
+# max size not published (8000×8000 OK); licence CC BY 4.0 in AccessConstraints.
+# Cache (sole location): data/cache/lgln_dgm1/  — data/raw/dgm1/ is obsolete.
+lgln_dgm1:
+  wcs_url: https://opendata.geoservices.lgln.niedersachsen.de/dgm_wcs  # verify
+  coverage_id: ni_dgm1
+  twi_buffer_m: 300              # upslope area for TWI (default; configurable)
+  slope_buffer_m: 300            # lower if parcel fetch > 20 s (keep TWI at 300)
+  max_tile_px: 4000              # verify; split GetCoverage above this side length
+  derivative_resolution_m: 5     # slope/aspect/TWI on 5 m, then aggregate to 10 m
+  twi_max_fill_m: 0.5            # micro-pit fill cap (preserves deep bowls)
+  twi_colormap:
+    min: 4
+    max: 14
+  cache_dir: data/cache/lgln_dgm1
+  # Within-parcel IQR thresholds for terrain_zoning_ok (propio, indicativo — TODO calibrate).
+  terrain_zoning:
+    slope_iqr_min_pct: 2.0       # propio, indicativo
+    twi_iqr_min: 1.0             # propio, indicativo
+  license: "CC BY 4.0 (LGLN metadata 2026-10-03; verify vs Datenlizenz Deutschland)"
+  citation: "LGLN (year) CC BY 4.0"  # verify; alt © GeoBasis-DE/LGLN <year>
+
+soilgrids:
+  mode: bbox                      # bbox | per_parcel
+  max_bbox_km: 50
+  cluster_eps_km: 25
+  bbox_margin_km: 1.0
+  bbox_workers: 8
+  # {quantile}: Q0.05 | Q0.5 | Q0.95 | mean
+  url_template: https://files.isric.org/soilgrids/latest/data/{prop}/{prop}_{depth}_{quantile}.vrt
+  properties: [clay, sand, silt, soc, phh2o, bdod]
+  optional_properties: []
+  depths: ["0-5cm", "5-15cm", "15-30cm"]
+  # Capas extra solo para nFK (sand, clay, soc). Si faltan, perfil homogéneo.
+  nfk_depths: ["30-60cm", "60-100cm"]
+  nfk_properties: [sand, clay, soc]
+  quantiles: ["Q0.05", "Q0.5", "Q0.95"]
+  source_year: 2020              # año de publicación SoilGrids 2.0
+  scale: "250 m"
+
+weather:
+  provider: open-meteo
+  open_meteo_url: https://archive-api.open-meteo.com/v1/archive
+  model: era5_land
+  daily:
+    - temperature_2m_max
+    - temperature_2m_min
+    - temperature_2m_mean
+    - precipitation_sum
+    - et0_fao_evapotranspiration
+    - shortwave_radiation_sum
+  cell_deg: 0.1
+  earthengine_project: null
+
+worldcover:
+  url_template: https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_{tile}_Map.tif
+  cropland_class: 40
+  min_cropland_fraction: 0.7
+
+conversions:
+  texture_limit_sigma_inflate: 1.2
+  ph_h2o_to_cacl2_offset: 0.55       # aproximado, verificar
+  ph_conversion_sigma_extra: 0.3
+  peat_humus_pct_threshold: 30       # umbral KA5 de Torf, verificar
+  humus_to_soc_factor: 1.72
+
+# nFK por pedotransferencia (supuestos; verificar KA5 We por textura).
+# Umbral de sequía (90 mm) = nFKWe en zona de raíces, no 0-30 cm.
+nfk:
+  root_depth_dm:
+    arena: 10    # supuesto, verificar KA5
+    franco: 10
+    arcilla: 10
+  ptf_sigma_factor: 1.5   # método no alemán
+  homogeneous_sigma_inflate: 1.5  # si faltan capas 30-100 cm
+
+# Límites aproximados de Alemania si no hay polígono Natural Earth.
+germany:
+  use_polygon: true
+  polygon_path: data/ref/germany_outline.geojson
+  bbox: [5.8, 47.2, 15.1, 55.1]   # lon_min, lat_min, lon_max, lat_max (fallback)
+
+# valores indicativos
+age_uncertainty:
+  ph_cacl2: 0.3
+  soc_gkg: 0.15
+
+fusion:
+  agreement_inflate_threshold: 0.5
+  agreement_inflate_factor: 1.5
+  p_interval_z: 1.28
+  texture_mc_samples: 500
+  texture_mc_seed: 42
+  ilr_zero_replacement_pct: 0.1  # reemplazo multiplicativo antes de ilr
+  regional_std:
+    ph_cacl2: 0.8
+    soc_gkg: 15.0
+    nfk_mm: 40.0
+    bodenzahl: 15.0
+    clay_pct: 12.0
+    silt_pct: 15.0
+    sand_pct: 20.0
+  physical_range:
+    ph_cacl2: [3.0, 9.0]
+    soc_gkg: [0.0, 200.0]
+    soc_gkg_peat: [0.0, 580.0]
+    nfk_mm: [0.0, 300.0]
+    bodenzahl: [7.0, 100.0]
+    sand_pct: [0.0, 100.0]
+    silt_pct: [0.0, 100.0]
+    clay_pct: [0.0, 100.0]
+
+abstention:
+  agreement_amber: 0.3
+  bodenzahl_model_delta_amber: 15
+  coarse_scale_min: 1000000
+  geology_dominant_frac_min: 0.7   # GÜK200 coherence / peat hint
+  bodenart_dominant_frac_min: 0.7  # Bodenschätzung Bodenart vs fused texture
+  width_amber:
+    clay_pct: 15.0
+    sand_pct: 15.0
+    silt_pct: 15.0
+    ph_cacl2: 1.0
+    soc_gkg_frac_of_p50: 0.60
+    nfk_mm: 50.0
+    bodenzahl: 20.0
+
+# SMAP L4 via AppEEARS (validation source, not a soil-property source).
+# Product/layers read from https://appeears.earthdatacloud.nasa.gov/api/product (2026-10-03).
+smap_l4:
+  api_url: https://appeears.earthdatacloud.nasa.gov/api/
+  product_id: SPL4SMGP
+  product_version: "008"
+  product_and_version: SPL4SMGP.008
+  layers:
+    surface: Geophysical_Data_sm_surface      # 0–5 cm, m³/m³
+    rootzone: Geophysical_Data_sm_rootzone    # 0–100 cm, m³/m³
+  fill_value: -9999.0
+  valid_min: 0.0
+  valid_max: 0.9
+  start: "2015-04-01"                        # SMAP L4 start (API extent 2015-03-31)
+  end: null                                  # null → today
+  cell_deg: 0.1                              # EASE-Grid 2.0 not exposed → round like Open-Meteo
+  max_wait_s: 7200                           # CLI refresh only
+  poll_initial_s: 15
+  poll_max_s: 120
+  cache_dir: data/cache/smap_l4
+  doi: "10.5067/T5RUATAQREF8"
+  # TODO: verify citation wording against NSIDC DOI landing page
+  citation: "TODO: verify — SMAP L4 SPL4SMGP.008; DOI: 10.5067/T5RUATAQREF8"
+  license: "NASA open data"
+  native_resolution: "9 km (EASE-Grid 2.0)"
+  latency: "~2-3 days"
+
+# Plausibility ranges for tools/review_sources.py (flag outliers; not fusion limits).
+review:
+  ranges:
+    elevation: [-10, 300]          # m
+    slope: [0, 30]                 # %
+    soil_moisture: [0.0, 0.6]      # m3/m3
+    soil_temperature: [-10, 35]    # degC
+    water_balance_30d: [-200, 200] # mm
+  edge_ring_m: 20
+  edge_slope_ratio: 2.0
+  uniform_std_max: 1.0e-4         # within-parcel std below this → uniform at field scale

@@ -77,6 +77,12 @@ The bounded units and their evidence are defined in
 | P4.3 | Static safety and read-only store regressions | P3.2 |
 | P4.4 | No-network verification and startup documentation | P4.1, P4.2, P4.3 |
 
+### Delivery status
+
+| Unit | Status | Evidence |
+| --- | --- | --- |
+| P1.1 | Complete | `soil_api.app` imports; validated settings resolve the repository store; `soil_api.database` opens `soil.sqlite` with SQLite `mode=ro`; startup command documented in `README.md`. |
+
 ## Completion gate
 
 The POC is complete when P1–P4 pass and the exact sample request produces the

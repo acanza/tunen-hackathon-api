@@ -17,5 +17,14 @@ python3 -m venv .venv
 The implementation is organized into the bounded units in
 [`docs/implementation-units.md`](docs/implementation-units.md). The store is
 an input artifact for this POC; live provider integrations, raster generation,
-refresh, and Phase B clipping are deferred. The application entrypoint and
-startup command will be added by unit P1.1.
+refresh, and Phase B clipping are deferred.
+
+Start the application from the repository root with:
+
+```sh
+.venv/bin/uvicorn soil_api.app:app --reload
+```
+
+The P1.1 bootstrap validates `docs/poc/store/` and opens
+`soil.sqlite` in SQLite read-only mode. The HTTP routes are added by later
+implementation units.

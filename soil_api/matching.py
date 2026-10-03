@@ -11,7 +11,13 @@ from typing import Optional, Union
 from shapely.geometry import shape
 
 from .models import Feature, Geometry, MatchType
-from .store import FieldRecord, get_all_fields, get_field_by_geometry_hash, get_field_by_plot_id
+from .store import (
+    FieldRecord,
+    get_all_fields,
+    get_coverage_area,
+    get_field_by_geometry_hash,
+    get_field_by_plot_id,
+)
 
 
 GEOMETRY_MATCH_IOU_THRESHOLD = 0.95
@@ -28,13 +34,28 @@ class FieldMatch:
     iou: Optional[float]
 
 
+@dataclass(frozen=True)
+class MatchMetadata:
+    """Public field metadata resulting from matching and coverage checks."""
+
+    feature_id: Optional[Union[str, int]]
+    matched_plot_id: Optional[str]
+    match: MatchType
+    field_name: Optional[str]
+    bounds: Optional[list[list[float]]]
+
+
 def geometry_hash(geometry: Geometry) -> str:
     """Return the store-compatible hash of a longitude/latitude geometry."""
 
     def round_coordinates(coordinates: object) -> object:
-        if isinstance(coordinates, list) and coordinates and isinstance(coordinates[0], list):
+        if (
+            isinstance(coordinates, (list, tuple))
+            and coordinates
+            and isinstance(coordinates[0], (list, tuple))
+        ):
             return [round_coordinates(value) for value in coordinates]
-        if isinstance(coordinates, list) and len(coordinates) == 2:
+        if isinstance(coordinates, (list, tuple)) and len(coordinates) == 2:
             return [round(float(coordinates[0]), 6), round(float(coordinates[1]), 6)]
         raise ValueError("geometry coordinates have an unsupported structure")
 
@@ -85,3 +106,53 @@ def match_feature(connection: sqlite3.Connection, feature: Feature) -> FieldMatc
         return FieldMatch(feature.id, None, None, None, None)
     field, iou = best_match
     return FieldMatch(feature.id, field.plot_id, MatchType.GEOMETRY, field, iou)
+
+
+def _bounds_in_latitude_longitude_order(feature: Feature) -> list[list[float]]:
+    """Convert Shapely's (min longitude, min latitude, ...) bounds."""
+
+    minimum_longitude, minimum_latitude, maximum_longitude, maximum_latitude = shape(
+        feature.geometry.model_dump()
+    ).bounds
+    return [
+        [minimum_latitude, minimum_longitude],
+        [maximum_latitude, maximum_longitude],
+    ]
+
+
+def classify_field_match(
+    connection: sqlite3.Connection,
+    feature: Feature,
+    field_match: Optional[FieldMatch] = None,
+) -> MatchMetadata:
+    """Classify a match as known, clipped within coverage, or outside coverage."""
+
+    resolved_match = field_match or match_feature(connection, feature)
+    if resolved_match.field is not None and resolved_match.match is not None:
+        return MatchMetadata(
+            feature_id=resolved_match.feature_id,
+            matched_plot_id=resolved_match.field.plot_id,
+            match=resolved_match.match,
+            field_name=resolved_match.field.field_name,
+            bounds=resolved_match.field.bounds,
+        )
+
+    coverage_area = get_coverage_area(connection)
+    if coverage_area is not None and shape(coverage_area.geometry).covers(
+        shape(feature.geometry.model_dump())
+    ):
+        return MatchMetadata(
+            feature_id=resolved_match.feature_id,
+            matched_plot_id=None,
+            match=MatchType.CLIPPED,
+            field_name=None,
+            bounds=_bounds_in_latitude_longitude_order(feature),
+        )
+
+    return MatchMetadata(
+        feature_id=resolved_match.feature_id,
+        matched_plot_id=None,
+        match=MatchType.OUTSIDE_COVERAGE_AREA,
+        field_name=None,
+        bounds=None,
+    )

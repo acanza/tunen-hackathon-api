@@ -104,6 +104,7 @@ SOURCES = [
     ("lbeg_bk50", "LBEG BK50 (NIBIS)", "1:50 000", None, "Niedersachsen", "not verified", "2026-10-03"),
     ("lbeg_bodenschaetzung", "LBEG Bodenschätzung (NIBIS)", "1:5 000", None, "Niedersachsen", "not verified", "2026-10-03"),
     ("derived", "Own model (Sentinel-2 L2A, 2019–2026)", "10 m grid", 10, "farm", "Copernicus open data", "2026-10-03"),
+    ("best", "Best available source per pixel", "mixed", None, "farm", "see contributing sources", "2026-10-03"),
 ]
 
 # Which source can deliver which parameter. Anything not listed is `not_applicable`.
@@ -118,9 +119,16 @@ SOURCE_PARAMETERS = [
     ("derived", "nfk", "nFKWe of the BÜK200 unit (nearest sample point): KA5 lookup over its agricultural "
                        "profiles, area-weighted; approximate KA5 values"),
     ("derived", "bodenzahl", "Model trained on the downloaded Bodenschätzung parcels (west), applied farm-wide"),
+    ("best", "nfk", "Per pixel: derived (BÜK200 + KA5) > soilgrids; band 5 = source code"),
+    ("best", "bodenzahl", "Per pixel: lbeg_bodenschaetzung > derived; band 5 = source code"),
     ("derived", "yield_potential", "yield_v1: water-scaled multi-year relative peak NDVI (normal spring) blended "
                                    "with a soil/terrain model; rescaled to field mean = 100"),
 ]
+
+
+# Reconciled `best` source: per pixel, the first source in the list that has a value.
+BEST_RANKING = {"bodenzahl": ["lbeg_bodenschaetzung", "derived"], "nfk": ["derived", "soilgrids"]}
+SOURCE_COLORS = {"lbeg_bodenschaetzung": "#1b7837", "lbeg_bk50": "#5aae61", "derived": "#9970ab", "soilgrids": "#e08214"}
 
 
 # ---------------------------------------------------------------- helpers
@@ -317,6 +325,27 @@ def build_regional(transform, h, w, parcels):
 NFK_LOOKUP_SIGMA_MM = 30 / Z90   # ±30 mm at 90 % for the approximate KA5 lookup itself
 
 
+def build_best(layers):
+    """Add the reconciled `best` layers: value, interval and confidence of the top-ranked source per pixel."""
+    for param, ranking in BEST_RANKING.items():
+        srcs = [s for s in ranking if (param, s) in layers]
+        first = layers[(param, srcs[0])]
+        out = {k: np.full(first["value"].shape, np.nan, "float32") for k in ("value", "lo", "hi", "conf", "source")}
+        for code, src in enumerate(srcs, 1):
+            L = layers[(param, src)]
+            take = np.isnan(out["value"]) & np.isfinite(L["value"])
+            for k in ("value", "lo", "hi", "conf"):
+                out[k][take] = L[k][take]
+            out["source"][take] = code
+        layers[(param, "best")] = dict(**out, source_codes={i: s for i, s in enumerate(srcs, 1)}, kind="continuous",
+                                       cmap=first["cmap"], unit=first["unit"], zone_m=20, native_m=None)
+
+
+def source_colormap(codes: dict[int, str]) -> dict:
+    return {"type": "categorical", "unit": "source",
+            "classes": [{"value": c, "code": s, "label": s, "color": SOURCE_COLORS[s]} for c, s in codes.items()]}
+
+
 def apply_texture_calibration(layers, parcels, transform, h, w) -> dict:
     """Replace SoilGrids' own clay interval with the error measured against Bodenschätzung (west)."""
     pid = rasterize(((g, i + 1) for i, g in enumerate(parcels.geometry)), out_shape=(h, w), transform=transform,
@@ -482,12 +511,13 @@ def build_field(f, layers, transform, H, W, parcels, nibis_row, conn):
         rel =f"runs/{RUN_ID}/fields/{pid}/{param}__{source}"
         row = dict(run_id=RUN_ID, plot_id=pid, parameter=param, source=source, unit=COLORMAPS[L["cmap"]]["unit"],
                    colormap_id=L["cmap"], status=None, reason=None, coverage=0.0, stats_zone=None,
-                   stats_json=None, confidence_json=None, geotiff_path=None, png_path=None, conf_png_path=None,
+                   stats_json=None, confidence_json=None, geotiff_path=None, png_path=None, conf_png_path=None, source_png_path=None,
                    provenance_json=json.dumps({"native_resolution_m": L["native_m"], "grid": "EPSG:32632 10 m"}))
         if param == "yield_potential":
             row["provenance_json"] = json.dumps({"native_resolution_m": 10, "grid": "EPSG:32632 10 m",
                                                  **{k: YIELD_META[k] for k in ("model", "scenario", "scenarios_mm")}})
         val, lo, hi, conf = (L[k][sl].copy() for k in ("value", "lo", "hi", "conf"))
+        src = L["source"][sl].copy() if "source" in L else None
         zone, zone_name = zone_mask(g, L["zone_m"], wt, shp, centres, inside)
         drivers = []
 
@@ -536,7 +566,7 @@ def build_field(f, layers, transform, H, W, parcels, nibis_row, conn):
         if row["status"] == "partial":
             row["reason"] = "only_parcels_at_sample_point_downloaded" if source == "lbeg_bodenschaetzung" else "partial_source_coverage"
 
-        for a in (val, lo, hi, conf):
+        for a in (val, lo, hi, conf) + ((src,) if src is not None else ()):
             a[~inside] = np.nan
         zv = zone & np.isfinite(val)
         if not zv.any():
@@ -555,6 +585,10 @@ def build_field(f, layers, transform, H, W, parcels, nibis_row, conn):
                 sand, silt = layers["_sand"][sl][zv].mean(), layers["_silt"][sl][zv].mean()
                 stats |= dict(clay_mean=stats["mean"], sand_mean=r(sand), silt_mean=r(silt),
                               usda_class=usda_class(sand, silt, stats["mean"]))
+        if src is not None:
+            codes_, counts_ = np.unique(src[zv], return_counts=True)
+            stats["source_shares"] = {L["source_codes"][int(c)]: round(float(n / counts_.sum()), 3)
+                                      for c, n in zip(codes_, counts_)}
         stats["zone"] = zone_name
         row["stats_json"] = json.dumps(stats)
 
@@ -580,6 +614,13 @@ def build_field(f, layers, transform, H, W, parcels, nibis_row, conn):
                 drivers.append("extrapolated_across_state_border")
             if shares.get("low", 0) > 0.5:
                 drivers.append("range_crosses_threshold:bodenzahl_30_50")
+        if source == "best":
+            drivers.append("reconciled_best_source_per_pixel")
+            sh = stats["source_shares"]
+            if len(sh) > 1:
+                drivers.append("mixed_sources_in_field")
+            if param == "bodenzahl" and sh.get("lbeg_bodenschaetzung", 0) == 0:
+                drivers.append("no_official_survey_model_only")
         if source == "lbeg_bodenschaetzung":
             drivers.append("official_survey_1to5000")
             if param == "bodenzahl":
@@ -599,10 +640,16 @@ def build_field(f, layers, transform, H, W, parcels, nibis_row, conn):
         row["confidence_json"] = json.dumps(dict(level=LEVEL_NAME[level], interval_90=interval, drivers=drivers,
                                                  pixel_shares=shares))
 
-        write_cog(fdir / f"{param}__{source}.tif", np.stack([val, lo, hi, conf]), wt,
-                  ["value", "lo90", "hi90", "confidence"],
+        write_cog(fdir / f"{param}__{source}.tif", np.stack([val, lo, hi, conf] + ([src] if src is not None else [])), wt,
+                  ["value", "lo90", "hi90", "confidence"] + (["source_code"] if src is not None else []),
                   dict(parameter=param, source=source, unit=row["unit"], run_id=RUN_ID, plot_id=pid,
-                       confidence_codes="1=low 2=medium 3=high"))
+                       confidence_codes="1=low 2=medium 3=high", source_codes=json.dumps(L.get("source_codes", {}))))
+        if src is not None:
+            to_png(src, wt, pt, pshape, pmask, lambda a: colorize(a, source_colormap(L["source_codes"])),
+                   fdir / f"{param}__{source}__source.png")
+            row["source_png_path"] = rel + "__source.png"
+            row["provenance_json"] = json.dumps({"grid": "EPSG:32632 10 m", "ranking": BEST_RANKING[param],
+                                                 "source_colormap": source_colormap(L["source_codes"])})
         to_png(val, wt, pt, pshape, pmask, lambda a: colorize(a, COLORMAPS[L["cmap"]]), fdir / f"{param}__{source}.png")
         to_png(conf, wt, pt, pshape, pmask, hatch, fdir / f"{param}__{source}__conf.png")
         row.update(geotiff_path=rel + ".tif", png_path=rel + ".png", conf_png_path=rel + "__conf.png")
@@ -613,7 +660,7 @@ def build_field(f, layers, transform, H, W, parcels, nibis_row, conn):
                      status="unavailable", coverage=0.0,
                      reason="attribute_not_in_downloaded_data" if in_ni else "outside_source_region:niedersachsen",
                      stats_zone=None, stats_json=None, confidence_json=None, geotiff_path=None, png_path=None,
-                     conf_png_path=None, provenance_json=None))
+                     conf_png_path=None, source_png_path=None, provenance_json=None))
     cols = list(rows[0])
     conn.executemany(f"INSERT INTO field_layers ({','.join(cols)}) VALUES ({','.join('?' * len(cols))})",
                      [tuple(x[c] for c in cols) for x in rows])
@@ -654,6 +701,11 @@ def assemble_response(conn, fc: dict, parameters: list[str], sources: list[str])
                     lay |= {"png_url": f"/static/{fl['png_path']}", "geotiff_url": f"/static/{fl['geotiff_path']}",
                             "stats": json.loads(fl["stats_json"]), "colormap": cmaps[fl["colormap_id"]],
                             "confidence": conf, "provenance": json.loads(fl["provenance_json"])}
+                    if fl["source_png_path"]:
+                        prov = json.loads(fl["provenance_json"])
+                        lay["source_mask"] = {"png_url": f"/static/{fl['source_png_path']}",
+                                              "raster_url": f"/static/{fl['geotiff_path']}#band=5",
+                                              "colormap": prov["source_colormap"]}
                 entry["layers"].append(lay)
         out.append(entry)
     return {"run_id": run["run_id"], "data_as_of": json.loads(run["data_as_of_json"]), "fields": out}
@@ -687,6 +739,7 @@ def main():
     DERIVED_META = build_derived_soil(layers, dem, buek, parcels, fall, transform, H, W)
     print("bodenzahl model:", DERIVED_META["bodenzahl_model"]["chosen"], DERIVED_META["bodenzahl_model"]["scores"])
     YIELD_META = build_yield(layers, fields.to_crs(UTM), dem, buek, transform, H, W)
+    build_best(layers)
     print("yield model:", YIELD_META["soil_model"], YIELD_META["scenarios_mm"])
     write_cog(RUN_DIR / "covariates" / "dem__copernicus.tif", np.round(np.stack(list(dem.values())), 2), transform, list(dem),
               dict(source="Copernicus DEM GLO-30 surface model; ground = field interiors, rest interpolated; smoothed ~50 m", run_id=RUN_ID,
@@ -697,9 +750,11 @@ def main():
             continue
         param, source = key
         p = RUN_DIR / "regional" / f"{param}__{source}.tif"
-        write_cog(p, np.stack([L["value"], L["lo"], L["hi"], L["conf"]]), transform,
-                  ["value", "lo90", "hi90", "confidence"],
+        bands = [L["value"], L["lo"], L["hi"], L["conf"]] + ([L["source"]] if "source" in L else [])
+        write_cog(p, np.stack(bands), transform,
+                  ["value", "lo90", "hi90", "confidence"] + (["source_code"] if "source" in L else []),
                   dict(parameter=param, source=source, run_id=RUN_ID, confidence_codes="1=low 2=medium 3=high",
+                       source_codes=json.dumps(L.get("source_codes", {})),
                        note="yield_potential: divide by the field's inner-10 m mean and ×100 to get the field index"
                        if param == "yield_potential" else ""))
         regional_rows.append((RUN_ID, param, source, str(p.relative_to(STORE)), L["kind"], COLORMAPS[L["cmap"]]["unit"], L["cmap"]))

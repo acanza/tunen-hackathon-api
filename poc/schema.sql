@@ -52,7 +52,8 @@ CREATE TABLE colormaps (
 );
 
 -- Farm-wide rasters (EPSG:32632, 10 m). Used to clip polygons that are not known fields.
--- Bands: 1 value, 2 lo90, 3 hi90, 4 confidence (1 low, 2 medium, 3 high). Nodata = NaN.
+-- Bands: 1 value, 2 lo90, 3 hi90, 4 confidence (1 low, 2 medium, 3 high); source=best adds
+-- 5 source_code (codes in the file's `source_codes` tag). Nodata = NaN.
 CREATE TABLE regional_rasters (
     run_id      TEXT NOT NULL REFERENCES runs(run_id),
     parameter   TEXT NOT NULL,
@@ -100,9 +101,10 @@ CREATE TABLE field_layers (
     stats_zone      TEXT,                    -- inner_20m | inner_10m | full_field_fallback | full_field_all_touched
     stats_json      TEXT,                    -- continuous: mean,std,min,p10,p50,p90,max,n_px; categorical: classes,dominant
     confidence_json TEXT,                    -- {level, interval_90, drivers, pixel_shares}
-    geotiff_path    TEXT,                    -- 4-band COG, EPSG:32632
+    geotiff_path    TEXT,                    -- 4-band COG (5 for source=best), EPSG:32632
     png_path        TEXT,                    -- RGBA, EPSG:3857, aligned to fields.bounds_json
     conf_png_path   TEXT,                    -- hatch over low-confidence pixels, same grid as png
+    source_png_path TEXT,                    -- source=best only: which source won per pixel, same grid as png
     provenance_json TEXT,
     PRIMARY KEY (run_id, plot_id, parameter, source)
 );

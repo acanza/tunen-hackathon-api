@@ -214,6 +214,12 @@
      "reason": "source_does_not_provide_parameter"
     },
     {
+     "parameter": "texture",
+     "source": "best",
+     "status": "not_applicable",
+     "reason": "source_does_not_provide_parameter"
+    },
+    {
      "parameter": "ph",
      "source": "soilgrids",
      "status": "ok",
@@ -306,6 +312,12 @@
      "reason": "source_does_not_provide_parameter"
     },
     {
+     "parameter": "ph",
+     "source": "best",
+     "status": "not_applicable",
+     "reason": "source_does_not_provide_parameter"
+    },
+    {
      "parameter": "soc",
      "source": "soilgrids",
      "status": "ok",
@@ -390,6 +402,12 @@
     {
      "parameter": "soc",
      "source": "derived",
+     "status": "not_applicable",
+     "reason": "source_does_not_provide_parameter"
+    },
+    {
+     "parameter": "soc",
+     "source": "best",
      "status": "not_applicable",
      "reason": "source_does_not_provide_parameter"
     },
@@ -545,6 +563,120 @@
      "provenance": {
       "native_resolution_m": null,
       "grid": "EPSG:32632 10 m"
+     }
+    },
+    {
+     "parameter": "nfk",
+     "source": "best",
+     "status": "ok",
+     "reason": null,
+     "coverage": 1.0,
+     "unit": "mm",
+     "png_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/nfk__best.png",
+     "geotiff_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/nfk__best.tif",
+     "stats": {
+      "mean": 165.4,
+      "std": 0.0,
+      "min": 165.4,
+      "p10": 165.4,
+      "p50": 165.4,
+      "p90": 165.4,
+      "max": 165.4,
+      "n_px": 49,
+      "source_shares": {
+       "derived": 1.0
+      },
+      "zone": "inner_20m"
+     },
+     "colormap": {
+      "type": "continuous",
+      "unit": "mm",
+      "stops": [
+       [
+        50,
+        "#f7fbff"
+       ],
+       [
+        100,
+        "#c6dbef"
+       ],
+       [
+        150,
+        "#6baed6"
+       ],
+       [
+        200,
+        "#2171b5"
+       ],
+       [
+        300,
+        "#08306b"
+       ]
+      ]
+     },
+     "confidence": {
+      "level": "low",
+      "interval_90": [
+       120.77,
+       210.03
+      ],
+      "drivers": [
+       "reconciled_best_source_per_pixel"
+      ],
+      "pixel_shares": {
+       "low": 1.0,
+       "medium": 0.0,
+       "high": 0.0
+      },
+      "raster_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/nfk__best.tif#band=4",
+      "png_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/nfk__best__conf.png"
+     },
+     "provenance": {
+      "grid": "EPSG:32632 10 m",
+      "ranking": [
+       "derived",
+       "soilgrids"
+      ],
+      "source_colormap": {
+       "type": "categorical",
+       "unit": "source",
+       "classes": [
+        {
+         "value": 1,
+         "code": "derived",
+         "label": "derived",
+         "color": "#9970ab"
+        },
+        {
+         "value": 2,
+         "code": "soilgrids",
+         "label": "soilgrids",
+         "color": "#e08214"
+        }
+       ]
+      }
+     },
+     "source_mask": {
+      "png_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/nfk__best__source.png",
+      "raster_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/nfk__best.tif#band=5",
+      "colormap": {
+       "type": "categorical",
+       "unit": "source",
+       "classes": [
+        {
+         "value": 1,
+         "code": "derived",
+         "label": "derived",
+         "color": "#9970ab"
+        },
+        {
+         "value": 2,
+         "code": "soilgrids",
+         "label": "soilgrids",
+         "color": "#e08214"
+        }
+       ]
+      }
      }
     },
     {
@@ -706,6 +838,124 @@
      }
     },
     {
+     "parameter": "bodenzahl",
+     "source": "best",
+     "status": "ok",
+     "reason": null,
+     "coverage": 1.0,
+     "unit": "points",
+     "png_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/bodenzahl__best.png",
+     "geotiff_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/bodenzahl__best.tif",
+     "stats": {
+      "mean": 31.0,
+      "std": 0.0,
+      "min": 31.0,
+      "p10": 31.0,
+      "p50": 31.0,
+      "p90": 31.0,
+      "max": 31.0,
+      "n_px": 49,
+      "source_shares": {
+       "lbeg_bodenschaetzung": 1.0
+      },
+      "zone": "inner_20m"
+     },
+     "colormap": {
+      "type": "continuous",
+      "unit": "points",
+      "stops": [
+       [
+        10,
+        "#a50026"
+       ],
+       [
+        20,
+        "#f46d43"
+       ],
+       [
+        30,
+        "#fee08b"
+       ],
+       [
+        45,
+        "#a6d96a"
+       ],
+       [
+        60,
+        "#1a9850"
+       ],
+       [
+        80,
+        "#006837"
+       ]
+      ]
+     },
+     "confidence": {
+      "level": "high",
+      "interval_90": [
+       26.06,
+       35.94
+      ],
+      "drivers": [
+       "reconciled_best_source_per_pixel"
+      ],
+      "pixel_shares": {
+       "low": 0.0,
+       "medium": 0.0,
+       "high": 1.0
+      },
+      "raster_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/bodenzahl__best.tif#band=4",
+      "png_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/bodenzahl__best__conf.png"
+     },
+     "provenance": {
+      "grid": "EPSG:32632 10 m",
+      "ranking": [
+       "lbeg_bodenschaetzung",
+       "derived"
+      ],
+      "source_colormap": {
+       "type": "categorical",
+       "unit": "source",
+       "classes": [
+        {
+         "value": 1,
+         "code": "lbeg_bodenschaetzung",
+         "label": "lbeg_bodenschaetzung",
+         "color": "#1b7837"
+        },
+        {
+         "value": 2,
+         "code": "derived",
+         "label": "derived",
+         "color": "#9970ab"
+        }
+       ]
+      }
+     },
+     "source_mask": {
+      "png_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/bodenzahl__best__source.png",
+      "raster_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/bodenzahl__best.tif#band=5",
+      "colormap": {
+       "type": "categorical",
+       "unit": "source",
+       "classes": [
+        {
+         "value": 1,
+         "code": "lbeg_bodenschaetzung",
+         "label": "lbeg_bodenschaetzung",
+         "color": "#1b7837"
+        },
+        {
+         "value": 2,
+         "code": "derived",
+         "label": "derived",
+         "color": "#9970ab"
+        }
+       ]
+      }
+     }
+    },
+    {
      "parameter": "yield_potential",
      "source": "soilgrids",
      "status": "not_applicable",
@@ -808,6 +1058,12 @@
        "wet": -89.7
       }
      }
+    },
+    {
+     "parameter": "yield_potential",
+     "source": "best",
+     "status": "not_applicable",
+     "reason": "source_does_not_provide_parameter"
     }
    ]
   },
@@ -926,6 +1182,12 @@
      "reason": "source_does_not_provide_parameter"
     },
     {
+     "parameter": "texture",
+     "source": "best",
+     "status": "not_applicable",
+     "reason": "source_does_not_provide_parameter"
+    },
+    {
      "parameter": "ph",
      "source": "soilgrids",
      "status": "ok",
@@ -1017,6 +1279,12 @@
      "reason": "source_does_not_provide_parameter"
     },
     {
+     "parameter": "ph",
+     "source": "best",
+     "status": "not_applicable",
+     "reason": "source_does_not_provide_parameter"
+    },
+    {
      "parameter": "soc",
      "source": "soilgrids",
      "status": "ok",
@@ -1100,6 +1368,12 @@
     {
      "parameter": "soc",
      "source": "derived",
+     "status": "not_applicable",
+     "reason": "source_does_not_provide_parameter"
+    },
+    {
+     "parameter": "soc",
+     "source": "best",
      "status": "not_applicable",
      "reason": "source_does_not_provide_parameter"
     },
@@ -1257,6 +1531,120 @@
      }
     },
     {
+     "parameter": "nfk",
+     "source": "best",
+     "status": "ok",
+     "reason": null,
+     "coverage": 1.0,
+     "unit": "mm",
+     "png_url": "/static/runs/poc-2026-10-03/fields/SEo2xyfcqiAjoec8ZXXa/nfk__best.png",
+     "geotiff_url": "/static/runs/poc-2026-10-03/fields/SEo2xyfcqiAjoec8ZXXa/nfk__best.tif",
+     "stats": {
+      "mean": 110.95,
+      "std": 0.0,
+      "min": 110.95,
+      "p10": 110.95,
+      "p50": 110.95,
+      "p90": 110.95,
+      "max": 110.95,
+      "n_px": 4838,
+      "source_shares": {
+       "derived": 1.0
+      },
+      "zone": "inner_20m"
+     },
+     "colormap": {
+      "type": "continuous",
+      "unit": "mm",
+      "stops": [
+       [
+        50,
+        "#f7fbff"
+       ],
+       [
+        100,
+        "#c6dbef"
+       ],
+       [
+        150,
+        "#6baed6"
+       ],
+       [
+        200,
+        "#2171b5"
+       ],
+       [
+        300,
+        "#08306b"
+       ]
+      ]
+     },
+     "confidence": {
+      "level": "low",
+      "interval_90": [
+       80.56,
+       141.34
+      ],
+      "drivers": [
+       "reconciled_best_source_per_pixel"
+      ],
+      "pixel_shares": {
+       "low": 1.0,
+       "medium": 0.0,
+       "high": 0.0
+      },
+      "raster_url": "/static/runs/poc-2026-10-03/fields/SEo2xyfcqiAjoec8ZXXa/nfk__best.tif#band=4",
+      "png_url": "/static/runs/poc-2026-10-03/fields/SEo2xyfcqiAjoec8ZXXa/nfk__best__conf.png"
+     },
+     "provenance": {
+      "grid": "EPSG:32632 10 m",
+      "ranking": [
+       "derived",
+       "soilgrids"
+      ],
+      "source_colormap": {
+       "type": "categorical",
+       "unit": "source",
+       "classes": [
+        {
+         "value": 1,
+         "code": "derived",
+         "label": "derived",
+         "color": "#9970ab"
+        },
+        {
+         "value": 2,
+         "code": "soilgrids",
+         "label": "soilgrids",
+         "color": "#e08214"
+        }
+       ]
+      }
+     },
+     "source_mask": {
+      "png_url": "/static/runs/poc-2026-10-03/fields/SEo2xyfcqiAjoec8ZXXa/nfk__best__source.png",
+      "raster_url": "/static/runs/poc-2026-10-03/fields/SEo2xyfcqiAjoec8ZXXa/nfk__best.tif#band=5",
+      "colormap": {
+       "type": "categorical",
+       "unit": "source",
+       "classes": [
+        {
+         "value": 1,
+         "code": "derived",
+         "label": "derived",
+         "color": "#9970ab"
+        },
+        {
+         "value": 2,
+         "code": "soilgrids",
+         "label": "soilgrids",
+         "color": "#e08214"
+        }
+       ]
+      }
+     }
+    },
+    {
      "parameter": "bodenzahl",
      "source": "soilgrids",
      "status": "not_applicable",
@@ -1348,6 +1736,125 @@
      "provenance": {
       "native_resolution_m": null,
       "grid": "EPSG:32632 10 m"
+     }
+    },
+    {
+     "parameter": "bodenzahl",
+     "source": "best",
+     "status": "ok",
+     "reason": null,
+     "coverage": 1.0,
+     "unit": "points",
+     "png_url": "/static/runs/poc-2026-10-03/fields/SEo2xyfcqiAjoec8ZXXa/bodenzahl__best.png",
+     "geotiff_url": "/static/runs/poc-2026-10-03/fields/SEo2xyfcqiAjoec8ZXXa/bodenzahl__best.tif",
+     "stats": {
+      "mean": 29.26,
+      "std": 1.88,
+      "min": 25.26,
+      "p10": 26.13,
+      "p50": 29.66,
+      "p90": 31.42,
+      "max": 33.4,
+      "n_px": 4838,
+      "source_shares": {
+       "derived": 1.0
+      },
+      "zone": "inner_20m"
+     },
+     "colormap": {
+      "type": "continuous",
+      "unit": "points",
+      "stops": [
+       [
+        10,
+        "#a50026"
+       ],
+       [
+        20,
+        "#f46d43"
+       ],
+       [
+        30,
+        "#fee08b"
+       ],
+       [
+        45,
+        "#a6d96a"
+       ],
+       [
+        60,
+        "#1a9850"
+       ],
+       [
+        80,
+        "#006837"
+       ]
+      ]
+     },
+     "confidence": {
+      "level": "low",
+      "interval_90": [
+       17.98,
+       40.53
+      ],
+      "drivers": [
+       "reconciled_best_source_per_pixel",
+       "no_official_survey_model_only"
+      ],
+      "pixel_shares": {
+       "low": 1.0,
+       "medium": 0.0,
+       "high": 0.0
+      },
+      "raster_url": "/static/runs/poc-2026-10-03/fields/SEo2xyfcqiAjoec8ZXXa/bodenzahl__best.tif#band=4",
+      "png_url": "/static/runs/poc-2026-10-03/fields/SEo2xyfcqiAjoec8ZXXa/bodenzahl__best__conf.png"
+     },
+     "provenance": {
+      "grid": "EPSG:32632 10 m",
+      "ranking": [
+       "lbeg_bodenschaetzung",
+       "derived"
+      ],
+      "source_colormap": {
+       "type": "categorical",
+       "unit": "source",
+       "classes": [
+        {
+         "value": 1,
+         "code": "lbeg_bodenschaetzung",
+         "label": "lbeg_bodenschaetzung",
+         "color": "#1b7837"
+        },
+        {
+         "value": 2,
+         "code": "derived",
+         "label": "derived",
+         "color": "#9970ab"
+        }
+       ]
+      }
+     },
+     "source_mask": {
+      "png_url": "/static/runs/poc-2026-10-03/fields/SEo2xyfcqiAjoec8ZXXa/bodenzahl__best__source.png",
+      "raster_url": "/static/runs/poc-2026-10-03/fields/SEo2xyfcqiAjoec8ZXXa/bodenzahl__best.tif#band=5",
+      "colormap": {
+       "type": "categorical",
+       "unit": "source",
+       "classes": [
+        {
+         "value": 1,
+         "code": "lbeg_bodenschaetzung",
+         "label": "lbeg_bodenschaetzung",
+         "color": "#1b7837"
+        },
+        {
+         "value": 2,
+         "code": "derived",
+         "label": "derived",
+         "color": "#9970ab"
+        }
+       ]
+      }
      }
     },
     {
@@ -1453,6 +1960,12 @@
        "wet": -89.7
       }
      }
+    },
+    {
+     "parameter": "yield_potential",
+     "source": "best",
+     "status": "not_applicable",
+     "reason": "source_does_not_provide_parameter"
     }
    ]
   },
@@ -1573,6 +2086,12 @@
      "reason": "source_does_not_provide_parameter"
     },
     {
+     "parameter": "texture",
+     "source": "best",
+     "status": "not_applicable",
+     "reason": "source_does_not_provide_parameter"
+    },
+    {
      "parameter": "ph",
      "source": "soilgrids",
      "status": "ok",
@@ -1666,6 +2185,12 @@
      "reason": "source_does_not_provide_parameter"
     },
     {
+     "parameter": "ph",
+     "source": "best",
+     "status": "not_applicable",
+     "reason": "source_does_not_provide_parameter"
+    },
+    {
      "parameter": "soc",
      "source": "soilgrids",
      "status": "ok",
@@ -1751,6 +2276,12 @@
     {
      "parameter": "soc",
      "source": "derived",
+     "status": "not_applicable",
+     "reason": "source_does_not_provide_parameter"
+    },
+    {
+     "parameter": "soc",
+     "source": "best",
      "status": "not_applicable",
      "reason": "source_does_not_provide_parameter"
     },
@@ -1911,6 +2442,121 @@
      }
     },
     {
+     "parameter": "nfk",
+     "source": "best",
+     "status": "ok",
+     "reason": null,
+     "coverage": 1.0,
+     "unit": "mm",
+     "png_url": "/static/runs/poc-2026-10-03/fields/xtMqrquNCdC21lZ0NMYI/nfk__best.png",
+     "geotiff_url": "/static/runs/poc-2026-10-03/fields/xtMqrquNCdC21lZ0NMYI/nfk__best.tif",
+     "stats": {
+      "mean": 110.95,
+      "std": 0.0,
+      "min": 110.95,
+      "p10": 110.95,
+      "p50": 110.95,
+      "p90": 110.95,
+      "max": 110.95,
+      "n_px": 1,
+      "source_shares": {
+       "derived": 1.0
+      },
+      "zone": "full_field_fallback"
+     },
+     "colormap": {
+      "type": "continuous",
+      "unit": "mm",
+      "stops": [
+       [
+        50,
+        "#f7fbff"
+       ],
+       [
+        100,
+        "#c6dbef"
+       ],
+       [
+        150,
+        "#6baed6"
+       ],
+       [
+        200,
+        "#2171b5"
+       ],
+       [
+        300,
+        "#08306b"
+       ]
+      ]
+     },
+     "confidence": {
+      "level": "low",
+      "interval_90": [
+       80.56,
+       141.34
+      ],
+      "drivers": [
+       "reconciled_best_source_per_pixel",
+       "no_inner_zone_edge_pixels_only"
+      ],
+      "pixel_shares": {
+       "low": 1.0,
+       "medium": 0.0,
+       "high": 0.0
+      },
+      "raster_url": "/static/runs/poc-2026-10-03/fields/xtMqrquNCdC21lZ0NMYI/nfk__best.tif#band=4",
+      "png_url": "/static/runs/poc-2026-10-03/fields/xtMqrquNCdC21lZ0NMYI/nfk__best__conf.png"
+     },
+     "provenance": {
+      "grid": "EPSG:32632 10 m",
+      "ranking": [
+       "derived",
+       "soilgrids"
+      ],
+      "source_colormap": {
+       "type": "categorical",
+       "unit": "source",
+       "classes": [
+        {
+         "value": 1,
+         "code": "derived",
+         "label": "derived",
+         "color": "#9970ab"
+        },
+        {
+         "value": 2,
+         "code": "soilgrids",
+         "label": "soilgrids",
+         "color": "#e08214"
+        }
+       ]
+      }
+     },
+     "source_mask": {
+      "png_url": "/static/runs/poc-2026-10-03/fields/xtMqrquNCdC21lZ0NMYI/nfk__best__source.png",
+      "raster_url": "/static/runs/poc-2026-10-03/fields/xtMqrquNCdC21lZ0NMYI/nfk__best.tif#band=5",
+      "colormap": {
+       "type": "categorical",
+       "unit": "source",
+       "classes": [
+        {
+         "value": 1,
+         "code": "derived",
+         "label": "derived",
+         "color": "#9970ab"
+        },
+        {
+         "value": 2,
+         "code": "soilgrids",
+         "label": "soilgrids",
+         "color": "#e08214"
+        }
+       ]
+      }
+     }
+    },
+    {
      "parameter": "bodenzahl",
      "source": "soilgrids",
      "status": "not_applicable",
@@ -2003,6 +2649,126 @@
      "provenance": {
       "native_resolution_m": null,
       "grid": "EPSG:32632 10 m"
+     }
+    },
+    {
+     "parameter": "bodenzahl",
+     "source": "best",
+     "status": "ok",
+     "reason": null,
+     "coverage": 1.0,
+     "unit": "points",
+     "png_url": "/static/runs/poc-2026-10-03/fields/xtMqrquNCdC21lZ0NMYI/bodenzahl__best.png",
+     "geotiff_url": "/static/runs/poc-2026-10-03/fields/xtMqrquNCdC21lZ0NMYI/bodenzahl__best.tif",
+     "stats": {
+      "mean": 27.18,
+      "std": 0.0,
+      "min": 27.18,
+      "p10": 27.18,
+      "p50": 27.18,
+      "p90": 27.18,
+      "max": 27.18,
+      "n_px": 1,
+      "source_shares": {
+       "derived": 1.0
+      },
+      "zone": "full_field_fallback"
+     },
+     "colormap": {
+      "type": "continuous",
+      "unit": "points",
+      "stops": [
+       [
+        10,
+        "#a50026"
+       ],
+       [
+        20,
+        "#f46d43"
+       ],
+       [
+        30,
+        "#fee08b"
+       ],
+       [
+        45,
+        "#a6d96a"
+       ],
+       [
+        60,
+        "#1a9850"
+       ],
+       [
+        80,
+        "#006837"
+       ]
+      ]
+     },
+     "confidence": {
+      "level": "low",
+      "interval_90": [
+       15.9,
+       38.45
+      ],
+      "drivers": [
+       "reconciled_best_source_per_pixel",
+       "no_official_survey_model_only",
+       "no_inner_zone_edge_pixels_only"
+      ],
+      "pixel_shares": {
+       "low": 1.0,
+       "medium": 0.0,
+       "high": 0.0
+      },
+      "raster_url": "/static/runs/poc-2026-10-03/fields/xtMqrquNCdC21lZ0NMYI/bodenzahl__best.tif#band=4",
+      "png_url": "/static/runs/poc-2026-10-03/fields/xtMqrquNCdC21lZ0NMYI/bodenzahl__best__conf.png"
+     },
+     "provenance": {
+      "grid": "EPSG:32632 10 m",
+      "ranking": [
+       "lbeg_bodenschaetzung",
+       "derived"
+      ],
+      "source_colormap": {
+       "type": "categorical",
+       "unit": "source",
+       "classes": [
+        {
+         "value": 1,
+         "code": "lbeg_bodenschaetzung",
+         "label": "lbeg_bodenschaetzung",
+         "color": "#1b7837"
+        },
+        {
+         "value": 2,
+         "code": "derived",
+         "label": "derived",
+         "color": "#9970ab"
+        }
+       ]
+      }
+     },
+     "source_mask": {
+      "png_url": "/static/runs/poc-2026-10-03/fields/xtMqrquNCdC21lZ0NMYI/bodenzahl__best__source.png",
+      "raster_url": "/static/runs/poc-2026-10-03/fields/xtMqrquNCdC21lZ0NMYI/bodenzahl__best.tif#band=5",
+      "colormap": {
+       "type": "categorical",
+       "unit": "source",
+       "classes": [
+        {
+         "value": 1,
+         "code": "lbeg_bodenschaetzung",
+         "label": "lbeg_bodenschaetzung",
+         "color": "#1b7837"
+        },
+        {
+         "value": 2,
+         "code": "derived",
+         "label": "derived",
+         "color": "#9970ab"
+        }
+       ]
+      }
      }
     },
     {
@@ -2111,6 +2877,12 @@
        "wet": -89.7
       }
      }
+    },
+    {
+     "parameter": "yield_potential",
+     "source": "best",
+     "status": "not_applicable",
+     "reason": "source_does_not_provide_parameter"
     }
    ]
   },
@@ -2146,6 +2918,12 @@
      "reason": "source_does_not_provide_parameter"
     },
     {
+     "parameter": "texture",
+     "source": "best",
+     "status": "not_applicable",
+     "reason": "source_does_not_provide_parameter"
+    },
+    {
      "parameter": "ph",
      "source": "soilgrids",
      "status": "unavailable",
@@ -2166,6 +2944,12 @@
     {
      "parameter": "ph",
      "source": "derived",
+     "status": "not_applicable",
+     "reason": "source_does_not_provide_parameter"
+    },
+    {
+     "parameter": "ph",
+     "source": "best",
      "status": "not_applicable",
      "reason": "source_does_not_provide_parameter"
     },
@@ -2194,6 +2978,12 @@
      "reason": "source_does_not_provide_parameter"
     },
     {
+     "parameter": "soc",
+     "source": "best",
+     "status": "not_applicable",
+     "reason": "source_does_not_provide_parameter"
+    },
+    {
      "parameter": "nfk",
      "source": "soilgrids",
      "status": "unavailable",
@@ -2218,6 +3008,12 @@
      "reason": "outside_coverage_area"
     },
     {
+     "parameter": "nfk",
+     "source": "best",
+     "status": "unavailable",
+     "reason": "outside_coverage_area"
+    },
+    {
      "parameter": "bodenzahl",
      "source": "soilgrids",
      "status": "not_applicable",
@@ -2242,6 +3038,12 @@
      "reason": "outside_coverage_area"
     },
     {
+     "parameter": "bodenzahl",
+     "source": "best",
+     "status": "unavailable",
+     "reason": "outside_coverage_area"
+    },
+    {
      "parameter": "yield_potential",
      "source": "soilgrids",
      "status": "not_applicable",
@@ -2264,6 +3066,12 @@
      "source": "derived",
      "status": "unavailable",
      "reason": "outside_coverage_area"
+    },
+    {
+     "parameter": "yield_potential",
+     "source": "best",
+     "status": "not_applicable",
+     "reason": "source_does_not_provide_parameter"
     }
    ]
   }

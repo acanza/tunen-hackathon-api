@@ -669,6 +669,7 @@
   "soilgrids",
   "lbeg_bk50",
   "lbeg_bodenschaetzung",
-  "derived"
+  "derived",
+  "best"
  ]
 }

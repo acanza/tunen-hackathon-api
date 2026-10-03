@@ -9,7 +9,7 @@ The data is frozen as of 2026-10-03 (run `poc-2026-10-03`) and there is no refre
 | Path | What it is |
 |---|---|
 | `poc/store/soil.sqlite` | **The DB you query.** Metadata only; schema in `poc/schema.sql` |
-| `poc/store/runs/poc-2026-10-03/fields/<plotId>/` | Per field and layer: `<param>__<source>.tif` (values), `.png` (map overlay), `__conf.png` (low-confidence hatch) |
+| `poc/store/runs/poc-2026-10-03/fields/<plotId>/` | Per field and layer: `<param>__<source>.tif` (values), `.png` (map overlay), `__conf.png` (low-confidence hatch); for `best` also `__source.png` (which source won where) |
 | `poc/store/runs/poc-2026-10-03/regional/` | Farm-wide rasters, one per layer, for clipping polygons that are not known fields (phase B) + `bodenschaetzung_parcels.geojson` |
 | `poc/store/runs/poc-2026-10-03/covariates/` | Model inputs (terrain: elevation, slope, wetness index, relative elevation). **Not API layers; ignore them** |
 | `poc/samples/request.json` | Example request: a west field, an east field, a sliver, a polygon outside the farm |
@@ -27,16 +27,28 @@ LuF Seggerde has 87 fields (885 ha) straddling the Niedersachsen / Sachsen-Anhal
 
 ## Parameters and sources
 
-| parameter | soilgrids | lbeg_bk50 | lbeg_bodenschaetzung | derived |
-|---|---|---|---|---|
-| `texture` | clay % (stats add sand, silt, USDA class) | – | Bodenart class (categorical: S, lS, …) | – |
-| `ph` | ✓ | – | – | – |
-| `soc` | ✓ | – | – | – |
-| `nfk` | ✓ (mm, 0–100 cm) | always `unavailable` (not in downloaded data / outside NI) | – | ✓ (mm, nFKWe from BÜK200 + KA5) |
-| `bodenzahl` | – | – | ✓ (west only) | ✓ (model trained on the west, whole farm) |
-| `yield_potential` | – | – | – | ✓ index, 100 = field mean (model `yield_v1`, normal-spring scenario) |
+| parameter | soilgrids | lbeg_bk50 | lbeg_bodenschaetzung | derived | best |
+|---|---|---|---|---|---|
+| `texture` | clay % (stats add sand, silt, USDA class) | – | Bodenart class (categorical: S, lS, …) | – | – |
+| `ph` | ✓ | – | – | – | – |
+| `soc` | ✓ | – | – | – | – |
+| `nfk` | ✓ (mm, 0–100 cm) | always `unavailable` (not in downloaded data / outside NI) | – | ✓ (mm, nFKWe from BÜK200 + KA5) | ✓ derived > soilgrids |
+| `bodenzahl` | – | – | ✓ (west only) | ✓ (model trained on the west, whole farm) | ✓ lbeg_bodenschaetzung > derived |
+| `yield_potential` | – | – | – | ✓ index, 100 = field mean (model `yield_v1`, normal-spring scenario) | – |
 
 "–" means `not_applicable`. The table `source_parameters` holds exactly the ✓ cells and the `lbeg_bk50` row; any other pair is `not_applicable`.
+
+**`best` is the reconciled layer:** for each pixel it takes the first source in the ranking that has a value, together with that source's interval and confidence. Its GeoTIFF has a **5th band `source_code`**; the codes are in the file's `source_codes` tag and in the response. For `best` layers the response carries an extra block. Pass it through as-is:
+
+```jsonc
+"source_mask": {
+  "png_url": "/static/runs/.../bodenzahl__best__source.png",   // same bounds as the layer PNG
+  "raster_url": "/static/runs/.../bodenzahl__best.tif#band=5",
+  "colormap": {"type": "categorical", "classes": [{"value": 1, "code": "lbeg_bodenschaetzung", "color": "#1b7837"}, ...]}
+}
+```
+
+`stats.source_shares` gives the share of the stats zone that each source supplied, e.g. `{"lbeg_bodenschaetzung": 0.55, "derived": 0.45}`. Read it from `field_layers.source_png_path` and `provenance_json.source_colormap` (see `assemble_response()`).
 
 ## DB: what to query
 
@@ -158,6 +170,9 @@ Driver codes:
 - `soil_model_only`
 - `error_calibrated_west`
 - `buek200_1to200000_nearest_point`
+- `reconciled_best_source_per_pixel`
+- `mixed_sources_in_field`
+- `no_official_survey_model_only`
 - `lookup_table_approximate`
 - `model_trained_on_38_parcels`
 - `extrapolated_across_state_border`
@@ -221,6 +236,7 @@ Clip `regional_rasters` with rasterio. The same 4 bands, same grid and same colo
 
 - `samples/request.json` → `samples/response.json`.
 - An east field never shows LBEG data, but does show `derived` nFK and Bodenzahl. A west field shows Bodenzahl from both `lbeg_bodenschaetzung` (`ok` or `partial`) and `derived`.
+- `best` Bodenzahl on a partly surveyed west field (e.g. `Bocksenden`) has a `source_mask` and `stats.source_shares` with both sources; on an east field only `derived`.
 - The sliver `Sandberg - 2` returns `yield_potential` as `ok` with `low` confidence and drivers `soil_model_only`, `no_ndvi_history`. Its stats use `full_field_fallback`.
 - The Hildesheim polygon returns 200 with every layer `unavailable` / `outside_coverage_area`. It must not return 404 or 500.
 - PNG overlays line up with the field outlines in Leaflet.

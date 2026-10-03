@@ -138,6 +138,11 @@ the total-failure status, missing coverage versus missing data, and no artifact
 collisions. Check aggregate limits, not just per-field limits. Exercise source
 failure isolation again when the real LBEG adapter becomes available in 2E.
 
+**Implementation evidence:** The deterministic multi-field and aggregate-budget
+checks are recorded in [verification/2a](verification/2a/README.md). The
+multi-field live provider check remains pending until the provider call is
+explicitly run.
+
 ### 2B — Complete numeric texture
 
 **Dependencies:** 1B and viable 0B records for sand and silt.

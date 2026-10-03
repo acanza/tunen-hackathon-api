@@ -14,8 +14,10 @@ python3 -m venv .venv
 .venv/bin/python -m unittest discover -s tests -v
 ```
 
-The M1 service accepts one GeoJSON `Polygon` or `MultiPolygon` field, with a
-required `id`, and returns a real SoilGrids clay layer at 0–30 cm through
-`SoilLayerService.create_layer`. It stores PNG and JSON artifacts locally.
-Provider access requires network access to SoilGrids. Public FastAPI routes,
-additional parameters, multiple fields, and cache reuse belong to later units.
+The internal M1/M2 service accepts bounded GeoJSON `Polygon` or `MultiPolygon`
+fields, with a required unique `id`, and returns SoilGrids clay layers at
+0–30 cm through `SoilLayerService.create_layer` or the isolated multi-field
+`create_layers` coordinator. Each field keeps its own status and PNG/JSON
+artifacts; a mixed request returns a partial batch instead of discarding valid
+layers. Provider access requires network access to SoilGrids. Public FastAPI
+routes, additional parameters, and cache reuse belong to later units.

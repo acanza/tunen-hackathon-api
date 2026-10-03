@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from datetime import datetime, timezone
+from concurrent.futures import ThreadPoolExecutor, TimeoutError as FutureTimeoutError
 import json
 from pathlib import Path
 import uuid
@@ -14,13 +15,17 @@ from rasterio.io import MemoryFile
 from soil_api.domain import (
     ArtifactKind,
     ArtifactReference,
+    BatchStatus,
+    FieldLayerResult,
     LayerData,
     LayerError,
     LayerRequest,
     LayerResult,
+    LayerBatchResult,
     LayerStatistics,
     LegendEntry,
     ResultStatus,
+    DEFAULT_PROCESSING_LIMITS,
 )
 from soil_api.providers.soilgrids import (
     SoilGridsAdapter,
@@ -238,3 +243,66 @@ class SoilLayerService:
                 status=ResultStatus.FAILED,
                 error=LayerError(code="processing_failure", message=str(error)),
             )
+
+    def create_layers(self, request: LayerRequest) -> LayerBatchResult:
+        """Process fields independently with bounded worker and timeout budgets."""
+        executor = ThreadPoolExecutor(max_workers=DEFAULT_PROCESSING_LIMITS.max_concurrency)
+        futures = []
+        try:
+            for feature in request.fields.features:
+                field_request = LayerRequest.model_validate(
+                    {
+                        **request.model_dump(),
+                        "fields": {
+                            "type": "FeatureCollection",
+                            "features": [feature.model_dump()],
+                        },
+                    }
+                )
+                futures.append(
+                    (
+                        feature.id,
+                        executor.submit(self.create_layer, field_request),
+                    )
+                )
+
+            field_results = []
+            for field_id, future in futures:
+                try:
+                    result = future.result(
+                        timeout=DEFAULT_PROCESSING_LIMITS.processing_timeout_seconds
+                    )
+                except FutureTimeoutError:
+                    future.cancel()
+                    result = LayerResult(
+                        status=ResultStatus.FAILED,
+                        error=LayerError(
+                            code="provider_timeout",
+                            message=(
+                                f"Processing for field {field_id} exceeded "
+                                f"{DEFAULT_PROCESSING_LIMITS.processing_timeout_seconds} seconds"
+                            ),
+                            retryable=True,
+                        ),
+                    )
+                field_results.append(
+                    FieldLayerResult(
+                        field_id=field_id,
+                        parameter="clay",
+                        source="soilgrids",
+                        result=result,
+                    )
+                )
+        finally:
+            executor.shutdown(wait=False, cancel_futures=True)
+
+        available_count = sum(
+            item.result.status == ResultStatus.AVAILABLE for item in field_results
+        )
+        if available_count == len(field_results):
+            status = BatchStatus.AVAILABLE
+        elif available_count:
+            status = BatchStatus.PARTIAL
+        else:
+            status = BatchStatus.FAILED
+        return LayerBatchResult(status=status, results=tuple(field_results))

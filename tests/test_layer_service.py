@@ -17,6 +17,7 @@ from soil_api.domain import (
 )
 from soil_api.layer_service import ArtifactStore, SoilLayerService
 from soil_api.providers.soilgrids import (
+    SoilGridsProviderError,
     SoilGridsProviderTimeout,
     SoilGridsRaster,
 )
@@ -39,6 +40,31 @@ def request() -> LayerRequest:
         fields=GeoJsonFeatureCollection(
             type="FeatureCollection",
             features=[GeoJsonFeature(type="Feature", id="field-1", geometry=geometry)],
+        )
+    )
+
+
+def multi_field_request() -> LayerRequest:
+    first = request().fields.features[0]
+    second = GeoJsonFeature(
+        type="Feature",
+        id="field-2",
+        geometry=GeoJsonPolygon(
+            type="Polygon",
+            coordinates=[
+                [
+                    (0.01, 0),
+                    (0.014, 0),
+                    (0.014, 0.003),
+                    (0.01, 0.003),
+                    (0.01, 0),
+                ]
+            ],
+        ),
+    )
+    return LayerRequest(
+        fields=GeoJsonFeatureCollection(
+            type="FeatureCollection", features=[first, second]
         )
     )
 
@@ -86,6 +112,42 @@ def fixture_rasters(all_masked=False):
 
 
 class LayerServiceChecks(unittest.TestCase):
+    def test_multiple_fields_keep_isolated_artifacts_and_ids(self):
+        class FieldAdapter(FakeAdapter):
+            def retrieve(self, layer_request):
+                if layer_request.fields.features[0].id == "field-2":
+                    raise SoilGridsProviderError("field unavailable")
+                return super().retrieve(layer_request)
+
+        with tempfile.TemporaryDirectory() as directory:
+            result = SoilLayerService(
+                FieldAdapter(fixture_rasters()), ArtifactStore(Path(directory))
+            ).create_layers(multi_field_request())
+
+            self.assertEqual(result.status.value, "partial")
+            self.assertEqual([item.field_id for item in result.results], ["field-1", "field-2"])
+            self.assertEqual(result.results[0].result.status, ResultStatus.AVAILABLE)
+            self.assertEqual(result.results[1].result.status, ResultStatus.FAILED)
+            artifact_ids = {
+                artifact.artifact_id
+                for item in result.results
+                if item.result.data
+                for artifact in item.result.data.artifacts
+            }
+            self.assertEqual(len(artifact_ids), 2)
+
+    def test_total_provider_failure_is_failed_batch(self):
+        class FailingAdapter(FakeAdapter):
+            def retrieve(self, _request):
+                raise SoilGridsProviderError("source unavailable")
+
+        with tempfile.TemporaryDirectory() as directory:
+            result = SoilLayerService(
+                FailingAdapter(fixture_rasters()), ArtifactStore(Path(directory))
+            ).create_layers(multi_field_request())
+            self.assertEqual(result.status.value, "failed")
+            self.assertTrue(all(item.result.data is None for item in result.results))
+
     def test_generates_retrievable_json_and_transparent_png(self):
         with tempfile.TemporaryDirectory() as directory:
             service = SoilLayerService(

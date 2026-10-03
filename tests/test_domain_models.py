@@ -63,6 +63,11 @@ class RequestValidationChecks(unittest.TestCase):
         )
         self.assertEqual(request_for(feature(geometry=geometry)).fields.features[0].geometry.type, "MultiPolygon")
 
+    def test_accepts_two_fields_and_rejects_three(self):
+        self.assertEqual(len(request_for(feature("field-1"), feature("field-2")).fields.features), 2)
+        with self.assertRaisesRegex(ValidationError, "maximum is 2"):
+            request_for(feature("field-1"), feature("field-2"), feature("field-3"))
+
     def test_rejects_absent_invalid_and_duplicate_identifier_cases(self):
         with self.assertRaises(ValidationError):
             GeoJsonFeature(type="Feature", geometry=feature().geometry)

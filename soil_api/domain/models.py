@@ -43,6 +43,12 @@ class ResultStatus(str, Enum):
     FAILED = "failed"
 
 
+class BatchStatus(str, Enum):
+    AVAILABLE = "available"
+    PARTIAL = "partial"
+    FAILED = "failed"
+
+
 class ErrorCode(str, Enum):
     UNSUPPORTED_REQUEST = "unsupported_request"
     OUTSIDE_COVERAGE = "outside_coverage"
@@ -90,12 +96,13 @@ class DepthRange(DomainModel):
 
 
 class ProcessingLimits(DomainModel):
-    max_fields: int = 1
+    max_fields: int = 2
     max_area_hectares: float = 1_000.0
     max_vertices: int = 5_000
     max_output_pixels: int = 4_096
-    max_provider_calls: int = 8
-    max_concurrency: int = 1
+    max_provider_calls: int = 16
+    max_concurrency: int = 2
+    max_total_output_pixels: int = 8_192
     max_retry_attempts: int = 2
     connect_timeout_seconds: float = 10.0
     provider_timeout_seconds: float = 45.0
@@ -103,6 +110,7 @@ class ProcessingLimits(DomainModel):
 
 
 DEFAULT_PROCESSING_LIMITS = ProcessingLimits()
+PROVIDER_CALLS_PER_CLAY_FIELD = 8
 
 
 def _iter_rings(geometry: SupportedGeometry):
@@ -168,44 +176,70 @@ class LayerRequest(DomainModel):
     @model_validator(mode="after")
     def validate_bounded_request(self):
         limits = DEFAULT_PROCESSING_LIMITS
-        if len(self.fields.features) != limits.max_fields:
-            raise ValueError("M1 accepts exactly one field")
+        if not self.fields.features:
+            raise ValueError("request requires at least one field")
+        if len(self.fields.features) > limits.max_fields:
+            raise ValueError(
+                f"request has {len(self.fields.features)} fields; maximum is "
+                f"{limits.max_fields}"
+            )
+        field_ids = [feature.id for feature in self.fields.features]
+        if len(field_ids) != len(set(field_ids)):
+            raise ValueError("request requires exactly one field identifier per field")
         if self.parameters != (Parameter.CLAY,):
             raise ValueError("M1 supports only the clay parameter")
         if self.sources != (Source.SOILGRIDS,):
             raise ValueError("M1 supports only the soilgrids source")
-
-        feature = self.fields.features[0]
-        geometry = feature.geometry
-        _validate_positions(geometry)
-        vertex_count = _count_vertices(geometry)
-        if vertex_count > limits.max_vertices:
+        estimated_provider_calls = len(self.fields.features) * PROVIDER_CALLS_PER_CLAY_FIELD
+        if estimated_provider_calls > limits.max_provider_calls:
             raise ValueError(
-                f"field has {vertex_count} vertices; maximum is {limits.max_vertices}"
+                f"request estimates {estimated_provider_calls} provider calls; "
+                f"maximum is {limits.max_provider_calls}"
             )
 
-        shaped_geometry = shape(geometry.model_dump())
-        if shaped_geometry.is_empty:
-            raise ValueError("field geometry must not be empty")
-        if not shaped_geometry.is_valid:
-            raise ValueError(f"invalid field geometry: {explain_validity(shaped_geometry)}")
+        total_pixels = 0
+        for feature in self.fields.features:
+            geometry = feature.geometry
+            _validate_positions(geometry)
+            vertex_count = _count_vertices(geometry)
+            if vertex_count > limits.max_vertices:
+                raise ValueError(
+                    f"field {feature.id} has {vertex_count} vertices; maximum is "
+                    f"{limits.max_vertices}"
+                )
 
-        area_hectares = _geodesic_area_hectares(geometry)
-        if area_hectares <= 0:
-            raise ValueError("field area must be greater than zero")
-        if area_hectares > limits.max_area_hectares:
-            raise ValueError(
-                f"field area {area_hectares:.3f} ha exceeds "
-                f"{limits.max_area_hectares:.3f} ha"
-            )
+            shaped_geometry = shape(geometry.model_dump())
+            if shaped_geometry.is_empty:
+                raise ValueError(f"field {feature.id} geometry must not be empty")
+            if not shaped_geometry.is_valid:
+                raise ValueError(
+                    f"invalid field geometry for {feature.id}: "
+                    f"{explain_validity(shaped_geometry)}"
+                )
 
-        west, south, east, north = shaped_geometry.bounds
-        width = max(1, ceil((east - west) * 111_320 / self.output_resolution_meters))
-        height = max(1, ceil((north - south) * 111_320 / self.output_resolution_meters))
-        if width * height > limits.max_output_pixels:
+            area_hectares = _geodesic_area_hectares(geometry)
+            if area_hectares <= 0:
+                raise ValueError(f"field {feature.id} area must be greater than zero")
+            if area_hectares > limits.max_area_hectares:
+                raise ValueError(
+                    f"field {feature.id} area {area_hectares:.3f} ha exceeds "
+                    f"{limits.max_area_hectares:.3f} ha"
+                )
+
+            west, south, east, north = shaped_geometry.bounds
+            width = max(1, ceil((east - west) * 111_320 / self.output_resolution_meters))
+            height = max(1, ceil((north - south) * 111_320 / self.output_resolution_meters))
+            estimated_pixels = width * height
+            if estimated_pixels > limits.max_output_pixels:
+                raise ValueError(
+                    f"estimated output grid for {feature.id} has {estimated_pixels} "
+                    f"pixels; maximum is {limits.max_output_pixels}"
+                )
+            total_pixels += estimated_pixels
+        if total_pixels > limits.max_total_output_pixels:
             raise ValueError(
-                f"estimated output grid has {width * height} pixels; maximum is "
-                f"{limits.max_output_pixels}"
+                f"request estimates {total_pixels} output pixels; maximum is "
+                f"{limits.max_total_output_pixels}"
             )
         return self
 
@@ -303,4 +337,29 @@ class LayerResult(DomainModel):
                 raise ValueError("available result requires data and forbids error")
         elif self.data is not None or self.error is None:
             raise ValueError("non-available result requires error and forbids data")
+        return self
+
+
+class FieldLayerResult(DomainModel):
+    field_id: FieldIdentifier
+    parameter: Literal[Parameter.CLAY]
+    source: Literal[Source.SOILGRIDS]
+    result: LayerResult
+
+
+class LayerBatchResult(DomainModel):
+    status: BatchStatus
+    results: tuple[FieldLayerResult, ...] = Field(min_length=1)
+
+    @model_validator(mode="after")
+    def validate_status(self):
+        statuses = {item.result.status for item in self.results}
+        if self.status == BatchStatus.AVAILABLE and statuses != {ResultStatus.AVAILABLE}:
+            raise ValueError("available batch requires all results to be available")
+        if self.status == BatchStatus.PARTIAL and (
+            ResultStatus.AVAILABLE not in statuses or len(statuses) < 2
+        ):
+            raise ValueError("partial batch requires both available and failed results")
+        if self.status == BatchStatus.FAILED and ResultStatus.AVAILABLE in statuses:
+            raise ValueError("failed batch cannot contain available results")
         return self

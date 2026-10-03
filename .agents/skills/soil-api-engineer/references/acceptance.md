@@ -13,18 +13,23 @@ integration; enforce workload limits and timeouts from the first live layer.
 
 ## Functional core
 
-- The API accepts multiple GeoJSON fields and validates geometries, coordinates,
-  identifiers, and size limits. Document Polygon/MultiPolygon support.
+- `POST /soil/analyses` accepts multiple GeoJSON fields and validates geometries,
+  coordinates, identifiers, and size limits. Document Polygon/MultiPolygon support.
 - There is real integration with SoilGrids and at least one LBEG source, covering
   texture, ph, soc, nfk, and bodenzahl according to verified capabilities. If
   multiple LBEG sources are needed to cover them, incorporate that need into scope.
 - The capability matrix explains why a parameter is unavailable from a source;
   it does not require inventing every parameter/source combination.
-- Each available layer returns a PNG, bounds, values, statistics, legend, and
-  metadata for provenance, unit, depth, and resolution.
+- Each available layer within an analysis links through `GET /artifacts/{artifact_id}`
+  to its PNG and values, and returns bounds, statistics, legend, and metadata for
+  provenance, unit, depth, and resolution.
 - Input errors, missing coverage, missing values, and provider errors are
   distinguished; partial responses preserve valid work.
 - Adding an adapter does not require rewriting coordination or existing routes.
+- OpenAPI exposes only the M5 endpoint list from the implementation plan. It does
+  not expose legacy layer, raster, health, capability, or standalone refresh routes.
+- Analysis refresh produces a new immutable snapshot; idempotency replay does not
+  duplicate work or combine different refresh generations.
 
 ## Evidence-based checks
 
@@ -54,7 +59,7 @@ Document formulas, minimum requirements, and behavior with insufficient data.
 ## Reproducible delivery
 
 - Installation and startup instructions, dependencies, and required configuration.
-- OpenAPI contract and an executable request/response example.
+- OpenAPI contract for the M5-only endpoints and an executable analysis example.
 - A demonstration field with known provenance and coverage.
 - A summary of checks performed and their actual results.
 - Limitations concerning availability, depth, resolution, proxies, and licenses.

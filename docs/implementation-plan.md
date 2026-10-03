@@ -2,8 +2,9 @@
 
 Date: 2026-10-03
 
-Status: Planning baseline. No API implementation has started as part of creating
-this document. Implementation proceeds when requested by the user.
+Status: M0 / unit 0A verified on 2026-10-03; see the
+[feasibility evidence](verification/0a/README.md). M1–M5 remain planned.
+No API implementation has started.
 
 ## Objective and scope
 
@@ -17,8 +18,13 @@ The backend MVP covers texture, pH, soil organic carbon, plant-available water
 source must supply every parameter. Missing or unsupported combinations must be
 explicit rather than fabricated.
 
-The map frontend and public deployment are outside this plan. Therefore,
-completing the backend MVP does not complete the entire hackathon deliverable.
+Frontend implementation and public deployment are outside this plan. The API
+support required by the frontend v1 specification is in scope: confidence-aware
+property maps, source discrepancy, sampling plans, management signals, and
+farmer/audit parcel datasheets. Crop suitability and dynamic soil/weather layers
+remain explicitly out of scope. Therefore, completing the data-layer MVP does
+not by itself complete the frontend-supporting API. The source requirements are
+recorded in [Frontend application specifications](frontend_application_specs.md).
 
 ## Minimal architecture
 
@@ -44,6 +50,7 @@ All components are modules within one application:
 | Adapters | Retrieve data and translate it into a common representation with metadata. |
 | Geospatial processing | Normalize, clip, calculate statistics, and generate PNGs. |
 | Storage | Save images, values, and metadata; reuse results. |
+| Product services | Build versioned confidence, discrepancy, sampling, signal, and datasheet products from a coherent analysis snapshot. |
 
 Each adapter declares its capabilities and provides an operation to retrieve
 data for an area. Provider-specific protocols and attribute names remain inside
@@ -59,25 +66,65 @@ Initial simplifications:
   cannot represent it.
 - A local demo using fields within verified LBEG coverage.
 - Intensive raster processing runs outside the asynchronous event loop.
+- Rule-based products use versioned, reviewable rules and input snapshots; an
+  LLM is not part of calculation or user-facing evidence.
 
 Introduce background jobs only if measured processing times make direct requests
 insufficient. Set limits on fields, area, vertices, pixels, concurrency, and
 provider calls before accepting larger workloads.
 
-## Initial REST contract
+## Public REST contract (M5 only)
+
+Use JSON `camelCase` at the public boundary and `snake_case` in Python, with one
+global Pydantic alias policy. Identifiers are opaque strings, timestamps use
+RFC 3339 UTC, GeoJSON follows RFC 7946 longitude/latitude order, and errors use
+one documented problem-details shape. Do not put access tokens or arbitrary
+provider URLs in requests.
+
+M0–M4 define internal services, data products, and verification evidence; they
+do not define public endpoints. The routes below are the complete public HTTP
+surface planned for M5. In particular, the suggested `/soil/layers`, `/rasters/*`,
+and refresh routes in the raw brief are not part of the public contract.
 
 | Endpoint | Purpose |
 | --- | --- |
-| `GET /health` | Check that the application is running. |
-| `GET /soil/capabilities` | List supported parameters, sources, depths, and limitations. |
-| `POST /soil/layers` | Generate layers for the submitted fields. |
-| `GET /rasters/{artifact_id}.png` | Retrieve a rendered image. |
-| `GET /rasters/{artifact_id}.json` | Retrieve grid values and georeferencing. |
+| `POST /soil/analyses` | Synchronously create or refresh an immutable, versioned analysis snapshot for submitted fields and requested products. |
+| `GET /soil/analyses/{analysis_id}` | Retrieve the snapshot, product statuses, provenance, warnings, and links. |
+| `POST /soil/analyses/{analysis_id}/sampling-plans` | Create a sampling plan with a bounded `sampleCount` and explicit decision context. |
+| `GET /soil/analyses/{analysis_id}/sampling-plans/{sampling_plan_id}` | Retrieve a sampling plan and its GeoJSON/CSV artifact links. |
+| `GET /soil/analyses/{analysis_id}/parcel-datasheets/{field_id}` | Return the farmer and audit representations of the same evidence. |
+| `GET /soil/analyses/{analysis_id}/management-signals` | Return versioned categorical signals and rationale per field or zone. |
+| `GET /artifacts/{artifact_id}` | Retrieve an allow-listed immutable PNG, JSON grid, GeoJSON, or CSV artifact with its media type. |
 
-The layer request uses `fields`, `parameters`, and `sources`, following the
-specification's suggested structure. Expand `texture` into `clay`, `sand`, and
-`silt` when numeric percentages are available. Identify categorical texture
-classes separately.
+Endpoint success semantics are fixed as follows: analysis creation returns
+`201 Created` with `Location`; analysis, datasheet, and signal retrieval return
+`200 OK`; sampling-plan creation returns `201 Created` with a `Location` pointing
+to its retrieval endpoint; artifact retrieval returns `200 OK` with the registered
+media type and supports conditional GET. Missing resources return the shared
+problem-details `404`; validation and limit failures return `422`; idempotency-key
+reuse with a different payload returns `409`; temporary upstream failure is
+represented in product status unless no analysis resource can be created, in
+which case the API returns `503`.
+
+`POST /soil/analyses` is idempotent when the client supplies an idempotency key.
+Creation returns `201 Created` and `Location` on a new snapshot, or the existing
+snapshot for a replay. Invalid input is rejected before provider work; a valid
+analysis with mixed product outcomes remains retrievable and reports status per
+product. If measured latency exceeds the synchronous budget, asynchronous jobs
+require a separately authorized extension rather than an undocumented timeout.
+The request owns `fields`, `parameters`, `sources`, requested `products`, and an
+optional `refresh` boolean. Refresh creates a new immutable snapshot, links it to
+the superseded analysis, and never mutates or mislabels the old snapshot.
+
+Every product response carries `schemaVersion`, `methodVersion`, `analysisId`,
+input layer identities, `generatedAt`, and status. Artifact links are relative
+API URLs, not storage paths. Product status distinguishes `available`,
+`insufficientData`, `unsupported`, `outsideCoverage`, and `failed`; warnings do
+not silently turn missing evidence into a value.
+
+The analysis request uses `fields`, `parameters`, and `sources`. Expand `texture`
+into `clay`, `sand`, and `silt` when numeric percentages are available. Identify
+categorical texture classes separately.
 
 Each result includes:
 
@@ -88,22 +135,57 @@ Each result includes:
 - Represented depth, source resolution, and output resolution.
 - Source, retrieval date, available dataset version/date, and transformation method.
 
+For frontend-ready property maps, each numeric cell or zone also exposes a
+central estimate, lower and upper bounds with their statistical meaning, and a
+confidence category from a versioned method. Confidence is not inferred from a
+red color or from between-source spread alone. Unknown/invalid pixels remain
+masked and receive an explicit hatch style hint; PNG alpha, JSON masks, values,
+legend, and style categories must agree. Categorical texture and Bodenzahl
+semantics are not forced into numeric confidence intervals.
+
+Discrepancy products retain the comparable participating sources and provide a
+documented difference/dispersion metric, source count, unit, and sufficiency
+status per cell. They are separate from provider uncertainty and confidence.
+
+Sampling plans return ranked GeoJSON points within the field, stable point IDs,
+longitude/latitude coordinates, target parameter, priority score, decision
+rationale, supporting uncertainty/range, and method version. A downloadable CSV
+uses WGS 84 longitude and latitude columns. Ranking must measure expected
+decision value against explicit, verified thresholds; it must not merely select
+the largest uncertainty. Calibration from collected laboratory samples is a
+separate future capability and is not implied by exporting points.
+
+Management signals use the enum `probable | possible | unlikely | no | unknown`
+for lime, drought, erosion, compaction, and nitrate. Each result cites its inputs,
+rule version, spatial/temporal applicability, rationale, and missing evidence.
+They never return application rates. `unknown` is mandatory when required inputs
+or validated rules are absent; soil properties alone must not be presented as a
+current nitrate condition.
+
+Parcel datasheets are two projections of the same immutable analysis: concise
+farmer wording and an audit view with ranges, source citations, dataset/version,
+retrieval dates, licenses/attribution, transformations, rules, and limitations.
+Human-readable wording never replaces machine-readable values and provenance.
+
 Missing grid values are `null`, never zero. Partial failures retain valid layers.
 A total provider outage must not become an empty success response. Distinguish
 unsupported parameters, missing coverage, missing data, and provider failures.
 
-Finalize schemas, status codes, grid orientation, and numeric request limits
-in unit 1A, before the first integration. Enforce initial limits and timeouts in
-1B; extend workload budgets before enabling multiple fields in 2A. The endpoint
-list is the design baseline.
+Finalize domain schemas, grid orientation, and numeric request limits in unit 1A,
+before the first integration. Enforce initial limits and timeouts in 1B; extend
+workload budgets before enabling multiple fields in 2A. Unit 5A maps those
+verified internal contracts to the public endpoint list above and finalizes HTTP
+status codes and problem details.
 
 ## Source feasibility and expected coverage
 
 The official SoilGrids access documentation reviewed for this plan reports a
 temporary pause of its REST API and recommends alternatives, including WCS for
 map subsets. The architecture must support raster access without depending on
-REST point queries. This was a documentation review, not a successful live data
-retrieval. Recheck service availability in unit 0A and each relevant 0B check.
+REST point queries. Unit 0A subsequently verified live WCS clay retrieval at
+three depths. Its [record](verification/0a/README.md) documents omitted TIFF
+metadata and the official VRT metadata used to interpret it. REST was not tested.
+Recheck availability for each relevant 0B check.
 
 LBEG publishes WMS services, but usable attributes and coverage must be verified
 for each required layer. A rendered map alone does not establish access to
@@ -117,8 +199,8 @@ underlying numeric values.
 | nFK | Derived from SoilGrids; BK50 as additional data | Do not equate root-zone values with 0–30 cm values. |
 | Bodenzahl | LBEG Bodenschätzung | Access to the actual value and geographic coverage. |
 
-This matrix is a working hypothesis based on the requirements, not verified
-availability. Units 0A and 0B must resolve access to values, formats, units,
+This matrix remains a working hypothesis except for clay, verified for the
+reference field in [0A](verification/0a/README.md). Units 0A and 0B resolve access to values, formats, units,
 depths, coverage, restrictions, and attribution requirements before the
 corresponding integration. Do not infer values from
 map colors or silently substitute fixtures if access fails.
@@ -132,8 +214,8 @@ Official references consulted:
 
 The former phases are milestones, not single implementation tasks. Their
 bounded work units, dependencies, and evidence requirements are defined in
-[Implementation units](implementation-units.md). All units are initially
-planned; this reorganization records no completed implementation or live checks.
+[Implementation units](implementation-units.md). Unit 0A is complete with
+[recorded live evidence](verification/0a/README.md); all other units remain planned.
 
 | Milestone | Required units | Acceptance gate |
 | --- | --- | --- |
@@ -142,12 +224,19 @@ planned; this reorganization records no completed implementation or live checks.
 | M2: Functional backend MVP | 2A–2F and their 0B checks, after M1 | Multiple fields and all five parameters work through SoilGrids and the necessary LBEG sources; capabilities, provenance, and partial failures are verified. Any missing required parameter keeps M2 incomplete. |
 | M3: Reproducible demo and freshness | 3A–3C after M2 | Cache reuse, explicit refresh, and a clean-environment demo are verified; failures remain visible. |
 | M4: Cross-source derived layers | 4A–4C after M2 | Compatible aggregation, source counts, spread, and separately identified provider uncertainty meet their documented data requirements and tests. |
+| M5: Frontend-supporting API v1 | 5A–5F after M3; discrepancy/confidence units also depend on relevant M4 evidence | One coherent analysis supports the five frontend v1 products with explicit insufficiency, immutable artifacts, traceable methods, and verified frontend-oriented examples. |
 
 0B is a repeatable feasibility gate for each expansion, not a requirement to
 verify every source before M1. A blocked combination blocks its dependent unit,
 not unrelated work. M2 still requires every necessary integration gate to pass.
 M3 and M4 are independent after M2; cache integration for derived layers must be
 checked when both are present.
+
+M5 consumes M2–M4 evidence rather than redefining source semantics. A feature
+may return `unknown` or `insufficientData` honestly, but M5 is not complete until
+each advertised available product has the evidence required by its unit. The
+frontend must not reconstruct confidence, discrepancy, agronomic rules, or
+citations from raw layers.
 
 Capabilities, provenance, and startup instructions begin in M1 and evolve with
 each unit. Parameter-specific nFK derivation belongs to M2; cross-source
@@ -156,8 +245,10 @@ providers, not additions deferred until the demo milestone.
 
 ### Former Phase 5: Evidence-driven extension backlog
 
-Downloadable GeoTIFF, asynchronous jobs, remote storage, and additional sources
-are candidates, not a scheduled milestone or a condition for completing M2–M4.
+Downloadable GeoTIFF, asynchronous jobs, remote storage, ingestion/calibration
+from laboratory samples, crop suitability, dynamic soil/weather products, and
+additional sources are candidates, not a scheduled milestone or a condition for
+completing M2–M4.
 Before starting an authorized extension, define a separate bounded unit with a
 demonstrated need, dependencies, exclusions, and measurable acceptance evidence.
 Split extensions that contain multiple independently verifiable behaviors.

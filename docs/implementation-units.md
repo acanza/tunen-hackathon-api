@@ -2,7 +2,8 @@
 
 Date: 2026-10-03
 
-Status: Planning only. All units below are planned, not implemented or verified.
+Status: Unit 0A complete on 2026-10-03; [evidence](verification/0a/README.md).
+All remaining units are planned, not implemented or verified.
 This document does not authorize implementation, deployment, or scope expansion.
 
 The [architecture and milestones](implementation-plan.md) define the shared
@@ -32,6 +33,8 @@ remain the overall validation baseline.
 ## M0: Initial feasibility
 
 ### 0A — First real spatial sample
+
+**Status:** Complete; [verification record](verification/0a/README.md).
 
 **Dependencies:** None.
 
@@ -71,19 +74,19 @@ input compatibility and depth, and actual Bodenzahl attributes before coding the
 
 ## M1: First end-to-end integration
 
-### 1A — Minimal contract and validation
+### 1A — Minimal domain contract and validation
 
 **Dependencies:** 0A.
 
-**Scope:** FastAPI skeleton, health, request/response/error models, and validation
-for one field and clay. Decide Polygon/MultiPolygon support, field identifiers,
-coordinate validation, depth policy, grid orientation/transform, status codes,
+**Scope:** Internal request/result/error models and validation for one field and
+clay. Decide Polygon/MultiPolygon support, field identifiers,
+coordinate validation, depth policy, grid orientation/transform, result statuses,
 and the representation of unsupported, uncovered, empty, and failed results.
-Exclude provider integration and rendering.
+Exclude FastAPI routes, provider integration, and rendering.
 
-**Deliverable:** OpenAPI contract and minimal startup instructions. Specify numeric
-limits for fields, area, vertices, pixels, provider calls, concurrency, retries,
-and timeouts; initially accept only the bounded single-field workload.
+**Deliverable:** Typed domain contract and minimal startup instructions. Specify
+numeric limits for fields, area, vertices, pixels, provider calls, concurrency,
+retries, and timeouts; initially accept only the bounded single-field workload.
 
 **Verification and closure:** Accepted geometry and invalid geometry/coordinates,
 duplicate or absent identifiers under the chosen policy, unsupported requests,
@@ -100,16 +103,17 @@ clay normalization and depth handling; clipping, statistics, legend, PNG and JSO
 storage/retrieval. Include capabilities and complete provenance from this unit.
 Exclude additional parameters, multi-field processing, and cache reuse.
 
-**Deliverable:** An executable request returning a real layer with working artifact
-URLs. Enforce 1A's budgets, bounded transient retries, and timeouts. Keep intensive
-raster work outside the asynchronous event loop.
+**Deliverable:** An executable service call returning a real layer and registered
+PNG/JSON artifacts. Enforce 1A's budgets, bounded transient retries, and timeouts.
+Keep intensive raster work outside the asynchronous event loop.
 
 **Verification and closure:** A small known grid checks conversion/depth math,
 axis order, transform, a polygon hole, exterior transparency, nodata exclusion,
 all-nodata behavior, and agreement among JSON, PNG, statistics, and legend. A live
-request downloads both artifacts and records their metadata. A simulated timeout
-produces the contracted error rather than empty success; a bounded processing
-check confirms health requests remain responsive under the documented budget.
+service integration retrieves both artifacts and records their metadata. A
+simulated timeout produces the contracted error rather than empty success; a bounded processing
+check confirms lightweight application work remains responsive under the
+documented budget.
 
 ## M2: Functional backend MVP
 
@@ -200,7 +204,7 @@ and thickness handling. Missing or incompatible inputs yield an explicit status;
 nonphysical results follow a documented policy rather than silent correction.
 A live request confirms the actual inputs needed for the derived layer.
 
-**M2 closure:** After 2A–2F, run a multi-field request for all five parameters using
+**M2 closure:** After 2A–2F, run a multi-field service call for all five parameters using
 SoilGrids and the necessary LBEG sources. Check texture expansion, capabilities,
 artifact retrieval, provenance, and explicit unavailable combinations. Preserve
 unit evidence and report any missing requirement; passing units individually is
@@ -227,8 +231,9 @@ not publish mismatched PNG, JSON, and metadata.
 
 **Dependencies:** 3A.
 
-**Scope:** `refresh: true` on the layer request, affected-entry replacement, and
-failure behavior. Exclude scheduling and background jobs.
+**Scope:** An internal refresh option for analysis generation, affected-entry
+replacement, and failure behavior. Exclude public routes, scheduling, and
+background jobs.
 
 **Deliverable:** Documented semantics for successful, partial, and failed refresh,
 including whether old artifacts remain retrievable and how they are identified.
@@ -249,8 +254,9 @@ coverage fields, example requests, and limitation report. Exclude UI/deployment.
 **Deliverable:** Clean-environment instructions and a recorded backend demonstration.
 
 **Verification and closure:** Install and start from the documented environment;
-execute the multi-field example, retrieve artifacts, observe cache reuse, and
-refresh. Record commands, outcomes, and provider availability. Label any offline
+execute the multi-field example through the internal service interface, retrieve
+artifacts, observe cache reuse, and refresh. Record commands, outcomes, and
+provider availability. Label any offline
 fixture demonstration separately; it cannot replace pending live verification.
 
 ## M4: Cross-source derived layers
@@ -306,11 +312,134 @@ verified multi-source behavior and any unavailable combinations. If M3 is presen
 verify derived cache keys include method and participating-input identity/version,
 and refreshing inputs invalidates affected derived outputs.
 
+## M5: Frontend-supporting API v1
+
+### 5A — Analysis resource and frontend contract
+
+**Dependencies:** M3 and the M2 assembled-contract evidence.
+
+**Scope:** Add the immutable analysis resource, idempotent creation, retrieval,
+product links/statuses, global JSON `camelCase` aliases, version fields, and the
+generic allow-listed artifact route. Expose only the endpoints listed in the M5
+public REST contract; do not add legacy layer, raster, health, capability, or
+standalone refresh routes. Exclude confidence calculations and domain product logic.
+
+**Deliverable:** OpenAPI schemas and examples for `POST /soil/analyses`, analysis
+retrieval, artifact metadata, partial outcomes, and one coherent input snapshot.
+Document `201`, replay, refresh snapshot, validation, not-found, conflict,
+partial-product, and provider-failure behavior without encoding actions in URL
+paths.
+
+**Verification and closure:** Contract tests cover aliases, GeoJSON coordinate
+order, opaque IDs, RFC 3339 timestamps, idempotency replay/conflict, stable links,
+content types, access to only registered artifacts, and mixed product statuses.
+An analysis never combines layers from different refresh generations silently.
+
+### 5B — Property maps with ranges and confidence
+
+**Dependencies:** 5A, M2, 4C for provider uncertainty where used, and a viable 0B
+record for every uncertainty/range input claimed by the method.
+
+**Scope:** Produce central value, lower/upper range, range meaning, confidence
+category, mask, legend, and hatch style for the five required parameters at their
+valid represented depth. Exclude invented ranges and treating spread as a
+confidence interval.
+
+**Deliverable:** Versioned confidence method and frontend-ready PNG/JSON products
+whose numeric and visual representations agree. Unsupported categorical/range
+combinations are explicit.
+
+**Verification and closure:** Known grids cover high/low/unknown categories,
+nodata, range ordering, categorical inputs, and color/mask/legend agreement.
+Live evidence verifies every provider uncertainty input used. Unknown zones are
+transparent/masked with the contracted hatch hint, never painted as estimates.
+
+### 5C — Source discrepancy product
+
+**Dependencies:** 5A and 4A–4B.
+
+**Scope:** Expose a comparison product for each parameter with at least two
+compatible sources. Keep source discrepancy, provider uncertainty, and final
+confidence as distinct fields and legends.
+
+**Deliverable:** Per-cell or per-zone discrepancy metric, unit, participating
+source identities, source count, thresholds/categories, method version, and an
+`insufficientData` outcome when comparison is not valid.
+
+**Verification and closure:** Deterministic grids cover agreement, disagreement,
+nodata, one source, incompatible inputs, and alignment. A live example demonstrates
+two verified comparable sources; otherwise this unit remains verification pending.
+
+### 5D — Decision-aware sampling plan
+
+**Dependencies:** 5A–5C and verified agronomic decision thresholds for each
+supported target parameter.
+
+**Scope:** Create a bounded number of sampling points within field geometry,
+ranked by expected ability to resolve a declared decision. Support GeoJSON and
+CSV artifacts. Exclude laboratory-result ingestion, model calibration, routing,
+and claiming that maximum uncertainty alone is optimal.
+
+**Deliverable:** `POST /soil/analyses/{analysis_id}/sampling-plans` and
+`GET /soil/analyses/{analysis_id}/sampling-plans/{sampling_plan_id}` with stable
+point IDs, requested/actual count, WGS 84 coordinates, target parameter,
+priority, rationale, evidence, minimum-spacing policy, and method version.
+
+**Verification and closure:** Fixtures verify containment including holes,
+minimum spacing, deterministic tie-breaking, point/count limits, threshold-near
+priority over irrelevant high uncertainty, insufficient candidates, and exact
+GeoJSON/CSV coordinate agreement. Domain review evidence identifies the source
+and applicability of each enabled decision threshold.
+
+### 5E — Management signals
+
+**Dependencies:** 5A, viable 0B records for required data inputs, and reviewed,
+versioned rules for each advertised signal.
+
+**Scope:** Produce lime, drought, erosion, compaction, and nitrate categories
+using only `probable`, `possible`, `unlikely`, `no`, or `unknown`. Include
+spatial/temporal applicability and rationale. Exclude application rates and the
+out-of-scope dynamic moisture features.
+
+**Deliverable:** Machine-readable signals per field/zone with input references,
+rule version, evidence, limitations, and explicit missing inputs. A signal may
+remain `unknown`; the API must not infer current nitrate, erosion, or compaction
+conditions from unrelated soil layers.
+
+**Verification and closure:** Decision tables cover every rule branch, boundary,
+missing/stale/incompatible input, and wording enum. Agronomic review evidence is
+recorded for enabled rules. Each non-unknown live example is reproducible from
+the cited inputs; no response contains a product application rate.
+
+### 5F — Farmer and audit parcel datasheets
+
+**Dependencies:** 5A–5E.
+
+**Scope:** Present two projections of the same field analysis. The farmer view is
+plain and concise; the audit view retains numerical ranges, sources, citations,
+licenses/attribution, methods, rationale, dates, limitations, and product status.
+Exclude PDF generation and independent recomputation of evidence.
+
+**Deliverable:** `GET /soil/analyses/{analysis_id}/parcel-datasheets/{field_id}`
+returning both typed views and links to their underlying layers/products.
+
+**Verification and closure:** Schema and snapshot tests show both views share the
+same analysis and values, unknowns remain unknown, audit citations and licenses
+are present for every contributing source, and farmer wording does not overstate
+confidence. A frontend-oriented example renders all required states without
+client-side reconstruction of domain logic.
+
+**M5 closure:** Run one frontend-oriented scenario across the five parameters and
+all five v1 products. Retrieve every linked artifact; verify masks, confidence,
+discrepancy, sampling export, signal language, and farmer/audit consistency.
+Record which products are genuinely available and why any others are insufficient.
+Crop suitability, dynamic layers, and sample-result calibration remain out of scope.
+
 ## Completion record
 
 When work starts, create one record per unit (and one per 0B combination) under
-`docs/verification/`. This directory and its records are future deliverables;
-their mention here is not evidence that checks ran. Use this template:
+`docs/verification/`. Unit 0A already has a [record](verification/0a/README.md); other records remain
+future deliverables. Their mention here is not evidence that checks ran. Use this template:
 
 ```text
 Unit / source-parameter combination:

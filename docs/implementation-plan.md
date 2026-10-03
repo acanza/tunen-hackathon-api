@@ -94,6 +94,7 @@ The bounded units and their evidence are defined in
 | P3.2 | Approved | Validated on 2026-10-03: `GET /static/{path}` serves all 32 unique sample PNG/GeoTIFF artifacts with correct media types and `Cache-Control: public, max-age=31536000, immutable`; missing, traversal, unsupported-extension, and database paths return 404. |
 | P4.1 | Approved | Validated on 2026-10-03: `tests.test_contract` posts `poc/samples/request.json`, compares the complete JSON response with `poc/samples/response.json`, and retrieves every referenced PNG/GeoTIFF URL successfully. |
 | P4.2 | Approved | Validated on 2026-10-03: `tests.test_matching_statuses` verifies the complete requested matrix, western LBEG availability, eastern missing coverage, sliver yield unavailability and fallback stats, outside-coverage behavior, and a real stored partial layer without fabricated values or URLs. |
+| P4.3 | Approved | Validated on 2026-10-03: `tests.test_static_safety` verifies MIME/cache headers, missing and traversal rejection, unsupported-extension rejection, SQLite write failure in read-only mode, and byte-for-byte preservation of the database and served artifact after requests. |
 
 ## Completion gate
 

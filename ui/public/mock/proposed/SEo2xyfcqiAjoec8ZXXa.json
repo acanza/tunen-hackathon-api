@@ -1,0 +1,290 @@
+{
+ "_mock": true,
+ "plot_id": "SEo2xyfcqiAjoec8ZXXa",
+ "sampling_plan": {
+  "points": [
+   {
+    "rank": 1,
+    "lat": 52.350063,
+    "lon": 11.097418,
+    "decision": "liming",
+    "parameter": "ph",
+    "decision_uncertainty": 0.97,
+    "current_estimate": 5.4,
+    "interval_90": [
+     3.5,
+     7.8
+    ],
+    "why": "pH estimate 5.4 with a range of 3.5–7.8 straddles the liming threshold (5.5); one sample settles it for ~10.9 ha"
+   },
+   {
+    "rank": 2,
+    "lat": 52.346831,
+    "lon": 11.086988,
+    "decision": "liming",
+    "parameter": "ph",
+    "decision_uncertainty": 0.85,
+    "current_estimate": 5.7,
+    "interval_90": [
+     3.7,
+     7.8
+    ],
+    "why": "pH estimate 5.7 with a range of 3.7–7.8 straddles the liming threshold (5.5); one sample settles it for ~10.9 ha"
+   },
+   {
+    "rank": 3,
+    "lat": 52.347586,
+    "lon": 11.084968,
+    "decision": "liming",
+    "parameter": "ph",
+    "decision_uncertainty": 0.85,
+    "current_estimate": 5.7,
+    "interval_90": [
+     3.7,
+     7.8
+    ],
+    "why": "pH estimate 5.7 with a range of 3.7–7.8 straddles the liming threshold (5.5); one sample settles it for ~10.9 ha"
+   },
+   {
+    "rank": 4,
+    "lat": 52.347402,
+    "lon": 11.090245,
+    "decision": "liming",
+    "parameter": "ph",
+    "decision_uncertainty": 0.5,
+    "current_estimate": 6.2,
+    "interval_90": [
+     4.3,
+     7.8
+    ],
+    "why": "pH estimate 6.2 with a range of 4.3–7.8 straddles the liming threshold (5.5); one sample settles it for ~10.9 ha"
+   },
+   {
+    "rank": 5,
+    "lat": 52.352612,
+    "lon": 11.09563,
+    "decision": "liming",
+    "parameter": "ph",
+    "decision_uncertainty": 0.49,
+    "current_estimate": 6.2,
+    "interval_90": [
+     4.2,
+     7.8
+    ],
+    "why": "pH estimate 6.2 with a range of 4.2–7.8 straddles the liming threshold (5.5); one sample settles it for ~10.9 ha"
+   }
+  ],
+  "rules": {
+   "min_spacing_m": 160,
+   "edge_buffer_m": 20,
+   "max_points": 5
+  },
+  "covers_ha": 54.4
+ },
+ "signals": [
+  {
+   "signal": "liming",
+   "keyword": "Unknown",
+   "probability": 0.21,
+   "because": [
+    "ph_range_crosses_threshold"
+   ],
+   "farmer_text": "Public data can't tell whether this field needs lime; a soil sample would settle it.",
+   "audit": {
+    "inputs": {
+     "ph_soilgrids": 6.31,
+     "ph_interval_90": [
+      4.46,
+      7.81
+     ]
+    },
+    "rule": "P(pH < 5.5); Unknown if low confidence and range spans 4.8–7.0"
+   }
+  },
+  {
+   "signal": "drought_risk",
+   "keyword": "Possible",
+   "probability": 0.55,
+   "because": [
+    "nfk_best_mm",
+    "dry_spring_in_3_of_8_seasons"
+   ],
+   "farmer_text": "Dry springs can limit this field.",
+   "audit": {
+    "inputs": {
+     "nfk_best_mm": 111,
+     "cwb_apr_jun_dry_mm": -185
+    },
+    "rule": "nFK < 90 mm → 0.85; < 120 → 0.55; < 160 → 0.25"
+   }
+  },
+  {
+   "signal": "erosion",
+   "keyword": "Unlikely",
+   "probability": 0.2,
+   "because": [
+    "flat_terrain"
+   ],
+   "farmer_text": "Erosion is unlikely on this flat land.",
+   "audit": {
+    "inputs": {
+     "sand_pct": 58.74,
+     "slope_deg_p90": 1.2
+    },
+    "rule": "water: slope; wind: sand > 60 %"
+   }
+  },
+  {
+   "signal": "compaction",
+   "keyword": "Unknown",
+   "probability": null,
+   "because": [
+    "no_traffic_or_bulk_density_data"
+   ],
+   "farmer_text": "We have no data on traffic or soil density, so we can't judge compaction.",
+   "audit": {
+    "inputs": {},
+    "rule": "needs bulk density / traffic data"
+   }
+  },
+  {
+   "signal": "nitrate_leaching",
+   "keyword": "Possible",
+   "probability": 0.45,
+   "because": [
+    "sandy_texture",
+    "winter_rain_surplus"
+   ],
+   "farmer_text": "Some nitrate can wash out over winter.",
+   "audit": {
+    "inputs": {
+     "sand_pct": 58.74,
+     "nfk_best_mm": 111
+    },
+    "rule": "sand > 60 % and nFK < 140 mm"
+   }
+  }
+ ],
+ "crop_suitability": [
+  {
+   "crop": "winter_wheat",
+   "rating": "With limitations",
+   "limiting_factors": [
+    "low_fertility",
+    "low_available_water"
+   ],
+   "text": "Wheat: With limitations. Limiting factor: low soil fertility (≈ 111 mm, Bodenzahl 32).",
+   "confidence": "low",
+   "inputs": {
+    "nfk_best_mm": 111,
+    "bodenzahl_best": 32
+   }
+  },
+  {
+   "crop": "barley",
+   "rating": "Well adapted",
+   "limiting_factors": [],
+   "text": "Barley: Well adapted.",
+   "confidence": "low",
+   "inputs": {
+    "nfk_best_mm": 111,
+    "bodenzahl_best": 32
+   }
+  },
+  {
+   "crop": "rye",
+   "rating": "Well adapted",
+   "limiting_factors": [],
+   "text": "Rye: Well adapted.",
+   "confidence": "low",
+   "inputs": {
+    "nfk_best_mm": 111,
+    "bodenzahl_best": 32
+   }
+  },
+  {
+   "crop": "rapeseed",
+   "rating": "With limitations",
+   "limiting_factors": [
+    "low_available_water",
+    "low_fertility"
+   ],
+   "text": "Rapeseed: With limitations. Limiting factor: low available water capacity (≈ 111 mm, Bodenzahl 32).",
+   "confidence": "low",
+   "inputs": {
+    "nfk_best_mm": 111,
+    "bodenzahl_best": 32
+   }
+  },
+  {
+   "crop": "maize",
+   "rating": "With limitations",
+   "limiting_factors": [
+    "low_available_water"
+   ],
+   "text": "Maize: With limitations. Limiting factor: low available water capacity (≈ 111 mm, Bodenzahl 32).",
+   "confidence": "low",
+   "inputs": {
+    "nfk_best_mm": 111,
+    "bodenzahl_best": 32
+   }
+  },
+  {
+   "crop": "sugar_beet",
+   "rating": "Poorly adapted",
+   "limiting_factors": [
+    "low_fertility",
+    "low_available_water"
+   ],
+   "text": "Sugar beet: Poorly adapted. Limiting factor: low soil fertility (≈ 111 mm, Bodenzahl 32).",
+   "confidence": "low",
+   "inputs": {
+    "nfk_best_mm": 111,
+    "bodenzahl_best": 32
+   }
+  },
+  {
+   "crop": "potato",
+   "rating": "Well adapted",
+   "limiting_factors": [],
+   "text": "Potato: Well adapted.",
+   "confidence": "low",
+   "inputs": {
+    "nfk_best_mm": 111,
+    "bodenzahl_best": 32
+   }
+  },
+  {
+   "crop": "grassland",
+   "rating": "Well adapted",
+   "limiting_factors": [],
+   "text": "Grassland: Well adapted.",
+   "confidence": "low",
+   "inputs": {
+    "nfk_best_mm": 111,
+    "bodenzahl_best": 32
+   }
+  }
+ ],
+ "discrepancy": [
+  {
+   "parameter": "nfk",
+   "source": "discrepancy",
+   "status": "ok",
+   "png_url": null,
+   "stats": {
+    "share_conflict": 0.0,
+    "pairs": [
+     "derived",
+     "soilgrids"
+    ]
+   },
+   "explanation": "SoilGrids says ~175 mm here, the soil-profile estimate ~111 mm. SoilGrids' range is so wide that this gap isn't a statistically clear conflict: it can't confirm or rule out either value."
+  }
+ ],
+ "field_summary": {
+  "productivity_rank_pct": 64,
+  "seasons": 8,
+  "note": "mock value; crop mix not known, weak signal"
+ }
+}

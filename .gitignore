@@ -52,6 +52,10 @@ coverage.xml
 .pytest_cache/
 cover/
 
+# Verification summaries are documentation and remain versioned.
+# Ignore only generated live-run artifacts, which can be large or sensitive.
+docs/verification/**/live-*/
+
 # Translations
 *.mo
 *.pot

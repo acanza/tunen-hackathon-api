@@ -1,0 +1,41 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          11.045702,
+          52.348763
+        ],
+        [
+          11.046603,
+          52.344595
+        ],
+        [
+          11.054692,
+          52.34504
+        ],
+        [
+          11.054327,
+          52.348645
+        ],
+        [
+          11.046748,
+          52.348776
+        ],
+        [
+          11.045702,
+          52.348763
+        ]
+      ]
+    ]
+  },
+  "properties": {
+    "plotId": "Hk3aYz9j56wbQD4u3rAC",
+    "fieldName": "Wolfskuhle",
+    "area": 20.395,
+    "subsidyArea": 20.395,
+    "isArchived": false
+  }
+}

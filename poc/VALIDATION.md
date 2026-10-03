@@ -79,9 +79,51 @@ R² ≈ 0: the coarse soil maps and the 30 m terrain don't explain within-field 
 fields (the terrain effect changes sign between wet and dry soils). In v1 the soil/terrain model is
 therefore only a neutral prior: it fills the edge strip and fields without NDVI history, at low confidence.
 
+## 4. Derived soil layers (`source = derived`)
+
+### Bodenzahl
+
+Trained on the 38 downloaded Bodenschätzung parcels in the west (14306 pixels), then applied to
+the whole farm, including Sachsen-Anhalt. Features: clay, sand, soc, twi, slope, rel_elev, buek_unit.
+Cross-validation is grouped by parcel and scored per parcel (each parcel has one official value).
+
+| Model | RMSE per parcel (points) | MAE per parcel (points) |
+|---|---|---|
+| Farm mean (no model) | 10.0 | 8.7 |
+| BÜK200 unit mean | 7.0 | 5.9 |
+| Gradient boosting (covariates + unit) **(used)** | 6.9 | 5.5 |
+
+The model explains roughly half of the between-parcel variance, mostly through the BÜK200 unit.
+The interval in the API is ±1.645 × the CV RMSE. In the east this is an extrapolation across the
+state border (driver `extrapolated_across_state_border`); the soil units continue across it, but the
+model was never checked there.
+
+### nFK
+
+nFKWe of the BÜK200 unit of the nearest sample point: each profile's horizons (KA5 Bodenart, bulk
+density, humus) → available water per horizon from an **approximate** KA5 lookup → summed over the
+effective rooting depth, stopping at permanently wet (Gr) horizons. Agricultural profiles only,
+area-weighted. No capillary rise (as in BK50 nFKWe).
+
+| BÜK200 unit | nFKWe (mm) | SD between profiles (mm) | Profiles |
+|---|---|---|---|
+| 392603 | 165 | 20 | 2 |
+| 392604 | 170 | 37 | 8 |
+| 392606 | 111 | 3 | 3 |
+| 392611 | 83 | 15 | 4 |
+| 392621 | 174 | 46 | 4 |
+| 392630 | 94 | 8 | 5 |
+| 392636 | 126 | 0 | 1 |
+| 392637 | 155 | 48 | 6 |
+
+There is no nFK reference on disk (the downloaded BK50 attributes don't include nFKWe), so this layer is
+not validated. It is far more discriminating than SoilGrids, which gives ~160–215 mm everywhere on this
+sandy farm. Its interval combines the spread between profiles with ±30 mm (90 %) for the lookup itself.
+
 ## What is not validated
 
 - **Yield itself.** NDVI is a proxy for vigour; validating yield needs yield-monitor or harvest data.
-- **pH, SOC and nFK.** No independent reference is on disk; they carry SoilGrids' own uncertainty only.
+- **pH and SOC.** No independent reference is on disk; they carry SoilGrids' own uncertainty only.
+- **nFK** (SoilGrids and derived). No reference on disk.
 - **The dry/wet scenarios** beyond the 8 observed seasons (the per-pixel water sensitivity is fitted on
   CWB from -217 to -62 mm).

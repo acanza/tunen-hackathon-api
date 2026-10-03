@@ -479,8 +479,72 @@
     {
      "parameter": "nfk",
      "source": "derived",
-     "status": "not_applicable",
-     "reason": "source_does_not_provide_parameter"
+     "status": "ok",
+     "reason": null,
+     "coverage": 1.0,
+     "unit": "mm",
+     "png_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/nfk__derived.png",
+     "geotiff_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/nfk__derived.tif",
+     "stats": {
+      "mean": 165.4,
+      "std": 0.0,
+      "min": 165.4,
+      "p10": 165.4,
+      "p50": 165.4,
+      "p90": 165.4,
+      "max": 165.4,
+      "n_px": 49,
+      "zone": "inner_20m"
+     },
+     "colormap": {
+      "type": "continuous",
+      "unit": "mm",
+      "stops": [
+       [
+        50,
+        "#f7fbff"
+       ],
+       [
+        100,
+        "#c6dbef"
+       ],
+       [
+        150,
+        "#6baed6"
+       ],
+       [
+        200,
+        "#2171b5"
+       ],
+       [
+        300,
+        "#08306b"
+       ]
+      ]
+     },
+     "confidence": {
+      "level": "low",
+      "interval_90": [
+       120.77,
+       210.03
+      ],
+      "drivers": [
+       "buek200_1to200000_nearest_point",
+       "lookup_table_approximate",
+       "range_crosses_threshold:nfk_90_140_mm"
+      ],
+      "pixel_shares": {
+       "low": 1.0,
+       "medium": 0.0,
+       "high": 0.0
+      },
+      "raster_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/nfk__derived.tif#band=4",
+      "png_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/nfk__derived__conf.png"
+     },
+     "provenance": {
+      "native_resolution_m": null,
+      "grid": "EPSG:32632 10 m"
+     }
     },
     {
      "parameter": "bodenzahl",
@@ -570,8 +634,75 @@
     {
      "parameter": "bodenzahl",
      "source": "derived",
-     "status": "not_applicable",
-     "reason": "source_does_not_provide_parameter"
+     "status": "ok",
+     "reason": null,
+     "coverage": 1.0,
+     "unit": "points",
+     "png_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/bodenzahl__derived.png",
+     "geotiff_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/bodenzahl__derived.tif",
+     "stats": {
+      "mean": 31.37,
+      "std": 2.03,
+      "min": 30.17,
+      "p10": 30.2,
+      "p50": 30.51,
+      "p90": 32.68,
+      "max": 37.3,
+      "n_px": 49,
+      "zone": "inner_20m"
+     },
+     "colormap": {
+      "type": "continuous",
+      "unit": "points",
+      "stops": [
+       [
+        10,
+        "#a50026"
+       ],
+       [
+        20,
+        "#f46d43"
+       ],
+       [
+        30,
+        "#fee08b"
+       ],
+       [
+        45,
+        "#a6d96a"
+       ],
+       [
+        60,
+        "#1a9850"
+       ],
+       [
+        80,
+        "#006837"
+       ]
+      ]
+     },
+     "confidence": {
+      "level": "low",
+      "interval_90": [
+       20.1,
+       42.65
+      ],
+      "drivers": [
+       "model_trained_on_38_parcels",
+       "range_crosses_threshold:bodenzahl_30_50"
+      ],
+      "pixel_shares": {
+       "low": 1.0,
+       "medium": 0.0,
+       "high": 0.0
+      },
+      "raster_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/bodenzahl__derived.tif#band=4",
+      "png_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/bodenzahl__derived__conf.png"
+     },
+     "provenance": {
+      "native_resolution_m": null,
+      "grid": "EPSG:32632 10 m"
+     }
     },
     {
      "parameter": "yield_potential",
@@ -1056,8 +1187,72 @@
     {
      "parameter": "nfk",
      "source": "derived",
-     "status": "not_applicable",
-     "reason": "source_does_not_provide_parameter"
+     "status": "ok",
+     "reason": null,
+     "coverage": 1.0,
+     "unit": "mm",
+     "png_url": "/static/runs/poc-2026-10-03/fields/SEo2xyfcqiAjoec8ZXXa/nfk__derived.png",
+     "geotiff_url": "/static/runs/poc-2026-10-03/fields/SEo2xyfcqiAjoec8ZXXa/nfk__derived.tif",
+     "stats": {
+      "mean": 110.95,
+      "std": 0.0,
+      "min": 110.95,
+      "p10": 110.95,
+      "p50": 110.95,
+      "p90": 110.95,
+      "max": 110.95,
+      "n_px": 4838,
+      "zone": "inner_20m"
+     },
+     "colormap": {
+      "type": "continuous",
+      "unit": "mm",
+      "stops": [
+       [
+        50,
+        "#f7fbff"
+       ],
+       [
+        100,
+        "#c6dbef"
+       ],
+       [
+        150,
+        "#6baed6"
+       ],
+       [
+        200,
+        "#2171b5"
+       ],
+       [
+        300,
+        "#08306b"
+       ]
+      ]
+     },
+     "confidence": {
+      "level": "low",
+      "interval_90": [
+       80.56,
+       141.34
+      ],
+      "drivers": [
+       "buek200_1to200000_nearest_point",
+       "lookup_table_approximate",
+       "range_crosses_threshold:nfk_90_140_mm"
+      ],
+      "pixel_shares": {
+       "low": 1.0,
+       "medium": 0.0,
+       "high": 0.0
+      },
+      "raster_url": "/static/runs/poc-2026-10-03/fields/SEo2xyfcqiAjoec8ZXXa/nfk__derived.tif#band=4",
+      "png_url": "/static/runs/poc-2026-10-03/fields/SEo2xyfcqiAjoec8ZXXa/nfk__derived__conf.png"
+     },
+     "provenance": {
+      "native_resolution_m": null,
+      "grid": "EPSG:32632 10 m"
+     }
     },
     {
      "parameter": "bodenzahl",
@@ -1082,8 +1277,76 @@
     {
      "parameter": "bodenzahl",
      "source": "derived",
-     "status": "not_applicable",
-     "reason": "source_does_not_provide_parameter"
+     "status": "ok",
+     "reason": null,
+     "coverage": 1.0,
+     "unit": "points",
+     "png_url": "/static/runs/poc-2026-10-03/fields/SEo2xyfcqiAjoec8ZXXa/bodenzahl__derived.png",
+     "geotiff_url": "/static/runs/poc-2026-10-03/fields/SEo2xyfcqiAjoec8ZXXa/bodenzahl__derived.tif",
+     "stats": {
+      "mean": 29.26,
+      "std": 1.88,
+      "min": 25.26,
+      "p10": 26.13,
+      "p50": 29.66,
+      "p90": 31.42,
+      "max": 33.4,
+      "n_px": 4838,
+      "zone": "inner_20m"
+     },
+     "colormap": {
+      "type": "continuous",
+      "unit": "points",
+      "stops": [
+       [
+        10,
+        "#a50026"
+       ],
+       [
+        20,
+        "#f46d43"
+       ],
+       [
+        30,
+        "#fee08b"
+       ],
+       [
+        45,
+        "#a6d96a"
+       ],
+       [
+        60,
+        "#1a9850"
+       ],
+       [
+        80,
+        "#006837"
+       ]
+      ]
+     },
+     "confidence": {
+      "level": "low",
+      "interval_90": [
+       17.98,
+       40.53
+      ],
+      "drivers": [
+       "model_trained_on_38_parcels",
+       "extrapolated_across_state_border",
+       "range_crosses_threshold:bodenzahl_30_50"
+      ],
+      "pixel_shares": {
+       "low": 1.0,
+       "medium": 0.0,
+       "high": 0.0
+      },
+      "raster_url": "/static/runs/poc-2026-10-03/fields/SEo2xyfcqiAjoec8ZXXa/bodenzahl__derived.tif#band=4",
+      "png_url": "/static/runs/poc-2026-10-03/fields/SEo2xyfcqiAjoec8ZXXa/bodenzahl__derived__conf.png"
+     },
+     "provenance": {
+      "native_resolution_m": null,
+      "grid": "EPSG:32632 10 m"
+     }
     },
     {
      "parameter": "yield_potential",
@@ -1576,8 +1839,73 @@
     {
      "parameter": "nfk",
      "source": "derived",
-     "status": "not_applicable",
-     "reason": "source_does_not_provide_parameter"
+     "status": "ok",
+     "reason": null,
+     "coverage": 1.0,
+     "unit": "mm",
+     "png_url": "/static/runs/poc-2026-10-03/fields/xtMqrquNCdC21lZ0NMYI/nfk__derived.png",
+     "geotiff_url": "/static/runs/poc-2026-10-03/fields/xtMqrquNCdC21lZ0NMYI/nfk__derived.tif",
+     "stats": {
+      "mean": 110.95,
+      "std": 0.0,
+      "min": 110.95,
+      "p10": 110.95,
+      "p50": 110.95,
+      "p90": 110.95,
+      "max": 110.95,
+      "n_px": 1,
+      "zone": "full_field_fallback"
+     },
+     "colormap": {
+      "type": "continuous",
+      "unit": "mm",
+      "stops": [
+       [
+        50,
+        "#f7fbff"
+       ],
+       [
+        100,
+        "#c6dbef"
+       ],
+       [
+        150,
+        "#6baed6"
+       ],
+       [
+        200,
+        "#2171b5"
+       ],
+       [
+        300,
+        "#08306b"
+       ]
+      ]
+     },
+     "confidence": {
+      "level": "low",
+      "interval_90": [
+       80.56,
+       141.34
+      ],
+      "drivers": [
+       "buek200_1to200000_nearest_point",
+       "lookup_table_approximate",
+       "range_crosses_threshold:nfk_90_140_mm",
+       "no_inner_zone_edge_pixels_only"
+      ],
+      "pixel_shares": {
+       "low": 1.0,
+       "medium": 0.0,
+       "high": 0.0
+      },
+      "raster_url": "/static/runs/poc-2026-10-03/fields/xtMqrquNCdC21lZ0NMYI/nfk__derived.tif#band=4",
+      "png_url": "/static/runs/poc-2026-10-03/fields/xtMqrquNCdC21lZ0NMYI/nfk__derived__conf.png"
+     },
+     "provenance": {
+      "native_resolution_m": null,
+      "grid": "EPSG:32632 10 m"
+     }
     },
     {
      "parameter": "bodenzahl",
@@ -1602,8 +1930,77 @@
     {
      "parameter": "bodenzahl",
      "source": "derived",
-     "status": "not_applicable",
-     "reason": "source_does_not_provide_parameter"
+     "status": "ok",
+     "reason": null,
+     "coverage": 1.0,
+     "unit": "points",
+     "png_url": "/static/runs/poc-2026-10-03/fields/xtMqrquNCdC21lZ0NMYI/bodenzahl__derived.png",
+     "geotiff_url": "/static/runs/poc-2026-10-03/fields/xtMqrquNCdC21lZ0NMYI/bodenzahl__derived.tif",
+     "stats": {
+      "mean": 27.18,
+      "std": 0.0,
+      "min": 27.18,
+      "p10": 27.18,
+      "p50": 27.18,
+      "p90": 27.18,
+      "max": 27.18,
+      "n_px": 1,
+      "zone": "full_field_fallback"
+     },
+     "colormap": {
+      "type": "continuous",
+      "unit": "points",
+      "stops": [
+       [
+        10,
+        "#a50026"
+       ],
+       [
+        20,
+        "#f46d43"
+       ],
+       [
+        30,
+        "#fee08b"
+       ],
+       [
+        45,
+        "#a6d96a"
+       ],
+       [
+        60,
+        "#1a9850"
+       ],
+       [
+        80,
+        "#006837"
+       ]
+      ]
+     },
+     "confidence": {
+      "level": "low",
+      "interval_90": [
+       15.9,
+       38.45
+      ],
+      "drivers": [
+       "model_trained_on_38_parcels",
+       "extrapolated_across_state_border",
+       "range_crosses_threshold:bodenzahl_30_50",
+       "no_inner_zone_edge_pixels_only"
+      ],
+      "pixel_shares": {
+       "low": 1.0,
+       "medium": 0.0,
+       "high": 0.0
+      },
+      "raster_url": "/static/runs/poc-2026-10-03/fields/xtMqrquNCdC21lZ0NMYI/bodenzahl__derived.tif#band=4",
+      "png_url": "/static/runs/poc-2026-10-03/fields/xtMqrquNCdC21lZ0NMYI/bodenzahl__derived__conf.png"
+     },
+     "provenance": {
+      "native_resolution_m": null,
+      "grid": "EPSG:32632 10 m"
+     }
     },
     {
      "parameter": "yield_potential",
@@ -1814,8 +2211,8 @@
     {
      "parameter": "nfk",
      "source": "derived",
-     "status": "not_applicable",
-     "reason": "source_does_not_provide_parameter"
+     "status": "unavailable",
+     "reason": "outside_coverage_area"
     },
     {
      "parameter": "bodenzahl",
@@ -1838,8 +2235,8 @@
     {
      "parameter": "bodenzahl",
      "source": "derived",
-     "status": "not_applicable",
-     "reason": "source_does_not_provide_parameter"
+     "status": "unavailable",
+     "reason": "outside_coverage_area"
     },
     {
      "parameter": "yield_potential",

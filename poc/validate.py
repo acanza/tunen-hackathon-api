@@ -11,6 +11,7 @@
 2. Dry seasons (2022, 2025) reported separately: does water scaling help where it should?
 3. Bodenzahl (west): between fields and, where the downloaded parcels split a field, within fields.
 4. Soil/terrain model: grouped-CV R² over all fields and the west only.
+5. Derived soil layers: Bodenzahl model scores (grouped by parcel) and the nFK lookup per BÜK200 unit.
 """
 from __future__ import annotations
 
@@ -175,15 +176,19 @@ def main():
              (RUN_ID, "soil_model_r2_grouped_cv", "all_fields", sm["all"]["r2"], sm["all"]["n_px"], json.dumps(sm["all"])),
              (RUN_ID, "soil_model_r2_grouped_cv", "west", sm["west"]["r2"], sm["west"]["n_px"], json.dumps(sm["west"]))]
 
+    ds = json.loads((RUN_DIR / "covariates" / "derived_soil.json").read_text())
+    bm = ds["bodenzahl_model"]
+    for name, sc in bm["scores"].items():
+        rows.append((RUN_ID, "bodenzahl_derived_rmse_grouped_by_parcel", name, sc["rmse_parcel"], bm["n_parcels"], json.dumps(sc)))
     for r in sweep:
         rows.append((RUN_ID, "loyo_shrink_sweep", f"k={r['k']:g}", r["rho_v1"], len(lo), json.dumps(r)))
     write_db(rows)
-    md = render_md(lo, by_season, overall, win_all, win_dry, v1_vs_flat, bz, sm, cwb, sweep)
+    md = render_md(lo, by_season, overall, win_all, win_dry, v1_vs_flat, bz, sm, cwb, sweep, ds)
     (POC / "VALIDATION.md").write_text(md)
     print(md)
 
 
-def render_md(lo, by_season, overall, win_all, win_dry, v1_vs_flat, bz, sm, cwb, sweep) -> str:
+def render_md(lo, by_season, overall, win_all, win_dry, v1_vs_flat, bz, sm, cwb, sweep, ds) -> str:
     f2 = lambda x: f"{x:.2f}"
     f3 = lambda x: f"{x:.3f}"
     season_rows = "\n".join(
@@ -193,6 +198,12 @@ def render_md(lo, by_season, overall, win_all, win_dry, v1_vs_flat, bz, sm, cwb,
     sweep_rows = "\n".join(
         f"| {'off (no water scaling)' if r['k'] >= 1e8 else int(r['k'])}{' **(used)**' if r['k'] == ym.SLOPE_SHRINK_K else ''} | "
         f"{f2(r['rho_v1'])} | {f3(r['rmse_v1'])} | {f2(r['rho_v1_dry'])} | {r['scaled_beats_plain']:.0%} |" for r in sweep)
+    bm = ds["bodenzahl_model"]
+    label = {"farm_mean": "Farm mean (no model)", "unit_mean": "BÜK200 unit mean", "gradient_boosting": "Gradient boosting (covariates + unit)"}
+    bz_rows = "\n".join(f"| {label[k]}{' **(used)**' if k == bm['chosen'] else ''} | {v['rmse_parcel']:.1f} | {v['mae_parcel']:.1f} |"
+                         for k, v in bm["scores"].items())
+    nfk_rows = "\n".join(f"| {u} | {v['nfkwe_mm']:.0f} | {v['sd_between_profiles_mm']:.0f} | {v['n_profiles']} |"
+                          for u, v in ds["nfk_units"].items())
     within = bz["within"]
     within_rows = "\n".join(f"| {p['field']} | {p['bz_low']:.0f} → {p['bz_high']:.0f} | {p['yp_low']:.1f} → {p['yp_high']:.1f} | "
                             f"{'yes' if p['agrees'] else 'no'} |" for p in within["pairs"]) or "| – | – | – | – |"
@@ -267,10 +278,43 @@ R² ≈ 0: the coarse soil maps and the 30 m terrain don't explain within-field 
 fields (the terrain effect changes sign between wet and dry soils). In v1 the soil/terrain model is
 therefore only a neutral prior: it fills the edge strip and fields without NDVI history, at low confidence.
 
+## 4. Derived soil layers (`source = derived`)
+
+### Bodenzahl
+
+Trained on the {bm['n_parcels']} downloaded Bodenschätzung parcels in the west ({bm['n_px']} pixels), then applied to
+the whole farm, including Sachsen-Anhalt. Features: {', '.join(bm['features'])}.
+Cross-validation is grouped by parcel and scored per parcel (each parcel has one official value).
+
+| Model | RMSE per parcel (points) | MAE per parcel (points) |
+|---|---|---|
+{bz_rows}
+
+The model explains roughly half of the between-parcel variance, mostly through the BÜK200 unit.
+The interval in the API is ±1.645 × the CV RMSE. In the east this is an extrapolation across the
+state border (driver `extrapolated_across_state_border`); the soil units continue across it, but the
+model was never checked there.
+
+### nFK
+
+nFKWe of the BÜK200 unit of the nearest sample point: each profile's horizons (KA5 Bodenart, bulk
+density, humus) → available water per horizon from an **approximate** KA5 lookup → summed over the
+effective rooting depth, stopping at permanently wet (Gr) horizons. Agricultural profiles only,
+area-weighted. No capillary rise (as in BK50 nFKWe).
+
+| BÜK200 unit | nFKWe (mm) | SD between profiles (mm) | Profiles |
+|---|---|---|---|
+{nfk_rows}
+
+There is no nFK reference on disk (the downloaded BK50 attributes don't include nFKWe), so this layer is
+not validated. It is far more discriminating than SoilGrids, which gives ~160–215 mm everywhere on this
+sandy farm. Its interval combines the spread between profiles with ±30 mm (90 %) for the lookup itself.
+
 ## What is not validated
 
 - **Yield itself.** NDVI is a proxy for vigour; validating yield needs yield-monitor or harvest data.
-- **pH, SOC and nFK.** No independent reference is on disk; they carry SoilGrids' own uncertainty only.
+- **pH and SOC.** No independent reference is on disk; they carry SoilGrids' own uncertainty only.
+- **nFK** (SoilGrids and derived). No reference on disk.
 - **The dry/wet scenarios** beyond the 8 observed seasons (the per-pixel water sensitivity is fitted on
   CWB from {cwb.loc[2019:].min():.0f} to {cwb.loc[2019:].max():.0f} mm).
 """

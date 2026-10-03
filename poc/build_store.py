@@ -1,6 +1,6 @@
 # /// script
 # requires-python = ">=3.11"
-# dependencies = ["rasterio", "numpy", "pandas", "geopandas", "shapely", "pyproj", "pillow", "scipy", "scikit-learn"]
+# dependencies = ["rasterio", "numpy", "pandas", "geopandas", "shapely", "pyproj", "pillow", "scipy", "scikit-learn", "lxml"]
 # ///
 """Build the POC store the API serves: regional rasters, per-field COG/PNG, stats,
 confidence and a SQLite DB. Uses only files already in data/seggerde/ (no downloads).
@@ -49,7 +49,7 @@ from shapely.geometry import box, mapping, shape
 
 from lib import yield_model as ym
 from lib.dem import terrain
-from lib.derived_soil import buek_unit_raster
+from lib.derived_soil import bodenzahl_model, buek_unit_raster, unit_nfk
 
 warnings.filterwarnings("ignore", category=RuntimeWarning)  # nanmean of empty slices
 
@@ -60,6 +60,7 @@ STORE = POC / "store"
 RUN_ID = "poc-2026-10-03"
 RUN_DIR = STORE / "runs" / RUN_ID
 YIELD_META: dict = {}
+DERIVED_META: dict = {}
 
 UTM = "EPSG:32632"
 PNG_GROUND_RES_M = 2.5  # PNG pixel size on the ground; nearest-neighbour, so 10 m blocks stay crisp
@@ -114,6 +115,9 @@ SOURCE_PARAMETERS = [
     ("lbeg_bk50", "nfk", "nFKWe exists in BK50 but was not in the downloaded attributes"),
     ("lbeg_bodenschaetzung", "texture", "Bodenart from Klassenzeichen (categorical)"),
     ("lbeg_bodenschaetzung", "bodenzahl", "BODENZ of each parcel"),
+    ("derived", "nfk", "nFKWe of the BÜK200 unit (nearest sample point): KA5 lookup over its agricultural "
+                       "profiles, area-weighted; approximate KA5 values"),
+    ("derived", "bodenzahl", "Model trained on the downloaded Bodenschätzung parcels (west), applied farm-wide"),
     ("derived", "yield_potential", "yield_v1: water-scaled multi-year relative peak NDVI (normal spring) blended "
                                    "with a soil/terrain model; rescaled to field mean = 100"),
 ]
@@ -310,7 +314,43 @@ def build_regional(transform, h, w, parcels):
     return out
 
 
-def build_yield(layers, fields_utm, dem, transform, h, w):
+NFK_LOOKUP_SIGMA_MM = 30 / Z90   # ±30 mm at 90 % for the approximate KA5 lookup itself
+
+
+def build_derived_soil(layers, dem, buek, parcels, fall, transform, h, w):
+    """Derived nFK (BÜK200 unit → KA5) and Bodenzahl (model trained on the west). Returns metadata."""
+    units = unit_nfk(SEG / "raw" / "buek200")
+    nfk = pd.Series(buek.ravel()).map(units.nfkwe_mm).to_numpy("float32").reshape(h, w)
+    sd_prof = pd.Series(buek.ravel()).map(units.sd_between_profiles_mm).to_numpy("float32").reshape(h, w)
+    sig = np.sqrt(sd_prof ** 2 + NFK_LOOKUP_SIGMA_MM ** 2)
+    lo, hi = np.maximum(nfk - Z90 * sig, 0), nfk + Z90 * sig
+    conf = np.where(((lo < 90) & (hi > 90)) | ((lo < 140) & (hi > 140)), LOW, MEDIUM).astype("float32")
+    conf[~np.isfinite(nfk)] = np.nan
+    layers[("nfk", "derived")] = dict(value=nfk, lo=lo, hi=hi, conf=conf, kind="continuous", cmap="nfk",
+                                      unit="mm", zone_m=20, native_m=None)
+
+    pid = rasterize(((g, i + 1) for i, g in enumerate(parcels.geometry)), out_shape=(h, w), transform=transform,
+                    fill=0, dtype="int32")
+    numeric = {"clay": layers[("texture", "soilgrids")]["value"], "sand": layers["_sand"],
+               "soc": layers[("soc", "soilgrids")]["value"], "twi": dem["twi"], "slope": dem["slope"],
+               "rel_elev": dem["rel_elev"]}
+    bzm = bodenzahl_model(numeric, buek, layers[("bodenzahl", "lbeg_bodenschaetzung")]["value"], pid, fall > 0)
+    v = bzm["pred"]
+    lo, hi = v - Z90 * bzm["rmse"], v + Z90 * bzm["rmse"]
+    conf = np.where(((lo < 30) & (hi > 30)) | ((lo < 50) & (hi > 50)), LOW, MEDIUM).astype("float32")
+    conf[~np.isfinite(v)] = np.nan
+    layers[("bodenzahl", "derived")] = dict(value=v, lo=lo, hi=hi, conf=conf, kind="continuous", cmap="bodenzahl",
+                                            unit="points", zone_m=20, native_m=None)
+    meta = dict(nfk_units={int(u): dict(nfkwe_mm=round(r.nfkwe_mm, 1), sd_between_profiles_mm=round(r.sd_between_profiles_mm, 1),
+                                        n_profiles=int(r.n_profiles), profiles=r.profiles)
+                           for u, r in units.iterrows()},
+                bodenzahl_model=dict(chosen=bzm["best"], scores=bzm["scores"], n_parcels=bzm["n_parcels"],
+                                     n_px=bzm["n_px"], features=bzm["features"]))
+    (RUN_DIR / "covariates" / "derived_soil.json").write_text(json.dumps(meta, indent=1, ensure_ascii=False))
+    return meta
+
+
+def build_yield(layers, fields_utm, dem, buek, transform, h, w):
     """Yield potential v1 (see poc/lib/yield_model.py). Adds the layer and returns model metadata."""
     shape = (h, w)
     seasons = ym.season_rel(fields_utm, SEG / "sentinel2", transform, shape)
@@ -320,7 +360,6 @@ def build_yield(layers, fields_utm, dem, transform, h, w):
     yp_ndvi = {k: nanmedian3(nd.at(v)) for k, v in scen.items()}   # 3×3 median removes S2 striping
 
     fall, _ = ym.field_index(fields_utm, transform, shape)
-    buek = buek_unit_raster(SEG / "buek200_points.csv", transform, h, w, UTM)
     covs = {"clay": layers[("texture", "soilgrids")]["value"], "sand": layers["_sand"],
             "soc": layers[("soc", "soilgrids")]["value"], "nfk": layers[("nfk", "soilgrids")]["value"],
             "bodenzahl": layers[("bodenzahl", "lbeg_bodenschaetzung")]["value"],
@@ -514,6 +553,17 @@ def build_field(f, layers, transform, H, W, parcels, nibis_row, conn):
             if shares.get("low", 0) > 0.5:
                 drivers.append({"ph": "range_crosses_threshold:liming_ph_5.5", "nfk": "range_crosses_threshold:nfk_90_140_mm",
                                 "texture": "range_wider_than_texture_class", "soc": "range_wider_than_half_value"}[param])
+        if source == "derived" and param == "nfk":
+            drivers += ["buek200_1to200000_nearest_point", "lookup_table_approximate"]
+            if shares.get("low", 0) > 0.5:
+                drivers.append("range_crosses_threshold:nfk_90_140_mm")
+        if source == "derived" and param == "bodenzahl":
+            n_par = DERIVED_META["bodenzahl_model"]["n_parcels"]
+            drivers.append(f"model_trained_on_{n_par}_parcels")
+            if not in_ni:
+                drivers.append("extrapolated_across_state_border")
+            if shares.get("low", 0) > 0.5:
+                drivers.append("range_crosses_threshold:bodenzahl_30_50")
         if source == "lbeg_bodenschaetzung":
             drivers.append("official_survey_1to5000")
             if param == "bodenzahl":
@@ -599,6 +649,7 @@ def main():
     if STORE.exists():
         shutil.rmtree(STORE)
     (RUN_DIR / "regional").mkdir(parents=True)
+    (RUN_DIR / "covariates").mkdir(parents=True)
     transform, H, W = load_grid()
 
     fields = gpd.read_file(SEG / "clean" / "fields_clean.geojson").to_crs("EPSG:4326")
@@ -612,8 +663,12 @@ def main():
     ground = rasterize(fields.to_crs(UTM).buffer(-10).loc[lambda g: ~g.is_empty], out_shape=(H, W),
                        transform=transform, fill=0, dtype="uint8").astype(bool)
     dem = terrain(SEG / "raw" / "dem" / "farm_window.tif", transform, H, W, UTM, ground)
-    global YIELD_META
-    YIELD_META = build_yield(layers, fields.to_crs(UTM), dem, transform, H, W)
+    buek = buek_unit_raster(SEG / "buek200_points.csv", transform, H, W, UTM)
+    fall, _ = ym.field_index(fields.to_crs(UTM), transform, (H, W))
+    global DERIVED_META, YIELD_META
+    DERIVED_META = build_derived_soil(layers, dem, buek, parcels, fall, transform, H, W)
+    print("bodenzahl model:", DERIVED_META["bodenzahl_model"]["chosen"], DERIVED_META["bodenzahl_model"]["scores"])
+    YIELD_META = build_yield(layers, fields.to_crs(UTM), dem, buek, transform, H, W)
     print("yield model:", YIELD_META["soil_model"], YIELD_META["scenarios_mm"])
     write_cog(RUN_DIR / "covariates" / "dem__copernicus.tif", np.round(np.stack(list(dem.values())), 2), transform, list(dem),
               dict(source="Copernicus DEM GLO-30 surface model; ground = field interiors, rest interpolated; smoothed ~50 m", run_id=RUN_ID,
@@ -661,7 +716,7 @@ def main():
 
     # samples: one west field (best Bodenschätzung coverage), one large east field, one sliver, one outside polygon
     q = conn.execute("""SELECT f.plot_id FROM fields f JOIN field_layers l ON l.plot_id=f.plot_id
-                        WHERE l.parameter='bodenzahl' AND l.status IN ('ok','partial') ORDER BY l.coverage DESC, f.area_ha DESC LIMIT 1""")
+                        WHERE l.parameter='bodenzahl' AND l.source='lbeg_bodenschaetzung' AND l.status IN ('ok','partial') ORDER BY l.coverage DESC, f.area_ha DESC LIMIT 1""")
     west = q.fetchone()[0]
     east = conn.execute("SELECT plot_id FROM fields WHERE state='ST' AND use_for_stats=1 ORDER BY area_ha DESC LIMIT 1").fetchone()[0]
     sliver = conn.execute("SELECT plot_id FROM fields WHERE use_for_stats=0 ORDER BY area_ha LIMIT 1").fetchone()[0]

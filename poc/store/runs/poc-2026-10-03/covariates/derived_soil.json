@@ -1,0 +1,340 @@
+{
+ "nfk_units": {
+  "392603": {
+   "nfkwe_mm": 165.4,
+   "sd_between_profiles_mm": 20.1,
+   "n_profiles": 2,
+   "profiles": [
+    [
+     "Grünland",
+     60.0,
+     149.0,
+     9
+    ],
+    [
+     "Ackerflächen",
+     40.0,
+     190.0,
+     9
+    ]
+   ]
+  },
+  "392604": {
+   "nfkwe_mm": 170.0,
+   "sd_between_profiles_mm": 37.0,
+   "n_profiles": 8,
+   "profiles": [
+    [
+     "Ackerflächen",
+     20.0,
+     150.8,
+     9
+    ],
+    [
+     "Ackerflächen",
+     20.0,
+     146.0,
+     9
+    ],
+    [
+     "Grünland",
+     20.0,
+     177.0,
+     11
+    ],
+    [
+     "Ackerflächen",
+     20.0,
+     230.0,
+     11
+    ],
+    [
+     "Ackerflächen",
+     5.0,
+     212.0,
+     11
+    ],
+    [
+     "Ackerflächen",
+     5.0,
+     109.0,
+     7
+    ],
+    [
+     "Ackerflächen",
+     5.0,
+     150.0,
+     9
+    ],
+    [
+     "Grünland",
+     5.0,
+     114.5,
+     7.5
+    ]
+   ]
+  },
+  "392606": {
+   "nfkwe_mm": 111.0,
+   "sd_between_profiles_mm": 3.0,
+   "n_profiles": 3,
+   "profiles": [
+    [
+     "Ackerflächen",
+     40.0,
+     108.0,
+     7
+    ],
+    [
+     "Ackerflächen",
+     20.0,
+     114.0,
+     7
+    ],
+    [
+     "Ackerflächen",
+     20.0,
+     113.8,
+     7
+    ],
+    [
+     "Wälder",
+     20.0,
+     108.9,
+     7
+    ]
+   ]
+  },
+  "392611": {
+   "nfkwe_mm": 83.0,
+   "sd_between_profiles_mm": 15.3,
+   "n_profiles": 4,
+   "profiles": [
+    [
+     "Ackerflächen",
+     20.0,
+     100.8,
+     7
+    ],
+    [
+     "Laubwälder",
+     20.0,
+     67.4,
+     6
+    ],
+    [
+     "Laubwälder",
+     5.0,
+     97.8,
+     7
+    ],
+    [
+     "Ackerflächen",
+     5.0,
+     108.0,
+     7
+    ],
+    [
+     "Ackerflächen",
+     20.0,
+     70.0,
+     6
+    ],
+    [
+     "Ackerflächen",
+     20.0,
+     72.0,
+     6
+    ],
+    [
+     "Laubwälder",
+     5.0,
+     71.0,
+     6
+    ]
+   ]
+  },
+  "392621": {
+   "nfkwe_mm": 174.0,
+   "sd_between_profiles_mm": 45.6,
+   "n_profiles": 4,
+   "profiles": [
+    [
+     "Grünland",
+     40.0,
+     204.0,
+     10.0
+    ],
+    [
+     "Ackerflächen",
+     20.0,
+     222.0,
+     10.0
+    ],
+    [
+     "Grünland",
+     20.0,
+     105.0,
+     6.0
+    ],
+    [
+     "Grünland",
+     20.0,
+     135.0,
+     3.0
+    ]
+   ]
+  },
+  "392630": {
+   "nfkwe_mm": 94.3,
+   "sd_between_profiles_mm": 7.5,
+   "n_profiles": 5,
+   "profiles": [
+    [
+     "Grünland",
+     40.0,
+     92.0,
+     4.0
+    ],
+    [
+     "Ackerflächen",
+     20.0,
+     84.5,
+     4.0
+    ],
+    [
+     "Ackerflächen",
+     20.0,
+     102.5,
+     6.0
+    ],
+    [
+     "Ackerflächen",
+     5.0,
+     109.0,
+     6.0
+    ],
+    [
+     "Grünland",
+     5.0,
+     104.0,
+     4.0
+    ]
+   ]
+  },
+  "392636": {
+   "nfkwe_mm": 125.5,
+   "sd_between_profiles_mm": 0.0,
+   "n_profiles": 1,
+   "profiles": [
+    [
+     "Wälder",
+     40.0,
+     112.9,
+     7
+    ],
+    [
+     "Wälder",
+     20.0,
+     53.3,
+     7
+    ],
+    [
+     "Wälder",
+     20.0,
+     97.5,
+     7
+    ],
+    [
+     "Ackerflächen",
+     20.0,
+     125.5,
+     7
+    ],
+    [
+     "Wälder",
+     5.0,
+     119.0,
+     7
+    ]
+   ]
+  },
+  "392637": {
+   "nfkwe_mm": 155.1,
+   "sd_between_profiles_mm": 48.3,
+   "n_profiles": 6,
+   "profiles": [
+    [
+     "Ackerflächen",
+     20.0,
+     135.0,
+     7
+    ],
+    [
+     "Ackerflächen",
+     20.0,
+     150.0,
+     9
+    ],
+    [
+     "Ackerflächen",
+     5.0,
+     114.0,
+     7
+    ],
+    [
+     "Ackerflächen",
+     20.0,
+     242.0,
+     11
+    ],
+    [
+     "Ackerflächen",
+     20.0,
+     114.0,
+     7
+    ],
+    [
+     "Grünland",
+     5.0,
+     114.0,
+     7
+    ],
+    [
+     "Laubwälder",
+     5.0,
+     112.0,
+     7
+    ]
+   ]
+  }
+ },
+ "bodenzahl_model": {
+  "chosen": "gradient_boosting",
+  "scores": {
+   "farm_mean": {
+    "rmse_parcel": 10.003433518006023,
+    "mae_parcel": 8.69654635379189
+   },
+   "unit_mean": {
+    "rmse_parcel": 7.017652873724991,
+    "mae_parcel": 5.9450103737806295
+   },
+   "gradient_boosting": {
+    "rmse_parcel": 6.853973934178773,
+    "mae_parcel": 5.544467963009385
+   }
+  },
+  "n_parcels": 38,
+  "n_px": 14306,
+  "features": [
+   "clay",
+   "sand",
+   "soc",
+   "twi",
+   "slope",
+   "rel_elev",
+   "buek_unit"
+  ]
+ }
+}

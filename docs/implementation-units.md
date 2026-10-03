@@ -309,6 +309,126 @@ verified multi-source behavior and any unavailable combinations. If M3 is presen
 verify derived cache keys include method and participating-input identity/version,
 and refreshing inputs invalidates affected derived outputs.
 
+## M5: Frontend-supporting API v1
+
+### 5A — Analysis resource and frontend contract
+
+**Dependencies:** M3 and the M2 assembled-contract evidence.
+
+**Scope:** Add the immutable analysis resource, idempotent creation, retrieval,
+product links/statuses, global JSON `camelCase` aliases, version fields, and the
+generic allow-listed artifact route. Preserve the existing layer contract during
+migration. Exclude confidence calculations and domain product logic.
+
+**Deliverable:** OpenAPI schemas and examples for `POST /soil/analyses`, analysis
+retrieval, artifact metadata, partial outcomes, and one coherent input snapshot.
+Document `201`, replay, validation, not-found, conflict, partial-product, and
+provider-failure behavior without encoding actions in URL paths.
+
+**Verification and closure:** Contract tests cover aliases, GeoJSON coordinate
+order, opaque IDs, RFC 3339 timestamps, idempotency replay/conflict, stable links,
+content types, access to only registered artifacts, and mixed product statuses.
+An analysis never combines layers from different refresh generations silently.
+
+### 5B — Property maps with ranges and confidence
+
+**Dependencies:** 5A, M2, 4C for provider uncertainty where used, and a viable 0B
+record for every uncertainty/range input claimed by the method.
+
+**Scope:** Produce central value, lower/upper range, range meaning, confidence
+category, mask, legend, and hatch style for the five required parameters at their
+valid represented depth. Exclude invented ranges and treating spread as a
+confidence interval.
+
+**Deliverable:** Versioned confidence method and frontend-ready PNG/JSON products
+whose numeric and visual representations agree. Unsupported categorical/range
+combinations are explicit.
+
+**Verification and closure:** Known grids cover high/low/unknown categories,
+nodata, range ordering, categorical inputs, and color/mask/legend agreement.
+Live evidence verifies every provider uncertainty input used. Unknown zones are
+transparent/masked with the contracted hatch hint, never painted as estimates.
+
+### 5C — Source discrepancy product
+
+**Dependencies:** 5A and 4A–4B.
+
+**Scope:** Expose a comparison product for each parameter with at least two
+compatible sources. Keep source discrepancy, provider uncertainty, and final
+confidence as distinct fields and legends.
+
+**Deliverable:** Per-cell or per-zone discrepancy metric, unit, participating
+source identities, source count, thresholds/categories, method version, and an
+`insufficientData` outcome when comparison is not valid.
+
+**Verification and closure:** Deterministic grids cover agreement, disagreement,
+nodata, one source, incompatible inputs, and alignment. A live example demonstrates
+two verified comparable sources; otherwise this unit remains verification pending.
+
+### 5D — Decision-aware sampling plan
+
+**Dependencies:** 5A–5C and verified agronomic decision thresholds for each
+supported target parameter.
+
+**Scope:** Create a bounded number of sampling points within field geometry,
+ranked by expected ability to resolve a declared decision. Support GeoJSON and
+CSV artifacts. Exclude laboratory-result ingestion, model calibration, routing,
+and claiming that maximum uncertainty alone is optimal.
+
+**Deliverable:** `POST /soil/analyses/{analysis_id}/sampling-plans` with stable
+point IDs, requested/actual count, WGS 84 coordinates, target parameter,
+priority, rationale, evidence, minimum-spacing policy, and method version.
+
+**Verification and closure:** Fixtures verify containment including holes,
+minimum spacing, deterministic tie-breaking, point/count limits, threshold-near
+priority over irrelevant high uncertainty, insufficient candidates, and exact
+GeoJSON/CSV coordinate agreement. Domain review evidence identifies the source
+and applicability of each enabled decision threshold.
+
+### 5E — Management signals
+
+**Dependencies:** 5A, viable 0B records for required data inputs, and reviewed,
+versioned rules for each advertised signal.
+
+**Scope:** Produce lime, drought, erosion, compaction, and nitrate categories
+using only `probable`, `possible`, `unlikely`, `no`, or `unknown`. Include
+spatial/temporal applicability and rationale. Exclude application rates and the
+out-of-scope dynamic moisture features.
+
+**Deliverable:** Machine-readable signals per field/zone with input references,
+rule version, evidence, limitations, and explicit missing inputs. A signal may
+remain `unknown`; the API must not infer current nitrate, erosion, or compaction
+conditions from unrelated soil layers.
+
+**Verification and closure:** Decision tables cover every rule branch, boundary,
+missing/stale/incompatible input, and wording enum. Agronomic review evidence is
+recorded for enabled rules. Each non-unknown live example is reproducible from
+the cited inputs; no response contains a product application rate.
+
+### 5F — Farmer and audit parcel datasheets
+
+**Dependencies:** 5A–5E.
+
+**Scope:** Present two projections of the same field analysis. The farmer view is
+plain and concise; the audit view retains numerical ranges, sources, citations,
+licenses/attribution, methods, rationale, dates, limitations, and product status.
+Exclude PDF generation and independent recomputation of evidence.
+
+**Deliverable:** `GET /soil/analyses/{analysis_id}/parcel-datasheets/{field_id}`
+returning both typed views and links to their underlying layers/products.
+
+**Verification and closure:** Schema and snapshot tests show both views share the
+same analysis and values, unknowns remain unknown, audit citations and licenses
+are present for every contributing source, and farmer wording does not overstate
+confidence. A frontend-oriented example renders all required states without
+client-side reconstruction of domain logic.
+
+**M5 closure:** Run one frontend-oriented scenario across the five parameters and
+all five v1 products. Retrieve every linked artifact; verify masks, confidence,
+discrepancy, sampling export, signal language, and farmer/audit consistency.
+Record which products are genuinely available and why any others are insufficient.
+Crop suitability, dynamic layers, and sample-result calibration remain out of scope.
+
 ## Completion record
 
 When work starts, create one record per unit (and one per 0B combination) under

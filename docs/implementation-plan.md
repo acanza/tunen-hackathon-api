@@ -81,7 +81,7 @@ The bounded units and their evidence are defined in
 
 | Unit | Status | Evidence |
 | --- | --- | --- |
-| P1.1 | Complete | `soil_api.app` imports; validated settings resolve the repository store; `soil_api.database` opens `soil.sqlite` with SQLite `mode=ro`; startup command documented in `README.md`. |
+| P1.1 | Approved | Validated on 2026-10-03: `soil_api.app` imports; settings resolve the repository store and reject an external root; `soil_api.database` queries `sqlite_master`, rejects writes with SQLite read-only mode, and closes connections; no `/soil/*` routes are registered. Startup command is documented in `README.md`. |
 
 ## Completion gate
 

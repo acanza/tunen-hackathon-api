@@ -1,0 +1,13 @@
+BK50 - Karte
+
+# 1
+FL_NR	:511330
+NRKART	:400846
+PRONUM	:453196
+BOTYP	:G-P3
+BOTYP_KLARTEXT	:Mittlerer Gley-Podsol
+PSONST	:MNGW wurde abgesenkt.
+MHGW	:7
+MNGW	:17
+NUTZUNG	:FN
+GEOTYP	:f(qw)

@@ -1,0 +1,13 @@
+BK50 - Karte
+
+# 1
+FL_NR	:560454
+NRKART	:103967
+PRONUM	:156643
+BOTYP	:T-L3
+BOTYP_KLARTEXT	:Mittlere Tschernosem-Parabraunerde
+PSONST	:
+MHGW	:
+MNGW	:
+NUTZUNG	:A
+GEOTYP	:Lol=Lg_f(qM)

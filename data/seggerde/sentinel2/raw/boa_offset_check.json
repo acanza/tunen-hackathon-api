@@ -1,0 +1,32 @@
+{
+ "S2A_32UPD_20210618_0_L2A vs S2A_32UPD_20210618_1_L2A": {
+  "red": {
+   "n": 8456,
+   "median_old": 482.5,
+   "median_new": 488.0,
+   "median_diff_new_minus_old": 5.0
+  },
+  "nir": {
+   "n": 8456,
+   "median_old": 3078.0,
+   "median_new": 3082.0,
+   "median_diff_new_minus_old": 0.0
+  },
+  "ndvi_median_old": 0.7349980045974996,
+  "ndvi_median_new": 0.7321260228914921,
+  "ndvi_if_new_minus_1000": 0.9990333494441759,
+  "props": {
+   "S2A_32UPD_20210618_0_L2A": {
+    "s2:processing_baseline": "03.00",
+    "earthsearch:boa_offset_applied": false,
+    "raster_offset": 0
+   },
+   "S2A_32UPD_20210618_1_L2A": {
+    "s2:processing_baseline": "05.00",
+    "earthsearch:boa_offset_applied": true,
+    "raster_offset": -0.1
+   }
+  }
+ },
+ "('S2B_32UPD_20200425_0_L2A', 'S2B_32UPD_20200425_1_L2A')": "found only []"
+}

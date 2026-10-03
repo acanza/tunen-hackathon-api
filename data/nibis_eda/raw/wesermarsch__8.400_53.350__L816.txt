@@ -1,0 +1,13 @@
+BK50 - Karte
+
+# 1
+FL_NR	:536555
+NRKART	:208045
+PRONUM	:258792
+BOTYP	:MC4
+BOTYP_KLARTEXT	:Tiefe Kalkmarsch
+PSONST	:MHGW wurde abgesenkt. MNGW wurde abgesenkt.
+MHGW	:3
+MNGW	:8
+NUTZUNG	:G
+GEOTYP	:Miwa

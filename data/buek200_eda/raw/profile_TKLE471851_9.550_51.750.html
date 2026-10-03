@@ -1,0 +1,802 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:ka4="http://www.bgr.de/ka4">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title> BGR Produktdaten        </title>
+<style type="text/css">
+                    @font-face {
+                    	font-family: "NotoSansDisplay";
+                    	src: url("NotoSansDisplay-Regular.ttf");
+                       
+                    }
+            
+                    html {
+                        font-family:NotoSansDisplay,arial,helvetica,sans-serif;
+                        font-size: 12px;
+                        color:#000;
+                    }
+                    
+                    body {
+                         font-family:NotoSansDisplay,arial,helvetica,sans-serif;
+                    }
+                    
+                    table	{	
+                        background-color:#FFF;
+                        border:0px solid black;
+                        border-collapse:collapse;
+                                
+                    }
+                                
+                    td	{	
+     
+                        border:1px solid #CECECE;
+                    }
+
+                    th	{	
+                        font-weight:normal;
+                        padding:2px;
+                        border:1px solid black;   
+                    }
+
+                    
+                    .produkt  {background-color:#973A48;}
+                    .karte      {background-color:#DFDFFF; }
+                    .legendeneinheit {background-color:#973A48;} /*  */
+                    .profil { background-color:#fff; text-align:center; }
+                    .groupProfil { border-width:0px; border-left: 1px solid black; background-color:#F5F0D6; }
+                    .horizont { background-color:#CECECE; text-align:center; border-bottom:1px solid black;}
+                    .groupHoriz { border-width:0px; border-left: 1px solid black; background-color:#ababab; }
+                    .calculated {background-color:#DFFFDF; text-align:center; }
+                    .error {background-color:#FF0000; text-align:center; }
+                                
+                    .borderLeft { border-width:0px; border-left:1px solid black; }                    
+                    .borderTop { border-top:1px solid black; }
+                                
+                    /* Profildarstellung */
+                    table.showProfile { border-width:0px; background-color:transparent; margin:0px; }
+                    td.showProfile { border-width:0px; vertical-align:top; width:30px; }
+                    td.labelProfile { border-width:0px; background-color:transparent; }
+                    td img {display: block;} /* fuer die Profildarstellung mit Bildern */            
+        </style>
+<script type="text/javascript">
+                    
+                    function mouseOverFirstTd(element) {
+                        console.log('das Profil td');
+                        // erstes td Element ist die Profilanzeige
+
+                    }                    
+                    
+                    function mouseOverFirstTr(element) {
+                        // erstes td Element in diesem tr ist die Profilanzeige
+                        element.childNodes[1].style.backgroundColor = '#fff';
+                        element.childNodes[1].style.color = '#000';                    
+                        element.style.backgroundColor = '#C86F7D';
+                        element.style.color = '#fff';
+                    }                    
+               
+                    function mouseOver(element) {
+                        element.style.backgroundColor = '#C86F7D';
+                        element.style.color = '#fff';
+                    }
+                    function mouseOut(element, color) {
+                        element.style.backgroundColor = color;
+                        element.style.color = '#000';
+                    }                
+				</script>
+</head>
+<body style="margin:0px; padding:0px;">
+<div style="margin:5px; padding:5px; width:90%; background-color:rgb(235,233,232); border:1px solid black; font-family:arial,helvetica,sans-serif; font-size: 13px; color:#000;">
+                    Die Daten zu den Bodenprofilen der BÜK200 sind bisher nur vorläufig auf ihre Plausibilität, Vollständigkeit und Richtigkeit geprüft. BGR und die SGD weisen ausdrücklich auf die Vorläufigkeit des Datensatzes hin und übernehmen keine Gewähr für die Richtigkeit der Daten. Änderungen erfolgen ohne besondere Kennzeichnung.                                
+                </div>
+<table style="border:0px solid #000; margin:0px; margin-bottom:10px; width:100%">
+<tr class="legendeneinheit"><td style="border-width:0px; color:#fff; padding:5px;">
+<span style="font-size:14px; font-weight:bold;">Bodenübersichtskarte 1:200.000 - Legendeneinheit Nr. 471851</span><br>Vorherrschend Braunerden, gering verbreitet Podsol-Braunerden und Pseudogley-Braunerden aus Löss über Fließerde aus Verwitterungsmaterial von Sandstein-Schluffstein-Wechselfolgen</td></tr>
+<tr><td style="border-width:0px;">
+<div style="font-size: 13px; margin:5px;">
+                    Die folgenden bodenkundlichen Abkürzungen und Verschlüsselungen erfolgen nach der <a href="https://www.schweizerbart.de/publications/detail/isbn/3510959205" title="Bodenkundliche Kartieranleitung" onclick="window.open(this.href); return false;">Bodenkundliche Kartieranleitung</a>.
+                </div>
+<table class="profil" style="border:2px solid #973A48; margin:5px; margin-top:20px;">
+<tr><th class="profil" style="font-weight:normal; text-align:left; background-color:#973A48; color:#fff;">
+<div style="font-weight:bold">Pro­fil: 1<span style="font-weight:normal"> (von 4)</span>
+</div>
+<div>Bo­den­sys­te­ma­ti­sche Ein­heit: BBn</div>
+<div>Flächen­an­teil: 60 %</div>
+<div title="Landnutzung nach Corine 2000" style="cursor:help;">Land­nutz­ung: Wälder (CORINE Land Cover Code: 31)
+                                        </div>
+</th></tr>
+<tr><td style="margin:0px; padding:0px;"><table>
+<tr>
+<th rowspan="2" class="borderLeft horizont" style="border:1px solid black; border-right:2px solid black;">Abfolge</th>
+<th class="borderLeft borderTop groupHoriz" colspan="4">Horizont</th>
+<th rowspan="2" class="horizont" title="Stratigraphie nach der KA5" style="cursor:help;">Stra­ti­gra­phie</th>
+<th rowspan="2" class="horizont" title="Zusammensetzung und Herkunft nach der KA5" style="cursor:help;">Her­kunft</th>
+<th rowspan="2" class="horizont" title="Geogenese nach der KA5" style="cursor:help;">Geo­ge­ne­se</th>
+<th class="borderLeft borderTop groupHoriz" colspan="2">Grobboden</th>
+<th class="borderLeft borderTop groupHoriz" colspan="5">mineralischer Feinboden</th>
+<th class="borderLeft borderTop groupHoriz" colspan="3">Torf</th>
+<th rowspan="2" class="horizont" title="Bodenacidität nach KA5" style="cursor:help;">Bo­den­aci­di­tät</th>
+</tr>
+<tr>
+<th class="horizont" title="Laufende Horizontummer ab Geländeoberkante" style="cursor:help;">Nr</th>
+<th class="horizont" title="Horizontbezeichnung nach der KA5" style="cursor:help;">Sym­bol</th>
+<th class="horizont" title="Obere Horizonttiefe ab Oberkante des mineralischen Oberbodens oder der Geländeoberkante bei Mooren. Organische Auflagen sind mit negativem Vorzeichen gekennzeichnet." style="cursor:help;">Ober­gren­ze<div style="font-weight:normal; white-space:nowrap;">[dm]</div>
+</th>
+<th class="horizont" title="Untere Horizonttiefe ab Oberkante des mineralischen Oberbodens oder der Geländeoberkante bei Mooren. Organische Auflagen sind mit negativem Vorzeichen gekennzeichnet." style="cursor:help;">Un­ter­gren­ze<div style="font-weight:normal; white-space:nowrap;">[dm]</div>
+</th>
+<th class="horizont" title="Fraktion des Grobbodens nach der KA5" style="cursor:help;">Fra­kt­ion</th>
+<th class="horizont" title="Gemengeanteilsklassen des Grobbodens nach der KA5" style="cursor:help;">Sum­me</th>
+<th class="horizont" title="Bodenartenuntergruppen nach der KA5" style="cursor:help;">Bo­den­art</th>
+<th class="horizont" title="Humusstufe nach der KA5" style="cursor:help;">Hu­mus</th>
+<th class="horizont" title="Carbonatgehalt im Boden nach der KA5" style="cursor:help;">Car­bo­nat­ge­halt</th>
+<th class="horizont" title="Bodengefüge nach der KA5" style="cursor:help;">Ge­fü­ge</th>
+<th class="horizont" title="Rohdichte für trockenen Boden (Rt) oder effektive Lagerungsdichte (Ld)" style="cursor:help;">Tro­cken­roh­dich­te / eff. La­ge­rungs­dich­te</th>
+<th class="horizont" title="Torfbodenarten nach der KA5" style="cursor:help;">Torf­arten</th>
+<th class="horizont" title="Zersetzungsstufe von Torfhorizonten nach der KA5" style="cursor:help;">Zer­setz­ungs­stu­fe</th>
+<th class="horizont" title="Substanzvolumen von Torfhorizonten nach der KA5" style="cursor:help;">Sub­stanz­vo­lu­men</th>
+</tr>
+<tr style="background-color:#fff; text-align:center;" onmouseover="mouseOverFirstTr(this)" onmouseout="mouseOut(this, '#fff')">
+<td style="border-right:2px solid black;" rowspan="5"><table class="showProfile"><tr>
+<td style="border-width:0px;"><table class="showProfile" cellspacing="0" cellpadding="0">
+<tr><td class="labelProfile" style="height:3.5px;">O</td></tr>
+<tr><td class="labelProfile" style="height:4.899999999999999px;">Ah</td></tr>
+<tr><td class="labelProfile" style="height:33.6px;">Bv</td></tr>
+<tr><td class="labelProfile" style="height:45.5px;">lCv</td></tr>
+<tr><td class="labelProfile" style="height:56px;">mCn</td></tr>
+</table></td>
+<td style="border-width:0px;"><table class="showProfile" style="border:1px solid #000000; border-bottom-width:0px; font-size:1px; width:30px;" cellspacing="0">
+<tr><td class="showProfile" title="                Horizont: 'O'
+ (Mächtigkeit: 0.5 dm, Darstellung: #FFFFFF)" style="font-size:1px; background-color: #FFFFFF; height: 3.5px; border-bottom:1px solid black;"><span style="background-color: #FFFFFF; height: 3.5px;"></span></td></tr>
+<tr><td class="showProfile" title="                Horizont: 'Ah'
+ (Mächtigkeit: 0.7 dm, Darstellung: #8B776A)" style="font-size:1px; background-color: #8B776A; height: 4.899999999999999px; border-bottom:1px solid black;"><span style="background-color: #8B776A; height: 4.899999999999999px;"></span></td></tr>
+<tr><td class="showProfile" title="                Horizont: 'Bv'
+ (Mächtigkeit: 4.8 dm, Darstellung: #64402A)" style="font-size:1px; background-color: #64402A; height: 33.6px; border-bottom:1px solid black;"><span style="background-color: #64402A; height: 33.6px;"></span></td></tr>
+<tr><td class="showProfile" title="                Horizont: 'lCv'
+ (Mächtigkeit: 6.5 dm, Darstellung: #827B62)" style="font-size:1px; background-color: #827B62; height: 45.5px; border-bottom:1px solid black;"><span style="background-color: #827B62; height: 45.5px;"></span></td></tr>
+<tr><td class="showProfile" title="                Horizont: 'mCn'
+ (Mächtigkeit: 8 dm, Darstellung: #FFFFFF)" style="font-size:1px; background-color: #FFFFFF; height: 56px; border-bottom:1px solid black;"><span style="background-color: #FFFFFF; height: 56px;"></span></td></tr>
+</table></td>
+<td style="border-width:0px;"><table class="showProfile" cellspacing="0" cellpadding="0">
+<tr><td class="labelProfile" style="height:3.5px;">0.5</td></tr>
+<tr><td class="labelProfile" style="height:4.899999999999999px;">0.7</td></tr>
+<tr><td class="labelProfile" style="height:33.6px;">4.8</td></tr>
+<tr><td class="labelProfile" style="height:45.5px;">6.5</td></tr>
+<tr><td class="labelProfile" style="height:56px;">8.0</td></tr>
+</table></td>
+</tr></table></td>
+<td>1</td>
+<td>O</td>
+<td>-0.5</td>
+<td>0</td>
+<td>qh</td>
+<td>O</td>
+<td>og</td>
+<td></td>
+<td>0</td>
+<td></td>
+<td>h7</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr style="background-color:#ECECEC; text-align:center;" onmouseover="mouseOver(this)" onmouseout="mouseOut(this, '#ECECEC')">
+<td>2</td>
+<td>Ah</td>
+<td>0</td>
+<td>0.7</td>
+<td>qp</td>
+<td>^s,^u,Lol</td>
+<td>pfl</td>
+<td>Gr</td>
+<td>2</td>
+<td>Ls2</td>
+<td>h4</td>
+<td></td>
+<td></td>
+<td>Ld2</td>
+<td></td>
+<td></td>
+<td></td>
+<td>s5</td>
+</tr>
+<tr style="background-color:#fff; text-align:center;" onmouseover="mouseOver(this)" onmouseout="mouseOut(this, '#fff')">
+<td>3</td>
+<td>Bv</td>
+<td>0.7</td>
+<td>5.5</td>
+<td>qp</td>
+<td>^s,^u,Lol</td>
+<td>pfl</td>
+<td>X</td>
+<td>3</td>
+<td>Ls3</td>
+<td>h2</td>
+<td></td>
+<td></td>
+<td>Ld3</td>
+<td></td>
+<td></td>
+<td></td>
+<td>s4</td>
+</tr>
+<tr style="background-color:#ECECEC; text-align:center;" onmouseover="mouseOver(this)" onmouseout="mouseOut(this, '#ECECEC')">
+<td>4</td>
+<td>lCv</td>
+<td>5.5</td>
+<td>12</td>
+<td>qp</td>
+<td>^s,^u</td>
+<td>pfl</td>
+<td>X</td>
+<td>5</td>
+<td>Sl3</td>
+<td>h0</td>
+<td></td>
+<td></td>
+<td>Ld3</td>
+<td></td>
+<td></td>
+<td></td>
+<td>s4</td>
+</tr>
+<tr style="background-color:#fff; text-align:center;" onmouseover="mouseOver(this)" onmouseout="mouseOut(this, '#fff')">
+<td>5</td>
+<td>mCn</td>
+<td>12</td>
+<td>20</td>
+<td></td>
+<td>^s,^u</td>
+<td>n</td>
+<td></td>
+<td></td>
+<td></td>
+<td>h0</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table></td></tr>
+</table>
+<table class="profil" style="border:2px solid #973A48; margin:5px; margin-top:20px;">
+<tr><th class="profil" style="font-weight:normal; text-align:left; background-color:#973A48; color:#fff;">
+<div style="font-weight:bold">Pro­fil: 2<span style="font-weight:normal"> (von 4)</span>
+</div>
+<div>Bo­den­sys­te­ma­ti­sche Ein­heit: BBn</div>
+<div>Flächen­an­teil: 5 %</div>
+<div title="Landnutzung nach Corine 2000" style="cursor:help;">Land­nutz­ung: Grünland (CORINE Land Cover Code: 23)
+                                        </div>
+</th></tr>
+<tr><td style="margin:0px; padding:0px;"><table>
+<tr>
+<th rowspan="2" class="borderLeft horizont" style="border:1px solid black; border-right:2px solid black;">Abfolge</th>
+<th class="borderLeft borderTop groupHoriz" colspan="4">Horizont</th>
+<th rowspan="2" class="horizont" title="Stratigraphie nach der KA5" style="cursor:help;">Stra­ti­gra­phie</th>
+<th rowspan="2" class="horizont" title="Zusammensetzung und Herkunft nach der KA5" style="cursor:help;">Her­kunft</th>
+<th rowspan="2" class="horizont" title="Geogenese nach der KA5" style="cursor:help;">Geo­ge­ne­se</th>
+<th class="borderLeft borderTop groupHoriz" colspan="2">Grobboden</th>
+<th class="borderLeft borderTop groupHoriz" colspan="5">mineralischer Feinboden</th>
+<th class="borderLeft borderTop groupHoriz" colspan="3">Torf</th>
+<th rowspan="2" class="horizont" title="Bodenacidität nach KA5" style="cursor:help;">Bo­den­aci­di­tät</th>
+</tr>
+<tr>
+<th class="horizont" title="Laufende Horizontummer ab Geländeoberkante" style="cursor:help;">Nr</th>
+<th class="horizont" title="Horizontbezeichnung nach der KA5" style="cursor:help;">Sym­bol</th>
+<th class="horizont" title="Obere Horizonttiefe ab Oberkante des mineralischen Oberbodens oder der Geländeoberkante bei Mooren. Organische Auflagen sind mit negativem Vorzeichen gekennzeichnet." style="cursor:help;">Ober­gren­ze<div style="font-weight:normal; white-space:nowrap;">[dm]</div>
+</th>
+<th class="horizont" title="Untere Horizonttiefe ab Oberkante des mineralischen Oberbodens oder der Geländeoberkante bei Mooren. Organische Auflagen sind mit negativem Vorzeichen gekennzeichnet." style="cursor:help;">Un­ter­gren­ze<div style="font-weight:normal; white-space:nowrap;">[dm]</div>
+</th>
+<th class="horizont" title="Fraktion des Grobbodens nach der KA5" style="cursor:help;">Fra­kt­ion</th>
+<th class="horizont" title="Gemengeanteilsklassen des Grobbodens nach der KA5" style="cursor:help;">Sum­me</th>
+<th class="horizont" title="Bodenartenuntergruppen nach der KA5" style="cursor:help;">Bo­den­art</th>
+<th class="horizont" title="Humusstufe nach der KA5" style="cursor:help;">Hu­mus</th>
+<th class="horizont" title="Carbonatgehalt im Boden nach der KA5" style="cursor:help;">Car­bo­nat­ge­halt</th>
+<th class="horizont" title="Bodengefüge nach der KA5" style="cursor:help;">Ge­fü­ge</th>
+<th class="horizont" title="Rohdichte für trockenen Boden (Rt) oder effektive Lagerungsdichte (Ld)" style="cursor:help;">Tro­cken­roh­dich­te / eff. La­ge­rungs­dich­te</th>
+<th class="horizont" title="Torfbodenarten nach der KA5" style="cursor:help;">Torf­arten</th>
+<th class="horizont" title="Zersetzungsstufe von Torfhorizonten nach der KA5" style="cursor:help;">Zer­setz­ungs­stu­fe</th>
+<th class="horizont" title="Substanzvolumen von Torfhorizonten nach der KA5" style="cursor:help;">Sub­stanz­vo­lu­men</th>
+</tr>
+<tr style="background-color:#fff; text-align:center;" onmouseover="mouseOverFirstTr(this)" onmouseout="mouseOut(this, '#fff')">
+<td style="border-right:2px solid black;" rowspan="4"><table class="showProfile"><tr>
+<td style="border-width:0px;"><table class="showProfile" cellspacing="0" cellpadding="0">
+<tr><td class="labelProfile" style="height:6.3px;">Ah</td></tr>
+<tr><td class="labelProfile" style="height:32.9px;">Bv</td></tr>
+<tr><td class="labelProfile" style="height:30.8px;">ilCv</td></tr>
+<tr><td class="labelProfile" style="height:70px;">mCn</td></tr>
+</table></td>
+<td style="border-width:0px;"><table class="showProfile" style="border:1px solid #000000; border-bottom-width:0px; font-size:1px; width:30px;" cellspacing="0">
+<tr><td class="showProfile" title="                Horizont: 'Ah'
+ (Mächtigkeit: 0.9 dm, Darstellung: #8B776A)" style="font-size:1px; background-color: #8B776A; height: 6.3px; border-bottom:1px solid black;"><span style="background-color: #8B776A; height: 6.3px;"></span></td></tr>
+<tr><td class="showProfile" title="                Horizont: 'Bv'
+ (Mächtigkeit: 4.699999999999998 dm, Darstellung: #64402A)" style="font-size:1px; background-color: #64402A; height: 32.9px; border-bottom:1px solid black;"><span style="background-color: #64402A; height: 32.9px;"></span></td></tr>
+<tr><td class="showProfile" title="                Horizont: 'ilCv'
+ (Mächtigkeit: 4.4 dm, Darstellung: #827B62)" style="font-size:1px; background-color: #827B62; height: 30.8px; border-bottom:1px solid black;"><span style="background-color: #827B62; height: 30.8px;"></span></td></tr>
+<tr><td class="showProfile" title="                Horizont: 'mCn'
+ (Mächtigkeit: 10 dm, Darstellung: #FFFFFF)" style="font-size:1px; background-color: #FFFFFF; height: 70px; border-bottom:1px solid black;"><span style="background-color: #FFFFFF; height: 70px;"></span></td></tr>
+</table></td>
+<td style="border-width:0px;"><table class="showProfile" cellspacing="0" cellpadding="0">
+<tr><td class="labelProfile" style="height:6.3px;">0.9</td></tr>
+<tr><td class="labelProfile" style="height:32.9px;">4.7</td></tr>
+<tr><td class="labelProfile" style="height:30.8px;">4.4</td></tr>
+<tr><td class="labelProfile" style="height:70px;">10.0</td></tr>
+</table></td>
+</tr></table></td>
+<td>1</td>
+<td>Ah</td>
+<td>0</td>
+<td>0.9</td>
+<td>qp</td>
+<td>^s,^u,Lol</td>
+<td>pfl</td>
+<td>X</td>
+<td>3</td>
+<td>Ls2</td>
+<td>h4</td>
+<td></td>
+<td></td>
+<td>Ld1</td>
+<td></td>
+<td></td>
+<td></td>
+<td>s5</td>
+</tr>
+<tr style="background-color:#ECECEC; text-align:center;" onmouseover="mouseOver(this)" onmouseout="mouseOut(this, '#ECECEC')">
+<td>2</td>
+<td>Bv</td>
+<td>0.9</td>
+<td>5.6</td>
+<td>qp</td>
+<td>^s,^u,Lol</td>
+<td>pfl</td>
+<td>X</td>
+<td>3</td>
+<td>Ls2</td>
+<td>h2</td>
+<td></td>
+<td></td>
+<td>Ld2</td>
+<td></td>
+<td></td>
+<td></td>
+<td>s4</td>
+</tr>
+<tr style="background-color:#fff; text-align:center;" onmouseover="mouseOver(this)" onmouseout="mouseOut(this, '#fff')">
+<td>3</td>
+<td>ilCv</td>
+<td>5.6</td>
+<td>10</td>
+<td>qp</td>
+<td>^s,^u</td>
+<td>pfl</td>
+<td>X</td>
+<td>5</td>
+<td>Sl3</td>
+<td>h0</td>
+<td></td>
+<td></td>
+<td>Ld3</td>
+<td></td>
+<td></td>
+<td></td>
+<td>s4</td>
+</tr>
+<tr style="background-color:#ECECEC; text-align:center;" onmouseover="mouseOver(this)" onmouseout="mouseOut(this, '#ECECEC')">
+<td>4</td>
+<td>mCn</td>
+<td>10</td>
+<td>20</td>
+<td></td>
+<td>^s,^u</td>
+<td>nd</td>
+<td></td>
+<td></td>
+<td></td>
+<td>h0</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table></td></tr>
+</table>
+<table class="profil" style="border:2px solid #973A48; margin:5px; margin-top:20px;">
+<tr><th class="profil" style="font-weight:normal; text-align:left; background-color:#973A48; color:#fff;">
+<div style="font-weight:bold">Pro­fil: 3<span style="font-weight:normal"> (von 4)</span>
+</div>
+<div>Bo­den­sys­te­ma­ti­sche Ein­heit: PP-BB</div>
+<div>Flächen­an­teil: 20 %</div>
+<div title="Landnutzung nach Corine 2000" style="cursor:help;">Land­nutz­ung: Wälder (CORINE Land Cover Code: 31)
+                                        </div>
+</th></tr>
+<tr><td style="margin:0px; padding:0px;"><table>
+<tr>
+<th rowspan="2" class="borderLeft horizont" style="border:1px solid black; border-right:2px solid black;">Abfolge</th>
+<th class="borderLeft borderTop groupHoriz" colspan="4">Horizont</th>
+<th rowspan="2" class="horizont" title="Stratigraphie nach der KA5" style="cursor:help;">Stra­ti­gra­phie</th>
+<th rowspan="2" class="horizont" title="Zusammensetzung und Herkunft nach der KA5" style="cursor:help;">Her­kunft</th>
+<th rowspan="2" class="horizont" title="Geogenese nach der KA5" style="cursor:help;">Geo­ge­ne­se</th>
+<th class="borderLeft borderTop groupHoriz" colspan="2">Grobboden</th>
+<th class="borderLeft borderTop groupHoriz" colspan="5">mineralischer Feinboden</th>
+<th class="borderLeft borderTop groupHoriz" colspan="3">Torf</th>
+<th rowspan="2" class="horizont" title="Bodenacidität nach KA5" style="cursor:help;">Bo­den­aci­di­tät</th>
+</tr>
+<tr>
+<th class="horizont" title="Laufende Horizontummer ab Geländeoberkante" style="cursor:help;">Nr</th>
+<th class="horizont" title="Horizontbezeichnung nach der KA5" style="cursor:help;">Sym­bol</th>
+<th class="horizont" title="Obere Horizonttiefe ab Oberkante des mineralischen Oberbodens oder der Geländeoberkante bei Mooren. Organische Auflagen sind mit negativem Vorzeichen gekennzeichnet." style="cursor:help;">Ober­gren­ze<div style="font-weight:normal; white-space:nowrap;">[dm]</div>
+</th>
+<th class="horizont" title="Untere Horizonttiefe ab Oberkante des mineralischen Oberbodens oder der Geländeoberkante bei Mooren. Organische Auflagen sind mit negativem Vorzeichen gekennzeichnet." style="cursor:help;">Un­ter­gren­ze<div style="font-weight:normal; white-space:nowrap;">[dm]</div>
+</th>
+<th class="horizont" title="Fraktion des Grobbodens nach der KA5" style="cursor:help;">Fra­kt­ion</th>
+<th class="horizont" title="Gemengeanteilsklassen des Grobbodens nach der KA5" style="cursor:help;">Sum­me</th>
+<th class="horizont" title="Bodenartenuntergruppen nach der KA5" style="cursor:help;">Bo­den­art</th>
+<th class="horizont" title="Humusstufe nach der KA5" style="cursor:help;">Hu­mus</th>
+<th class="horizont" title="Carbonatgehalt im Boden nach der KA5" style="cursor:help;">Car­bo­nat­ge­halt</th>
+<th class="horizont" title="Bodengefüge nach der KA5" style="cursor:help;">Ge­fü­ge</th>
+<th class="horizont" title="Rohdichte für trockenen Boden (Rt) oder effektive Lagerungsdichte (Ld)" style="cursor:help;">Tro­cken­roh­dich­te / eff. La­ge­rungs­dich­te</th>
+<th class="horizont" title="Torfbodenarten nach der KA5" style="cursor:help;">Torf­arten</th>
+<th class="horizont" title="Zersetzungsstufe von Torfhorizonten nach der KA5" style="cursor:help;">Zer­setz­ungs­stu­fe</th>
+<th class="horizont" title="Substanzvolumen von Torfhorizonten nach der KA5" style="cursor:help;">Sub­stanz­vo­lu­men</th>
+</tr>
+<tr style="background-color:#fff; text-align:center;" onmouseover="mouseOverFirstTr(this)" onmouseout="mouseOut(this, '#fff')">
+<td style="border-right:2px solid black;" rowspan="7"><table class="showProfile"><tr>
+<td style="border-width:0px;"><table class="showProfile" cellspacing="0" cellpadding="0">
+<tr><td class="labelProfile" style="height:5.25px;">O</td></tr>
+<tr><td class="labelProfile" style="height:2.1px;">Ahe</td></tr>
+<tr><td class="labelProfile" style="height:2.8px;">Ae</td></tr>
+<tr><td class="labelProfile" style="height:5.600000000000001px;">Bhs</td></tr>
+<tr><td class="labelProfile" style="height:28px;">Bv</td></tr>
+<tr><td class="labelProfile" style="height:45.5px;">lCv</td></tr>
+<tr><td class="labelProfile" style="height:56px;">mCn</td></tr>
+</table></td>
+<td style="border-width:0px;"><table class="showProfile" style="border:1px solid #000000; border-bottom-width:0px; font-size:1px; width:30px;" cellspacing="0">
+<tr><td class="showProfile" title="                Horizont: 'O'
+ (Mächtigkeit: 0.75 dm, Darstellung: #FFFFFF)" style="font-size:1px; background-color: #FFFFFF; height: 5.25px; border-bottom:1px solid black;"><span style="background-color: #FFFFFF; height: 5.25px;"></span></td></tr>
+<tr><td class="showProfile" title="                Horizont: 'Ahe'
+ (Mächtigkeit: 0.3 dm, Darstellung: #8A7868)" style="font-size:1px; background-color: #8A7868; height: 2.1px; border-bottom:1px solid black;"><span style="background-color: #8A7868; height: 2.1px;"></span></td></tr>
+<tr><td class="showProfile" title="                Horizont: 'Ae'
+ (Mächtigkeit: 0.4 dm, Darstellung: #A69183)" style="font-size:1px; background-color: #A69183; height: 2.8px; border-bottom:1px solid black;"><span style="background-color: #A69183; height: 2.8px;"></span></td></tr>
+<tr><td class="showProfile" title="                Horizont: 'Bhs'
+ (Mächtigkeit: 0.8 dm, Darstellung: #A1713F)" style="font-size:1px; background-color: #A1713F; height: 5.600000000000001px; border-bottom:1px solid black;"><span style="background-color: #A1713F; height: 5.600000000000001px;"></span></td></tr>
+<tr><td class="showProfile" title="                Horizont: 'Bv'
+ (Mächtigkeit: 4 dm, Darstellung: #64402A)" style="font-size:1px; background-color: #64402A; height: 28px; border-bottom:1px solid black;"><span style="background-color: #64402A; height: 28px;"></span></td></tr>
+<tr><td class="showProfile" title="                Horizont: 'lCv'
+ (Mächtigkeit: 6.5 dm, Darstellung: #827B62)" style="font-size:1px; background-color: #827B62; height: 45.5px; border-bottom:1px solid black;"><span style="background-color: #827B62; height: 45.5px;"></span></td></tr>
+<tr><td class="showProfile" title="                Horizont: 'mCn'
+ (Mächtigkeit: 8 dm, Darstellung: #FFFFFF)" style="font-size:1px; background-color: #FFFFFF; height: 56px; border-bottom:1px solid black;"><span style="background-color: #FFFFFF; height: 56px;"></span></td></tr>
+</table></td>
+<td style="border-width:0px;"><table class="showProfile" cellspacing="0" cellpadding="0">
+<tr><td class="labelProfile" style="height:5.25px;">0.8</td></tr>
+<tr><td class="labelProfile" style="height:2.1px;">0.3</td></tr>
+<tr><td class="labelProfile" style="height:2.8px;">0.4</td></tr>
+<tr><td class="labelProfile" style="height:5.600000000000001px;">0.8</td></tr>
+<tr><td class="labelProfile" style="height:28px;">4.0</td></tr>
+<tr><td class="labelProfile" style="height:45.5px;">6.5</td></tr>
+<tr><td class="labelProfile" style="height:56px;">8.0</td></tr>
+</table></td>
+</tr></table></td>
+<td>1</td>
+<td>O</td>
+<td>-0.75</td>
+<td>0</td>
+<td>qh</td>
+<td>O</td>
+<td>og</td>
+<td></td>
+<td>0</td>
+<td></td>
+<td>h7</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr style="background-color:#ECECEC; text-align:center;" onmouseover="mouseOver(this)" onmouseout="mouseOut(this, '#ECECEC')">
+<td>2</td>
+<td>Ahe</td>
+<td>0</td>
+<td>0.3</td>
+<td>qp</td>
+<td>^s,Lol</td>
+<td>pfl</td>
+<td>Gr</td>
+<td>2</td>
+<td>Sl3</td>
+<td>h4</td>
+<td></td>
+<td></td>
+<td>Ld2</td>
+<td></td>
+<td></td>
+<td></td>
+<td>s5</td>
+</tr>
+<tr style="background-color:#fff; text-align:center;" onmouseover="mouseOver(this)" onmouseout="mouseOut(this, '#fff')">
+<td>3</td>
+<td>Ae</td>
+<td>0.3</td>
+<td>0.7</td>
+<td>qp</td>
+<td>^s,Lol</td>
+<td>pfl</td>
+<td>Gr</td>
+<td>2</td>
+<td>Sl3</td>
+<td>h1</td>
+<td></td>
+<td></td>
+<td>Ld3</td>
+<td></td>
+<td></td>
+<td></td>
+<td>s5</td>
+</tr>
+<tr style="background-color:#ECECEC; text-align:center;" onmouseover="mouseOver(this)" onmouseout="mouseOut(this, '#ECECEC')">
+<td>4</td>
+<td>Bhs</td>
+<td>0.7</td>
+<td>1.5</td>
+<td>qp</td>
+<td>^s,Lol</td>
+<td>pfl</td>
+<td>X</td>
+<td>3</td>
+<td>Sl3</td>
+<td>h2</td>
+<td></td>
+<td></td>
+<td>Ld3</td>
+<td></td>
+<td></td>
+<td></td>
+<td>s4</td>
+</tr>
+<tr style="background-color:#fff; text-align:center;" onmouseover="mouseOver(this)" onmouseout="mouseOut(this, '#fff')">
+<td>5</td>
+<td>Bv</td>
+<td>1.5</td>
+<td>5.5</td>
+<td>qp</td>
+<td>^s,Lol</td>
+<td>pfl</td>
+<td>X</td>
+<td>3</td>
+<td>Sl3</td>
+<td>h1</td>
+<td></td>
+<td></td>
+<td>Ld3</td>
+<td></td>
+<td></td>
+<td></td>
+<td>s4</td>
+</tr>
+<tr style="background-color:#ECECEC; text-align:center;" onmouseover="mouseOver(this)" onmouseout="mouseOut(this, '#ECECEC')">
+<td>6</td>
+<td>lCv</td>
+<td>5.5</td>
+<td>12</td>
+<td>qp</td>
+<td>^s</td>
+<td>pfl</td>
+<td>X</td>
+<td>5</td>
+<td>Sl2</td>
+<td>h0</td>
+<td></td>
+<td></td>
+<td>Ld3</td>
+<td></td>
+<td></td>
+<td></td>
+<td>s4</td>
+</tr>
+<tr style="background-color:#fff; text-align:center;" onmouseover="mouseOver(this)" onmouseout="mouseOut(this, '#fff')">
+<td>7</td>
+<td>mCn</td>
+<td>12</td>
+<td>20</td>
+<td></td>
+<td>^s</td>
+<td>n</td>
+<td></td>
+<td></td>
+<td></td>
+<td>h0</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table></td></tr>
+</table>
+<table class="profil" style="border:2px solid #973A48; margin:5px; margin-top:20px;">
+<tr><th class="profil" style="font-weight:normal; text-align:left; background-color:#973A48; color:#fff;">
+<div style="font-weight:bold">Pro­fil: 4<span style="font-weight:normal"> (von 4)</span>
+</div>
+<div>Bo­den­sys­te­ma­ti­sche Ein­heit: SS-BB</div>
+<div>Flächen­an­teil: 20 %</div>
+<div title="Landnutzung nach Corine 2000" style="cursor:help;">Land­nutz­ung: Grünland (CORINE Land Cover Code: 23)
+                                        </div>
+</th></tr>
+<tr><td style="margin:0px; padding:0px;"><table>
+<tr>
+<th rowspan="2" class="borderLeft horizont" style="border:1px solid black; border-right:2px solid black;">Abfolge</th>
+<th class="borderLeft borderTop groupHoriz" colspan="4">Horizont</th>
+<th rowspan="2" class="horizont" title="Stratigraphie nach der KA5" style="cursor:help;">Stra­ti­gra­phie</th>
+<th rowspan="2" class="horizont" title="Zusammensetzung und Herkunft nach der KA5" style="cursor:help;">Her­kunft</th>
+<th rowspan="2" class="horizont" title="Geogenese nach der KA5" style="cursor:help;">Geo­ge­ne­se</th>
+<th class="borderLeft borderTop groupHoriz" colspan="2">Grobboden</th>
+<th class="borderLeft borderTop groupHoriz" colspan="5">mineralischer Feinboden</th>
+<th class="borderLeft borderTop groupHoriz" colspan="3">Torf</th>
+<th rowspan="2" class="horizont" title="Bodenacidität nach KA5" style="cursor:help;">Bo­den­aci­di­tät</th>
+</tr>
+<tr>
+<th class="horizont" title="Laufende Horizontummer ab Geländeoberkante" style="cursor:help;">Nr</th>
+<th class="horizont" title="Horizontbezeichnung nach der KA5" style="cursor:help;">Sym­bol</th>
+<th class="horizont" title="Obere Horizonttiefe ab Oberkante des mineralischen Oberbodens oder der Geländeoberkante bei Mooren. Organische Auflagen sind mit negativem Vorzeichen gekennzeichnet." style="cursor:help;">Ober­gren­ze<div style="font-weight:normal; white-space:nowrap;">[dm]</div>
+</th>
+<th class="horizont" title="Untere Horizonttiefe ab Oberkante des mineralischen Oberbodens oder der Geländeoberkante bei Mooren. Organische Auflagen sind mit negativem Vorzeichen gekennzeichnet." style="cursor:help;">Un­ter­gren­ze<div style="font-weight:normal; white-space:nowrap;">[dm]</div>
+</th>
+<th class="horizont" title="Fraktion des Grobbodens nach der KA5" style="cursor:help;">Fra­kt­ion</th>
+<th class="horizont" title="Gemengeanteilsklassen des Grobbodens nach der KA5" style="cursor:help;">Sum­me</th>
+<th class="horizont" title="Bodenartenuntergruppen nach der KA5" style="cursor:help;">Bo­den­art</th>
+<th class="horizont" title="Humusstufe nach der KA5" style="cursor:help;">Hu­mus</th>
+<th class="horizont" title="Carbonatgehalt im Boden nach der KA5" style="cursor:help;">Car­bo­nat­ge­halt</th>
+<th class="horizont" title="Bodengefüge nach der KA5" style="cursor:help;">Ge­fü­ge</th>
+<th class="horizont" title="Rohdichte für trockenen Boden (Rt) oder effektive Lagerungsdichte (Ld)" style="cursor:help;">Tro­cken­roh­dich­te / eff. La­ge­rungs­dich­te</th>
+<th class="horizont" title="Torfbodenarten nach der KA5" style="cursor:help;">Torf­arten</th>
+<th class="horizont" title="Zersetzungsstufe von Torfhorizonten nach der KA5" style="cursor:help;">Zer­setz­ungs­stu­fe</th>
+<th class="horizont" title="Substanzvolumen von Torfhorizonten nach der KA5" style="cursor:help;">Sub­stanz­vo­lu­men</th>
+</tr>
+<tr style="background-color:#fff; text-align:center;" onmouseover="mouseOverFirstTr(this)" onmouseout="mouseOut(this, '#fff')">
+<td style="border-right:2px solid black;" rowspan="5"><table class="showProfile"><tr>
+<td style="border-width:0px;"><table class="showProfile" cellspacing="0" cellpadding="0">
+<tr><td class="labelProfile" style="height:7px;">Ah</td></tr>
+<tr><td class="labelProfile" style="height:21px;">Sw-Bv</td></tr>
+<tr><td class="labelProfile" style="height:42px;">Sd</td></tr>
+<tr><td class="labelProfile" style="height:35px;">lCv</td></tr>
+<tr><td class="labelProfile" style="height:35px;">mCn</td></tr>
+</table></td>
+<td style="border-width:0px;"><table class="showProfile" style="border:1px solid #000000; border-bottom-width:0px; font-size:1px; width:30px;" cellspacing="0">
+<tr><td class="showProfile" title="                Horizont: 'Ah'
+ (Mächtigkeit: 1 dm, Darstellung: #8B776A)" style="font-size:1px; background-color: #8B776A; height: 7px; border-bottom:1px solid black;"><span style="background-color: #8B776A; height: 7px;"></span></td></tr>
+<tr><td class="showProfile" title="                Horizont: 'Sw-Bv'
+ (Mächtigkeit: 3 dm, Darstellung: #64402A)" style="font-size:1px; background-color: #64402A; height: 21px; border-bottom:1px solid black;"><span style="background-color: #64402A; height: 21px;"></span></td></tr>
+<tr><td class="showProfile" title="                Horizont: 'Sd'
+ (Mächtigkeit: 6 dm, Darstellung: #B3673D)" style="font-size:1px; background-color: #B3673D; height: 42px; border-bottom:1px solid black;"><span style="background-color: #B3673D; height: 42px;"></span></td></tr>
+<tr><td class="showProfile" title="                Horizont: 'lCv'
+ (Mächtigkeit: 5 dm, Darstellung: #827B62)" style="font-size:1px; background-color: #827B62; height: 35px; border-bottom:1px solid black;"><span style="background-color: #827B62; height: 35px;"></span></td></tr>
+<tr><td class="showProfile" title="                Horizont: 'mCn'
+ (Mächtigkeit: 5 dm, Darstellung: #FFFFFF)" style="font-size:1px; background-color: #FFFFFF; height: 35px; border-bottom:1px solid black;"><span style="background-color: #FFFFFF; height: 35px;"></span></td></tr>
+</table></td>
+<td style="border-width:0px;"><table class="showProfile" cellspacing="0" cellpadding="0">
+<tr><td class="labelProfile" style="height:7px;">1.0</td></tr>
+<tr><td class="labelProfile" style="height:21px;">3.0</td></tr>
+<tr><td class="labelProfile" style="height:42px;">6.0</td></tr>
+<tr><td class="labelProfile" style="height:35px;">5.0</td></tr>
+<tr><td class="labelProfile" style="height:35px;">5.0</td></tr>
+</table></td>
+</tr></table></td>
+<td>1</td>
+<td>Ah</td>
+<td>0</td>
+<td>1</td>
+<td>qp</td>
+<td>Lol,^s</td>
+<td>pfl</td>
+<td>Gr</td>
+<td>3</td>
+<td>Uls</td>
+<td>h4</td>
+<td></td>
+<td></td>
+<td>Ld2</td>
+<td></td>
+<td></td>
+<td></td>
+<td>s1</td>
+</tr>
+<tr style="background-color:#ECECEC; text-align:center;" onmouseover="mouseOver(this)" onmouseout="mouseOut(this, '#ECECEC')">
+<td>2</td>
+<td>Sw-Bv</td>
+<td>1</td>
+<td>4</td>
+<td>qp</td>
+<td>Lol,^s</td>
+<td>pfl</td>
+<td>Gr</td>
+<td>3</td>
+<td>Uls</td>
+<td>h1</td>
+<td></td>
+<td></td>
+<td>Ld3</td>
+<td></td>
+<td></td>
+<td></td>
+<td>s1</td>
+</tr>
+<tr style="background-color:#fff; text-align:center;" onmouseover="mouseOver(this)" onmouseout="mouseOut(this, '#fff')">
+<td>3</td>
+<td>Sd</td>
+<td>4</td>
+<td>10</td>
+<td>qp(s)</td>
+<td>^s</td>
+<td>pfl</td>
+<td>Gr</td>
+<td>4</td>
+<td>Lts</td>
+<td>h0</td>
+<td></td>
+<td></td>
+<td>Ld4</td>
+<td></td>
+<td></td>
+<td></td>
+<td>s2</td>
+</tr>
+<tr style="background-color:#ECECEC; text-align:center;" onmouseover="mouseOver(this)" onmouseout="mouseOut(this, '#ECECEC')">
+<td>4</td>
+<td>lCv</td>
+<td>10</td>
+<td>15</td>
+<td>qp(s)</td>
+<td>^s</td>
+<td>c</td>
+<td>X</td>
+<td>5</td>
+<td>Ls4</td>
+<td>h0</td>
+<td></td>
+<td></td>
+<td>Ld3</td>
+<td></td>
+<td></td>
+<td></td>
+<td>s2</td>
+</tr>
+<tr style="background-color:#fff; text-align:center;" onmouseover="mouseOver(this)" onmouseout="mouseOut(this, '#fff')">
+<td>5</td>
+<td>mCn</td>
+<td>15</td>
+<td>20</td>
+<td>s</td>
+<td>^s</td>
+<td>n</td>
+<td></td>
+<td></td>
+<td></td>
+<td>h0</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table></td></tr>
+</table>
+</td></tr>
+</table>
+<a href="https://www.bgr.bund.de/DE/Allgemeines/Wm/Impressum/impressum_node.html" target="_blank" title="Impressum">Impressum</a> der Bundesanstalt für Geowissenschaften und Rohstoffe
+            </body>
+</html>

@@ -1,0 +1,56 @@
+{
+ "archive_era5land_2025": {
+  "url": "https://archive-api.open-meteo.com/v1/archive?latitude=52.22%2C53.05%2C52.75%2C53.35%2C53.25%2C51.75%2C52.37%2C53.55&longitude=9.95%2C10.05%2C7.35%2C8.4%2C8.9%2C9.55%2C9.73%2C9.95&start_date=2025-01-01&end_date=2025-12-31&hourly=soil_moisture_0_to_7cm%2Csoil_moisture_7_to_28cm%2Csoil_moisture_28_to_100cm%2Csoil_moisture_100_to_255cm%2Csoil_temperature_0_to_7cm%2Csoil_temperature_7_to_28cm%2Csoil_temperature_28_to_100cm%2Csoil_temperature_100_to_255cm&daily=precipitation_sum%2Cet0_fao_evapotranspiration&models=era5_land&timezone=UTC",
+  "seconds": 10.37,
+  "bytes": 4365062,
+  "fetched_utc": "2026-10-03T08:59:34Z"
+ },
+ "archive_era5land_cellcheck_nearest": {
+  "url": "https://archive-api.open-meteo.com/v1/archive?latitude=52.22%2C53.05%2C52.75%2C53.35%2C53.25%2C51.75%2C52.37%2C53.55&longitude=9.95%2C10.05%2C7.35%2C8.4%2C8.9%2C9.55%2C9.73%2C9.95&start_date=2025-07-01&end_date=2025-07-01&hourly=soil_moisture_0_to_7cm&models=era5_land&timezone=UTC&cell_selection=nearest&elevation=nan%2Cnan%2Cnan%2Cnan%2Cnan%2Cnan%2Cnan%2Cnan",
+  "seconds": 0.22,
+  "bytes": 7206,
+  "fetched_utc": "2026-10-03T08:59:37Z"
+ },
+ "archive_era5_cellcheck": {
+  "url": "https://archive-api.open-meteo.com/v1/archive?latitude=52.22%2C53.05%2C52.75%2C53.35%2C53.25%2C51.75%2C52.37%2C53.55&longitude=9.95%2C10.05%2C7.35%2C8.4%2C8.9%2C9.55%2C9.73%2C9.95&start_date=2025-07-01&end_date=2025-07-01&hourly=soil_moisture_0_to_7cm&models=era5&timezone=UTC",
+  "seconds": 0.22,
+  "bytes": 7140,
+  "fetched_utc": "2026-10-03T08:59:41Z"
+ },
+ "archive_lagprobe_era5land": {
+  "url": "https://archive-api.open-meteo.com/v1/archive?latitude=52.22&longitude=9.95&past_days=0&start_date=2026-09-15&end_date=2026-10-03&hourly=soil_moisture_0_to_7cm&daily=precipitation_sum&models=era5_land&timezone=UTC",
+  "seconds": 0.21,
+  "bytes": 11978,
+  "fetched_utc": "2026-10-03T08:59:44Z"
+ },
+ "archive_lagprobe_bestmatch": {
+  "url": "https://archive-api.open-meteo.com/v1/archive?latitude=52.22&longitude=9.95&start_date=2026-09-15&end_date=2026-10-03&hourly=soil_moisture_0_to_7cm&daily=precipitation_sum&models=best_match&timezone=UTC",
+  "seconds": 0.21,
+  "bytes": 12130,
+  "fetched_utc": "2026-10-03T08:59:47Z"
+ },
+ "forecast_icon_seamless": {
+  "url": "https://api.open-meteo.com/v1/forecast?latitude=52.22%2C53.05%2C52.75%2C53.35%2C53.25%2C51.75%2C52.37%2C53.55&longitude=9.95%2C10.05%2C7.35%2C8.4%2C8.9%2C9.55%2C9.73%2C9.95&hourly=soil_moisture_0_to_1cm%2Csoil_moisture_1_to_3cm%2Csoil_moisture_3_to_9cm%2Csoil_moisture_9_to_27cm%2Csoil_moisture_27_to_81cm%2Csoil_temperature_0cm%2Csoil_temperature_6cm%2Csoil_temperature_18cm%2Csoil_temperature_54cm&daily=precipitation_sum%2Cet0_fao_evapotranspiration&models=icon_seamless&forecast_days=7&past_days=7&timezone=UTC",
+  "seconds": 0.33,
+  "bytes": 194855,
+  "fetched_utc": "2026-10-03T08:59:50Z"
+ },
+ "forecast_icon_models": {
+  "url": "https://api.open-meteo.com/v1/forecast?latitude=52.22%2C53.05%2C52.75%2C53.35%2C53.25%2C51.75%2C52.37%2C53.55&longitude=9.95%2C10.05%2C7.35%2C8.4%2C8.9%2C9.55%2C9.73%2C9.95&hourly=soil_moisture_0_to_1cm%2Csoil_moisture_1_to_3cm%2Csoil_moisture_3_to_9cm%2Csoil_moisture_9_to_27cm%2Csoil_moisture_27_to_81cm%2Csoil_temperature_0cm%2Csoil_temperature_6cm%2Csoil_temperature_18cm%2Csoil_temperature_54cm&models=icon_d2%2Cicon_eu%2Cicon_global&forecast_days=7&timezone=UTC",
+  "seconds": 0.26,
+  "bytes": 238340,
+  "fetched_utc": "2026-10-03T08:59:54Z"
+ },
+ "forecast_ecmwf_era5names": {
+  "url": "https://api.open-meteo.com/v1/forecast?latitude=52.22%2C53.05%2C52.75%2C53.35%2C53.25%2C51.75%2C52.37%2C53.55&longitude=9.95%2C10.05%2C7.35%2C8.4%2C8.9%2C9.55%2C9.73%2C9.95&hourly=soil_moisture_0_to_7cm%2Csoil_moisture_7_to_28cm%2Csoil_moisture_28_to_100cm%2Csoil_moisture_100_to_255cm%2Csoil_temperature_0_to_7cm%2Csoil_temperature_7_to_28cm%2Csoil_temperature_28_to_100cm%2Csoil_temperature_100_to_255cm&models=ecmwf_ifs025&forecast_days=7&timezone=UTC",
+  "seconds": 0.21,
+  "bytes": 90673,
+  "fetched_utc": "2026-10-03T08:59:57Z"
+ },
+ "archive_era5seamless_daily_2025": {
+  "url": "https://archive-api.open-meteo.com/v1/archive?latitude=52.22%2C53.05%2C52.75%2C53.35%2C53.25%2C51.75%2C52.37%2C53.55&longitude=9.95%2C10.05%2C7.35%2C8.4%2C8.9%2C9.55%2C9.73%2C9.95&start_date=2025-01-01&end_date=2025-12-31&daily=precipitation_sum%2Cet0_fao_evapotranspiration&models=era5_seamless&timezone=UTC",
+  "seconds": 0.71,
+  "bytes": 70036,
+  "fetched_utc": "2026-10-03T09:00:35Z"
+ }
+}

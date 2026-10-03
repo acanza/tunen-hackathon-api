@@ -1,0 +1,11 @@
+requests
+owslib
+rasterio
+rioxarray
+xarray
+geopandas
+shapely
+pandas
+pyproj
+stac-client
+jsonlines

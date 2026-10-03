@@ -7,7 +7,7 @@ This document does not authorize implementation, deployment, or scope expansion.
 
 The [architecture and milestones](implementation-plan.md) define the shared
 design and delivery gates. This document defines the smallest planned units of
-work. The [acceptance criteria](../skills/soil-api-engineer/references/acceptance.md)
+work. The [acceptance criteria](../.agents/skills/soil-api-engineer/references/acceptance.md)
 remain the overall validation baseline.
 
 ## Execution and verification rules

@@ -1,6 +1,7 @@
 -- POC store for the soil layers API. Pixels live in files under poc/store/; this DB holds metadata only.
 -- Geometries are GeoJSON text in EPSG:4326 (no SpatiaLite needed). Paths are relative to poc/store/.
 
+DROP TABLE IF EXISTS validation;
 DROP TABLE IF EXISTS field_layers;
 DROP TABLE IF EXISTS fields;
 DROP TABLE IF EXISTS regional_rasters;
@@ -104,4 +105,14 @@ CREATE TABLE field_layers (
     conf_png_path   TEXT,                    -- hatch over low-confidence pixels, same grid as png
     provenance_json TEXT,
     PRIMARY KEY (run_id, plot_id, parameter, source)
+);
+
+-- Written by poc/validate.py (run after build_store.py). Metrics for the derived layers.
+CREATE TABLE validation (
+    run_id       TEXT NOT NULL REFERENCES runs(run_id),
+    metric       TEXT NOT NULL,
+    scope        TEXT NOT NULL,
+    value        REAL,
+    n            INTEGER,
+    details_json TEXT
 );

@@ -29,7 +29,8 @@ ZONE_INNER_M = 10
 MIN_ZONE_PX = 20
 SD_FLOOR = 0.02
 
-SLOPE_SHRINK_K = 4          # slope weight n / (n + k): with n ≤ 8 seasons the per-pixel slope is noisy
+SLOPE_SHRINK_K = 32         # slope weight n / (n + k): with n ≤ 8 seasons the per-pixel slope is noisy;
+                            # k chosen by leave-one-season-out in poc/validate.py (k = 4 hurt, 32 ≈ best)
 CLIMATE_YEARS = (1991, 2020)
 SCENARIO_QUANTILES = {"dry": 0.2, "wet": 0.8}
 

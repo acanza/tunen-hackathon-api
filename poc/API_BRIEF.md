@@ -57,6 +57,9 @@ SELECT source, parameter FROM source_parameters;
 -- colour scales (returned verbatim as "colormap")
 SELECT colormap_id, json FROM colormaps;
 
+-- optional, e.g. for an "about the data" page: validation metrics of the derived layers (see poc/VALIDATION.md)
+SELECT metric, scope, value, n FROM validation WHERE run_id = ?;
+
 -- the area you can answer for (polygons outside → outside_coverage_area)
 SELECT geom_geojson FROM coverage_areas WHERE name = 'farm_raster_extent';
 ```

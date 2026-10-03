@@ -602,12 +602,12 @@
      "geotiff_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/yield_potential__derived.tif",
      "stats": {
       "mean": 100.0,
-      "std": 1.0,
-      "min": 97.58,
-      "p10": 98.77,
-      "p50": 99.83,
-      "p90": 101.26,
-      "max": 101.91,
+      "std": 0.91,
+      "min": 97.26,
+      "p10": 98.83,
+      "p50": 99.93,
+      "p90": 101.02,
+      "max": 101.82,
       "n_px": 91,
       "zone": "inner_10m"
      },
@@ -659,8 +659,8 @@
       ],
       "pixel_shares": {
        "low": 0.143,
-       "medium": 0.791,
-       "high": 0.066
+       "medium": 0.802,
+       "high": 0.055
       },
       "raster_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/yield_potential__derived.tif#band=4",
       "png_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/yield_potential__derived__conf.png"
@@ -1114,12 +1114,12 @@
      "geotiff_url": "/static/runs/poc-2026-10-03/fields/SEo2xyfcqiAjoec8ZXXa/yield_potential__derived.tif",
      "stats": {
       "mean": 100.0,
-      "std": 1.51,
-      "min": 94.82,
-      "p10": 98.0,
+      "std": 1.56,
+      "min": 94.56,
+      "p10": 97.96,
       "p50": 100.02,
-      "p90": 101.93,
-      "max": 103.28,
+      "p90": 102.0,
+      "max": 103.43,
       "n_px": 5133,
       "zone": "inner_10m"
      },
@@ -1171,8 +1171,8 @@
       ],
       "pixel_shares": {
        "low": 0.14,
-       "medium": 0.526,
-       "high": 0.334
+       "medium": 0.51,
+       "high": 0.35
       },
       "raster_url": "/static/runs/poc-2026-10-03/fields/SEo2xyfcqiAjoec8ZXXa/yield_potential__derived.tif#band=4",
       "png_url": "/static/runs/poc-2026-10-03/fields/SEo2xyfcqiAjoec8ZXXa/yield_potential__derived__conf.png"

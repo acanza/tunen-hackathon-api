@@ -6,6 +6,7 @@
 confidence and a SQLite DB. Uses only files already in data/seggerde/ (no downloads).
 
     uv run poc/build_store.py          # from the repo root; rebuilds poc/store/ from scratch
+    uv run poc/validate.py             # then refill the `validation` table and poc/VALIDATION.md
 
 Inputs
 - data/seggerde/clean/fields_clean.geojson        87 fields

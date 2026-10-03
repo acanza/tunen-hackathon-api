@@ -91,6 +91,7 @@ The bounded units and their evidence are defined in
 | P2.4 | Approved | Validated on 2026-10-03: `soil_api.layers.map_field_layer` maps all 696 stored layers with status-specific metadata, colormaps, statistics, provenance, confidence artifact URLs, and run-relative static URLs; stored paths are rejected if absolute or traversing outside the store-relative namespace. |
 | P2.5 | Approved | Validated on 2026-10-03: `POST /soil/layers` validates requests, reads the current run read-only, expands every requested pair, applies matching and coverage classification, maps stored layers, preserves the exact sample response, returns 413 above 200 features, and returns 422 for unknown filters without provider or network calls. |
 | P3.1 | Approved | Validated on 2026-10-03: `soil_api.artifacts.resolve_store_artifact` resolves existing store-relative files, rejects absolute paths, traversal, backslashes, NUL bytes, and missing files, and confirms the resolved path remains inside the configured store after symlink resolution. |
+| P3.2 | Approved | Validated on 2026-10-03: `GET /static/{path}` serves all 32 unique sample PNG/GeoTIFF artifacts with correct media types and `Cache-Control: public, max-age=31536000, immutable`; missing, traversal, unsupported-extension, and database paths return 404. |
 
 ## Completion gate
 

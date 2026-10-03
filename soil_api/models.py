@@ -6,7 +6,15 @@ import math
 from enum import Enum
 from typing import Any, ClassVar, Optional, Union
 
-from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
+from pydantic import (
+    BaseModel,
+    ConfigDict,
+    Field,
+    SerializerFunctionWrapHandler,
+    field_validator,
+    model_serializer,
+    model_validator,
+)
 from shapely.geometry import shape
 from shapely.validation import explain_validity
 
@@ -144,3 +152,111 @@ class LayersRequest(BaseModel):
         """Return an immutable filter, preserving omission as ``None``."""
 
         return tuple(self.sources) if self.sources is not None else None
+
+
+class LayerStatus(str, Enum):
+    """States returned for a requested parameter/source pair."""
+
+    OK = "ok"
+    PARTIAL = "partial"
+    UNAVAILABLE = "unavailable"
+    NOT_APPLICABLE = "not_applicable"
+
+
+class MatchType(str, Enum):
+    """Ways a submitted feature can be associated with the frozen store."""
+
+    PLOT_ID = "plot_id"
+    PLOT_ID_GEOMETRY_DIFFERS = "plot_id_geometry_differs"
+    GEOMETRY = "geometry"
+    CLIPPED = "clipped"
+    OUTSIDE_COVERAGE_AREA = "outside_coverage_area"
+
+
+class ConfidenceResponse(BaseModel):
+    """Stored confidence metadata and its derived artifact URLs."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    level: str
+    interval_90: Optional[list[float]] = None
+    drivers: list[str]
+    pixel_shares: dict[str, float]
+    raster_url: Optional[str] = None
+    png_url: Optional[str] = None
+
+
+class LayerResponse(BaseModel):
+    """One response entry for a requested parameter/source pair."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    parameter: Parameter
+    source: Source
+    status: LayerStatus
+    reason: Optional[str] = None
+    coverage: Optional[float] = Field(default=None, ge=0, le=1)
+    unit: Optional[str] = None
+    png_url: Optional[str] = None
+    geotiff_url: Optional[str] = None
+    stats: Optional[dict[str, Any]] = None
+    colormap: Optional[dict[str, Any]] = None
+    confidence: Optional[ConfidenceResponse] = None
+    provenance: Optional[dict[str, Any]] = None
+
+    @model_serializer(mode="wrap")
+    def serialize_layer(
+        self,
+        serializer: SerializerFunctionWrapHandler,
+    ) -> dict[str, Any]:
+        data = serializer(self)
+        if self.status in (LayerStatus.UNAVAILABLE, LayerStatus.NOT_APPLICABLE):
+            return {key: value for key, value in data.items() if value is not None}
+        return data
+
+    @model_validator(mode="after")
+    def validate_status_metadata(self) -> "LayerResponse":
+        has_artifacts = any(
+            value is not None
+            for value in (
+                self.png_url,
+                self.geotiff_url,
+                self.stats,
+                self.colormap,
+                self.confidence,
+                self.provenance,
+            )
+        )
+        if self.status == LayerStatus.NOT_APPLICABLE:
+            if self.reason != "source_does_not_provide_parameter":
+                raise ValueError(
+                    "not_applicable layers must explain that the source does not provide the parameter"
+                )
+            if has_artifacts or self.coverage is not None or self.unit is not None:
+                raise ValueError("not_applicable layers cannot contain stored layer metadata")
+        elif self.status in (LayerStatus.OK, LayerStatus.PARTIAL) and not has_artifacts:
+            raise ValueError("available layers must contain stored metadata")
+        return self
+
+
+class FieldResponse(BaseModel):
+    """Response for one submitted field feature."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    id: Optional[Union[str, int]] = None
+    matched_plot_id: Optional[str] = None
+    match: MatchType
+    field_name: Optional[str] = None
+    bounds: Optional[list[list[float]]] = None
+    layers: list[LayerResponse]
+
+
+class LayersResponse(BaseModel):
+    """Top-level response for the frozen soil layers contract."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    run_id: str
+    data_as_of: dict[str, str]
+    fields: list[FieldResponse]

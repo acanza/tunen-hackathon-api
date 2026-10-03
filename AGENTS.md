@@ -6,6 +6,11 @@ To design, implement, or review this repository's soil API, read and apply
 The definition is versioned in this project; it does not require installing a
 global skill or running an AI service. It does not apply to tasks outside the backend.
 
+For API planning, implementation, and review, also read the shared
+[architecture and phased implementation plan](docs/implementation-plan.md).
+Consult the relevant phase when resuming work; the plan is context, not automatic
+authorization to implement or evidence of completed milestones.
+
 ## Codex integration
 
 Codex discovers this repository's skill through

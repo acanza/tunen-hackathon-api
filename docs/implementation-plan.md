@@ -2,10 +2,10 @@
 
 Date: 2026-10-03
 
-Status: M0 / unit 0A and M1 / unit 1A verified on 2026-10-03; see the
+Status: M0 / unit 0A and M1 / units 1A and 1B verified on 2026-10-03; see the
 [feasibility evidence](verification/0a/README.md) and the
-[domain-contract evidence](verification/1a/README.md). M1 is in progress: unit
-1B remains planned. M2–M5 remain planned, and no public API routes exist yet.
+[domain-contract evidence](verification/1a/README.md) and [layer evidence](verification/1b/README.md).
+M1 is complete. M2–M5 remain planned, and no public API routes exist yet.
 
 ## Objective and scope
 
@@ -221,7 +221,7 @@ bounded work units, dependencies, and evidence requirements are defined in
 | Milestone | Required units | Acceptance gate |
 | --- | --- | --- |
 | M0: Initial data feasibility | 0A | One real source/parameter has reproducible spatial value access and sufficient metadata for the first integration. |
-| M1: First end-to-end integration (1A complete; 1B planned) | 1A, 1B after M0 | One field and one real layer yield downloadable PNG and JSON, correct clipping, statistics, provenance, and enforced limits. This is a technical demonstration. |
+| M1: First end-to-end integration | 1A, 1B after M0 | One field and one real layer yield downloadable PNG and JSON, correct clipping, statistics, provenance, and enforced limits. This is a technical demonstration. |
 | M2: Functional backend MVP | 2A–2F and their 0B checks, after M1 | Multiple fields and all five parameters work through SoilGrids and the necessary LBEG sources; capabilities, provenance, and partial failures are verified. Any missing required parameter keeps M2 incomplete. |
 | M3: Reproducible demo and freshness | 3A–3C after M2 | Cache reuse, explicit refresh, and a clean-environment demo are verified; failures remain visible. |
 | M4: Cross-source derived layers | 4A–4C after M2 | Compatible aggregation, source counts, spread, and separately identified provider uncertainty meet their documented data requirements and tests. |

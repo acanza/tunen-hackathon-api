@@ -16,6 +16,7 @@ from .models import (
     LayerRequest,
     LayerResult,
     LayerStatistics,
+    LegendEntry,
     Parameter,
     ProcessingLimits,
     ResultStatus,
@@ -38,9 +39,9 @@ __all__ = [
     "LayerRequest",
     "LayerResult",
     "LayerStatistics",
+    "LegendEntry",
     "Parameter",
     "ProcessingLimits",
     "ResultStatus",
     "Source",
 ]
-

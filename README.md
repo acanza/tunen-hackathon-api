@@ -1,7 +1,8 @@
 # Tunen soil API
 
-The repository currently contains the verified M0 feasibility probe and the M1
-unit 1A internal domain contract. It does not expose an HTTP API yet.
+The repository currently contains the verified M0 feasibility probe and the
+complete M1 single-field SoilGrids clay integration. It does not expose an HTTP
+API yet; public routes belong to M5.
 
 ## Local setup and checks
 
@@ -13,8 +14,8 @@ python3 -m venv .venv
 .venv/bin/python -m unittest discover -s tests -v
 ```
 
-The public FastAPI routes, SoilGrids runtime adapter, clipping, rendering, and
-artifact storage belong to later units. The M1 contract currently accepts one
-GeoJSON `Polygon` or `MultiPolygon` field, with a required `id`, for SoilGrids
-clay at 0–30 cm.
-
+The M1 service accepts one GeoJSON `Polygon` or `MultiPolygon` field, with a
+required `id`, and returns a real SoilGrids clay layer at 0–30 cm through
+`SoilLayerService.create_layer`. It stores PNG and JSON artifacts locally.
+Provider access requires network access to SoilGrids. Public FastAPI routes,
+additional parameters, multiple fields, and cache reuse belong to later units.

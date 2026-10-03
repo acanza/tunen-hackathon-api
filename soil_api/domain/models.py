@@ -256,6 +256,11 @@ class ArtifactReference(DomainModel):
     media_type: str = Field(min_length=1, max_length=128)
 
 
+class LegendEntry(DomainModel):
+    value: float
+    color: str = Field(pattern=r"^#[0-9A-Fa-f]{6}$")
+
+
 class LayerData(DomainModel):
     field_id: FieldIdentifier
     parameter: Literal[Parameter.CLAY]
@@ -269,6 +274,8 @@ class LayerData(DomainModel):
     dataset_version: Optional[str]
     dataset_date: Optional[str]
     method: str = Field(min_length=1)
+    legend: tuple[LegendEntry, ...] = ()
+    provenance: dict[str, Any] = Field(default_factory=dict)
 
     @model_validator(mode="after")
     def validate_artifacts(self):
@@ -297,4 +304,3 @@ class LayerResult(DomainModel):
         elif self.data is not None or self.error is None:
             raise ValueError("non-available result requires error and forbids data")
         return self
-

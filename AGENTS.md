@@ -11,6 +11,12 @@ For API planning, implementation, and review, also read the shared
 Consult the relevant milestone when resuming work; the plan is context, not automatic
 authorization to implement or evidence of completed milestones.
 
+For code naming conventions
+[FastAPI naming conventions and best practices](docs/api-naming-conventions.md).
+Apply these conventions to new and updated API code, schemas, routes,
+parameters, JSON fields, and related documentation unless the user explicitly
+requests a bounded exception.
+
 The former phases are milestones. Read the relevant bounded
 [implementation units](docs/implementation-units.md) for dependencies, scope,
 and required verification evidence before working on a milestone.

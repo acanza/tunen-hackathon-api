@@ -1,0 +1,308 @@
+[
+ {
+  "url": "https://services.bgr.de/arcgis/rest/services/boden/buek200/MapServer?f=json",
+  "status": 200,
+  "seconds": 0.294,
+  "try": 1
+ },
+ {
+  "url": "https://services.bgr.de/arcgis/rest/services/boden/buek200/MapServer/0/query?geometry=9.95%2C52.22&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false&f=json",
+  "status": 200,
+  "seconds": 0.268,
+  "try": 1
+ },
+ {
+  "url": "https://services.bgr.de/arcgis/rest/services/boden/buek200/MapServer/17/query?geometry=9.95%2C52.22&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false&f=json",
+  "status": 200,
+  "seconds": 0.356,
+  "try": 1
+ },
+ {
+  "url": "https://services.bgr.de/arcgis/rest/services/boden/buek200/MapServer/identify?geometry=9.95%2C52.22&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=0&returnGeometry=false&mapExtent=9.94%2C52.21%2C9.959999999999999%2C52.23&imageDisplay=400%2C400%2C96&f=json",
+  "status": 200,
+  "seconds": 0.553,
+  "try": 1
+ },
+ {
+  "url": "https://fisbo.bgr.de/app/FISBoBGR_Profilanzeige/getProfile.php?KARTE=BUEK200&LEGNR=391852",
+  "status": 200,
+  "seconds": 0.335,
+  "try": 1
+ },
+ {
+  "url": "https://services.bgr.de/arcgis/rest/services/boden/buek200/MapServer/0/query?geometry=9.95%2C52.12&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false&f=json",
+  "status": 200,
+  "seconds": 0.295,
+  "try": 1
+ },
+ {
+  "url": "https://services.bgr.de/arcgis/rest/services/boden/buek200/MapServer/17/query?geometry=9.95%2C52.12&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false&f=json",
+  "status": 200,
+  "seconds": 0.362,
+  "try": 1
+ },
+ {
+  "url": "https://services.bgr.de/arcgis/rest/services/boden/buek200/MapServer/identify?geometry=9.95%2C52.12&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=0&returnGeometry=false&mapExtent=9.94%2C52.11%2C9.959999999999999%2C52.129999999999995&imageDisplay=400%2C400%2C96&f=json",
+  "status": 200,
+  "seconds": 0.504,
+  "try": 1
+ },
+ {
+  "url": "https://fisbo.bgr.de/app/FISBoBGR_Profilanzeige/getProfile.php?KARTE=BUEK200&LEGNR=391888",
+  "status": 200,
+  "seconds": 0.386,
+  "try": 1
+ },
+ {
+  "url": "https://services.bgr.de/arcgis/rest/services/boden/buek200/MapServer/0/query?geometry=10.05%2C53.05&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false&f=json",
+  "status": 200,
+  "seconds": 0.264,
+  "try": 1
+ },
+ {
+  "url": "https://services.bgr.de/arcgis/rest/services/boden/buek200/MapServer/11/query?geometry=10.05%2C53.05&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false&f=json",
+  "status": 200,
+  "seconds": 0.398,
+  "try": 1
+ },
+ {
+  "url": "https://services.bgr.de/arcgis/rest/services/boden/buek200/MapServer/identify?geometry=10.05%2C53.05&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=0&returnGeometry=false&mapExtent=10.040000000000001%2C53.04%2C10.06%2C53.059999999999995&imageDisplay=400%2C400%2C96&f=json",
+  "status": 200,
+  "seconds": 0.495,
+  "try": 1
+ },
+ {
+  "url": "https://fisbo.bgr.de/app/FISBoBGR_Profilanzeige/getProfile.php?KARTE=BUEK200&LEGNR=312666",
+  "status": 200,
+  "seconds": 0.317,
+  "try": 1
+ },
+ {
+  "url": "https://services.bgr.de/arcgis/rest/services/boden/buek200/MapServer/0/query?geometry=7.35%2C52.75&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false&f=json",
+  "status": 200,
+  "seconds": 0.25,
+  "try": 1
+ },
+ {
+  "url": "https://services.bgr.de/arcgis/rest/services/boden/buek200/MapServer/16/query?geometry=7.35%2C52.75&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false&f=json",
+  "status": 200,
+  "seconds": 0.392,
+  "try": 1
+ },
+ {
+  "url": "https://services.bgr.de/arcgis/rest/services/boden/buek200/MapServer/identify?geometry=7.35%2C52.75&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=0&returnGeometry=false&mapExtent=7.34%2C52.74%2C7.359999999999999%2C52.76&imageDisplay=400%2C400%2C96&f=json",
+  "status": 200,
+  "seconds": 0.449,
+  "try": 1
+ },
+ {
+  "url": "https://fisbo.bgr.de/app/FISBoBGR_Profilanzeige/getProfile.php?KARTE=BUEK200&LEGNR=391031",
+  "status": 200,
+  "seconds": 0.379,
+  "try": 1
+ },
+ {
+  "url": "https://services.bgr.de/arcgis/rest/services/boden/buek200/MapServer/0/query?geometry=8.4%2C53.35&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false&f=json",
+  "status": 200,
+  "seconds": 0.275,
+  "try": 1
+ },
+ {
+  "url": "https://services.bgr.de/arcgis/rest/services/boden/buek200/MapServer/9/query?geometry=8.4%2C53.35&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false&f=json",
+  "status": 200,
+  "seconds": 0.499,
+  "try": 1
+ },
+ {
+  "url": "https://services.bgr.de/arcgis/rest/services/boden/buek200/MapServer/identify?geometry=8.4%2C53.35&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=0&returnGeometry=false&mapExtent=8.39%2C53.34%2C8.41%2C53.36&imageDisplay=400%2C400%2C96&f=json",
+  "status": 200,
+  "seconds": 0.548,
+  "try": 1
+ },
+ {
+  "url": "https://fisbo.bgr.de/app/FISBoBGR_Profilanzeige/getProfile.php?KARTE=BUEK200&LEGNR=311009",
+  "status": 200,
+  "seconds": 0.289,
+  "try": 1
+ },
+ {
+  "url": "https://services.bgr.de/arcgis/rest/services/boden/buek200/MapServer/0/query?geometry=8.9%2C53.25&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false&f=json",
+  "status": 200,
+  "seconds": 0.241,
+  "try": 1
+ },
+ {
+  "url": "https://services.bgr.de/arcgis/rest/services/boden/buek200/MapServer/10/query?geometry=8.9%2C53.25&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false&f=json",
+  "status": 200,
+  "seconds": 0.375,
+  "try": 1
+ },
+ {
+  "url": "https://services.bgr.de/arcgis/rest/services/boden/buek200/MapServer/identify?geometry=8.9%2C53.25&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=0&returnGeometry=false&mapExtent=8.89%2C53.24%2C8.91%2C53.26&imageDisplay=400%2C400%2C96&f=json",
+  "status": 200,
+  "seconds": 0.665,
+  "try": 1
+ },
+ {
+  "url": "https://fisbo.bgr.de/app/FISBoBGR_Profilanzeige/getProfile.php?KARTE=BUEK200&LEGNR=311868",
+  "status": 200,
+  "seconds": 0.329,
+  "try": 1
+ },
+ {
+  "url": "https://services.bgr.de/arcgis/rest/services/boden/buek200/MapServer/0/query?geometry=9.55%2C51.75&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false&f=json",
+  "status": 200,
+  "seconds": 0.279,
+  "try": 1
+ },
+ {
+  "url": "https://services.bgr.de/arcgis/rest/services/boden/buek200/MapServer/24/query?geometry=9.55%2C51.75&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false&f=json",
+  "status": 200,
+  "seconds": 0.405,
+  "try": 1
+ },
+ {
+  "url": "https://services.bgr.de/arcgis/rest/services/boden/buek200/MapServer/identify?geometry=9.55%2C51.75&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=0&returnGeometry=false&mapExtent=9.540000000000001%2C51.74%2C9.56%2C51.76&imageDisplay=400%2C400%2C96&f=json",
+  "status": 200,
+  "seconds": 0.438,
+  "try": 1
+ },
+ {
+  "url": "https://fisbo.bgr.de/app/FISBoBGR_Profilanzeige/getProfile.php?KARTE=BUEK200&LEGNR=471851",
+  "status": 200,
+  "seconds": 0.372,
+  "try": 1
+ },
+ {
+  "url": "https://services.bgr.de/arcgis/rest/services/boden/buek200/MapServer/0/query?geometry=9.73%2C52.37&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false&f=json",
+  "status": 200,
+  "seconds": 0.236,
+  "try": 1
+ },
+ {
+  "url": "https://services.bgr.de/arcgis/rest/services/boden/buek200/MapServer/17/query?geometry=9.73%2C52.37&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false&f=json",
+  "status": 200,
+  "seconds": 0.465,
+  "try": 1
+ },
+ {
+  "url": "https://services.bgr.de/arcgis/rest/services/boden/buek200/MapServer/identify?geometry=9.73%2C52.37&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=0&returnGeometry=false&mapExtent=9.72%2C52.36%2C9.74%2C52.379999999999995&imageDisplay=400%2C400%2C96&f=json",
+  "status": 200,
+  "seconds": 0.675,
+  "try": 1
+ },
+ {
+  "url": "https://fisbo.bgr.de/app/FISBoBGR_Profilanzeige/getProfile.php?KARTE=BUEK200&LEGNR=391893",
+  "status": 200,
+  "seconds": 0.254,
+  "try": 1
+ },
+ {
+  "url": "https://services.bgr.de/arcgis/rest/services/boden/buek200/MapServer/0/query?geometry=10.1%2C52.18&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false&f=json",
+  "status": 200,
+  "seconds": 0.246,
+  "try": 1
+ },
+ {
+  "url": "https://services.bgr.de/arcgis/rest/services/boden/buek200/MapServer/18/query?geometry=10.1%2C52.18&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false&f=json",
+  "status": 200,
+  "seconds": 0.305,
+  "try": 1
+ },
+ {
+  "url": "https://services.bgr.de/arcgis/rest/services/boden/buek200/MapServer/identify?geometry=10.1%2C52.18&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=0&returnGeometry=false&mapExtent=10.09%2C52.17%2C10.11%2C52.19&imageDisplay=400%2C400%2C96&f=json",
+  "status": 200,
+  "seconds": 0.565,
+  "try": 1
+ },
+ {
+  "url": "https://fisbo.bgr.de/app/FISBoBGR_Profilanzeige/getProfile.php?KARTE=BUEK200&LEGNR=392650",
+  "status": 200,
+  "seconds": 0.267,
+  "try": 1
+ },
+ {
+  "url": "https://services.bgr.de/arcgis/rest/services/boden/buek200/MapServer/0/query?geometry=9.95%2C53.55&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false&f=json",
+  "status": 200,
+  "seconds": 0.268,
+  "try": 1
+ },
+ {
+  "url": "https://services.bgr.de/arcgis/rest/services/boden/buek200/MapServer/10/query?geometry=9.95%2C53.55&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false&f=json",
+  "status": 200,
+  "seconds": 0.373,
+  "try": 1
+ },
+ {
+  "url": "https://services.bgr.de/arcgis/rest/services/boden/buek200/MapServer/identify?geometry=9.95%2C53.55&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=0&returnGeometry=false&mapExtent=9.94%2C53.54%2C9.959999999999999%2C53.559999999999995&imageDisplay=400%2C400%2C96&f=json",
+  "status": 200,
+  "seconds": 0.599,
+  "try": 1
+ },
+ {
+  "url": "https://fisbo.bgr.de/app/FISBoBGR_Profilanzeige/getProfile.php?KARTE=BUEK200&LEGNR=311870",
+  "status": 200,
+  "seconds": 0.276,
+  "try": 1
+ },
+ {
+  "url": "https://services.bgr.de/arcgis/rest/services/boden/buek200/MapServer/0/query?geometry=9.32%2C52.46&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false&f=json",
+  "status": 200,
+  "seconds": 0.263,
+  "try": 1
+ },
+ {
+  "url": "https://services.bgr.de/arcgis/rest/services/boden/buek200/MapServer/17/query?geometry=9.32%2C52.46&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false&f=json",
+  "status": 200,
+  "seconds": 0.386,
+  "try": 1
+ },
+ {
+  "url": "https://services.bgr.de/arcgis/rest/services/boden/buek200/MapServer/identify?geometry=9.32%2C52.46&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=0&returnGeometry=false&mapExtent=9.31%2C52.45%2C9.33%2C52.47&imageDisplay=400%2C400%2C96&f=json",
+  "status": 200,
+  "seconds": 0.688,
+  "try": 1
+ },
+ {
+  "url": "https://fisbo.bgr.de/app/FISBoBGR_Profilanzeige/getProfile.php?KARTE=BUEK200&LEGNR=391800",
+  "status": 200,
+  "seconds": 0.255,
+  "try": 1
+ },
+ {
+  "url": "https://services.bgr.de/arcgis/rest/services/boden/buek200/MapServer/0/query?geometry=7.5%2C54.0&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false&f=json",
+  "status": 200,
+  "seconds": 0.303,
+  "try": 1
+ },
+ {
+  "url": "https://services.bgr.de/arcgis/rest/services/boden/buek200/MapServer/3/query?geometry=7.5%2C54.0&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false&f=json",
+  "status": 200,
+  "seconds": 0.352,
+  "try": 1
+ },
+ {
+  "url": "https://services.bgr.de/arcgis/rest/services/boden/buek200/MapServer/identify?geometry=7.5%2C54.0&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=0&returnGeometry=false&mapExtent=7.49%2C53.99%2C7.51%2C54.01&imageDisplay=400%2C400%2C96&f=json",
+  "status": 200,
+  "seconds": 0.436,
+  "try": 1
+ },
+ {
+  "url": "https://services.bgr.de/arcgis/rest/services/boden/buek200/MapServer/0/query?geometry=6.3%2C52.5&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false&f=json",
+  "status": 200,
+  "seconds": 0.281,
+  "try": 1
+ },
+ {
+  "url": "https://services.bgr.de/arcgis/rest/services/boden/buek200/MapServer/15/query?geometry=6.3%2C52.5&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false&f=json",
+  "status": 200,
+  "seconds": 0.304,
+  "try": 1
+ },
+ {
+  "url": "https://services.bgr.de/arcgis/rest/services/boden/buek200/MapServer/identify?geometry=6.3%2C52.5&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=0&returnGeometry=false&mapExtent=6.29%2C52.49%2C6.31%2C52.51&imageDisplay=400%2C400%2C96&f=json",
+  "status": 200,
+  "seconds": 0.301,
+  "try": 1
+ }
+]

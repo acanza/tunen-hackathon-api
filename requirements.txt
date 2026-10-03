@@ -1,3 +1,14 @@
+requests
+owslib
+rasterio
+rioxarray
+xarray
+geopandas
+shapely
+pandas
+pyproj
+stac-client
+jsonlines
 pydantic>=2.10,<3
 pyproj>=3.6,<4
 shapely>=2.0,<3

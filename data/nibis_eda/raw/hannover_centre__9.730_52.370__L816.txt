@@ -1,0 +1,13 @@
+BK50 - Karte
+
+# 1
+FL_NR	:521597
+NRKART	:-3
+PRONUM	:-3
+BOTYP	:
+BOTYP_KLARTEXT	:
+PSONST	:Auftragsfläche
+MHGW	:
+MNGW	:
+NUTZUNG	:
+GEOTYP	:

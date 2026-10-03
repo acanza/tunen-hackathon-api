@@ -1,0 +1,775 @@
+{
+ "run_id": "poc-2026-10-03",
+ "data_as_of": {
+  "sentinel2": "2026-10-03",
+  "weather": "2026-09-27",
+  "soilgrids": "v2.0 (pulled 2026-10-03)",
+  "nibis": "pulled 2026-10-03",
+  "lagb": "pulled 2026-10-03"
+ },
+ "runs": [
+  {
+   "run_id": "poc-2026-10-03",
+   "created_at": "2026-10-03T16:36:29+00:00",
+   "is_current": 1,
+   "notes": "POC: built from data already on disk, no refresh",
+   "data_as_of": {
+    "sentinel2": "2026-10-03",
+    "weather": "2026-09-27",
+    "soilgrids": "v2.0 (pulled 2026-10-03)",
+    "nibis": "pulled 2026-10-03",
+    "lagb": "pulled 2026-10-03"
+   }
+  }
+ ],
+ "sources": [
+  {
+   "source": "soilgrids",
+   "label": "ISRIC SoilGrids v2.0",
+   "scale": "250 m grid",
+   "native_resolution_m": 250.0,
+   "region": "global",
+   "licence": "CC BY 4.0",
+   "pulled": "2026-10-03"
+  },
+  {
+   "source": "lbeg_bk50",
+   "label": "LBEG BK50 (NIBIS)",
+   "scale": "1:50 000",
+   "native_resolution_m": null,
+   "region": "Niedersachsen",
+   "licence": "not verified",
+   "pulled": "2026-10-03"
+  },
+  {
+   "source": "lbeg_bodenschaetzung",
+   "label": "Bodenschätzung: LBEG NIBIS (NI) + LAGB (ST)",
+   "scale": "1:5 000 (NI) / 1:10 000 (ST)",
+   "native_resolution_m": null,
+   "region": "Niedersachsen + Sachsen-Anhalt",
+   "licence": "not verified",
+   "pulled": "2026-10-03"
+  },
+  {
+   "source": "derived",
+   "label": "Own model (Sentinel-2 L2A, 2019–2026)",
+   "scale": "10 m grid",
+   "native_resolution_m": 10.0,
+   "region": "farm",
+   "licence": "Copernicus open data",
+   "pulled": "2026-10-03"
+  },
+  {
+   "source": "best",
+   "label": "Best available source per pixel",
+   "scale": "mixed",
+   "native_resolution_m": null,
+   "region": "farm",
+   "licence": "see contributing sources",
+   "pulled": "2026-10-03"
+  }
+ ],
+ "parameters": [
+  {
+   "parameter": "texture",
+   "label": "Soil texture",
+   "description": "Clay content 0–30 cm (SoilGrids) or Bodenart class (Bodenschätzung)"
+  },
+  {
+   "parameter": "ph",
+   "label": "pH (H2O)",
+   "description": "Topsoil pH 0–30 cm"
+  },
+  {
+   "parameter": "soc",
+   "label": "Soil organic carbon",
+   "description": "Topsoil SOC 0–30 cm"
+  },
+  {
+   "parameter": "nfk",
+   "label": "Plant-available water (nFK)",
+   "description": "Available water capacity 0–100 cm"
+  },
+  {
+   "parameter": "bodenzahl",
+   "label": "Bodenzahl",
+   "description": "Official soil quality score 0–100 (Bodenschätzung)"
+  },
+  {
+   "parameter": "yield_potential",
+   "label": "Yield potential",
+   "description": "Relative index, 100 = field mean; from multi-year Sentinel-2 peak NDVI"
+  }
+ ],
+ "source_parameters": [
+  {
+   "source": "soilgrids",
+   "parameter": "texture",
+   "method": "Clay % (Q0.5), depth-weighted 0–30 cm; sand/silt and USDA class in stats"
+  },
+  {
+   "source": "soilgrids",
+   "parameter": "ph",
+   "method": "phh2o Q0.5, depth-weighted 0–30 cm"
+  },
+  {
+   "source": "soilgrids",
+   "parameter": "soc",
+   "method": "soc Q0.5, depth-weighted 0–30 cm"
+  },
+  {
+   "source": "soilgrids",
+   "parameter": "nfk",
+   "method": "Sum over 0–100 cm of (wv0033 − wv1500) × layer thickness"
+  },
+  {
+   "source": "lbeg_bk50",
+   "parameter": "nfk",
+   "method": "nFKWe exists in BK50 but was not in the downloaded attributes"
+  },
+  {
+   "source": "lbeg_bodenschaetzung",
+   "parameter": "texture",
+   "method": "Bodenart from Klassenzeichen (categorical); NI: LBEG parcels, ST: LAGB polygons"
+  },
+  {
+   "source": "lbeg_bodenschaetzung",
+   "parameter": "bodenzahl",
+   "method": "NI: BODENZ of each parcel. ST: no Bodenzahl published; looked up from the Klassenzeichen via western parcels with the same class (mean, range ±5)"
+  },
+  {
+   "source": "derived",
+   "parameter": "nfk",
+   "method": "nFKWe of the BÜK200 unit (nearest sample point): KA5 lookup over its agricultural profiles, area-weighted; approximate KA5 values"
+  },
+  {
+   "source": "derived",
+   "parameter": "bodenzahl",
+   "method": "Model trained on the downloaded Bodenschätzung parcels (west), applied farm-wide"
+  },
+  {
+   "source": "best",
+   "parameter": "nfk",
+   "method": "Per pixel: derived (BÜK200 + KA5) > soilgrids; band 5 = source code"
+  },
+  {
+   "source": "best",
+   "parameter": "bodenzahl",
+   "method": "Per pixel: lbeg_bodenschaetzung > derived; band 5 = source code"
+  },
+  {
+   "source": "derived",
+   "parameter": "yield_potential",
+   "method": "yield_v1: water-scaled multi-year relative peak NDVI (normal spring) blended with a soil/terrain model; rescaled to field mean = 100"
+  }
+ ],
+ "validation": [
+  {
+   "metric": "loyo_rho_plain_median",
+   "scope": "all_seasons",
+   "value": 0.535564943581446,
+   "n": 616,
+   "details": null
+  },
+  {
+   "metric": "loyo_rmse_plain_median",
+   "scope": "all_seasons",
+   "value": 0.036725159734487534,
+   "n": 616,
+   "details": null
+  },
+  {
+   "metric": "loyo_agree_plain_median",
+   "scope": "all_seasons",
+   "value": 0.7025554913573113,
+   "n": 616,
+   "details": null
+  },
+  {
+   "metric": "loyo_rho_scaled_median",
+   "scope": "all_seasons",
+   "value": 0.5281566864703191,
+   "n": 616,
+   "details": null
+  },
+  {
+   "metric": "loyo_rmse_scaled_median",
+   "scope": "all_seasons",
+   "value": 0.037170182913541794,
+   "n": 616,
+   "details": null
+  },
+  {
+   "metric": "loyo_agree_scaled_median",
+   "scope": "all_seasons",
+   "value": 0.7020281879102751,
+   "n": 616,
+   "details": null
+  },
+  {
+   "metric": "loyo_rho_v1_median",
+   "scope": "all_seasons",
+   "value": 0.5298959402273453,
+   "n": 616,
+   "details": null
+  },
+  {
+   "metric": "loyo_rmse_v1_median",
+   "scope": "all_seasons",
+   "value": 0.03393566608428955,
+   "n": 616,
+   "details": null
+  },
+  {
+   "metric": "loyo_agree_v1_median",
+   "scope": "all_seasons",
+   "value": 0.7006222943722944,
+   "n": 616,
+   "details": null
+  },
+  {
+   "metric": "loyo_rmse_flat_median",
+   "scope": "all_seasons",
+   "value": 0.03989368677139282,
+   "n": 616,
+   "details": null
+  },
+  {
+   "metric": "loyo_season",
+   "scope": "2019",
+   "value": 0.5625443978525467,
+   "n": 77,
+   "details": {
+    "n_fields": 77.0,
+    "rho_plain": 0.5590416774,
+    "rho_scaled": 0.5606557425,
+    "rho_v1": 0.5625443979,
+    "rmse_plain": 0.0373320654,
+    "rmse_scaled": 0.0379126891,
+    "rmse_v1": 0.0338488333,
+    "rmse_flat": 0.0362750702,
+    "agree_plain": 0.7005948447,
+    "agree_scaled": 0.6966292135,
+    "agree_v1": 0.703125
+   }
+  },
+  {
+   "metric": "loyo_season",
+   "scope": "2020",
+   "value": 0.44855442403337675,
+   "n": 77,
+   "details": {
+    "n_fields": 77.0,
+    "rho_plain": 0.4534685013,
+    "rho_scaled": 0.4416277743,
+    "rho_v1": 0.448554424,
+    "rmse_plain": 0.038422849,
+    "rmse_scaled": 0.0391767584,
+    "rmse_v1": 0.0350259654,
+    "rmse_flat": 0.0345805399,
+    "agree_plain": 0.6783310902,
+    "agree_scaled": 0.66756393,
+    "agree_v1": 0.6643598616
+   }
+  },
+  {
+   "metric": "loyo_season",
+   "scope": "2021",
+   "value": 0.4169185849816925,
+   "n": 77,
+   "details": {
+    "n_fields": 77.0,
+    "rho_plain": 0.4557453241,
+    "rho_scaled": 0.415705744,
+    "rho_v1": 0.416918585,
+    "rmse_plain": 0.0316129066,
+    "rmse_scaled": 0.0325275101,
+    "rmse_v1": 0.0273321494,
+    "rmse_flat": 0.028551273,
+    "agree_plain": 0.6799307958,
+    "agree_scaled": 0.6704545455,
+    "agree_v1": 0.6725146199
+   }
+  },
+  {
+   "metric": "loyo_season",
+   "scope": "2022",
+   "value": 0.5642711144438128,
+   "n": 77,
+   "details": {
+    "n_fields": 77.0,
+    "rho_plain": 0.5621641405,
+    "rho_scaled": 0.5521218545,
+    "rho_v1": 0.5642711144,
+    "rmse_plain": 0.0395245701,
+    "rmse_scaled": 0.0393468812,
+    "rmse_v1": 0.03939474,
+    "rmse_flat": 0.0443649478,
+    "agree_plain": 0.7136498516,
+    "agree_scaled": 0.7105788423,
+    "agree_v1": 0.7115037865
+   }
+  },
+  {
+   "metric": "loyo_season",
+   "scope": "2023",
+   "value": 0.5542654938305464,
+   "n": 77,
+   "details": {
+    "n_fields": 77.0,
+    "rho_plain": 0.5485368158,
+    "rho_scaled": 0.5386621687,
+    "rho_v1": 0.5542654938,
+    "rmse_plain": 0.0332223624,
+    "rmse_scaled": 0.0341241807,
+    "rmse_v1": 0.0326446742,
+    "rmse_flat": 0.0386780798,
+    "agree_plain": 0.7029548989,
+    "agree_scaled": 0.7033898305,
+    "agree_v1": 0.7064220183
+   }
+  },
+  {
+   "metric": "loyo_season",
+   "scope": "2024",
+   "value": 0.4991926964371078,
+   "n": 77,
+   "details": {
+    "n_fields": 77.0,
+    "rho_plain": 0.5049479656,
+    "rho_scaled": 0.4972552741,
+    "rho_v1": 0.4991926964,
+    "rmse_plain": 0.0393796749,
+    "rmse_scaled": 0.039506387,
+    "rmse_v1": 0.0364023149,
+    "rmse_flat": 0.046442572,
+    "agree_plain": 0.6955017301,
+    "agree_scaled": 0.6968641115,
+    "agree_v1": 0.6830147854
+   }
+  },
+  {
+   "metric": "loyo_season",
+   "scope": "2025",
+   "value": 0.5779214029447909,
+   "n": 77,
+   "details": {
+    "n_fields": 77.0,
+    "rho_plain": 0.591104981,
+    "rho_scaled": 0.561021812,
+    "rho_v1": 0.5779214029,
+    "rmse_plain": 0.05207536,
+    "rmse_scaled": 0.0522234179,
+    "rmse_v1": 0.0544282198,
+    "rmse_flat": 0.0684430078,
+    "agree_plain": 0.7285974499,
+    "agree_scaled": 0.7249544627,
+    "agree_v1": 0.7277448071
+   }
+  },
+  {
+   "metric": "loyo_season",
+   "scope": "2026",
+   "value": 0.6023893894907361,
+   "n": 77,
+   "details": {
+    "n_fields": 77.0,
+    "rho_plain": 0.6030023263,
+    "rho_scaled": 0.6010329463,
+    "rho_v1": 0.6023893895,
+    "rmse_plain": 0.0311459117,
+    "rmse_scaled": 0.0306460541,
+    "rmse_v1": 0.0252384841,
+    "rmse_flat": 0.0263671037,
+    "agree_plain": 0.7335154116,
+    "agree_scaled": 0.7319034853,
+    "agree_v1": 0.7312390925
+   }
+  },
+  {
+   "metric": "loyo_share_scaled_beats_plain_rmse",
+   "scope": "all_seasons",
+   "value": 0.42694805194805197,
+   "n": 616,
+   "details": null
+  },
+  {
+   "metric": "loyo_share_scaled_beats_plain_rmse",
+   "scope": "dry_seasons",
+   "value": 0.43506493506493504,
+   "n": 154,
+   "details": null
+  },
+  {
+   "metric": "loyo_share_v1_beats_flat_rmse",
+   "scope": "all_seasons",
+   "value": 0.7175324675324676,
+   "n": 616,
+   "details": null
+  },
+  {
+   "metric": "bodenzahl_between_fields_spearman",
+   "scope": "west",
+   "value": 0.2104315381579374,
+   "n": 36,
+   "details": {
+    "rho": 0.2104315381579374,
+    "p": 0.21799374262815863,
+    "n": 36
+   }
+  },
+  {
+   "metric": "bodenzahl_within_field_agree_share",
+   "scope": "west",
+   "value": 0.8846153846153846,
+   "n": 26,
+   "details": {
+    "n": 26,
+    "n_agree": 23,
+    "p": 4.398822784423828e-05,
+    "pairs": [
+     {
+      "field": "Berg",
+      "bz_low": 22.0,
+      "bz_high": 45.0,
+      "yp_low": 98.5203628540039,
+      "yp_high": 101.62071228027344,
+      "agrees": true
+     },
+     {
+      "field": "Helmecken Kamp",
+      "bz_low": 30.0,
+      "bz_high": 45.0,
+      "yp_low": 98.67164611816406,
+      "yp_high": 101.54591369628906,
+      "agrees": true
+     },
+     {
+      "field": "Hofbreite Seggerde",
+      "bz_low": 22.0,
+      "bz_high": 46.0,
+      "yp_low": 98.20648956298828,
+      "yp_high": 102.09034729003906,
+      "agrees": true
+     },
+     {
+      "field": "Kampwiese",
+      "bz_low": 45.0,
+      "bz_high": 46.0,
+      "yp_low": 96.73712158203125,
+      "yp_high": 98.51576232910156,
+      "agrees": true
+     },
+     {
+      "field": "Klinzer Brache",
+      "bz_low": 26.0,
+      "bz_high": 30.0,
+      "yp_low": 97.7945785522461,
+      "yp_high": 103.1365737915039,
+      "agrees": true
+     },
+     {
+      "field": "Klinzerbreite",
+      "bz_low": 30.0,
+      "bz_high": 45.0,
+      "yp_low": 98.17301177978516,
+      "yp_high": 103.25045776367188,
+      "agrees": true
+     },
+     {
+      "field": "Krügerbreite",
+      "bz_low": 26.0,
+      "bz_high": 45.0,
+      "yp_low": 98.96228790283203,
+      "yp_high": 101.1335678100586,
+      "agrees": true
+     },
+     {
+      "field": "Kälbergehege",
+      "bz_low": 30.0,
+      "bz_high": 39.0,
+      "yp_low": 99.22319030761719,
+      "yp_high": 100.5204086303711,
+      "agrees": true
+     },
+     {
+      "field": "Kälbergehege Brache",
+      "bz_low": 30.0,
+      "bz_high": 39.0,
+      "yp_low": 99.71600341796875,
+      "yp_high": 100.34187316894531,
+      "agrees": true
+     },
+     {
+      "field": "Lange Wiese",
+      "bz_low": 45.0,
+      "bz_high": 46.0,
+      "yp_low": 100.52425384521484,
+      "yp_high": 100.56124877929688,
+      "agrees": true
+     },
+     {
+      "field": "Langes Feld",
+      "bz_low": 30.0,
+      "bz_high": 45.0,
+      "yp_low": 94.86309051513672,
+      "yp_high": 98.00720977783203,
+      "agrees": true
+     },
+     {
+      "field": "Langes Feld Brache",
+      "bz_low": 18.0,
+      "bz_high": 39.0,
+      "yp_low": 97.8748550415039,
+      "yp_high": 102.61691284179688,
+      "agrees": true
+     },
+     {
+      "field": "Masch",
+      "bz_low": 30.0,
+      "bz_high": 45.0,
+      "yp_low": 100.643798828125,
+      "yp_high": 100.00139617919922,
+      "agrees": false
+     },
+     {
+      "field": "Mittelbreite",
+      "bz_low": 30.0,
+      "bz_high": 39.0,
+      "yp_low": 98.3536148071289,
+      "yp_high": 99.67015838623047,
+      "agrees": true
+     },
+     {
+      "field": "Mühlenbreite (+)",
+      "bz_low": 30.0,
+      "bz_high": 39.0,
+      "yp_low": 97.5925521850586,
+      "yp_high": 102.3042221069336,
+      "agrees": true
+     },
+     {
+      "field": "Nachthude 2",
+      "bz_low": 46.0,
+      "bz_high": 48.0,
+      "yp_low": 99.7861328125,
+      "yp_high": 99.70569610595703,
+      "agrees": false
+     },
+     {
+      "field": "Plantage",
+      "bz_low": 22.0,
+      "bz_high": 45.0,
+      "yp_low": 96.4345703125,
+      "yp_high": 102.6163558959961,
+      "agrees": true
+     },
+     {
+      "field": "Pumpmühlensee",
+      "bz_low": 30.0,
+      "bz_high": 45.0,
+      "yp_low": 97.45594787597656,
+      "yp_high": 102.29302978515625,
+      "agrees": true
+     },
+     {
+      "field": "Saalsdorfer Breite",
+      "bz_low": 30.0,
+      "bz_high": 45.0,
+      "yp_low": 99.68390655517578,
+      "yp_high": 103.51410675048828,
+      "agrees": true
+     },
+     {
+      "field": "Sandberg",
+      "bz_low": 30.0,
+      "bz_high": 39.0,
+      "yp_low": 98.28965759277344,
+      "yp_high": 99.30438995361328,
+      "agrees": true
+     },
+     {
+      "field": "See",
+      "bz_low": 22.0,
+      "bz_high": 45.0,
+      "yp_low": 96.21393585205078,
+      "yp_high": 100.4518051147461,
+      "agrees": true
+     },
+     {
+      "field": "Specksbreite Brache",
+      "bz_low": 22.0,
+      "bz_high": 45.0,
+      "yp_low": 101.39987182617188,
+      "yp_high": 102.170654296875,
+      "agrees": true
+     },
+     {
+      "field": "Specksbreite Groß",
+      "bz_low": 30.0,
+      "bz_high": 45.0,
+      "yp_low": 96.84870910644531,
+      "yp_high": 101.87840270996094,
+      "agrees": true
+     },
+     {
+      "field": "Spraken",
+      "bz_low": 30.0,
+      "bz_high": 45.0,
+      "yp_low": 99.83194732666016,
+      "yp_high": 100.70043182373047,
+      "agrees": true
+     },
+     {
+      "field": "Wiesenbalken",
+      "bz_low": 30.0,
+      "bz_high": 39.0,
+      "yp_low": 93.26712799072266,
+      "yp_high": 98.96293640136719,
+      "agrees": true
+     },
+     {
+      "field": "Wolfskuhle",
+      "bz_low": 30.0,
+      "bz_high": 45.0,
+      "yp_low": 96.51415252685547,
+      "yp_high": 95.89395141601562,
+      "agrees": false
+     }
+    ]
+   }
+  },
+  {
+   "metric": "soil_model_r2_grouped_cv",
+   "scope": "all_fields",
+   "value": 0.012030116659840662,
+   "n": 77434,
+   "details": {
+    "r2": 0.012030116659840662,
+    "n_px": 77434,
+    "resid_sd": 0.03756357085813354
+   }
+  },
+  {
+   "metric": "soil_model_r2_grouped_cv",
+   "scope": "west",
+   "value": 0.03014992126893512,
+   "n": 21729,
+   "details": {
+    "r2": 0.03014992126893512,
+    "n_px": 21729,
+    "resid_sd": 0.03707904988260578
+   }
+  },
+  {
+   "metric": "bodenzahl_derived_rmse_grouped_by_parcel",
+   "scope": "farm_mean",
+   "value": 10.003433518006023,
+   "n": 38,
+   "details": {
+    "rmse_parcel": 10.003433518006023,
+    "mae_parcel": 8.69654635379189
+   }
+  },
+  {
+   "metric": "bodenzahl_derived_rmse_grouped_by_parcel",
+   "scope": "unit_mean",
+   "value": 7.017652873724991,
+   "n": 38,
+   "details": {
+    "rmse_parcel": 7.017652873724991,
+    "mae_parcel": 5.9450103737806295
+   }
+  },
+  {
+   "metric": "bodenzahl_derived_rmse_grouped_by_parcel",
+   "scope": "gradient_boosting",
+   "value": 6.853973934178773,
+   "n": 38,
+   "details": {
+    "rmse_parcel": 6.853973934178773,
+    "mae_parcel": 5.544467963009385
+   }
+  },
+  {
+   "metric": "texture_soilgrids_bias",
+   "scope": "west_parcels",
+   "value": 0.2940399840071395,
+   "n": 37,
+   "details": null
+  },
+  {
+   "metric": "texture_soilgrids_rmse",
+   "scope": "west_parcels",
+   "value": 3.714386599909281,
+   "n": 37,
+   "details": null
+  },
+  {
+   "metric": "texture_soilgrids_share_in_class_range",
+   "scope": "west_parcels",
+   "value": 0.24324324324324326,
+   "n": 37,
+   "details": null
+  },
+  {
+   "metric": "texture_soilgrids_spearman_class_vs_clay",
+   "scope": "west_parcels",
+   "value": -0.21679761275424997,
+   "n": 37,
+   "details": null
+  },
+  {
+   "metric": "loyo_shrink_sweep",
+   "scope": "k=4",
+   "value": 0.4956356359548342,
+   "n": 616,
+   "details": {
+    "k": 4,
+    "rho_v1": 0.4956356359548342,
+    "rmse_v1": 0.03481294773519039,
+    "rho_v1_dry": 0.545068967640871,
+    "scaled_beats_plain": 0.3847402597402597
+   }
+  },
+  {
+   "metric": "loyo_shrink_sweep",
+   "scope": "k=32",
+   "value": 0.5298959402273453,
+   "n": 616,
+   "details": {
+    "k": 32,
+    "rho_v1": 0.5298959402273453,
+    "rmse_v1": 0.03393566608428955,
+    "rho_v1_dry": 0.5710962586943018,
+    "scaled_beats_plain": 0.42694805194805197
+   }
+  },
+  {
+   "metric": "loyo_shrink_sweep",
+   "scope": "k=256",
+   "value": 0.5361665815904382,
+   "n": 616,
+   "details": {
+    "k": 256,
+    "rho_v1": 0.5361665815904382,
+    "rmse_v1": 0.03369555063545704,
+    "rho_v1_dry": 0.5700957331486447,
+    "scaled_beats_plain": 0.37337662337662336
+   }
+  },
+  {
+   "metric": "loyo_shrink_sweep",
+   "scope": "k=1e+09",
+   "value": 0.5370527939782859,
+   "n": 616,
+   "details": {
+    "k": 1000000000.0,
+    "rho_v1": 0.5370527939782859,
+    "rmse_v1": 0.03377876989543438,
+    "rho_v1_dry": 0.5699357491794736,
+    "scaled_beats_plain": 0.2857142857142857
+   }
+  }
+ ]
+}

@@ -1,0 +1,33 @@
+site,depth,sm_min,sm_p05,sm_median,sm_p95,sm_max,sm_range,sm_wettest_month,sm_driest_month,st_min,st_mean,st_max
+Hildesheimer Boerde (loess),0_to_7cm,0.142,0.173,0.311,0.396,0.439,0.297,Jan,Aug,-1.5,10.857,32.9
+Hildesheimer Boerde (loess),7_to_28cm,0.189,0.2,0.287,0.396,0.439,0.25,Jan,Jul,0.1,10.82,24.7
+Hildesheimer Boerde (loess),28_to_100cm,0.216,0.216,0.27,0.398,0.408,0.192,Jan,Sep,2.0,10.767,18.9
+Hildesheimer Boerde (loess),100_to_255cm,0.32,0.32,0.352,0.387,0.388,0.068,Feb,Dec,5.0,10.702,16.2
+Lueneburger Heide (sand),0_to_7cm,0.082,0.117,0.218,0.279,0.337,0.255,Jan,May,-1.7,10.742,32.0
+Lueneburger Heide (sand),7_to_28cm,0.113,0.125,0.204,0.274,0.311,0.198,Jan,Sep,0.0,10.711,24.5
+Lueneburger Heide (sand),28_to_100cm,0.123,0.125,0.167,0.274,0.28,0.157,Jan,Sep,1.8,10.631,18.8
+Lueneburger Heide (sand),100_to_255cm,0.205,0.205,0.228,0.269,0.269,0.064,Feb,Nov,4.6,10.513,16.2
+Emsland (sand/peat),0_to_7cm,0.165,0.202,0.347,0.404,0.439,0.274,Jan,May,-0.9,11.062,28.6
+Emsland (sand/peat),7_to_28cm,0.199,0.224,0.329,0.401,0.432,0.233,Jan,May,0.6,11.048,23.1
+Emsland (sand/peat),28_to_100cm,0.239,0.242,0.304,0.397,0.403,0.164,Jan,Sep,2.6,11.015,18.5
+Emsland (sand/peat),100_to_255cm,0.33,0.33,0.354,0.386,0.386,0.056,Feb,Nov,5.5,10.95,16.0
+Wesermarsch (marsh clay),0_to_7cm,0.17,0.228,0.353,0.41,0.43,0.26,Jan,May,-0.8,10.772,27.2
+Wesermarsch (marsh clay),7_to_28cm,0.215,0.252,0.344,0.408,0.43,0.215,Jan,May,0.5,10.768,22.3
+Wesermarsch (marsh clay),28_to_100cm,0.283,0.289,0.328,0.402,0.412,0.129,Jan,Jul,2.6,10.766,17.9
+Wesermarsch (marsh clay),100_to_255cm,0.339,0.339,0.362,0.396,0.396,0.057,Feb,Oct,5.6,10.741,15.7
+Teufelsmoor (bog),0_to_7cm,0.202,0.263,0.366,0.422,0.454,0.252,Nov,May,-0.9,10.886,28.3
+Teufelsmoor (bog),7_to_28cm,0.237,0.275,0.36,0.42,0.452,0.215,Nov,May,0.5,10.885,23.1
+Teufelsmoor (bog),28_to_100cm,0.282,0.29,0.334,0.416,0.422,0.14,Jan,Jun,2.6,10.884,18.2
+Teufelsmoor (bog),100_to_255cm,0.35,0.351,0.376,0.407,0.407,0.057,Feb,Oct,5.6,10.855,16.0
+Solling (upland forest),0_to_7cm,0.197,0.224,0.339,0.401,0.439,0.242,Jan,Aug,-2.8,8.731,30.2
+Solling (upland forest),7_to_28cm,0.222,0.234,0.319,0.394,0.437,0.215,Jan,Jul,-1.3,8.705,22.7
+Solling (upland forest),28_to_100cm,0.234,0.236,0.286,0.406,0.424,0.19,Jan,Sep,0.4,8.64,16.9
+Solling (upland forest),100_to_255cm,0.324,0.325,0.354,0.409,0.41,0.086,Feb,Nov,2.9,8.55,14.1
+Hannover centre (urban),0_to_7cm,0.158,0.189,0.309,0.396,0.439,0.281,Jan,Aug,-1.3,11.189,32.6
+Hannover centre (urban),7_to_28cm,0.178,0.196,0.281,0.393,0.437,0.259,Jan,Aug,0.2,11.154,25.2
+Hannover centre (urban),28_to_100cm,0.204,0.205,0.263,0.397,0.405,0.201,Jan,Sep,2.2,11.092,19.4
+Hannover centre (urban),100_to_255cm,0.314,0.314,0.347,0.38,0.381,0.067,Mar,Dec,5.2,11.021,16.6
+Hamburg,0_to_7cm,0.074,0.099,0.227,0.29,0.346,0.272,Jan,May,-2.0,10.621,30.8
+Hamburg,7_to_28cm,0.099,0.113,0.215,0.283,0.318,0.219,Jan,Sep,-0.1,10.582,23.6
+Hamburg,28_to_100cm,0.13,0.135,0.179,0.278,0.288,0.158,Jan,Jul,1.8,10.496,18.2
+Hamburg,100_to_255cm,0.217,0.217,0.237,0.272,0.272,0.055,Feb,Nov,4.6,10.392,16.0

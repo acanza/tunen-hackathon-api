@@ -1,0 +1,33 @@
+site,depth,sg_fc_wv0033,sg_wp_wv1500,era5_min,era5_median,era5_max,pct_hours_below_sg_wp,pct_hours_above_sg_fc,median_rel_awc
+Hildesheimer Boerde (loess),0_to_7cm,,,0.142,0.311,0.439,,,
+Hildesheimer Boerde (loess),7_to_28cm,,,0.189,0.287,0.439,,,
+Hildesheimer Boerde (loess),28_to_100cm,,,0.216,0.27,0.408,,,
+Hildesheimer Boerde (loess),100_to_255cm,,,0.32,0.352,0.388,,,
+Lueneburger Heide (sand),0_to_7cm,0.376,0.093,0.082,0.218,0.337,1.6,0.0,0.44
+Lueneburger Heide (sand),7_to_28cm,0.336,0.093,0.113,0.204,0.311,0.0,0.0,0.46
+Lueneburger Heide (sand),28_to_100cm,0.3,0.088,0.123,0.167,0.28,0.0,0.0,0.37
+Lueneburger Heide (sand),100_to_255cm,0.295,0.086,0.205,0.228,0.269,0.0,0.0,0.68
+Emsland (sand/peat),0_to_7cm,0.371,0.055,0.165,0.347,0.439,0.0,28.8,0.93
+Emsland (sand/peat),7_to_28cm,0.319,0.053,0.199,0.329,0.432,0.0,54.5,1.04
+Emsland (sand/peat),28_to_100cm,0.298,0.04,0.239,0.304,0.403,0.0,51.3,1.02
+Emsland (sand/peat),100_to_255cm,0.275,0.037,0.33,0.354,0.386,0.0,100.0,1.33
+Wesermarsch (marsh clay),0_to_7cm,0.369,0.169,0.17,0.353,0.43,0.0,40.9,0.92
+Wesermarsch (marsh clay),7_to_28cm,0.305,0.16,0.215,0.344,0.43,0.0,74.9,1.27
+Wesermarsch (marsh clay),28_to_100cm,0.282,0.127,0.283,0.328,0.412,0.0,100.0,1.29
+Wesermarsch (marsh clay),100_to_255cm,0.276,0.115,0.339,0.362,0.396,0.0,100.0,1.53
+Teufelsmoor (bog),0_to_7cm,0.372,0.136,0.202,0.366,0.454,0.0,44.7,0.97
+Teufelsmoor (bog),7_to_28cm,0.325,0.134,0.237,0.36,0.452,0.0,73.8,1.18
+Teufelsmoor (bog),28_to_100cm,0.289,0.112,0.282,0.334,0.422,0.0,95.5,1.25
+Teufelsmoor (bog),100_to_255cm,0.287,0.109,0.35,0.376,0.407,0.0,100.0,1.5
+Solling (upland forest),0_to_7cm,0.397,0.185,0.197,0.339,0.439,0.0,6.7,0.73
+Solling (upland forest),7_to_28cm,0.379,0.172,0.222,0.319,0.437,0.0,14.2,0.71
+Solling (upland forest),28_to_100cm,0.361,0.125,0.234,0.286,0.424,0.0,17.2,0.68
+Solling (upland forest),100_to_255cm,0.333,0.124,0.324,0.354,0.41,0.0,69.0,1.1
+Hannover centre (urban),0_to_7cm,,,0.158,0.309,0.439,,,
+Hannover centre (urban),7_to_28cm,,,0.178,0.281,0.437,,,
+Hannover centre (urban),28_to_100cm,,,0.204,0.263,0.405,,,
+Hannover centre (urban),100_to_255cm,,,0.314,0.347,0.381,,,
+Hamburg,0_to_7cm,,,0.074,0.227,0.346,,,
+Hamburg,7_to_28cm,,,0.099,0.215,0.318,,,
+Hamburg,28_to_100cm,,,0.13,0.179,0.288,,,
+Hamburg,100_to_255cm,,,0.217,0.237,0.272,,,

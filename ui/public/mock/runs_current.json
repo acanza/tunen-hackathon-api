@@ -1,0 +1,10 @@
+{
+ "run_id": "poc-2026-10-03",
+ "data_as_of": {
+  "sentinel2": "2026-10-03",
+  "weather": "2026-09-27",
+  "soilgrids": "v2.0 (pulled 2026-10-03)",
+  "nibis": "pulled 2026-10-03",
+  "lagb": "pulled 2026-10-03"
+ }
+}

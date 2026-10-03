@@ -1,0 +1,35 @@
+{
+ "texture_soilgrids": {
+  "n_parcels": 37,
+  "bias": 0.2940399840071395,
+  "rmse": 3.714386599909281,
+  "share_in_class_range": 0.24324324324324326,
+  "spearman_class_vs_clay": -0.21679761275424997,
+  "by_class": {
+   "S": {
+    "n": 15,
+    "sg_clay_mean": 6.58,
+    "class_clay_range": [
+     0,
+     5
+    ]
+   },
+   "Sl": {
+    "n": 9,
+    "sg_clay_mean": 6.81,
+    "class_clay_range": [
+     5,
+     8
+    ]
+   },
+   "lS": {
+    "n": 13,
+    "sg_clay_mean": 5.91,
+    "class_clay_range": [
+     8,
+     12
+    ]
+   }
+  }
+ }
+}

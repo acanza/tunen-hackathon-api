@@ -1,7 +1,7 @@
 # Project development agent
 
 To design, implement, or review this repository's soil API, read and apply
-[soil-api-engineer](skills/soil-api-engineer/SKILL.md).
+[soil-api-engineer](.agents/skills/soil-api-engineer/SKILL.md).
 
 The definition is versioned in this project; it does not require installing a
 global skill or running an AI service. It does not apply to tasks outside the backend.
@@ -17,11 +17,10 @@ and required verification evidence before working on a milestone.
 
 ## Codex integration
 
-Codex discovers this repository's skill through
-`.agents/skills/soil-api-engineer`, a relative symlink to
-`skills/soil-api-engineer`. Maintain the files in the latter directory to avoid
-duplicate definitions. Display metadata and the suggested invocation are defined
-in `skills/soil-api-engineer/agents/openai.yaml`.
+Codex discovers this repository's skill directly in
+`.agents/skills/soil-api-engineer`. Maintain the skill files in this directory.
+Display metadata and the suggested invocation are defined in
+`.agents/skills/soil-api-engineer/agents/openai.yaml`.
 
 Open this repository in Codex and invoke `$soil-api-engineer` for an explicit
 task. Automatic selection is also enabled for matching backend tasks. If the

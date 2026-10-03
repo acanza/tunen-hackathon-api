@@ -168,7 +168,7 @@ Add meaningful checks during each unit: conversions, georeferencing, masks,
 PNG/value correspondence, and external failure handling. Keep deterministic
 fixture tests separate from real-provider integration checks.
 
-Use the agent's [acceptance criteria](../skills/soil-api-engineer/references/acceptance.md)
+Use the agent's [acceptance criteria](../.agents/skills/soil-api-engineer/references/acceptance.md)
 for implementation reviews and delivery. Report what was tested and any remaining
 limitations, rather than treating mocked results as proof of provider availability.
 

@@ -2,8 +2,9 @@
 
 Date: 2026-10-03
 
-Status: Unit 0A complete on 2026-10-03; [evidence](verification/0a/README.md).
-All remaining units are planned, not implemented or verified.
+Status: Units 0A, 1A, and 1B complete on 2026-10-03; see their records under
+[`docs/verification`](verification/). All M2–M5 units remain planned, not
+implemented or verified.
 This document does not authorize implementation, deployment, or scope expansion.
 
 The [architecture and milestones](implementation-plan.md) define the shared
@@ -76,6 +77,8 @@ input compatibility and depth, and actual Bodenzahl attributes before coding the
 
 ### 1A — Minimal domain contract and validation
 
+**Status:** Complete; [verification record](verification/1a/README.md).
+
 **Dependencies:** 0A.
 
 **Scope:** Internal request/result/error models and validation for one field and
@@ -95,6 +98,8 @@ before provider calls or large raster allocation. A contract example unambiguous
 defines `[west, south, east, north]`, row/column orientation, and null values.
 
 ### 1B — One complete real layer
+
+**Status:** Complete; [verification record](verification/1b/README.md).
 
 **Dependencies:** 1A.
 

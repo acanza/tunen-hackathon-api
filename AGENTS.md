@@ -21,7 +21,11 @@ The former phases are milestones. Read the relevant bounded
 [implementation units](docs/implementation-units.md) for dependencies, scope,
 and required verification evidence before working on a milestone.
 
-## Codex integration
+## Agent integrations
+
+The canonical backend instructions live in
+`.agents/skills/soil-api-engineer/SKILL.md` and are shared by the supported
+coding agents.
 
 Codex discovers this repository's skill directly in
 `.agents/skills/soil-api-engineer`. Maintain the skill files in this directory.
@@ -33,6 +37,12 @@ task. Automatic selection is also enabled for matching backend tasks. If the
 skill does not appear after the files change, restart Codex.
 
 Example: `Use $soil-api-engineer to design the REST contract for the soil API.`
+
+GitHub Copilot discovers the repository-specific custom agent in
+`.github/agents/soil-api-engineer.agent.md`. Select `soil-api-engineer` from
+the custom agents list in Copilot Chat. That agent reads the canonical skill
+before acting, so `.agents/skills/soil-api-engineer/SKILL.md` remains the
+single source of truth.
 
 ## Scope
 

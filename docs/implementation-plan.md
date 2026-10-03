@@ -2,9 +2,10 @@
 
 Date: 2026-10-03
 
-Status: M0 / unit 0A verified on 2026-10-03; see the
-[feasibility evidence](verification/0a/README.md). M1–M5 remain planned.
-No API implementation has started.
+Status: M0 / unit 0A and M1 / units 1A and 1B verified on 2026-10-03; see the
+[feasibility evidence](verification/0a/README.md) and the
+[domain-contract evidence](verification/1a/README.md) and [layer evidence](verification/1b/README.md).
+M1 is complete. M2–M5 remain planned, and no public API routes exist yet.
 
 ## Objective and scope
 

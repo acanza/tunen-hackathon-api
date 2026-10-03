@@ -73,7 +73,7 @@ Introduce background jobs only if measured processing times make direct requests
 insufficient. Set limits on fields, area, vertices, pixels, concurrency, and
 provider calls before accepting larger workloads.
 
-## REST contract evolution
+## Public REST contract (M5 only)
 
 Use JSON `camelCase` at the public boundary and `snake_case` in Python, with one
 global Pydantic alias policy. Identifiers are opaque strings, timestamps use
@@ -81,27 +81,30 @@ RFC 3339 UTC, GeoJSON follows RFC 7946 longitude/latitude order, and errors use
 one documented problem-details shape. Do not put access tokens or arbitrary
 provider URLs in requests.
 
-The initial layer contract remains the M1 integration surface:
+M0–M4 define internal services, data products, and verification evidence; they
+do not define public endpoints. The routes below are the complete public HTTP
+surface planned for M5. In particular, the suggested `/soil/layers`, `/rasters/*`,
+and refresh routes in the raw brief are not part of the public contract.
 
 | Endpoint | Purpose |
 | --- | --- |
-| `GET /health` | Check that the application is running. |
-| `GET /soil/capabilities` | List supported parameters, sources, depths, and limitations. |
-| `POST /soil/layers` | Generate layers for the submitted fields. |
-| `GET /rasters/{artifact_id}.png` | Retrieve a rendered image. |
-| `GET /rasters/{artifact_id}.json` | Retrieve grid values and georeferencing. |
-
-Unit 5A introduces the stable frontend surface without breaking the layer
-contract:
-
-| Endpoint | Purpose |
-| --- | --- |
-| `POST /soil/analyses` | Synchronously create an immutable, versioned analysis snapshot for submitted fields and requested products. |
+| `POST /soil/analyses` | Synchronously create or refresh an immutable, versioned analysis snapshot for submitted fields and requested products. |
 | `GET /soil/analyses/{analysis_id}` | Retrieve the snapshot, product statuses, provenance, warnings, and links. |
 | `POST /soil/analyses/{analysis_id}/sampling-plans` | Create a sampling plan with a bounded `sampleCount` and explicit decision context. |
+| `GET /soil/analyses/{analysis_id}/sampling-plans/{sampling_plan_id}` | Retrieve a sampling plan and its GeoJSON/CSV artifact links. |
 | `GET /soil/analyses/{analysis_id}/parcel-datasheets/{field_id}` | Return the farmer and audit representations of the same evidence. |
 | `GET /soil/analyses/{analysis_id}/management-signals` | Return versioned categorical signals and rationale per field or zone. |
 | `GET /artifacts/{artifact_id}` | Retrieve an allow-listed immutable PNG, JSON grid, GeoJSON, or CSV artifact with its media type. |
+
+Endpoint success semantics are fixed as follows: analysis creation returns
+`201 Created` with `Location`; analysis, datasheet, and signal retrieval return
+`200 OK`; sampling-plan creation returns `201 Created` with a `Location` pointing
+to its retrieval endpoint; artifact retrieval returns `200 OK` with the registered
+media type and supports conditional GET. Missing resources return the shared
+problem-details `404`; validation and limit failures return `422`; idempotency-key
+reuse with a different payload returns `409`; temporary upstream failure is
+represented in product status unless no analysis resource can be created, in
+which case the API returns `503`.
 
 `POST /soil/analyses` is idempotent when the client supplies an idempotency key.
 Creation returns `201 Created` and `Location` on a new snapshot, or the existing
@@ -109,6 +112,9 @@ snapshot for a replay. Invalid input is rejected before provider work; a valid
 analysis with mixed product outcomes remains retrievable and reports status per
 product. If measured latency exceeds the synchronous budget, asynchronous jobs
 require a separately authorized extension rather than an undocumented timeout.
+The request owns `fields`, `parameters`, `sources`, requested `products`, and an
+optional `refresh` boolean. Refresh creates a new immutable snapshot, links it to
+the superseded analysis, and never mutates or mislabels the old snapshot.
 
 Every product response carries `schemaVersion`, `methodVersion`, `analysisId`,
 input layer identities, `generatedAt`, and status. Artifact links are relative
@@ -116,10 +122,9 @@ API URLs, not storage paths. Product status distinguishes `available`,
 `insufficientData`, `unsupported`, `outsideCoverage`, and `failed`; warnings do
 not silently turn missing evidence into a value.
 
-The layer request uses `fields`, `parameters`, and `sources`, following the
-specification's suggested structure. Expand `texture` into `clay`, `sand`, and
-`silt` when numeric percentages are available. Identify categorical texture
-classes separately.
+The analysis request uses `fields`, `parameters`, and `sources`. Expand `texture`
+into `clay`, `sand`, and `silt` when numeric percentages are available. Identify
+categorical texture classes separately.
 
 Each result includes:
 
@@ -166,10 +171,11 @@ Missing grid values are `null`, never zero. Partial failures retain valid layers
 A total provider outage must not become an empty success response. Distinguish
 unsupported parameters, missing coverage, missing data, and provider failures.
 
-Finalize schemas, status codes, grid orientation, and numeric request limits
-in unit 1A, before the first integration. Enforce initial limits and timeouts in
-1B; extend workload budgets before enabling multiple fields in 2A. The endpoint
-list is the design baseline.
+Finalize domain schemas, grid orientation, and numeric request limits in unit 1A,
+before the first integration. Enforce initial limits and timeouts in 1B; extend
+workload budgets before enabling multiple fields in 2A. Unit 5A maps those
+verified internal contracts to the public endpoint list above and finalizes HTTP
+status codes and problem details.
 
 ## Source feasibility and expected coverage
 

@@ -74,19 +74,19 @@ input compatibility and depth, and actual Bodenzahl attributes before coding the
 
 ## M1: First end-to-end integration
 
-### 1A — Minimal contract and validation
+### 1A — Minimal domain contract and validation
 
 **Dependencies:** 0A.
 
-**Scope:** FastAPI skeleton, health, request/response/error models, and validation
-for one field and clay. Decide Polygon/MultiPolygon support, field identifiers,
-coordinate validation, depth policy, grid orientation/transform, status codes,
+**Scope:** Internal request/result/error models and validation for one field and
+clay. Decide Polygon/MultiPolygon support, field identifiers,
+coordinate validation, depth policy, grid orientation/transform, result statuses,
 and the representation of unsupported, uncovered, empty, and failed results.
-Exclude provider integration and rendering.
+Exclude FastAPI routes, provider integration, and rendering.
 
-**Deliverable:** OpenAPI contract and minimal startup instructions. Specify numeric
-limits for fields, area, vertices, pixels, provider calls, concurrency, retries,
-and timeouts; initially accept only the bounded single-field workload.
+**Deliverable:** Typed domain contract and minimal startup instructions. Specify
+numeric limits for fields, area, vertices, pixels, provider calls, concurrency,
+retries, and timeouts; initially accept only the bounded single-field workload.
 
 **Verification and closure:** Accepted geometry and invalid geometry/coordinates,
 duplicate or absent identifiers under the chosen policy, unsupported requests,
@@ -103,16 +103,17 @@ clay normalization and depth handling; clipping, statistics, legend, PNG and JSO
 storage/retrieval. Include capabilities and complete provenance from this unit.
 Exclude additional parameters, multi-field processing, and cache reuse.
 
-**Deliverable:** An executable request returning a real layer with working artifact
-URLs. Enforce 1A's budgets, bounded transient retries, and timeouts. Keep intensive
-raster work outside the asynchronous event loop.
+**Deliverable:** An executable service call returning a real layer and registered
+PNG/JSON artifacts. Enforce 1A's budgets, bounded transient retries, and timeouts.
+Keep intensive raster work outside the asynchronous event loop.
 
 **Verification and closure:** A small known grid checks conversion/depth math,
 axis order, transform, a polygon hole, exterior transparency, nodata exclusion,
 all-nodata behavior, and agreement among JSON, PNG, statistics, and legend. A live
-request downloads both artifacts and records their metadata. A simulated timeout
-produces the contracted error rather than empty success; a bounded processing
-check confirms health requests remain responsive under the documented budget.
+service integration retrieves both artifacts and records their metadata. A
+simulated timeout produces the contracted error rather than empty success; a bounded processing
+check confirms lightweight application work remains responsive under the
+documented budget.
 
 ## M2: Functional backend MVP
 
@@ -203,7 +204,7 @@ and thickness handling. Missing or incompatible inputs yield an explicit status;
 nonphysical results follow a documented policy rather than silent correction.
 A live request confirms the actual inputs needed for the derived layer.
 
-**M2 closure:** After 2A–2F, run a multi-field request for all five parameters using
+**M2 closure:** After 2A–2F, run a multi-field service call for all five parameters using
 SoilGrids and the necessary LBEG sources. Check texture expansion, capabilities,
 artifact retrieval, provenance, and explicit unavailable combinations. Preserve
 unit evidence and report any missing requirement; passing units individually is
@@ -230,8 +231,9 @@ not publish mismatched PNG, JSON, and metadata.
 
 **Dependencies:** 3A.
 
-**Scope:** `refresh: true` on the layer request, affected-entry replacement, and
-failure behavior. Exclude scheduling and background jobs.
+**Scope:** An internal refresh option for analysis generation, affected-entry
+replacement, and failure behavior. Exclude public routes, scheduling, and
+background jobs.
 
 **Deliverable:** Documented semantics for successful, partial, and failed refresh,
 including whether old artifacts remain retrievable and how they are identified.
@@ -252,8 +254,9 @@ coverage fields, example requests, and limitation report. Exclude UI/deployment.
 **Deliverable:** Clean-environment instructions and a recorded backend demonstration.
 
 **Verification and closure:** Install and start from the documented environment;
-execute the multi-field example, retrieve artifacts, observe cache reuse, and
-refresh. Record commands, outcomes, and provider availability. Label any offline
+execute the multi-field example through the internal service interface, retrieve
+artifacts, observe cache reuse, and refresh. Record commands, outcomes, and
+provider availability. Label any offline
 fixture demonstration separately; it cannot replace pending live verification.
 
 ## M4: Cross-source derived layers
@@ -317,13 +320,15 @@ and refreshing inputs invalidates affected derived outputs.
 
 **Scope:** Add the immutable analysis resource, idempotent creation, retrieval,
 product links/statuses, global JSON `camelCase` aliases, version fields, and the
-generic allow-listed artifact route. Preserve the existing layer contract during
-migration. Exclude confidence calculations and domain product logic.
+generic allow-listed artifact route. Expose only the endpoints listed in the M5
+public REST contract; do not add legacy layer, raster, health, capability, or
+standalone refresh routes. Exclude confidence calculations and domain product logic.
 
 **Deliverable:** OpenAPI schemas and examples for `POST /soil/analyses`, analysis
 retrieval, artifact metadata, partial outcomes, and one coherent input snapshot.
-Document `201`, replay, validation, not-found, conflict, partial-product, and
-provider-failure behavior without encoding actions in URL paths.
+Document `201`, replay, refresh snapshot, validation, not-found, conflict,
+partial-product, and provider-failure behavior without encoding actions in URL
+paths.
 
 **Verification and closure:** Contract tests cover aliases, GeoJSON coordinate
 order, opaque IDs, RFC 3339 timestamps, idempotency replay/conflict, stable links,
@@ -375,7 +380,8 @@ ranked by expected ability to resolve a declared decision. Support GeoJSON and
 CSV artifacts. Exclude laboratory-result ingestion, model calibration, routing,
 and claiming that maximum uncertainty alone is optimal.
 
-**Deliverable:** `POST /soil/analyses/{analysis_id}/sampling-plans` with stable
+**Deliverable:** `POST /soil/analyses/{analysis_id}/sampling-plans` and
+`GET /soil/analyses/{analysis_id}/sampling-plans/{sampling_plan_id}` with stable
 point IDs, requested/actual count, WGS 84 coordinates, target parameter,
 priority, rationale, evidence, minimum-spacing policy, and method version.
 

@@ -1,7 +1,7 @@
 interface:
   display_name: "Soil API Engineer"
-  short_description: "Build and validate Tunen's FastAPI soil API"
-  default_prompt: "Use $soil-api-engineer to implement the next requested task for this repository's FastAPI soil aggregation API."
+  short_description: "Build Tunen's M5 soil analysis API"
+  default_prompt: "Use $soil-api-engineer to implement the next requested task for this repository's M5 FastAPI soil analysis contract."
 
 policy:
   allow_implicit_invocation: true

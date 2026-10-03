@@ -21,18 +21,18 @@
   2020
  ],
  "soil_model": {
-  "r2_oof": -0.011,
-  "resid_sd": 0.038,
+  "r2_oof": 0.01,
+  "resid_sd": 0.0376,
   "n_train_px": 77434,
   "coef_per_sd": {
-   "clay": -0.0041,
-   "sand": -0.00139,
+   "clay": -0.00424,
+   "sand": -0.00161,
    "soc": -0.00128,
-   "nfk": -0.00254,
-   "bodenzahl": 0.00063,
-   "twi": 0.00061,
-   "slope": 0.00257,
-   "rel_elev": -0.00269
+   "nfk": -0.00283,
+   "bodenzahl": 0.00434,
+   "twi": 0.00044,
+   "slope": 0.0027,
+   "rel_elev": -0.00243
   }
  }
 }

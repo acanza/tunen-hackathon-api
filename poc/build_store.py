@@ -13,6 +13,7 @@ Inputs
 - data/seggerde/soilgrids/s2grid/*.tif            SoilGrids v2.0 on the S2 10 m grid, quantile bands
 - data/seggerde/nibis/raw/gfi_L849_*.json         Bodenschätzung parcels (polygons) at each field's sample point
 - data/seggerde/nibis/nibis_fields.csv            NIBIS coverage share per field (west = Niedersachsen)
+- data/seggerde/lagb/raw/klassenzeichen.geojson   LAGB Bodenschätzung class symbols (east = Sachsen-Anhalt), see fetch_lagb.py
 - data/seggerde/sentinel2/relative_productivity.tif, yield_potential_zones.tif
 
 Outputs (poc/store/)
@@ -26,6 +27,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 import math
 import shutil
 import sqlite3
@@ -102,7 +104,8 @@ PARAMETERS = [
 SOURCES = [
     ("soilgrids", "ISRIC SoilGrids v2.0", "250 m grid", 250, "global", "CC BY 4.0", "2026-10-03"),
     ("lbeg_bk50", "LBEG BK50 (NIBIS)", "1:50 000", None, "Niedersachsen", "not verified", "2026-10-03"),
-    ("lbeg_bodenschaetzung", "LBEG Bodenschätzung (NIBIS)", "1:5 000", None, "Niedersachsen", "not verified", "2026-10-03"),
+    ("lbeg_bodenschaetzung", "Bodenschätzung: LBEG NIBIS (NI) + LAGB (ST)", "1:5 000 (NI) / 1:10 000 (ST)", None,
+     "Niedersachsen + Sachsen-Anhalt", "not verified", "2026-10-03"),
     ("derived", "Own model (Sentinel-2 L2A, 2019–2026)", "10 m grid", 10, "farm", "Copernicus open data", "2026-10-03"),
     ("best", "Best available source per pixel", "mixed", None, "farm", "see contributing sources", "2026-10-03"),
 ]
@@ -114,8 +117,9 @@ SOURCE_PARAMETERS = [
     ("soilgrids", "soc", "soc Q0.5, depth-weighted 0–30 cm"),
     ("soilgrids", "nfk", "Sum over 0–100 cm of (wv0033 − wv1500) × layer thickness"),
     ("lbeg_bk50", "nfk", "nFKWe exists in BK50 but was not in the downloaded attributes"),
-    ("lbeg_bodenschaetzung", "texture", "Bodenart from Klassenzeichen (categorical)"),
-    ("lbeg_bodenschaetzung", "bodenzahl", "BODENZ of each parcel"),
+    ("lbeg_bodenschaetzung", "texture", "Bodenart from Klassenzeichen (categorical); NI: LBEG parcels, ST: LAGB polygons"),
+    ("lbeg_bodenschaetzung", "bodenzahl", "NI: BODENZ of each parcel. ST: no Bodenzahl published; looked up from the "
+                                           "Klassenzeichen via western parcels with the same class (mean, range ±5)"),
     ("derived", "nfk", "nFKWe of the BÜK200 unit (nearest sample point): KA5 lookup over its agricultural "
                        "profiles, area-weighted; approximate KA5 values"),
     ("derived", "bodenzahl", "Model trained on the downloaded Bodenschätzung parcels (west), applied farm-wide"),
@@ -291,6 +295,50 @@ def load_bodenschaetzung() -> gpd.GeoDataFrame:
     return gpd.GeoDataFrame(list(rows.values()), crs="EPSG:25832").to_crs(UTM)
 
 
+KLZ_RE = re.compile(r"^(Mo|LT|sL|SL|lS|Sl|S|L|T)(I{1,3}V?|IV|V|\d)(Al|Lö|Vg|V|D)?")
+
+
+def klz_key(bodenart, zustand, entstehung):
+    """(Bodenart, Zustandsstufe, first Entstehungsart); grassland keys have no Entstehung."""
+    e = next((t for t in ("Al", "Lö", "Vg", "V", "D") if (entstehung or "").startswith(t)), None)
+    return (bodenart, str(zustand), e if str(zustand).isdigit() else None)
+
+
+def bodenzahl_lookup(parcels: gpd.GeoDataFrame) -> dict:
+    """Klassenzeichen → Bodenzahl (mean, min, max) from the western parcels, which have both."""
+    acc: dict = {}
+    for kz, bz in zip(parcels.klassenzeichen, parcels.bodenzahl):
+        m = KLZ_RE.match(kz or "")
+        if m and bz is not None:
+            k = klz_key(*m.groups())
+            for key in (k, k[:2]):  # exact, then Bodenart + Zustand
+                acc.setdefault(key, []).append(float(bz))
+    return {k: (float(np.mean(v)), min(v), max(v)) for k, v in acc.items()}
+
+
+def load_lagb(parcels_west: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
+    """Sachsen-Anhalt Bodenschätzung polygons (LAGB open data). No Bodenzahl is published: it is looked up from
+    the Klassenzeichen via the western parcels (`bodenzahl_lookup`); classes the west doesn't have stay empty."""
+    p = SEG / "lagb" / "raw" / "klassenzeichen.geojson"
+    if not p.exists():
+        return gpd.GeoDataFrame(columns=["geometry"], geometry="geometry", crs=UTM)
+    g = gpd.read_file(p).to_crs(UTM)
+    g["geometry"] = g.geometry.make_valid()
+    lut = bodenzahl_lookup(parcels_west)
+    rows = []
+    for r_ in g.itertuples():
+        k = klz_key(r_.Bodenart, r_.Zustand, r_.Substratentstehung_Code)
+        hit = lut.get(k) or lut.get(k[:2])
+        rows.append(dict(parcel_id=f"ST-{r_.ID_Fläche_KLZ}", bodenzahl=round(hit[0]) if hit else None,
+                         bz_lo=hit[1] - 5 if hit else None, bz_hi=hit[2] + 5 if hit else None, ackerzahl=None,
+                         klassenzeichen=(r_.Standardklassenzeichen or "").strip() or None,
+                         bodenart=r_.Bodenart if r_.Bodenart in BODENART else None, updated=str(r_.STAND_ALK),
+                         origin="lagb", geometry=r_.geometry))
+    out = gpd.GeoDataFrame(rows, crs=UTM)
+    print(f"LAGB: {len(out)} polygons, Bodenzahl looked up for {out.bodenzahl.notna().mean():.0%}")
+    return out
+
+
 def build_regional(transform, h, w, parcels):
     out = {}  # (param, source) -> dict(value, lo, hi, conf, kind, cmap, unit, zone_m)
     for param, prop, cmap, unit in [("texture", "clay", "clay", "% clay"), ("ph", "phh2o", "ph", "pH"), ("soc", "soc", "soc", "g/kg")]:
@@ -306,13 +354,19 @@ def build_regional(transform, h, w, parcels):
 
     # Bodenschätzung: rasterise the downloaded parcels. Official 1:5k survey → high where present.
     shp = (h, w)
-    bz = rasterize(((g, v) for g, v in zip(parcels.geometry, parcels.bodenzahl) if v is not None),
-                   out_shape=shp, transform=transform, fill=np.nan, dtype="float32")
+    def burn(col):
+        return rasterize(((g, v) for g, v, b in zip(parcels.geometry, parcels[col], parcels.bodenzahl) if v is not None and b is not None),
+                         out_shape=shp, transform=transform, fill=np.nan, dtype="float32")
+    parcels = parcels.assign(
+        bz_lo=parcels.get("bz_lo", pd.Series(index=parcels.index, dtype=float)).fillna(parcels.bodenzahl.astype(float) - Z90 * 3.0),
+        bz_hi=parcels.get("bz_hi", pd.Series(index=parcels.index, dtype=float)).fillna(parcels.bodenzahl.astype(float) + Z90 * 3.0),
+        bz_conf=np.where(parcels.get("origin", pd.Series(index=parcels.index)).eq("lagb"), MEDIUM, HIGH))
+    bz = burn("bodenzahl")
     ba = rasterize(((g, BODENART_CODES.index(c) + 1) for g, c in zip(parcels.geometry, parcels.bodenart) if c in BODENART),
                    out_shape=shp, transform=transform, fill=np.nan, dtype="float32")
-    sigma_bz = 3.0  # assumed until calibrated: Bodenzahl ±5 points at 90 %
+    # NI: official value, interval ±5 assumed. ST: lookup from the class symbol, interval = western range ±5, medium.
     out[("bodenzahl", "lbeg_bodenschaetzung")] = dict(
-        value=bz, lo=bz - Z90 * sigma_bz, hi=bz + Z90 * sigma_bz, conf=np.where(np.isfinite(bz), HIGH, np.nan).astype("float32"),
+        value=bz, lo=burn("bz_lo"), hi=burn("bz_hi"), conf=np.where(np.isfinite(bz), burn("bz_conf"), np.nan).astype("float32"),
         kind="continuous", cmap="bodenzahl", unit="points", zone_m=20, native_m=None)
     out[("texture", "lbeg_bodenschaetzung")] = dict(
         value=ba, lo=np.full(shp, np.nan, "float32"), hi=np.full(shp, np.nan, "float32"),
@@ -521,13 +575,16 @@ def build_field(f, layers, transform, H, W, parcels, nibis_row, conn):
         zone, zone_name = zone_mask(g, L["zone_m"], wt, shp, centres, inside)
         drivers = []
 
-        if source == "lbeg_bodenschaetzung":
-            if not in_ni:
-                row.update(status="unavailable", reason="outside_source_region:niedersachsen")
-                rows.append(row)
-                continue
+        if source == "lbeg_bodenschaetzung" and in_ni:
             cov = float(parcels.intersection(g).area.sum() / g.area) if len(parcels) else 0.0
             row["coverage"] = round(min(cov, 1.0), 3)
+        elif source == "lbeg_bodenschaetzung":  # Sachsen-Anhalt: LAGB polygons; coverage where a value exists
+            valid = np.isfinite(val) & inside
+            row["coverage"] = round(float(valid.sum() / max(inside.sum(), 1)), 3)
+            if row["coverage"] == 0:
+                row.update(status="unavailable", reason="no_data_in_source" if param == "bodenzahl" else "outside_source_region:niedersachsen")
+                rows.append(row)
+                continue
         else:
             # NDVI-based values exist only in the inner zone (edge pixels mix crop and hedges), so
             # coverage is measured there; the excluded edge strip is reported as a driver instead.
@@ -564,7 +621,7 @@ def build_field(f, layers, transform, H, W, parcels, nibis_row, conn):
             continue
         row["status"] = "ok" if row["coverage"] >= 0.95 else "partial"
         if row["status"] == "partial":
-            row["reason"] = "only_parcels_at_sample_point_downloaded" if source == "lbeg_bodenschaetzung" else "partial_source_coverage"
+            row["reason"] = "only_parcels_at_sample_point_downloaded" if source == "lbeg_bodenschaetzung" and in_ni else "partial_source_coverage"
 
         for a in (val, lo, hi, conf) + ((src,) if src is not None else ()):
             a[~inside] = np.nan
@@ -621,10 +678,14 @@ def build_field(f, layers, transform, H, W, parcels, nibis_row, conn):
                 drivers.append("mixed_sources_in_field")
             if param == "bodenzahl" and sh.get("lbeg_bodenschaetzung", 0) == 0:
                 drivers.append("no_official_survey_model_only")
-        if source == "lbeg_bodenschaetzung":
+        if source == "lbeg_bodenschaetzung" and in_ni:
             drivers.append("official_survey_1to5000")
             if param == "bodenzahl":
                 drivers.append("interval_assumed_not_calibrated")
+        elif source == "lbeg_bodenschaetzung":
+            drivers.append("official_survey_lagb_1to10000")
+            if param == "bodenzahl":
+                drivers.append("bodenzahl_from_class_lookup_west")
         if row["status"] == "partial":
             drivers.append("partial_coverage")
             level = max(LOW, level - 1)
@@ -726,7 +787,9 @@ def main():
     parcels = load_bodenschaetzung()
     print(f"{len(fields)} fields, {len(parcels)} Bodenschätzung parcels")
 
-    layers = build_regional(transform, H, W, parcels)
+    lagb = load_lagb(parcels)
+    survey = pd.concat([parcels.assign(origin="lbeg"), lagb], ignore_index=True)  # survey layers only; models train on `parcels`
+    layers = build_regional(transform, H, W, survey)
     # bare-ground pixels: field interiors (10 m in from the edge, away from hedges and tree lines)
     ground = rasterize(fields.to_crs(UTM).buffer(-10).loc[lambda g: ~g.is_empty], out_shape=(H, W),
                        transform=transform, fill=0, dtype="uint8").astype(bool)
@@ -765,7 +828,7 @@ def main():
     conn.executescript((POC / "schema.sql").read_text())
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
     as_of = {"sentinel2": "2026-10-03", "weather": "2026-09-27", "soilgrids": "v2.0 (pulled 2026-10-03)",
-             "nibis": "pulled 2026-10-03"}
+             "nibis": "pulled 2026-10-03", "lagb": "pulled 2026-10-03"}
     conn.execute("INSERT INTO runs VALUES (?,?,?,?,?)", (RUN_ID, now, 1, json.dumps(as_of),
                  "POC: built from data already on disk, no refresh"))
     conn.executemany("INSERT INTO sources VALUES (?,?,?,?,?,?,?)", SOURCES)
@@ -780,7 +843,7 @@ def main():
 
     for f in fields.itertuples():
         nrow = nibis.loc[f.plotId].to_dict() if f.plotId in nibis.index else {}
-        bounds, in_ni = build_field(f, layers, transform, H, W, parcels, nrow, conn)
+        bounds, in_ni = build_field(f, layers, transform, H, W, survey, nrow, conn)
         conn.execute("INSERT INTO fields VALUES (?,?,?,?,?,?,?,?,?,?)", (
             f.plotId, f.fieldName, round(f.area_geom_ha, 4), int(bool(f.use_for_stats)), "NI" if in_ni else "ST",
             geom_hash(f.geometry), json.dumps(mapping(f.geometry)), json.dumps(bounds),

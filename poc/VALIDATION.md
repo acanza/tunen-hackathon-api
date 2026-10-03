@@ -28,10 +28,10 @@ n / (n + k). The leave-one-season-out score for each k:
 
 | k | Spearman v1 | RMSE v1 | Spearman v1, dry seasons | Scaled beats plain (RMSE) |
 |---|---|---|---|---|
-| 4 | 0.49 | 0.035 | 0.54 | 38% |
+| 4 | 0.50 | 0.035 | 0.55 | 38% |
 | 32 **(used)** | 0.53 | 0.034 | 0.57 | 43% |
-| 256 | 0.54 | 0.034 | 0.56 | 37% |
-| off (no water scaling) | 0.53 | 0.034 | 0.56 | 29% |
+| 256 | 0.54 | 0.034 | 0.57 | 37% |
+| off (no water scaling) | 0.54 | 0.034 | 0.57 | 29% |
 
 **Finding: water scaling adds no measurable skill.** Eight seasons are too few to estimate a per-pixel
 drought response; weak shrinkage (k = 4) made the map worse, especially for the wet season 2021.
@@ -44,7 +44,7 @@ plain mean comes from the per-field shrinkage (lower RMSE), not from the water b
 | Season | CWB Apr–Jun (mm) | Fields | ρ plain | ρ scaled | ρ v1 | RMSE flat | RMSE plain | RMSE v1 | Agreement v1 |
 |---|---|---|---|---|---|---|---|---|---|
 | 2019 | -170 | 77 | 0.56 | 0.56 | 0.56 | 0.036 | 0.037 | 0.034 | 0.70 |
-| 2020 | -185 | 77 | 0.45 | 0.44 | 0.46 | 0.035 | 0.038 | 0.035 | 0.66 |
+| 2020 | -185 | 77 | 0.45 | 0.44 | 0.45 | 0.035 | 0.038 | 0.035 | 0.66 |
 | 2021 | -62 | 77 | 0.46 | 0.42 | 0.42 | 0.029 | 0.032 | 0.027 | 0.67 |
 | 2022 (dry) | -217 | 77 | 0.56 | 0.55 | 0.56 | 0.044 | 0.040 | 0.039 | 0.71 |
 | 2023 | -183 | 77 | 0.55 | 0.54 | 0.55 | 0.039 | 0.033 | 0.033 | 0.71 |
@@ -58,12 +58,37 @@ plain mean comes from the per-field shrinkage (lower RMSE), not from the water b
   peak NDVI among all fields in each season. Spearman ρ = **0.21** (p = 0.22, n = 36 fields).
   Peak NDVI depends on the crop grown, and we have no rotation records, so this is a weak test.
 - **Within fields:** only where the downloaded Bodenschätzung parcels split a field into parts with
-  different Bodenzahl (≥ 20 pixels each). n = **1**, higher-Bodenzahl part has higher yield
-  potential in **1** (one-sided sign test p = 0.5).
+  different Bodenzahl (≥ 20 pixels each). n = **26**, higher-Bodenzahl part has higher yield
+  potential in **23** (one-sided sign test p = 0.0).
 
 | Field | Bodenzahl low → high | Yield potential low → high | Agrees |
 |---|---|---|---|
-| Nachthude 2 | 46 → 48 | 99.4 → 100.1 | yes |
+| Berg | 22 → 45 | 98.5 → 101.6 | yes |
+| Helmecken Kamp | 30 → 45 | 98.7 → 101.5 | yes |
+| Hofbreite Seggerde | 22 → 46 | 98.2 → 102.1 | yes |
+| Kampwiese | 45 → 46 | 96.7 → 98.5 | yes |
+| Klinzer Brache | 26 → 30 | 97.8 → 103.1 | yes |
+| Klinzerbreite | 30 → 45 | 98.2 → 103.3 | yes |
+| Krügerbreite | 26 → 45 | 99.0 → 101.1 | yes |
+| Kälbergehege | 30 → 39 | 99.2 → 100.5 | yes |
+| Kälbergehege Brache | 30 → 39 | 99.7 → 100.3 | yes |
+| Lange Wiese | 45 → 46 | 100.5 → 100.6 | yes |
+| Langes Feld | 30 → 45 | 94.9 → 98.0 | yes |
+| Langes Feld Brache | 18 → 39 | 97.9 → 102.6 | yes |
+| Masch | 30 → 45 | 100.6 → 100.0 | no |
+| Mittelbreite | 30 → 39 | 98.4 → 99.7 | yes |
+| Mühlenbreite (+) | 30 → 39 | 97.6 → 102.3 | yes |
+| Nachthude 2 | 46 → 48 | 99.8 → 99.7 | no |
+| Plantage | 22 → 45 | 96.4 → 102.6 | yes |
+| Pumpmühlensee | 30 → 45 | 97.5 → 102.3 | yes |
+| Saalsdorfer Breite | 30 → 45 | 99.7 → 103.5 | yes |
+| Sandberg | 30 → 39 | 98.3 → 99.3 | yes |
+| See | 22 → 45 | 96.2 → 100.5 | yes |
+| Specksbreite Brache | 22 → 45 | 101.4 → 102.2 | yes |
+| Specksbreite Groß | 30 → 45 | 96.8 → 101.9 | yes |
+| Spraken | 30 → 45 | 99.8 → 100.7 | yes |
+| Wiesenbalken | 30 → 39 | 93.3 → 99.0 | yes |
+| Wolfskuhle | 30 → 45 | 96.5 → 95.9 | no |
 
 ## 3. Soil/terrain model
 
@@ -72,8 +97,8 @@ multi-year relative NDVI level; cross-validation grouped by field.
 
 | Scope | R² (grouped CV) | Pixels | Residual SD |
 |---|---|---|---|
-| All fields | -0.008 | 77434 | 0.0379 |
-| West only | 0.013 | 21729 | 0.0374 |
+| All fields | 0.012 | 77434 | 0.0376 |
+| West only | 0.030 | 21729 | 0.0371 |
 
 R² ≈ 0: the coarse soil maps and the 30 m terrain don't explain within-field NDVI patterns across
 fields (the terrain effect changes sign between wet and dry soils). In v1 the soil/terrain model is

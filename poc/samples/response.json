@@ -4,22 +4,23 @@
   "sentinel2": "2026-10-03",
   "weather": "2026-09-27",
   "soilgrids": "v2.0 (pulled 2026-10-03)",
-  "nibis": "pulled 2026-10-03"
+  "nibis": "pulled 2026-10-03",
+  "lagb": "pulled 2026-10-03"
  },
  "fields": [
   {
    "id": "f1",
-   "matched_plot_id": "MoYIfvnid4wXBDha0wJ3",
+   "matched_plot_id": "y7yHeXkyCRybIj7aUk0L",
    "match": "plot_id",
-   "field_name": "Heuweg",
+   "field_name": "Helmecken Kamp",
    "bounds": [
     [
-     52.3737955,
-     11.0546055
+     52.3449823,
+     11.0548365
     ],
     [
-     52.3751879,
-     11.0586888
+     52.3473179,
+     11.0595789
     ]
    ],
    "layers": [
@@ -30,21 +31,21 @@
      "reason": null,
      "coverage": 1.0,
      "unit": "%",
-     "png_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/texture__soilgrids.png",
-     "geotiff_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/texture__soilgrids.tif",
+     "png_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/texture__soilgrids.png",
+     "geotiff_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/texture__soilgrids.tif",
      "stats": {
-      "mean": 4.87,
-      "std": 0.05,
-      "min": 4.85,
-      "p10": 4.85,
-      "p50": 4.85,
-      "p90": 4.88,
-      "max": 5.0,
-      "n_px": 49,
-      "clay_mean": 4.87,
-      "sand_mean": 66.68,
-      "silt_mean": 16.32,
-      "usda_class": "loamy sand",
+      "mean": 9.23,
+      "std": 0.13,
+      "min": 9.13,
+      "p10": 9.13,
+      "p50": 9.13,
+      "p90": 9.4,
+      "max": 9.4,
+      "n_px": 335,
+      "clay_mean": 9.23,
+      "sand_mean": 60.63,
+      "silt_mean": 21.25,
+      "usda_class": "sandy loam",
       "zone": "inner_20m"
      },
      "colormap": {
@@ -80,8 +81,8 @@
      "confidence": {
       "level": "low",
       "interval_90": [
-       0.0,
-       10.98
+       3.12,
+       15.34
       ],
       "drivers": [
        "single_coarse_source",
@@ -94,8 +95,8 @@
        "medium": 0.0,
        "high": 0.0
       },
-      "raster_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/texture__soilgrids.tif#band=4",
-      "png_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/texture__soilgrids__conf.png"
+      "raster_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/texture__soilgrids.tif#band=4",
+      "png_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/texture__soilgrids__conf.png"
      },
      "provenance": {
       "native_resolution_m": 250,
@@ -115,16 +116,19 @@
      "reason": null,
      "coverage": 1.0,
      "unit": "class",
-     "png_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/texture__lbeg_bodenschaetzung.png",
-     "geotiff_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/texture__lbeg_bodenschaetzung.tif",
+     "png_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/texture__lbeg_bodenschaetzung.png",
+     "geotiff_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/texture__lbeg_bodenschaetzung.tif",
      "stats": {
       "classes": {
-       "Sl": 1.0
+       "Sl": 0.149,
+       "lS": 0.851
       },
-      "dominant": "Sl",
-      "n_px": 49,
+      "dominant": "lS",
+      "n_px": 335,
       "klassenzeichen": [
-       "Sl4D"
+       "SSl4D",
+       "lS4AlD",
+       "lS4D"
       ],
       "zone": "inner_20m"
      },
@@ -192,15 +196,15 @@
       "level": "high",
       "interval_90": null,
       "drivers": [
-       "official_survey_1to5000"
+       "official_survey_lagb_1to10000"
       ],
       "pixel_shares": {
        "low": 0.0,
        "medium": 0.0,
        "high": 1.0
       },
-      "raster_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/texture__lbeg_bodenschaetzung.tif#band=4",
-      "png_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/texture__lbeg_bodenschaetzung__conf.png"
+      "raster_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/texture__lbeg_bodenschaetzung.tif#band=4",
+      "png_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/texture__lbeg_bodenschaetzung__conf.png"
      },
      "provenance": {
       "native_resolution_m": null,
@@ -226,17 +230,17 @@
      "reason": null,
      "coverage": 1.0,
      "unit": "pH",
-     "png_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/ph__soilgrids.png",
-     "geotiff_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/ph__soilgrids.tif",
+     "png_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/ph__soilgrids.png",
+     "geotiff_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/ph__soilgrids.tif",
      "stats": {
-      "mean": 6.23,
-      "std": 0.02,
-      "min": 6.17,
-      "p10": 6.22,
-      "p50": 6.23,
-      "p90": 6.23,
-      "max": 6.23,
-      "n_px": 49,
+      "mean": 6.4,
+      "std": 0.0,
+      "min": 6.4,
+      "p10": 6.4,
+      "p50": 6.4,
+      "p90": 6.4,
+      "max": 6.4,
+      "n_px": 335,
       "zone": "inner_20m"
      },
      "colormap": {
@@ -272,8 +276,8 @@
      "confidence": {
       "level": "low",
       "interval_90": [
-       4.56,
-       7.87
+       4.51,
+       7.89
       ],
       "drivers": [
        "single_coarse_source",
@@ -285,8 +289,8 @@
        "medium": 0.0,
        "high": 0.0
       },
-      "raster_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/ph__soilgrids.tif#band=4",
-      "png_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/ph__soilgrids__conf.png"
+      "raster_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/ph__soilgrids.tif#band=4",
+      "png_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/ph__soilgrids__conf.png"
      },
      "provenance": {
       "native_resolution_m": 250,
@@ -324,17 +328,17 @@
      "reason": null,
      "coverage": 1.0,
      "unit": "g/kg",
-     "png_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/soc__soilgrids.png",
-     "geotiff_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/soc__soilgrids.tif",
+     "png_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/soc__soilgrids.png",
+     "geotiff_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/soc__soilgrids.tif",
      "stats": {
-      "mean": 14.16,
-      "std": 0.19,
-      "min": 14.1,
-      "p10": 14.1,
-      "p50": 14.1,
-      "p90": 14.22,
-      "max": 14.72,
-      "n_px": 49,
+      "mean": 14.35,
+      "std": 0.09,
+      "min": 14.23,
+      "p10": 14.23,
+      "p50": 14.42,
+      "p90": 14.42,
+      "max": 14.42,
+      "n_px": 335,
       "zone": "inner_20m"
      },
      "colormap": {
@@ -366,8 +370,8 @@
      "confidence": {
       "level": "low",
       "interval_90": [
-       4.56,
-       80.75
+       5.64,
+       74.49
       ],
       "drivers": [
        "single_coarse_source",
@@ -379,8 +383,8 @@
        "medium": 0.0,
        "high": 0.0
       },
-      "raster_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/soc__soilgrids.tif#band=4",
-      "png_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/soc__soilgrids__conf.png"
+      "raster_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/soc__soilgrids.tif#band=4",
+      "png_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/soc__soilgrids__conf.png"
      },
      "provenance": {
       "native_resolution_m": 250,
@@ -418,17 +422,17 @@
      "reason": null,
      "coverage": 1.0,
      "unit": "mm",
-     "png_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/nfk__soilgrids.png",
-     "geotiff_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/nfk__soilgrids.tif",
+     "png_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/nfk__soilgrids.png",
+     "geotiff_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/nfk__soilgrids.tif",
      "stats": {
-      "mean": 183.22,
-      "std": 3.62,
-      "min": 182.0,
-      "p10": 182.0,
-      "p50": 182.0,
-      "p90": 184.39,
-      "max": 193.95,
-      "n_px": 49,
+      "mean": 196.03,
+      "std": 1.74,
+      "min": 194.7,
+      "p10": 194.7,
+      "p50": 194.7,
+      "p90": 198.3,
+      "max": 198.3,
+      "n_px": 335,
       "zone": "inner_20m"
      },
      "colormap": {
@@ -460,8 +464,8 @@
      "confidence": {
       "level": "low",
       "interval_90": [
-       0.86,
-       378.44
+       3.29,
+       390.49
       ],
       "drivers": [
        "single_coarse_source",
@@ -473,8 +477,8 @@
        "medium": 0.0,
        "high": 0.0
       },
-      "raster_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/nfk__soilgrids.tif#band=4",
-      "png_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/nfk__soilgrids__conf.png"
+      "raster_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/nfk__soilgrids.tif#band=4",
+      "png_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/nfk__soilgrids__conf.png"
      },
      "provenance": {
       "native_resolution_m": 250,
@@ -485,7 +489,7 @@
      "parameter": "nfk",
      "source": "lbeg_bk50",
      "status": "unavailable",
-     "reason": "attribute_not_in_downloaded_data",
+     "reason": "outside_source_region:niedersachsen",
      "coverage": 0.0,
      "unit": "mm"
     },
@@ -502,17 +506,17 @@
      "reason": null,
      "coverage": 1.0,
      "unit": "mm",
-     "png_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/nfk__derived.png",
-     "geotiff_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/nfk__derived.tif",
+     "png_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/nfk__derived.png",
+     "geotiff_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/nfk__derived.tif",
      "stats": {
-      "mean": 165.4,
+      "mean": 94.28,
       "std": 0.0,
-      "min": 165.4,
-      "p10": 165.4,
-      "p50": 165.4,
-      "p90": 165.4,
-      "max": 165.4,
-      "n_px": 49,
+      "min": 94.28,
+      "p10": 94.28,
+      "p50": 94.28,
+      "p90": 94.28,
+      "max": 94.28,
+      "n_px": 335,
       "zone": "inner_20m"
      },
      "colormap": {
@@ -544,8 +548,8 @@
      "confidence": {
       "level": "low",
       "interval_90": [
-       120.77,
-       210.03
+       61.86,
+       126.7
       ],
       "drivers": [
        "buek200_1to200000_nearest_point",
@@ -557,8 +561,8 @@
        "medium": 0.0,
        "high": 0.0
       },
-      "raster_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/nfk__derived.tif#band=4",
-      "png_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/nfk__derived__conf.png"
+      "raster_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/nfk__derived.tif#band=4",
+      "png_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/nfk__derived__conf.png"
      },
      "provenance": {
       "native_resolution_m": null,
@@ -572,17 +576,17 @@
      "reason": null,
      "coverage": 1.0,
      "unit": "mm",
-     "png_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/nfk__best.png",
-     "geotiff_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/nfk__best.tif",
+     "png_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/nfk__best.png",
+     "geotiff_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/nfk__best.tif",
      "stats": {
-      "mean": 165.4,
+      "mean": 94.28,
       "std": 0.0,
-      "min": 165.4,
-      "p10": 165.4,
-      "p50": 165.4,
-      "p90": 165.4,
-      "max": 165.4,
-      "n_px": 49,
+      "min": 94.28,
+      "p10": 94.28,
+      "p50": 94.28,
+      "p90": 94.28,
+      "max": 94.28,
+      "n_px": 335,
       "source_shares": {
        "derived": 1.0
       },
@@ -617,8 +621,8 @@
      "confidence": {
       "level": "low",
       "interval_90": [
-       120.77,
-       210.03
+       61.86,
+       126.7
       ],
       "drivers": [
        "reconciled_best_source_per_pixel"
@@ -628,8 +632,8 @@
        "medium": 0.0,
        "high": 0.0
       },
-      "raster_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/nfk__best.tif#band=4",
-      "png_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/nfk__best__conf.png"
+      "raster_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/nfk__best.tif#band=4",
+      "png_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/nfk__best__conf.png"
      },
      "provenance": {
       "grid": "EPSG:32632 10 m",
@@ -657,8 +661,8 @@
       }
      },
      "source_mask": {
-      "png_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/nfk__best__source.png",
-      "raster_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/nfk__best.tif#band=5",
+      "png_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/nfk__best__source.png",
+      "raster_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/nfk__best.tif#band=5",
       "colormap": {
        "type": "categorical",
        "unit": "source",
@@ -698,17 +702,17 @@
      "reason": null,
      "coverage": 1.0,
      "unit": "points",
-     "png_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/bodenzahl__lbeg_bodenschaetzung.png",
-     "geotiff_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/bodenzahl__lbeg_bodenschaetzung.tif",
+     "png_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/bodenzahl__lbeg_bodenschaetzung.png",
+     "geotiff_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/bodenzahl__lbeg_bodenschaetzung.tif",
      "stats": {
-      "mean": 31.0,
-      "std": 0.0,
-      "min": 31.0,
-      "p10": 31.0,
-      "p50": 31.0,
-      "p90": 31.0,
-      "max": 31.0,
-      "n_px": 49,
+      "mean": 42.01,
+      "std": 5.4,
+      "min": 30.0,
+      "p10": 30.0,
+      "p50": 45.0,
+      "p90": 45.0,
+      "max": 45.0,
+      "n_px": 335,
       "zone": "inner_20m"
      },
      "colormap": {
@@ -742,22 +746,22 @@
       ]
      },
      "confidence": {
-      "level": "high",
+      "level": "medium",
       "interval_90": [
-       26.06,
-       35.94
+       33.26,
+       50.76
       ],
       "drivers": [
-       "official_survey_1to5000",
-       "interval_assumed_not_calibrated"
+       "official_survey_lagb_1to10000",
+       "bodenzahl_from_class_lookup_west"
       ],
       "pixel_shares": {
        "low": 0.0,
-       "medium": 0.0,
-       "high": 1.0
+       "medium": 1.0,
+       "high": 0.0
       },
-      "raster_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/bodenzahl__lbeg_bodenschaetzung.tif#band=4",
-      "png_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/bodenzahl__lbeg_bodenschaetzung__conf.png"
+      "raster_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/bodenzahl__lbeg_bodenschaetzung.tif#band=4",
+      "png_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/bodenzahl__lbeg_bodenschaetzung__conf.png"
      },
      "provenance": {
       "native_resolution_m": null,
@@ -771,17 +775,17 @@
      "reason": null,
      "coverage": 1.0,
      "unit": "points",
-     "png_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/bodenzahl__derived.png",
-     "geotiff_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/bodenzahl__derived.tif",
+     "png_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/bodenzahl__derived.png",
+     "geotiff_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/bodenzahl__derived.tif",
      "stats": {
-      "mean": 31.37,
-      "std": 2.03,
-      "min": 30.17,
-      "p10": 30.2,
-      "p50": 30.51,
-      "p90": 32.68,
-      "max": 37.3,
-      "n_px": 49,
+      "mean": 35.18,
+      "std": 0.86,
+      "min": 33.29,
+      "p10": 33.93,
+      "p50": 35.18,
+      "p90": 36.44,
+      "max": 36.59,
+      "n_px": 335,
       "zone": "inner_20m"
      },
      "colormap": {
@@ -817,11 +821,12 @@
      "confidence": {
       "level": "low",
       "interval_90": [
-       20.1,
-       42.65
+       23.91,
+       46.46
       ],
       "drivers": [
        "model_trained_on_38_parcels",
+       "extrapolated_across_state_border",
        "range_crosses_threshold:bodenzahl_30_50"
       ],
       "pixel_shares": {
@@ -829,8 +834,8 @@
        "medium": 0.0,
        "high": 0.0
       },
-      "raster_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/bodenzahl__derived.tif#band=4",
-      "png_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/bodenzahl__derived__conf.png"
+      "raster_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/bodenzahl__derived.tif#band=4",
+      "png_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/bodenzahl__derived__conf.png"
      },
      "provenance": {
       "native_resolution_m": null,
@@ -844,17 +849,17 @@
      "reason": null,
      "coverage": 1.0,
      "unit": "points",
-     "png_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/bodenzahl__best.png",
-     "geotiff_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/bodenzahl__best.tif",
+     "png_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/bodenzahl__best.png",
+     "geotiff_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/bodenzahl__best.tif",
      "stats": {
-      "mean": 31.0,
-      "std": 0.0,
-      "min": 31.0,
-      "p10": 31.0,
-      "p50": 31.0,
-      "p90": 31.0,
-      "max": 31.0,
-      "n_px": 49,
+      "mean": 42.01,
+      "std": 5.4,
+      "min": 30.0,
+      "p10": 30.0,
+      "p50": 45.0,
+      "p90": 45.0,
+      "max": 45.0,
+      "n_px": 335,
       "source_shares": {
        "lbeg_bodenschaetzung": 1.0
       },
@@ -891,21 +896,21 @@
       ]
      },
      "confidence": {
-      "level": "high",
+      "level": "medium",
       "interval_90": [
-       26.06,
-       35.94
+       33.26,
+       50.76
       ],
       "drivers": [
        "reconciled_best_source_per_pixel"
       ],
       "pixel_shares": {
        "low": 0.0,
-       "medium": 0.0,
-       "high": 1.0
+       "medium": 1.0,
+       "high": 0.0
       },
-      "raster_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/bodenzahl__best.tif#band=4",
-      "png_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/bodenzahl__best__conf.png"
+      "raster_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/bodenzahl__best.tif#band=4",
+      "png_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/bodenzahl__best__conf.png"
      },
      "provenance": {
       "grid": "EPSG:32632 10 m",
@@ -933,8 +938,8 @@
       }
      },
      "source_mask": {
-      "png_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/bodenzahl__best__source.png",
-      "raster_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/bodenzahl__best.tif#band=5",
+      "png_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/bodenzahl__best__source.png",
+      "raster_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/bodenzahl__best.tif#band=5",
       "colormap": {
        "type": "categorical",
        "unit": "source",
@@ -980,17 +985,17 @@
      "reason": null,
      "coverage": 1.0,
      "unit": "index (field mean = 100)",
-     "png_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/yield_potential__derived.png",
-     "geotiff_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/yield_potential__derived.tif",
+     "png_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/yield_potential__derived.png",
+     "geotiff_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/yield_potential__derived.tif",
      "stats": {
       "mean": 100.0,
-      "std": 0.91,
-      "min": 97.26,
-      "p10": 98.83,
-      "p50": 99.93,
-      "p90": 101.02,
-      "max": 101.82,
-      "n_px": 91,
+      "std": 2.59,
+      "min": 92.69,
+      "p10": 95.66,
+      "p50": 100.75,
+      "p90": 102.57,
+      "max": 103.27,
+      "n_px": 415,
       "zone": "inner_10m"
      },
      "colormap": {
@@ -1031,8 +1036,8 @@
      "confidence": {
       "level": "medium",
       "interval_90": [
-       98.32,
-       101.68
+       97.55,
+       102.45
       ],
       "drivers": [
        "ndvi_proxy_not_yield",
@@ -1040,12 +1045,12 @@
        "edge_strip_soil_model_weighted"
       ],
       "pixel_shares": {
-       "low": 0.143,
-       "medium": 0.802,
-       "high": 0.055
+       "low": 0.099,
+       "medium": 0.588,
+       "high": 0.313
       },
-      "raster_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/yield_potential__derived.tif#band=4",
-      "png_url": "/static/runs/poc-2026-10-03/fields/MoYIfvnid4wXBDha0wJ3/yield_potential__derived__conf.png"
+      "raster_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/yield_potential__derived.tif#band=4",
+      "png_url": "/static/runs/poc-2026-10-03/fields/y7yHeXkyCRybIj7aUk0L/yield_potential__derived__conf.png"
      },
      "provenance": {
       "native_resolution_m": 10,
@@ -1170,10 +1175,111 @@
     {
      "parameter": "texture",
      "source": "lbeg_bodenschaetzung",
-     "status": "unavailable",
-     "reason": "outside_source_region:niedersachsen",
-     "coverage": 0.0,
-     "unit": "class"
+     "status": "ok",
+     "reason": null,
+     "coverage": 0.989,
+     "unit": "class",
+     "png_url": "/static/runs/poc-2026-10-03/fields/SEo2xyfcqiAjoec8ZXXa/texture__lbeg_bodenschaetzung.png",
+     "geotiff_url": "/static/runs/poc-2026-10-03/fields/SEo2xyfcqiAjoec8ZXXa/texture__lbeg_bodenschaetzung.tif",
+     "stats": {
+      "classes": {
+       "Sl": 0.049,
+       "lS": 0.292,
+       "SL": 0.27,
+       "sL": 0.326,
+       "LT": 0.064
+      },
+      "dominant": "sL",
+      "n_px": 4796,
+      "klassenzeichen": [
+       "Auftr",
+       "LT4D",
+       "SL4D",
+       "SSl4D",
+       "lS4D",
+       "sLL3D",
+       "sLL4D"
+      ],
+      "zone": "inner_20m"
+     },
+     "colormap": {
+      "type": "categorical",
+      "unit": "class",
+      "classes": [
+       {
+        "value": 1,
+        "code": "S",
+        "label": "Sand",
+        "color": "#f6e8c3"
+       },
+       {
+        "value": 2,
+        "code": "Sl",
+        "label": "anlehmiger Sand",
+        "color": "#ecd59a"
+       },
+       {
+        "value": 3,
+        "code": "lS",
+        "label": "lehmiger Sand",
+        "color": "#dfc27d"
+       },
+       {
+        "value": 4,
+        "code": "SL",
+        "label": "stark lehmiger Sand",
+        "color": "#c9a25a"
+       },
+       {
+        "value": 5,
+        "code": "sL",
+        "label": "sandiger Lehm",
+        "color": "#a6763c"
+       },
+       {
+        "value": 6,
+        "code": "L",
+        "label": "Lehm",
+        "color": "#80cdc1"
+       },
+       {
+        "value": 7,
+        "code": "LT",
+        "label": "schwerer Lehm",
+        "color": "#35978f"
+       },
+       {
+        "value": 8,
+        "code": "T",
+        "label": "Ton",
+        "color": "#01665e"
+       },
+       {
+        "value": 9,
+        "code": "Mo",
+        "label": "Moor",
+        "color": "#543005"
+       }
+      ]
+     },
+     "confidence": {
+      "level": "high",
+      "interval_90": null,
+      "drivers": [
+       "official_survey_lagb_1to10000"
+      ],
+      "pixel_shares": {
+       "low": 0.0,
+       "medium": 0.0,
+       "high": 1.0
+      },
+      "raster_url": "/static/runs/poc-2026-10-03/fields/SEo2xyfcqiAjoec8ZXXa/texture__lbeg_bodenschaetzung.tif#band=4",
+      "png_url": "/static/runs/poc-2026-10-03/fields/SEo2xyfcqiAjoec8ZXXa/texture__lbeg_bodenschaetzung__conf.png"
+     },
+     "provenance": {
+      "native_resolution_m": null,
+      "grid": "EPSG:32632 10 m"
+     }
     },
     {
      "parameter": "texture",
@@ -1659,10 +1765,76 @@
     {
      "parameter": "bodenzahl",
      "source": "lbeg_bodenschaetzung",
-     "status": "unavailable",
-     "reason": "outside_source_region:niedersachsen",
-     "coverage": 0.0,
-     "unit": "points"
+     "status": "partial",
+     "reason": "partial_source_coverage",
+     "coverage": 0.326,
+     "unit": "points",
+     "png_url": "/static/runs/poc-2026-10-03/fields/SEo2xyfcqiAjoec8ZXXa/bodenzahl__lbeg_bodenschaetzung.png",
+     "geotiff_url": "/static/runs/poc-2026-10-03/fields/SEo2xyfcqiAjoec8ZXXa/bodenzahl__lbeg_bodenschaetzung.tif",
+     "stats": {
+      "mean": 37.71,
+      "std": 3.15,
+      "min": 30.0,
+      "p10": 30.0,
+      "p50": 39.0,
+      "p90": 39.0,
+      "max": 39.0,
+      "n_px": 1635,
+      "zone": "inner_20m"
+     },
+     "colormap": {
+      "type": "continuous",
+      "unit": "points",
+      "stops": [
+       [
+        10,
+        "#a50026"
+       ],
+       [
+        20,
+        "#f46d43"
+       ],
+       [
+        30,
+        "#fee08b"
+       ],
+       [
+        45,
+        "#a6d96a"
+       ],
+       [
+        60,
+        "#1a9850"
+       ],
+       [
+        80,
+        "#006837"
+       ]
+      ]
+     },
+     "confidence": {
+      "level": "low",
+      "interval_90": [
+       30.43,
+       45.0
+      ],
+      "drivers": [
+       "official_survey_lagb_1to10000",
+       "bodenzahl_from_class_lookup_west",
+       "partial_coverage"
+      ],
+      "pixel_shares": {
+       "low": 0.0,
+       "medium": 1.0,
+       "high": 0.0
+      },
+      "raster_url": "/static/runs/poc-2026-10-03/fields/SEo2xyfcqiAjoec8ZXXa/bodenzahl__lbeg_bodenschaetzung.tif#band=4",
+      "png_url": "/static/runs/poc-2026-10-03/fields/SEo2xyfcqiAjoec8ZXXa/bodenzahl__lbeg_bodenschaetzung__conf.png"
+     },
+     "provenance": {
+      "native_resolution_m": null,
+      "grid": "EPSG:32632 10 m"
+     }
     },
     {
      "parameter": "bodenzahl",
@@ -1748,16 +1920,17 @@
      "png_url": "/static/runs/poc-2026-10-03/fields/SEo2xyfcqiAjoec8ZXXa/bodenzahl__best.png",
      "geotiff_url": "/static/runs/poc-2026-10-03/fields/SEo2xyfcqiAjoec8ZXXa/bodenzahl__best.tif",
      "stats": {
-      "mean": 29.26,
-      "std": 1.88,
+      "mean": 31.99,
+      "std": 4.77,
       "min": 25.26,
-      "p10": 26.13,
-      "p50": 29.66,
-      "p90": 31.42,
-      "max": 33.4,
+      "p10": 26.65,
+      "p50": 30.66,
+      "p90": 39.0,
+      "max": 39.0,
       "n_px": 4838,
       "source_shares": {
-       "derived": 1.0
+       "lbeg_bodenschaetzung": 0.338,
+       "derived": 0.662
       },
       "zone": "inner_20m"
      },
@@ -1794,16 +1967,16 @@
      "confidence": {
       "level": "low",
       "interval_90": [
-       17.98,
-       40.53
+       22.06,
+       41.92
       ],
       "drivers": [
        "reconciled_best_source_per_pixel",
-       "no_official_survey_model_only"
+       "mixed_sources_in_field"
       ],
       "pixel_shares": {
-       "low": 1.0,
-       "medium": 0.0,
+       "low": 0.662,
+       "medium": 0.338,
        "high": 0.0
       },
       "raster_url": "/static/runs/poc-2026-10-03/fields/SEo2xyfcqiAjoec8ZXXa/bodenzahl__best.tif#band=4",
@@ -1886,12 +2059,12 @@
      "geotiff_url": "/static/runs/poc-2026-10-03/fields/SEo2xyfcqiAjoec8ZXXa/yield_potential__derived.tif",
      "stats": {
       "mean": 100.0,
-      "std": 1.56,
-      "min": 94.56,
-      "p10": 97.96,
-      "p50": 100.02,
-      "p90": 102.0,
-      "max": 103.43,
+      "std": 1.58,
+      "min": 94.62,
+      "p10": 97.93,
+      "p50": 100.04,
+      "p90": 102.01,
+      "max": 103.45,
       "n_px": 5133,
       "zone": "inner_10m"
      },
@@ -1943,8 +2116,8 @@
       ],
       "pixel_shares": {
        "low": 0.14,
-       "medium": 0.51,
-       "high": 0.35
+       "medium": 0.507,
+       "high": 0.353
       },
       "raster_url": "/static/runs/poc-2026-10-03/fields/SEo2xyfcqiAjoec8ZXXa/yield_potential__derived.tif#band=4",
       "png_url": "/static/runs/poc-2026-10-03/fields/SEo2xyfcqiAjoec8ZXXa/yield_potential__derived__conf.png"
@@ -2074,10 +2247,102 @@
     {
      "parameter": "texture",
      "source": "lbeg_bodenschaetzung",
-     "status": "unavailable",
-     "reason": "outside_source_region:niedersachsen",
-     "coverage": 0.0,
-     "unit": "class"
+     "status": "ok",
+     "reason": null,
+     "coverage": 1.0,
+     "unit": "class",
+     "png_url": "/static/runs/poc-2026-10-03/fields/xtMqrquNCdC21lZ0NMYI/texture__lbeg_bodenschaetzung.png",
+     "geotiff_url": "/static/runs/poc-2026-10-03/fields/xtMqrquNCdC21lZ0NMYI/texture__lbeg_bodenschaetzung.tif",
+     "stats": {
+      "classes": {
+       "SL": 1.0
+      },
+      "dominant": "SL",
+      "n_px": 1,
+      "klassenzeichen": [
+       "SL4AlD"
+      ],
+      "zone": "full_field_fallback"
+     },
+     "colormap": {
+      "type": "categorical",
+      "unit": "class",
+      "classes": [
+       {
+        "value": 1,
+        "code": "S",
+        "label": "Sand",
+        "color": "#f6e8c3"
+       },
+       {
+        "value": 2,
+        "code": "Sl",
+        "label": "anlehmiger Sand",
+        "color": "#ecd59a"
+       },
+       {
+        "value": 3,
+        "code": "lS",
+        "label": "lehmiger Sand",
+        "color": "#dfc27d"
+       },
+       {
+        "value": 4,
+        "code": "SL",
+        "label": "stark lehmiger Sand",
+        "color": "#c9a25a"
+       },
+       {
+        "value": 5,
+        "code": "sL",
+        "label": "sandiger Lehm",
+        "color": "#a6763c"
+       },
+       {
+        "value": 6,
+        "code": "L",
+        "label": "Lehm",
+        "color": "#80cdc1"
+       },
+       {
+        "value": 7,
+        "code": "LT",
+        "label": "schwerer Lehm",
+        "color": "#35978f"
+       },
+       {
+        "value": 8,
+        "code": "T",
+        "label": "Ton",
+        "color": "#01665e"
+       },
+       {
+        "value": 9,
+        "code": "Mo",
+        "label": "Moor",
+        "color": "#543005"
+       }
+      ]
+     },
+     "confidence": {
+      "level": "medium",
+      "interval_90": null,
+      "drivers": [
+       "official_survey_lagb_1to10000",
+       "no_inner_zone_edge_pixels_only"
+      ],
+      "pixel_shares": {
+       "low": 0.0,
+       "medium": 0.0,
+       "high": 1.0
+      },
+      "raster_url": "/static/runs/poc-2026-10-03/fields/xtMqrquNCdC21lZ0NMYI/texture__lbeg_bodenschaetzung.tif#band=4",
+      "png_url": "/static/runs/poc-2026-10-03/fields/xtMqrquNCdC21lZ0NMYI/texture__lbeg_bodenschaetzung__conf.png"
+     },
+     "provenance": {
+      "native_resolution_m": null,
+      "grid": "EPSG:32632 10 m"
+     }
     },
     {
      "parameter": "texture",
@@ -2572,7 +2837,7 @@
      "parameter": "bodenzahl",
      "source": "lbeg_bodenschaetzung",
      "status": "unavailable",
-     "reason": "outside_source_region:niedersachsen",
+     "reason": "no_data_in_source",
      "coverage": 0.0,
      "unit": "points"
     },
@@ -2847,8 +3112,8 @@
      "confidence": {
       "level": "low",
       "interval_90": [
-       93.75,
-       106.25
+       93.81,
+       106.19
       ],
       "drivers": [
        "ndvi_proxy_not_yield",

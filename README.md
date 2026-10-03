@@ -27,4 +27,6 @@ Start the application from the repository root with:
 
 The P1.1 bootstrap validates `docs/poc/store/` and opens
 `soil.sqlite` in SQLite read-only mode. The HTTP routes are added by later
-implementation units.
+implementation units. P1.3 request models are available from
+`soil_api.models`; they validate FeatureCollection payloads, Polygon and
+MultiPolygon GeoJSON, supported filters, and the 200-feature limit.

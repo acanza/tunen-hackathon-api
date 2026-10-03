@@ -83,6 +83,7 @@ The bounded units and their evidence are defined in
 | --- | --- | --- |
 | P1.1 | Approved | Validated on 2026-10-03: `soil_api.app` imports; settings resolve the repository store and reject an external root; `soil_api.database` queries `sqlite_master`, rejects writes with SQLite read-only mode, and closes connections; no `/soil/*` routes are registered. Startup command is documented in `README.md`. |
 | P1.2 | Approved | Validated on 2026-10-03: `soil_api.store` returns the current run, all supported source/parameter pairs, colormaps, field records by plot ID or geometry hash, field layer metadata, and farm coverage from the frozen SQLite store; JSON metadata is parsed into typed records and the module performs no writes or client-path access. |
+| P1.3 | Approved | Validated on 2026-10-03: `soil_api.models` accepts the sample FeatureCollection, validates Polygon/MultiPolygon GeoJSON in EPSG:4326 longitude/latitude order, rejects unsupported types and filters, duplicate filters, malformed geometries, and more than 200 features without store or file access. |
 
 ## Completion gate
 

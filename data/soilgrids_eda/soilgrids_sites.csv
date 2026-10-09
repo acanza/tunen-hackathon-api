@@ -1,0 +1,2766 @@
+site,lon,lat,prop,depth,stat,raw,value,unit
+Hildesheimer Börde (loess),9.95,52.12,bdod,0-5cm,Q0.5,,,kg/dm³
+Hildesheimer Börde (loess),9.95,52.12,bdod,0-5cm,Q0.05,,,kg/dm³
+Hildesheimer Börde (loess),9.95,52.12,bdod,0-5cm,Q0.95,,,kg/dm³
+Hildesheimer Börde (loess),9.95,52.12,bdod,0-5cm,mean,,,kg/dm³
+Hildesheimer Börde (loess),9.95,52.12,bdod,0-5cm,uncertainty,,,kg/dm³
+Hildesheimer Börde (loess),9.95,52.12,bdod,5-15cm,Q0.05,,,kg/dm³
+Hildesheimer Börde (loess),9.95,52.12,bdod,5-15cm,Q0.5,,,kg/dm³
+Hildesheimer Börde (loess),9.95,52.12,bdod,5-15cm,Q0.95,,,kg/dm³
+Hildesheimer Börde (loess),9.95,52.12,bdod,5-15cm,mean,,,kg/dm³
+Hildesheimer Börde (loess),9.95,52.12,bdod,5-15cm,uncertainty,,,kg/dm³
+Hildesheimer Börde (loess),9.95,52.12,bdod,15-30cm,Q0.5,,,kg/dm³
+Hildesheimer Börde (loess),9.95,52.12,bdod,15-30cm,Q0.05,,,kg/dm³
+Hildesheimer Börde (loess),9.95,52.12,bdod,15-30cm,Q0.95,,,kg/dm³
+Hildesheimer Börde (loess),9.95,52.12,bdod,15-30cm,mean,,,kg/dm³
+Hildesheimer Börde (loess),9.95,52.12,bdod,15-30cm,uncertainty,,,kg/dm³
+Hildesheimer Börde (loess),9.95,52.12,bdod,30-60cm,Q0.5,,,kg/dm³
+Hildesheimer Börde (loess),9.95,52.12,bdod,30-60cm,Q0.05,,,kg/dm³
+Hildesheimer Börde (loess),9.95,52.12,bdod,30-60cm,Q0.95,,,kg/dm³
+Hildesheimer Börde (loess),9.95,52.12,bdod,30-60cm,mean,,,kg/dm³
+Hildesheimer Börde (loess),9.95,52.12,bdod,30-60cm,uncertainty,,,kg/dm³
+Hildesheimer Börde (loess),9.95,52.12,bdod,60-100cm,Q0.05,,,kg/dm³
+Hildesheimer Börde (loess),9.95,52.12,bdod,60-100cm,Q0.5,,,kg/dm³
+Hildesheimer Börde (loess),9.95,52.12,bdod,60-100cm,Q0.95,,,kg/dm³
+Hildesheimer Börde (loess),9.95,52.12,bdod,60-100cm,mean,,,kg/dm³
+Hildesheimer Börde (loess),9.95,52.12,bdod,60-100cm,uncertainty,,,kg/dm³
+Hildesheimer Börde (loess),9.95,52.12,bdod,100-200cm,Q0.5,,,kg/dm³
+Hildesheimer Börde (loess),9.95,52.12,bdod,100-200cm,Q0.05,,,kg/dm³
+Hildesheimer Börde (loess),9.95,52.12,bdod,100-200cm,Q0.95,,,kg/dm³
+Hildesheimer Börde (loess),9.95,52.12,bdod,100-200cm,mean,,,kg/dm³
+Hildesheimer Börde (loess),9.95,52.12,bdod,100-200cm,uncertainty,,,kg/dm³
+Hildesheimer Börde (loess),9.95,52.12,cec,0-5cm,Q0.5,,,cmol(c)/kg
+Hildesheimer Börde (loess),9.95,52.12,cec,0-5cm,Q0.05,,,cmol(c)/kg
+Hildesheimer Börde (loess),9.95,52.12,cec,0-5cm,Q0.95,,,cmol(c)/kg
+Hildesheimer Börde (loess),9.95,52.12,cec,0-5cm,mean,,,cmol(c)/kg
+Hildesheimer Börde (loess),9.95,52.12,cec,0-5cm,uncertainty,,,cmol(c)/kg
+Hildesheimer Börde (loess),9.95,52.12,cec,5-15cm,Q0.05,,,cmol(c)/kg
+Hildesheimer Börde (loess),9.95,52.12,cec,5-15cm,Q0.5,,,cmol(c)/kg
+Hildesheimer Börde (loess),9.95,52.12,cec,5-15cm,Q0.95,,,cmol(c)/kg
+Hildesheimer Börde (loess),9.95,52.12,cec,5-15cm,mean,,,cmol(c)/kg
+Hildesheimer Börde (loess),9.95,52.12,cec,5-15cm,uncertainty,,,cmol(c)/kg
+Hildesheimer Börde (loess),9.95,52.12,cec,15-30cm,Q0.5,,,cmol(c)/kg
+Hildesheimer Börde (loess),9.95,52.12,cec,15-30cm,Q0.05,,,cmol(c)/kg
+Hildesheimer Börde (loess),9.95,52.12,cec,15-30cm,Q0.95,,,cmol(c)/kg
+Hildesheimer Börde (loess),9.95,52.12,cec,15-30cm,mean,,,cmol(c)/kg
+Hildesheimer Börde (loess),9.95,52.12,cec,15-30cm,uncertainty,,,cmol(c)/kg
+Hildesheimer Börde (loess),9.95,52.12,cec,30-60cm,Q0.05,,,cmol(c)/kg
+Hildesheimer Börde (loess),9.95,52.12,cec,30-60cm,Q0.5,,,cmol(c)/kg
+Hildesheimer Börde (loess),9.95,52.12,cec,30-60cm,Q0.95,,,cmol(c)/kg
+Hildesheimer Börde (loess),9.95,52.12,cec,30-60cm,mean,,,cmol(c)/kg
+Hildesheimer Börde (loess),9.95,52.12,cec,30-60cm,uncertainty,,,cmol(c)/kg
+Hildesheimer Börde (loess),9.95,52.12,cec,60-100cm,Q0.05,,,cmol(c)/kg
+Hildesheimer Börde (loess),9.95,52.12,cec,60-100cm,Q0.5,,,cmol(c)/kg
+Hildesheimer Börde (loess),9.95,52.12,cec,60-100cm,Q0.95,,,cmol(c)/kg
+Hildesheimer Börde (loess),9.95,52.12,cec,60-100cm,mean,,,cmol(c)/kg
+Hildesheimer Börde (loess),9.95,52.12,cec,60-100cm,uncertainty,,,cmol(c)/kg
+Hildesheimer Börde (loess),9.95,52.12,cec,100-200cm,Q0.05,,,cmol(c)/kg
+Hildesheimer Börde (loess),9.95,52.12,cec,100-200cm,Q0.5,,,cmol(c)/kg
+Hildesheimer Börde (loess),9.95,52.12,cec,100-200cm,Q0.95,,,cmol(c)/kg
+Hildesheimer Börde (loess),9.95,52.12,cec,100-200cm,mean,,,cmol(c)/kg
+Hildesheimer Börde (loess),9.95,52.12,cec,100-200cm,uncertainty,,,cmol(c)/kg
+Hildesheimer Börde (loess),9.95,52.12,cfvo,0-5cm,Q0.05,,,cm³/100cm³
+Hildesheimer Börde (loess),9.95,52.12,cfvo,0-5cm,Q0.5,,,cm³/100cm³
+Hildesheimer Börde (loess),9.95,52.12,cfvo,0-5cm,Q0.95,,,cm³/100cm³
+Hildesheimer Börde (loess),9.95,52.12,cfvo,0-5cm,mean,,,cm³/100cm³
+Hildesheimer Börde (loess),9.95,52.12,cfvo,0-5cm,uncertainty,,,cm³/100cm³
+Hildesheimer Börde (loess),9.95,52.12,cfvo,5-15cm,Q0.5,,,cm³/100cm³
+Hildesheimer Börde (loess),9.95,52.12,cfvo,5-15cm,Q0.05,,,cm³/100cm³
+Hildesheimer Börde (loess),9.95,52.12,cfvo,5-15cm,Q0.95,,,cm³/100cm³
+Hildesheimer Börde (loess),9.95,52.12,cfvo,5-15cm,mean,,,cm³/100cm³
+Hildesheimer Börde (loess),9.95,52.12,cfvo,5-15cm,uncertainty,,,cm³/100cm³
+Hildesheimer Börde (loess),9.95,52.12,cfvo,15-30cm,Q0.5,,,cm³/100cm³
+Hildesheimer Börde (loess),9.95,52.12,cfvo,15-30cm,Q0.05,,,cm³/100cm³
+Hildesheimer Börde (loess),9.95,52.12,cfvo,15-30cm,Q0.95,,,cm³/100cm³
+Hildesheimer Börde (loess),9.95,52.12,cfvo,15-30cm,mean,,,cm³/100cm³
+Hildesheimer Börde (loess),9.95,52.12,cfvo,15-30cm,uncertainty,,,cm³/100cm³
+Hildesheimer Börde (loess),9.95,52.12,cfvo,30-60cm,Q0.5,,,cm³/100cm³
+Hildesheimer Börde (loess),9.95,52.12,cfvo,30-60cm,Q0.05,,,cm³/100cm³
+Hildesheimer Börde (loess),9.95,52.12,cfvo,30-60cm,Q0.95,,,cm³/100cm³
+Hildesheimer Börde (loess),9.95,52.12,cfvo,30-60cm,mean,,,cm³/100cm³
+Hildesheimer Börde (loess),9.95,52.12,cfvo,30-60cm,uncertainty,,,cm³/100cm³
+Hildesheimer Börde (loess),9.95,52.12,cfvo,60-100cm,Q0.05,,,cm³/100cm³
+Hildesheimer Börde (loess),9.95,52.12,cfvo,60-100cm,Q0.5,,,cm³/100cm³
+Hildesheimer Börde (loess),9.95,52.12,cfvo,60-100cm,Q0.95,,,cm³/100cm³
+Hildesheimer Börde (loess),9.95,52.12,cfvo,60-100cm,mean,,,cm³/100cm³
+Hildesheimer Börde (loess),9.95,52.12,cfvo,60-100cm,uncertainty,,,cm³/100cm³
+Hildesheimer Börde (loess),9.95,52.12,cfvo,100-200cm,Q0.05,,,cm³/100cm³
+Hildesheimer Börde (loess),9.95,52.12,cfvo,100-200cm,Q0.5,,,cm³/100cm³
+Hildesheimer Börde (loess),9.95,52.12,cfvo,100-200cm,Q0.95,,,cm³/100cm³
+Hildesheimer Börde (loess),9.95,52.12,cfvo,100-200cm,mean,,,cm³/100cm³
+Hildesheimer Börde (loess),9.95,52.12,cfvo,100-200cm,uncertainty,,,cm³/100cm³
+Hildesheimer Börde (loess),9.95,52.12,clay,0-5cm,Q0.05,,,%
+Hildesheimer Börde (loess),9.95,52.12,clay,0-5cm,Q0.5,,,%
+Hildesheimer Börde (loess),9.95,52.12,clay,0-5cm,Q0.95,,,%
+Hildesheimer Börde (loess),9.95,52.12,clay,0-5cm,mean,,,%
+Hildesheimer Börde (loess),9.95,52.12,clay,0-5cm,uncertainty,,,%
+Hildesheimer Börde (loess),9.95,52.12,clay,5-15cm,Q0.05,,,%
+Hildesheimer Börde (loess),9.95,52.12,clay,5-15cm,Q0.5,,,%
+Hildesheimer Börde (loess),9.95,52.12,clay,5-15cm,Q0.95,,,%
+Hildesheimer Börde (loess),9.95,52.12,clay,5-15cm,mean,,,%
+Hildesheimer Börde (loess),9.95,52.12,clay,5-15cm,uncertainty,,,%
+Hildesheimer Börde (loess),9.95,52.12,clay,15-30cm,Q0.5,,,%
+Hildesheimer Börde (loess),9.95,52.12,clay,15-30cm,Q0.05,,,%
+Hildesheimer Börde (loess),9.95,52.12,clay,15-30cm,Q0.95,,,%
+Hildesheimer Börde (loess),9.95,52.12,clay,15-30cm,mean,,,%
+Hildesheimer Börde (loess),9.95,52.12,clay,15-30cm,uncertainty,,,%
+Hildesheimer Börde (loess),9.95,52.12,clay,30-60cm,Q0.05,,,%
+Hildesheimer Börde (loess),9.95,52.12,clay,30-60cm,Q0.5,,,%
+Hildesheimer Börde (loess),9.95,52.12,clay,30-60cm,Q0.95,,,%
+Hildesheimer Börde (loess),9.95,52.12,clay,30-60cm,mean,,,%
+Hildesheimer Börde (loess),9.95,52.12,clay,30-60cm,uncertainty,,,%
+Hildesheimer Börde (loess),9.95,52.12,clay,60-100cm,Q0.05,,,%
+Hildesheimer Börde (loess),9.95,52.12,clay,60-100cm,Q0.5,,,%
+Hildesheimer Börde (loess),9.95,52.12,clay,60-100cm,Q0.95,,,%
+Hildesheimer Börde (loess),9.95,52.12,clay,60-100cm,mean,,,%
+Hildesheimer Börde (loess),9.95,52.12,clay,60-100cm,uncertainty,,,%
+Hildesheimer Börde (loess),9.95,52.12,clay,100-200cm,Q0.05,,,%
+Hildesheimer Börde (loess),9.95,52.12,clay,100-200cm,Q0.5,,,%
+Hildesheimer Börde (loess),9.95,52.12,clay,100-200cm,Q0.95,,,%
+Hildesheimer Börde (loess),9.95,52.12,clay,100-200cm,mean,,,%
+Hildesheimer Börde (loess),9.95,52.12,clay,100-200cm,uncertainty,,,%
+Hildesheimer Börde (loess),9.95,52.12,nitrogen,0-5cm,Q0.05,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,nitrogen,0-5cm,Q0.5,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,nitrogen,0-5cm,Q0.95,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,nitrogen,0-5cm,mean,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,nitrogen,0-5cm,uncertainty,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,nitrogen,5-15cm,Q0.05,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,nitrogen,5-15cm,Q0.5,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,nitrogen,5-15cm,Q0.95,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,nitrogen,5-15cm,mean,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,nitrogen,5-15cm,uncertainty,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,nitrogen,15-30cm,Q0.05,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,nitrogen,15-30cm,Q0.5,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,nitrogen,15-30cm,Q0.95,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,nitrogen,15-30cm,mean,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,nitrogen,15-30cm,uncertainty,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,nitrogen,30-60cm,Q0.5,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,nitrogen,30-60cm,Q0.05,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,nitrogen,30-60cm,Q0.95,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,nitrogen,30-60cm,mean,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,nitrogen,30-60cm,uncertainty,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,nitrogen,60-100cm,Q0.05,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,nitrogen,60-100cm,Q0.5,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,nitrogen,60-100cm,Q0.95,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,nitrogen,60-100cm,mean,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,nitrogen,60-100cm,uncertainty,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,nitrogen,100-200cm,Q0.5,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,nitrogen,100-200cm,Q0.05,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,nitrogen,100-200cm,Q0.95,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,nitrogen,100-200cm,mean,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,nitrogen,100-200cm,uncertainty,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,ocd,0-5cm,Q0.05,,,hg/m³
+Hildesheimer Börde (loess),9.95,52.12,ocd,0-5cm,Q0.5,,,hg/m³
+Hildesheimer Börde (loess),9.95,52.12,ocd,0-5cm,Q0.95,,,hg/m³
+Hildesheimer Börde (loess),9.95,52.12,ocd,0-5cm,mean,,,hg/m³
+Hildesheimer Börde (loess),9.95,52.12,ocd,0-5cm,uncertainty,,,hg/m³
+Hildesheimer Börde (loess),9.95,52.12,ocd,5-15cm,Q0.5,,,hg/m³
+Hildesheimer Börde (loess),9.95,52.12,ocd,5-15cm,Q0.05,,,hg/m³
+Hildesheimer Börde (loess),9.95,52.12,ocd,5-15cm,Q0.95,,,hg/m³
+Hildesheimer Börde (loess),9.95,52.12,ocd,5-15cm,mean,,,hg/m³
+Hildesheimer Börde (loess),9.95,52.12,ocd,5-15cm,uncertainty,,,hg/m³
+Hildesheimer Börde (loess),9.95,52.12,ocd,15-30cm,Q0.5,,,hg/m³
+Hildesheimer Börde (loess),9.95,52.12,ocd,15-30cm,Q0.05,,,hg/m³
+Hildesheimer Börde (loess),9.95,52.12,ocd,15-30cm,Q0.95,,,hg/m³
+Hildesheimer Börde (loess),9.95,52.12,ocd,15-30cm,mean,,,hg/m³
+Hildesheimer Börde (loess),9.95,52.12,ocd,15-30cm,uncertainty,,,hg/m³
+Hildesheimer Börde (loess),9.95,52.12,ocd,30-60cm,Q0.5,,,hg/m³
+Hildesheimer Börde (loess),9.95,52.12,ocd,30-60cm,Q0.05,,,hg/m³
+Hildesheimer Börde (loess),9.95,52.12,ocd,30-60cm,Q0.95,,,hg/m³
+Hildesheimer Börde (loess),9.95,52.12,ocd,30-60cm,mean,,,hg/m³
+Hildesheimer Börde (loess),9.95,52.12,ocd,30-60cm,uncertainty,,,hg/m³
+Hildesheimer Börde (loess),9.95,52.12,ocd,60-100cm,Q0.5,,,hg/m³
+Hildesheimer Börde (loess),9.95,52.12,ocd,60-100cm,Q0.05,,,hg/m³
+Hildesheimer Börde (loess),9.95,52.12,ocd,60-100cm,Q0.95,,,hg/m³
+Hildesheimer Börde (loess),9.95,52.12,ocd,60-100cm,mean,,,hg/m³
+Hildesheimer Börde (loess),9.95,52.12,ocd,60-100cm,uncertainty,,,hg/m³
+Hildesheimer Börde (loess),9.95,52.12,ocd,100-200cm,Q0.5,,,hg/m³
+Hildesheimer Börde (loess),9.95,52.12,ocd,100-200cm,Q0.05,,,hg/m³
+Hildesheimer Börde (loess),9.95,52.12,ocd,100-200cm,Q0.95,,,hg/m³
+Hildesheimer Börde (loess),9.95,52.12,ocd,100-200cm,mean,,,hg/m³
+Hildesheimer Börde (loess),9.95,52.12,ocd,100-200cm,uncertainty,,,hg/m³
+Hildesheimer Börde (loess),9.95,52.12,ocs,0-30cm,Q0.05,,,kg/m²
+Hildesheimer Börde (loess),9.95,52.12,ocs,0-30cm,Q0.5,,,kg/m²
+Hildesheimer Börde (loess),9.95,52.12,ocs,0-30cm,Q0.95,,,kg/m²
+Hildesheimer Börde (loess),9.95,52.12,ocs,0-30cm,mean,,,kg/m²
+Hildesheimer Börde (loess),9.95,52.12,ocs,0-30cm,uncertainty,,,kg/m²
+Hildesheimer Börde (loess),9.95,52.12,phh2o,0-5cm,Q0.5,,,-
+Hildesheimer Börde (loess),9.95,52.12,phh2o,0-5cm,Q0.05,,,-
+Hildesheimer Börde (loess),9.95,52.12,phh2o,0-5cm,Q0.95,,,-
+Hildesheimer Börde (loess),9.95,52.12,phh2o,0-5cm,mean,,,-
+Hildesheimer Börde (loess),9.95,52.12,phh2o,0-5cm,uncertainty,,,-
+Hildesheimer Börde (loess),9.95,52.12,phh2o,5-15cm,Q0.5,,,-
+Hildesheimer Börde (loess),9.95,52.12,phh2o,5-15cm,Q0.05,,,-
+Hildesheimer Börde (loess),9.95,52.12,phh2o,5-15cm,Q0.95,,,-
+Hildesheimer Börde (loess),9.95,52.12,phh2o,5-15cm,mean,,,-
+Hildesheimer Börde (loess),9.95,52.12,phh2o,5-15cm,uncertainty,,,-
+Hildesheimer Börde (loess),9.95,52.12,phh2o,15-30cm,Q0.05,,,-
+Hildesheimer Börde (loess),9.95,52.12,phh2o,15-30cm,Q0.5,,,-
+Hildesheimer Börde (loess),9.95,52.12,phh2o,15-30cm,Q0.95,,,-
+Hildesheimer Börde (loess),9.95,52.12,phh2o,15-30cm,mean,,,-
+Hildesheimer Börde (loess),9.95,52.12,phh2o,15-30cm,uncertainty,,,-
+Hildesheimer Börde (loess),9.95,52.12,phh2o,30-60cm,Q0.05,,,-
+Hildesheimer Börde (loess),9.95,52.12,phh2o,30-60cm,Q0.5,,,-
+Hildesheimer Börde (loess),9.95,52.12,phh2o,30-60cm,Q0.95,,,-
+Hildesheimer Börde (loess),9.95,52.12,phh2o,30-60cm,mean,,,-
+Hildesheimer Börde (loess),9.95,52.12,phh2o,30-60cm,uncertainty,,,-
+Hildesheimer Börde (loess),9.95,52.12,phh2o,60-100cm,Q0.05,,,-
+Hildesheimer Börde (loess),9.95,52.12,phh2o,60-100cm,Q0.5,,,-
+Hildesheimer Börde (loess),9.95,52.12,phh2o,60-100cm,Q0.95,,,-
+Hildesheimer Börde (loess),9.95,52.12,phh2o,60-100cm,mean,,,-
+Hildesheimer Börde (loess),9.95,52.12,phh2o,60-100cm,uncertainty,,,-
+Hildesheimer Börde (loess),9.95,52.12,phh2o,100-200cm,Q0.05,,,-
+Hildesheimer Börde (loess),9.95,52.12,phh2o,100-200cm,Q0.5,,,-
+Hildesheimer Börde (loess),9.95,52.12,phh2o,100-200cm,Q0.95,,,-
+Hildesheimer Börde (loess),9.95,52.12,phh2o,100-200cm,mean,,,-
+Hildesheimer Börde (loess),9.95,52.12,phh2o,100-200cm,uncertainty,,,-
+Hildesheimer Börde (loess),9.95,52.12,sand,0-5cm,Q0.05,,,%
+Hildesheimer Börde (loess),9.95,52.12,sand,0-5cm,Q0.5,,,%
+Hildesheimer Börde (loess),9.95,52.12,sand,0-5cm,Q0.95,,,%
+Hildesheimer Börde (loess),9.95,52.12,sand,0-5cm,mean,,,%
+Hildesheimer Börde (loess),9.95,52.12,sand,0-5cm,uncertainty,,,%
+Hildesheimer Börde (loess),9.95,52.12,sand,5-15cm,Q0.05,,,%
+Hildesheimer Börde (loess),9.95,52.12,sand,5-15cm,Q0.5,,,%
+Hildesheimer Börde (loess),9.95,52.12,sand,5-15cm,Q0.95,,,%
+Hildesheimer Börde (loess),9.95,52.12,sand,5-15cm,mean,,,%
+Hildesheimer Börde (loess),9.95,52.12,sand,5-15cm,uncertainty,,,%
+Hildesheimer Börde (loess),9.95,52.12,sand,15-30cm,Q0.05,,,%
+Hildesheimer Börde (loess),9.95,52.12,sand,15-30cm,Q0.5,,,%
+Hildesheimer Börde (loess),9.95,52.12,sand,15-30cm,Q0.95,,,%
+Hildesheimer Börde (loess),9.95,52.12,sand,15-30cm,mean,,,%
+Hildesheimer Börde (loess),9.95,52.12,sand,15-30cm,uncertainty,,,%
+Hildesheimer Börde (loess),9.95,52.12,sand,30-60cm,Q0.05,,,%
+Hildesheimer Börde (loess),9.95,52.12,sand,30-60cm,Q0.5,,,%
+Hildesheimer Börde (loess),9.95,52.12,sand,30-60cm,Q0.95,,,%
+Hildesheimer Börde (loess),9.95,52.12,sand,30-60cm,mean,,,%
+Hildesheimer Börde (loess),9.95,52.12,sand,30-60cm,uncertainty,,,%
+Hildesheimer Börde (loess),9.95,52.12,sand,60-100cm,Q0.5,,,%
+Hildesheimer Börde (loess),9.95,52.12,sand,60-100cm,Q0.05,,,%
+Hildesheimer Börde (loess),9.95,52.12,sand,60-100cm,Q0.95,,,%
+Hildesheimer Börde (loess),9.95,52.12,sand,60-100cm,mean,,,%
+Hildesheimer Börde (loess),9.95,52.12,sand,60-100cm,uncertainty,,,%
+Hildesheimer Börde (loess),9.95,52.12,sand,100-200cm,Q0.05,,,%
+Hildesheimer Börde (loess),9.95,52.12,sand,100-200cm,Q0.5,,,%
+Hildesheimer Börde (loess),9.95,52.12,sand,100-200cm,Q0.95,,,%
+Hildesheimer Börde (loess),9.95,52.12,sand,100-200cm,mean,,,%
+Hildesheimer Börde (loess),9.95,52.12,sand,100-200cm,uncertainty,,,%
+Hildesheimer Börde (loess),9.95,52.12,silt,0-5cm,Q0.05,,,%
+Hildesheimer Börde (loess),9.95,52.12,silt,0-5cm,Q0.5,,,%
+Hildesheimer Börde (loess),9.95,52.12,silt,0-5cm,Q0.95,,,%
+Hildesheimer Börde (loess),9.95,52.12,silt,0-5cm,mean,,,%
+Hildesheimer Börde (loess),9.95,52.12,silt,0-5cm,uncertainty,,,%
+Hildesheimer Börde (loess),9.95,52.12,silt,5-15cm,Q0.5,,,%
+Hildesheimer Börde (loess),9.95,52.12,silt,5-15cm,Q0.05,,,%
+Hildesheimer Börde (loess),9.95,52.12,silt,5-15cm,Q0.95,,,%
+Hildesheimer Börde (loess),9.95,52.12,silt,5-15cm,mean,,,%
+Hildesheimer Börde (loess),9.95,52.12,silt,5-15cm,uncertainty,,,%
+Hildesheimer Börde (loess),9.95,52.12,silt,15-30cm,Q0.5,,,%
+Hildesheimer Börde (loess),9.95,52.12,silt,15-30cm,Q0.05,,,%
+Hildesheimer Börde (loess),9.95,52.12,silt,15-30cm,Q0.95,,,%
+Hildesheimer Börde (loess),9.95,52.12,silt,15-30cm,mean,,,%
+Hildesheimer Börde (loess),9.95,52.12,silt,15-30cm,uncertainty,,,%
+Hildesheimer Börde (loess),9.95,52.12,silt,30-60cm,Q0.05,,,%
+Hildesheimer Börde (loess),9.95,52.12,silt,30-60cm,Q0.5,,,%
+Hildesheimer Börde (loess),9.95,52.12,silt,30-60cm,Q0.95,,,%
+Hildesheimer Börde (loess),9.95,52.12,silt,30-60cm,mean,,,%
+Hildesheimer Börde (loess),9.95,52.12,silt,30-60cm,uncertainty,,,%
+Hildesheimer Börde (loess),9.95,52.12,silt,60-100cm,Q0.05,,,%
+Hildesheimer Börde (loess),9.95,52.12,silt,60-100cm,Q0.5,,,%
+Hildesheimer Börde (loess),9.95,52.12,silt,60-100cm,Q0.95,,,%
+Hildesheimer Börde (loess),9.95,52.12,silt,60-100cm,mean,,,%
+Hildesheimer Börde (loess),9.95,52.12,silt,60-100cm,uncertainty,,,%
+Hildesheimer Börde (loess),9.95,52.12,silt,100-200cm,Q0.05,,,%
+Hildesheimer Börde (loess),9.95,52.12,silt,100-200cm,Q0.5,,,%
+Hildesheimer Börde (loess),9.95,52.12,silt,100-200cm,Q0.95,,,%
+Hildesheimer Börde (loess),9.95,52.12,silt,100-200cm,mean,,,%
+Hildesheimer Börde (loess),9.95,52.12,silt,100-200cm,uncertainty,,,%
+Hildesheimer Börde (loess),9.95,52.12,soc,0-5cm,Q0.5,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,soc,0-5cm,Q0.05,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,soc,0-5cm,Q0.95,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,soc,0-5cm,mean,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,soc,0-5cm,uncertainty,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,soc,5-15cm,Q0.05,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,soc,5-15cm,Q0.5,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,soc,5-15cm,Q0.95,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,soc,5-15cm,mean,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,soc,5-15cm,uncertainty,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,soc,15-30cm,Q0.5,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,soc,15-30cm,Q0.05,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,soc,15-30cm,Q0.95,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,soc,15-30cm,mean,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,soc,15-30cm,uncertainty,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,soc,30-60cm,Q0.05,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,soc,30-60cm,Q0.5,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,soc,30-60cm,Q0.95,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,soc,30-60cm,mean,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,soc,30-60cm,uncertainty,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,soc,60-100cm,Q0.05,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,soc,60-100cm,Q0.5,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,soc,60-100cm,Q0.95,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,soc,60-100cm,mean,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,soc,60-100cm,uncertainty,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,soc,100-200cm,Q0.05,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,soc,100-200cm,Q0.5,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,soc,100-200cm,Q0.95,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,soc,100-200cm,mean,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,soc,100-200cm,uncertainty,,,g/kg
+Hildesheimer Börde (loess),9.95,52.12,wv0010,0-5cm,Q0.05,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0010,0-5cm,Q0.5,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0010,0-5cm,Q0.95,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0010,0-5cm,mean,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0010,0-5cm,uncertainty,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0010,5-15cm,Q0.05,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0010,5-15cm,Q0.5,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0010,5-15cm,Q0.95,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0010,5-15cm,mean,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0010,5-15cm,uncertainty,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0010,15-30cm,Q0.05,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0010,15-30cm,Q0.5,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0010,15-30cm,Q0.95,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0010,15-30cm,mean,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0010,15-30cm,uncertainty,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0010,30-60cm,Q0.05,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0010,30-60cm,Q0.5,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0010,30-60cm,Q0.95,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0010,30-60cm,mean,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0010,30-60cm,uncertainty,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0010,60-100cm,Q0.05,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0010,60-100cm,Q0.5,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0010,60-100cm,Q0.95,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0010,60-100cm,mean,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0010,60-100cm,uncertainty,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0010,100-200cm,Q0.5,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0010,100-200cm,Q0.05,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0010,100-200cm,Q0.95,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0010,100-200cm,mean,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0010,100-200cm,uncertainty,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0033,0-5cm,Q0.5,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0033,0-5cm,Q0.05,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0033,0-5cm,Q0.95,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0033,0-5cm,mean,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0033,0-5cm,uncertainty,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0033,5-15cm,Q0.05,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0033,5-15cm,Q0.5,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0033,5-15cm,Q0.95,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0033,5-15cm,mean,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0033,5-15cm,uncertainty,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0033,15-30cm,Q0.05,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0033,15-30cm,Q0.5,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0033,15-30cm,Q0.95,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0033,15-30cm,mean,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0033,15-30cm,uncertainty,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0033,30-60cm,Q0.5,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0033,30-60cm,Q0.05,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0033,30-60cm,Q0.95,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0033,30-60cm,mean,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0033,30-60cm,uncertainty,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0033,60-100cm,Q0.05,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0033,60-100cm,Q0.5,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0033,60-100cm,Q0.95,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0033,60-100cm,mean,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0033,60-100cm,uncertainty,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0033,100-200cm,Q0.5,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0033,100-200cm,Q0.05,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0033,100-200cm,Q0.95,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0033,100-200cm,mean,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv0033,100-200cm,uncertainty,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv1500,0-5cm,Q0.05,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv1500,0-5cm,Q0.5,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv1500,0-5cm,Q0.95,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv1500,0-5cm,mean,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv1500,0-5cm,uncertainty,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv1500,5-15cm,Q0.5,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv1500,5-15cm,Q0.05,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv1500,5-15cm,Q0.95,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv1500,5-15cm,mean,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv1500,5-15cm,uncertainty,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv1500,15-30cm,Q0.05,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv1500,15-30cm,Q0.5,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv1500,15-30cm,Q0.95,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv1500,15-30cm,mean,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv1500,15-30cm,uncertainty,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv1500,30-60cm,Q0.05,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv1500,30-60cm,Q0.5,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv1500,30-60cm,Q0.95,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv1500,30-60cm,mean,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv1500,30-60cm,uncertainty,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv1500,60-100cm,Q0.5,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv1500,60-100cm,Q0.05,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv1500,60-100cm,Q0.95,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv1500,60-100cm,mean,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv1500,60-100cm,uncertainty,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv1500,100-200cm,Q0.05,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv1500,100-200cm,Q0.5,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv1500,100-200cm,Q0.95,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv1500,100-200cm,mean,,,10-2 cm³/cm³
+Hildesheimer Börde (loess),9.95,52.12,wv1500,100-200cm,uncertainty,,,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,bdod,0-5cm,Q0.05,11.0,0.11,kg/dm³
+Lüneburger Heide (sand),10.05,53.05,bdod,0-5cm,Q0.5,112.0,1.12,kg/dm³
+Lüneburger Heide (sand),10.05,53.05,bdod,0-5cm,Q0.95,157.0,1.57,kg/dm³
+Lüneburger Heide (sand),10.05,53.05,bdod,0-5cm,mean,97.0,0.97,kg/dm³
+Lüneburger Heide (sand),10.05,53.05,bdod,0-5cm,uncertainty,13.0,1.3,kg/dm³
+Lüneburger Heide (sand),10.05,53.05,bdod,5-15cm,Q0.05,36.0,0.36,kg/dm³
+Lüneburger Heide (sand),10.05,53.05,bdod,5-15cm,Q0.5,130.0,1.3,kg/dm³
+Lüneburger Heide (sand),10.05,53.05,bdod,5-15cm,Q0.95,160.0,1.6,kg/dm³
+Lüneburger Heide (sand),10.05,53.05,bdod,5-15cm,mean,119.0,1.19,kg/dm³
+Lüneburger Heide (sand),10.05,53.05,bdod,5-15cm,uncertainty,10.0,1.0,kg/dm³
+Lüneburger Heide (sand),10.05,53.05,bdod,15-30cm,Q0.05,39.0,0.39,kg/dm³
+Lüneburger Heide (sand),10.05,53.05,bdod,15-30cm,Q0.5,138.0,1.38,kg/dm³
+Lüneburger Heide (sand),10.05,53.05,bdod,15-30cm,Q0.95,168.0,1.68,kg/dm³
+Lüneburger Heide (sand),10.05,53.05,bdod,15-30cm,mean,130.0,1.3,kg/dm³
+Lüneburger Heide (sand),10.05,53.05,bdod,15-30cm,uncertainty,9.0,0.9,kg/dm³
+Lüneburger Heide (sand),10.05,53.05,bdod,30-60cm,Q0.05,24.0,0.24,kg/dm³
+Lüneburger Heide (sand),10.05,53.05,bdod,30-60cm,Q0.5,150.0,1.5,kg/dm³
+Lüneburger Heide (sand),10.05,53.05,bdod,30-60cm,Q0.95,180.0,1.8,kg/dm³
+Lüneburger Heide (sand),10.05,53.05,bdod,30-60cm,mean,135.0,1.35,kg/dm³
+Lüneburger Heide (sand),10.05,53.05,bdod,30-60cm,uncertainty,10.0,1.0,kg/dm³
+Lüneburger Heide (sand),10.05,53.05,bdod,60-100cm,Q0.05,24.0,0.24,kg/dm³
+Lüneburger Heide (sand),10.05,53.05,bdod,60-100cm,Q0.5,158.0,1.58,kg/dm³
+Lüneburger Heide (sand),10.05,53.05,bdod,60-100cm,Q0.95,186.0,1.86,kg/dm³
+Lüneburger Heide (sand),10.05,53.05,bdod,60-100cm,mean,139.0,1.39,kg/dm³
+Lüneburger Heide (sand),10.05,53.05,bdod,60-100cm,uncertainty,10.0,1.0,kg/dm³
+Lüneburger Heide (sand),10.05,53.05,bdod,100-200cm,Q0.05,24.0,0.24,kg/dm³
+Lüneburger Heide (sand),10.05,53.05,bdod,100-200cm,Q0.5,158.0,1.58,kg/dm³
+Lüneburger Heide (sand),10.05,53.05,bdod,100-200cm,Q0.95,186.0,1.86,kg/dm³
+Lüneburger Heide (sand),10.05,53.05,bdod,100-200cm,mean,141.0,1.41,kg/dm³
+Lüneburger Heide (sand),10.05,53.05,bdod,100-200cm,uncertainty,10.0,1.0,kg/dm³
+Lüneburger Heide (sand),10.05,53.05,cec,0-5cm,Q0.05,65.0,6.5,cmol(c)/kg
+Lüneburger Heide (sand),10.05,53.05,cec,0-5cm,Q0.5,225.0,22.5,cmol(c)/kg
+Lüneburger Heide (sand),10.05,53.05,cec,0-5cm,Q0.95,555.0,55.5,cmol(c)/kg
+Lüneburger Heide (sand),10.05,53.05,cec,0-5cm,mean,268.0,26.8,cmol(c)/kg
+Lüneburger Heide (sand),10.05,53.05,cec,0-5cm,uncertainty,22.0,2.2,cmol(c)/kg
+Lüneburger Heide (sand),10.05,53.05,cec,5-15cm,Q0.05,20.0,2.0,cmol(c)/kg
+Lüneburger Heide (sand),10.05,53.05,cec,5-15cm,Q0.5,128.0,12.8,cmol(c)/kg
+Lüneburger Heide (sand),10.05,53.05,cec,5-15cm,Q0.95,409.0,40.9,cmol(c)/kg
+Lüneburger Heide (sand),10.05,53.05,cec,5-15cm,mean,160.0,16.0,cmol(c)/kg
+Lüneburger Heide (sand),10.05,53.05,cec,5-15cm,uncertainty,30.0,3.0,cmol(c)/kg
+Lüneburger Heide (sand),10.05,53.05,cec,15-30cm,Q0.05,17.0,1.7,cmol(c)/kg
+Lüneburger Heide (sand),10.05,53.05,cec,15-30cm,Q0.5,124.0,12.4,cmol(c)/kg
+Lüneburger Heide (sand),10.05,53.05,cec,15-30cm,Q0.95,410.0,41.0,cmol(c)/kg
+Lüneburger Heide (sand),10.05,53.05,cec,15-30cm,mean,155.0,15.5,cmol(c)/kg
+Lüneburger Heide (sand),10.05,53.05,cec,15-30cm,uncertainty,32.0,3.2,cmol(c)/kg
+Lüneburger Heide (sand),10.05,53.05,cec,30-60cm,Q0.05,17.0,1.7,cmol(c)/kg
+Lüneburger Heide (sand),10.05,53.05,cec,30-60cm,Q0.5,120.0,12.0,cmol(c)/kg
+Lüneburger Heide (sand),10.05,53.05,cec,30-60cm,Q0.95,351.0,35.1,cmol(c)/kg
+Lüneburger Heide (sand),10.05,53.05,cec,30-60cm,mean,135.0,13.5,cmol(c)/kg
+Lüneburger Heide (sand),10.05,53.05,cec,30-60cm,uncertainty,28.0,2.8,cmol(c)/kg
+Lüneburger Heide (sand),10.05,53.05,cec,60-100cm,Q0.05,16.0,1.6,cmol(c)/kg
+Lüneburger Heide (sand),10.05,53.05,cec,60-100cm,Q0.5,116.0,11.6,cmol(c)/kg
+Lüneburger Heide (sand),10.05,53.05,cec,60-100cm,Q0.95,314.0,31.4,cmol(c)/kg
+Lüneburger Heide (sand),10.05,53.05,cec,60-100cm,mean,128.0,12.8,cmol(c)/kg
+Lüneburger Heide (sand),10.05,53.05,cec,60-100cm,uncertainty,26.0,2.6,cmol(c)/kg
+Lüneburger Heide (sand),10.05,53.05,cec,100-200cm,Q0.05,17.0,1.7,cmol(c)/kg
+Lüneburger Heide (sand),10.05,53.05,cec,100-200cm,Q0.5,108.0,10.8,cmol(c)/kg
+Lüneburger Heide (sand),10.05,53.05,cec,100-200cm,Q0.95,266.0,26.6,cmol(c)/kg
+Lüneburger Heide (sand),10.05,53.05,cec,100-200cm,mean,121.0,12.1,cmol(c)/kg
+Lüneburger Heide (sand),10.05,53.05,cec,100-200cm,uncertainty,23.0,2.3,cmol(c)/kg
+Lüneburger Heide (sand),10.05,53.05,cfvo,0-5cm,Q0.05,0.0,0.0,cm³/100cm³
+Lüneburger Heide (sand),10.05,53.05,cfvo,0-5cm,Q0.5,40.0,4.0,cm³/100cm³
+Lüneburger Heide (sand),10.05,53.05,cfvo,0-5cm,Q0.95,130.0,13.0,cm³/100cm³
+Lüneburger Heide (sand),10.05,53.05,cfvo,0-5cm,mean,57.0,5.7,cm³/100cm³
+Lüneburger Heide (sand),10.05,53.05,cfvo,0-5cm,uncertainty,33.0,3.3,cm³/100cm³
+Lüneburger Heide (sand),10.05,53.05,cfvo,5-15cm,Q0.05,10.0,1.0,cm³/100cm³
+Lüneburger Heide (sand),10.05,53.05,cfvo,5-15cm,Q0.5,50.0,5.0,cm³/100cm³
+Lüneburger Heide (sand),10.05,53.05,cfvo,5-15cm,Q0.95,130.0,13.0,cm³/100cm³
+Lüneburger Heide (sand),10.05,53.05,cfvo,5-15cm,mean,63.0,6.3,cm³/100cm³
+Lüneburger Heide (sand),10.05,53.05,cfvo,5-15cm,uncertainty,24.0,2.4,cm³/100cm³
+Lüneburger Heide (sand),10.05,53.05,cfvo,15-30cm,Q0.05,0.0,0.0,cm³/100cm³
+Lüneburger Heide (sand),10.05,53.05,cfvo,15-30cm,Q0.5,40.0,4.0,cm³/100cm³
+Lüneburger Heide (sand),10.05,53.05,cfvo,15-30cm,Q0.95,180.0,18.0,cm³/100cm³
+Lüneburger Heide (sand),10.05,53.05,cfvo,15-30cm,mean,56.0,5.6,cm³/100cm³
+Lüneburger Heide (sand),10.05,53.05,cfvo,15-30cm,uncertainty,45.0,4.5,cm³/100cm³
+Lüneburger Heide (sand),10.05,53.05,cfvo,30-60cm,Q0.05,0.0,0.0,cm³/100cm³
+Lüneburger Heide (sand),10.05,53.05,cfvo,30-60cm,Q0.5,40.0,4.0,cm³/100cm³
+Lüneburger Heide (sand),10.05,53.05,cfvo,30-60cm,Q0.95,180.0,18.0,cm³/100cm³
+Lüneburger Heide (sand),10.05,53.05,cfvo,30-60cm,mean,55.0,5.5,cm³/100cm³
+Lüneburger Heide (sand),10.05,53.05,cfvo,30-60cm,uncertainty,45.0,4.5,cm³/100cm³
+Lüneburger Heide (sand),10.05,53.05,cfvo,60-100cm,Q0.05,0.0,0.0,cm³/100cm³
+Lüneburger Heide (sand),10.05,53.05,cfvo,60-100cm,Q0.5,30.0,3.0,cm³/100cm³
+Lüneburger Heide (sand),10.05,53.05,cfvo,60-100cm,Q0.95,260.0,26.0,cm³/100cm³
+Lüneburger Heide (sand),10.05,53.05,cfvo,60-100cm,mean,65.0,6.5,cm³/100cm³
+Lüneburger Heide (sand),10.05,53.05,cfvo,60-100cm,uncertainty,87.0,8.7,cm³/100cm³
+Lüneburger Heide (sand),10.05,53.05,cfvo,100-200cm,Q0.05,0.0,0.0,cm³/100cm³
+Lüneburger Heide (sand),10.05,53.05,cfvo,100-200cm,Q0.5,40.0,4.0,cm³/100cm³
+Lüneburger Heide (sand),10.05,53.05,cfvo,100-200cm,Q0.95,400.0,40.0,cm³/100cm³
+Lüneburger Heide (sand),10.05,53.05,cfvo,100-200cm,mean,97.0,9.7,cm³/100cm³
+Lüneburger Heide (sand),10.05,53.05,cfvo,100-200cm,uncertainty,100.0,10.0,cm³/100cm³
+Lüneburger Heide (sand),10.05,53.05,clay,0-5cm,Q0.05,6.0,0.6,%
+Lüneburger Heide (sand),10.05,53.05,clay,0-5cm,Q0.5,43.0,4.3,%
+Lüneburger Heide (sand),10.05,53.05,clay,0-5cm,Q0.95,282.0,28.2,%
+Lüneburger Heide (sand),10.05,53.05,clay,0-5cm,mean,83.0,8.3,%
+Lüneburger Heide (sand),10.05,53.05,clay,0-5cm,uncertainty,64.0,6.4,%
+Lüneburger Heide (sand),10.05,53.05,clay,5-15cm,Q0.05,6.0,0.6,%
+Lüneburger Heide (sand),10.05,53.05,clay,5-15cm,Q0.5,40.0,4.0,%
+Lüneburger Heide (sand),10.05,53.05,clay,5-15cm,Q0.95,254.0,25.4,%
+Lüneburger Heide (sand),10.05,53.05,clay,5-15cm,mean,72.0,7.2,%
+Lüneburger Heide (sand),10.05,53.05,clay,5-15cm,uncertainty,62.0,6.2,%
+Lüneburger Heide (sand),10.05,53.05,clay,15-30cm,Q0.05,6.0,0.6,%
+Lüneburger Heide (sand),10.05,53.05,clay,15-30cm,Q0.5,40.0,4.0,%
+Lüneburger Heide (sand),10.05,53.05,clay,15-30cm,Q0.95,616.0,61.6,%
+Lüneburger Heide (sand),10.05,53.05,clay,15-30cm,mean,112.0,11.2,%
+Lüneburger Heide (sand),10.05,53.05,clay,15-30cm,uncertainty,153.0,15.3,%
+Lüneburger Heide (sand),10.05,53.05,clay,30-60cm,Q0.05,5.0,0.5,%
+Lüneburger Heide (sand),10.05,53.05,clay,30-60cm,Q0.5,41.0,4.1,%
+Lüneburger Heide (sand),10.05,53.05,clay,30-60cm,Q0.95,732.0,73.2,%
+Lüneburger Heide (sand),10.05,53.05,clay,30-60cm,mean,127.0,12.7,%
+Lüneburger Heide (sand),10.05,53.05,clay,30-60cm,uncertainty,177.0,17.7,%
+Lüneburger Heide (sand),10.05,53.05,clay,60-100cm,Q0.05,4.0,0.4,%
+Lüneburger Heide (sand),10.05,53.05,clay,60-100cm,Q0.5,32.0,3.2,%
+Lüneburger Heide (sand),10.05,53.05,clay,60-100cm,Q0.95,744.0,74.4,%
+Lüneburger Heide (sand),10.05,53.05,clay,60-100cm,mean,117.0,11.7,%
+Lüneburger Heide (sand),10.05,53.05,clay,60-100cm,uncertainty,231.0,23.1,%
+Lüneburger Heide (sand),10.05,53.05,clay,100-200cm,Q0.05,3.0,0.3,%
+Lüneburger Heide (sand),10.05,53.05,clay,100-200cm,Q0.5,33.0,3.3,%
+Lüneburger Heide (sand),10.05,53.05,clay,100-200cm,Q0.95,724.0,72.4,%
+Lüneburger Heide (sand),10.05,53.05,clay,100-200cm,mean,111.0,11.1,%
+Lüneburger Heide (sand),10.05,53.05,clay,100-200cm,uncertainty,218.0,21.8,%
+Lüneburger Heide (sand),10.05,53.05,nitrogen,0-5cm,Q0.05,50.0,0.5,g/kg
+Lüneburger Heide (sand),10.05,53.05,nitrogen,0-5cm,Q0.5,200.0,2.0,g/kg
+Lüneburger Heide (sand),10.05,53.05,nitrogen,0-5cm,Q0.95,1987.0,19.87,g/kg
+Lüneburger Heide (sand),10.05,53.05,nitrogen,0-5cm,mean,497.0,4.97,g/kg
+Lüneburger Heide (sand),10.05,53.05,nitrogen,0-5cm,uncertainty,97.0,9.7,g/kg
+Lüneburger Heide (sand),10.05,53.05,nitrogen,5-15cm,Q0.05,70.0,0.7,g/kg
+Lüneburger Heide (sand),10.05,53.05,nitrogen,5-15cm,Q0.5,120.0,1.2,g/kg
+Lüneburger Heide (sand),10.05,53.05,nitrogen,5-15cm,Q0.95,640.0,6.4,g/kg
+Lüneburger Heide (sand),10.05,53.05,nitrogen,5-15cm,mean,224.0,2.24,g/kg
+Lüneburger Heide (sand),10.05,53.05,nitrogen,5-15cm,uncertainty,48.0,4.8,g/kg
+Lüneburger Heide (sand),10.05,53.05,nitrogen,15-30cm,Q0.05,26.0,0.26,g/kg
+Lüneburger Heide (sand),10.05,53.05,nitrogen,15-30cm,Q0.5,123.0,1.23,g/kg
+Lüneburger Heide (sand),10.05,53.05,nitrogen,15-30cm,Q0.95,2640.0,26.4,g/kg
+Lüneburger Heide (sand),10.05,53.05,nitrogen,15-30cm,mean,382.0,3.82,g/kg
+Lüneburger Heide (sand),10.05,53.05,nitrogen,15-30cm,uncertainty,212.0,21.2,g/kg
+Lüneburger Heide (sand),10.05,53.05,nitrogen,30-60cm,Q0.05,10.0,0.1,g/kg
+Lüneburger Heide (sand),10.05,53.05,nitrogen,30-60cm,Q0.5,100.0,1.0,g/kg
+Lüneburger Heide (sand),10.05,53.05,nitrogen,30-60cm,Q0.95,2640.0,26.4,g/kg
+Lüneburger Heide (sand),10.05,53.05,nitrogen,30-60cm,mean,384.0,3.84,g/kg
+Lüneburger Heide (sand),10.05,53.05,nitrogen,30-60cm,uncertainty,263.0,26.3,g/kg
+Lüneburger Heide (sand),10.05,53.05,nitrogen,60-100cm,Q0.05,10.0,0.1,g/kg
+Lüneburger Heide (sand),10.05,53.05,nitrogen,60-100cm,Q0.5,100.0,1.0,g/kg
+Lüneburger Heide (sand),10.05,53.05,nitrogen,60-100cm,Q0.95,2643.0,26.43,g/kg
+Lüneburger Heide (sand),10.05,53.05,nitrogen,60-100cm,mean,381.0,3.81,g/kg
+Lüneburger Heide (sand),10.05,53.05,nitrogen,60-100cm,uncertainty,263.0,26.3,g/kg
+Lüneburger Heide (sand),10.05,53.05,nitrogen,100-200cm,Q0.05,10.0,0.1,g/kg
+Lüneburger Heide (sand),10.05,53.05,nitrogen,100-200cm,Q0.5,82.0,0.82,g/kg
+Lüneburger Heide (sand),10.05,53.05,nitrogen,100-200cm,Q0.95,2643.0,26.43,g/kg
+Lüneburger Heide (sand),10.05,53.05,nitrogen,100-200cm,mean,361.0,3.61,g/kg
+Lüneburger Heide (sand),10.05,53.05,nitrogen,100-200cm,uncertainty,321.0,32.1,g/kg
+Lüneburger Heide (sand),10.05,53.05,ocd,0-5cm,Q0.05,117.0,11.7,hg/m³
+Lüneburger Heide (sand),10.05,53.05,ocd,0-5cm,Q0.5,436.0,43.6,hg/m³
+Lüneburger Heide (sand),10.05,53.05,ocd,0-5cm,Q0.95,972.0,97.2,hg/m³
+Lüneburger Heide (sand),10.05,53.05,ocd,0-5cm,mean,519.0,51.9,hg/m³
+Lüneburger Heide (sand),10.05,53.05,ocd,0-5cm,uncertainty,20.0,2.0,hg/m³
+Lüneburger Heide (sand),10.05,53.05,ocd,5-15cm,Q0.05,83.0,8.3,hg/m³
+Lüneburger Heide (sand),10.05,53.05,ocd,5-15cm,Q0.5,318.0,31.8,hg/m³
+Lüneburger Heide (sand),10.05,53.05,ocd,5-15cm,Q0.95,692.0,69.2,hg/m³
+Lüneburger Heide (sand),10.05,53.05,ocd,5-15cm,mean,286.0,28.6,hg/m³
+Lüneburger Heide (sand),10.05,53.05,ocd,5-15cm,uncertainty,19.0,1.9,hg/m³
+Lüneburger Heide (sand),10.05,53.05,ocd,15-30cm,Q0.05,55.0,5.5,hg/m³
+Lüneburger Heide (sand),10.05,53.05,ocd,15-30cm,Q0.5,166.0,16.6,hg/m³
+Lüneburger Heide (sand),10.05,53.05,ocd,15-30cm,Q0.95,806.0,80.6,hg/m³
+Lüneburger Heide (sand),10.05,53.05,ocd,15-30cm,mean,266.0,26.6,hg/m³
+Lüneburger Heide (sand),10.05,53.05,ocd,15-30cm,uncertainty,45.0,4.5,hg/m³
+Lüneburger Heide (sand),10.05,53.05,ocd,30-60cm,Q0.05,26.0,2.6,hg/m³
+Lüneburger Heide (sand),10.05,53.05,ocd,30-60cm,Q0.5,71.0,7.1,hg/m³
+Lüneburger Heide (sand),10.05,53.05,ocd,30-60cm,Q0.95,390.0,39.0,hg/m³
+Lüneburger Heide (sand),10.05,53.05,ocd,30-60cm,mean,121.0,12.1,hg/m³
+Lüneburger Heide (sand),10.05,53.05,ocd,30-60cm,uncertainty,51.0,5.1,hg/m³
+Lüneburger Heide (sand),10.05,53.05,ocd,60-100cm,Q0.05,13.0,1.3,hg/m³
+Lüneburger Heide (sand),10.05,53.05,ocd,60-100cm,Q0.5,41.0,4.1,hg/m³
+Lüneburger Heide (sand),10.05,53.05,ocd,60-100cm,Q0.95,202.0,20.2,hg/m³
+Lüneburger Heide (sand),10.05,53.05,ocd,60-100cm,mean,73.0,7.3,hg/m³
+Lüneburger Heide (sand),10.05,53.05,ocd,60-100cm,uncertainty,46.0,4.6,hg/m³
+Lüneburger Heide (sand),10.05,53.05,ocd,100-200cm,Q0.05,7.0,0.7,hg/m³
+Lüneburger Heide (sand),10.05,53.05,ocd,100-200cm,Q0.5,30.0,3.0,hg/m³
+Lüneburger Heide (sand),10.05,53.05,ocd,100-200cm,Q0.95,110.0,11.0,hg/m³
+Lüneburger Heide (sand),10.05,53.05,ocd,100-200cm,mean,60.0,6.0,hg/m³
+Lüneburger Heide (sand),10.05,53.05,ocd,100-200cm,uncertainty,34.0,3.4,hg/m³
+Lüneburger Heide (sand),10.05,53.05,ocs,0-30cm,Q0.05,16.0,1.6,kg/m²
+Lüneburger Heide (sand),10.05,53.05,ocs,0-30cm,Q0.5,55.0,5.5,kg/m²
+Lüneburger Heide (sand),10.05,53.05,ocs,0-30cm,Q0.95,125.0,12.5,kg/m²
+Lüneburger Heide (sand),10.05,53.05,ocs,0-30cm,mean,54.0,5.4,kg/m²
+Lüneburger Heide (sand),10.05,53.05,ocs,0-30cm,uncertainty,20.0,2.0,kg/m²
+Lüneburger Heide (sand),10.05,53.05,phh2o,0-5cm,Q0.05,37.0,3.7,-
+Lüneburger Heide (sand),10.05,53.05,phh2o,0-5cm,Q0.5,45.0,4.5,-
+Lüneburger Heide (sand),10.05,53.05,phh2o,0-5cm,Q0.95,70.0,7.0,-
+Lüneburger Heide (sand),10.05,53.05,phh2o,0-5cm,mean,49.0,4.9,-
+Lüneburger Heide (sand),10.05,53.05,phh2o,0-5cm,uncertainty,7.0,0.7,-
+Lüneburger Heide (sand),10.05,53.05,phh2o,5-15cm,Q0.05,37.0,3.7,-
+Lüneburger Heide (sand),10.05,53.05,phh2o,5-15cm,Q0.5,50.0,5.0,-
+Lüneburger Heide (sand),10.05,53.05,phh2o,5-15cm,Q0.95,70.0,7.0,-
+Lüneburger Heide (sand),10.05,53.05,phh2o,5-15cm,mean,51.0,5.1,-
+Lüneburger Heide (sand),10.05,53.05,phh2o,5-15cm,uncertainty,7.0,0.7,-
+Lüneburger Heide (sand),10.05,53.05,phh2o,15-30cm,Q0.05,38.0,3.8,-
+Lüneburger Heide (sand),10.05,53.05,phh2o,15-30cm,Q0.5,50.0,5.0,-
+Lüneburger Heide (sand),10.05,53.05,phh2o,15-30cm,Q0.95,71.0,7.1,-
+Lüneburger Heide (sand),10.05,53.05,phh2o,15-30cm,mean,51.0,5.1,-
+Lüneburger Heide (sand),10.05,53.05,phh2o,15-30cm,uncertainty,7.0,0.7,-
+Lüneburger Heide (sand),10.05,53.05,phh2o,30-60cm,Q0.05,39.0,3.9,-
+Lüneburger Heide (sand),10.05,53.05,phh2o,30-60cm,Q0.5,51.0,5.1,-
+Lüneburger Heide (sand),10.05,53.05,phh2o,30-60cm,Q0.95,76.0,7.6,-
+Lüneburger Heide (sand),10.05,53.05,phh2o,30-60cm,mean,53.0,5.3,-
+Lüneburger Heide (sand),10.05,53.05,phh2o,30-60cm,uncertainty,7.0,0.7,-
+Lüneburger Heide (sand),10.05,53.05,phh2o,60-100cm,Q0.05,39.0,3.9,-
+Lüneburger Heide (sand),10.05,53.05,phh2o,60-100cm,Q0.5,52.0,5.2,-
+Lüneburger Heide (sand),10.05,53.05,phh2o,60-100cm,Q0.95,78.0,7.8,-
+Lüneburger Heide (sand),10.05,53.05,phh2o,60-100cm,mean,54.0,5.4,-
+Lüneburger Heide (sand),10.05,53.05,phh2o,60-100cm,uncertainty,8.0,0.8,-
+Lüneburger Heide (sand),10.05,53.05,phh2o,100-200cm,Q0.05,39.0,3.9,-
+Lüneburger Heide (sand),10.05,53.05,phh2o,100-200cm,Q0.5,53.0,5.3,-
+Lüneburger Heide (sand),10.05,53.05,phh2o,100-200cm,Q0.95,79.0,7.9,-
+Lüneburger Heide (sand),10.05,53.05,phh2o,100-200cm,mean,55.0,5.5,-
+Lüneburger Heide (sand),10.05,53.05,phh2o,100-200cm,uncertainty,8.0,0.8,-
+Lüneburger Heide (sand),10.05,53.05,sand,0-5cm,Q0.05,182.0,18.2,%
+Lüneburger Heide (sand),10.05,53.05,sand,0-5cm,Q0.5,762.0,76.2,%
+Lüneburger Heide (sand),10.05,53.05,sand,0-5cm,Q0.95,905.0,90.5,%
+Lüneburger Heide (sand),10.05,53.05,sand,0-5cm,mean,711.0,71.1,%
+Lüneburger Heide (sand),10.05,53.05,sand,0-5cm,uncertainty,9.0,0.9,%
+Lüneburger Heide (sand),10.05,53.05,sand,5-15cm,Q0.05,182.0,18.2,%
+Lüneburger Heide (sand),10.05,53.05,sand,5-15cm,Q0.5,764.0,76.4,%
+Lüneburger Heide (sand),10.05,53.05,sand,5-15cm,Q0.95,902.0,90.2,%
+Lüneburger Heide (sand),10.05,53.05,sand,5-15cm,mean,719.0,71.9,%
+Lüneburger Heide (sand),10.05,53.05,sand,5-15cm,uncertainty,9.0,0.9,%
+Lüneburger Heide (sand),10.05,53.05,sand,15-30cm,Q0.05,133.0,13.3,%
+Lüneburger Heide (sand),10.05,53.05,sand,15-30cm,Q0.5,762.0,76.2,%
+Lüneburger Heide (sand),10.05,53.05,sand,15-30cm,Q0.95,918.0,91.8,%
+Lüneburger Heide (sand),10.05,53.05,sand,15-30cm,mean,687.0,68.7,%
+Lüneburger Heide (sand),10.05,53.05,sand,15-30cm,uncertainty,10.0,1.0,%
+Lüneburger Heide (sand),10.05,53.05,sand,30-60cm,Q0.05,147.0,14.7,%
+Lüneburger Heide (sand),10.05,53.05,sand,30-60cm,Q0.5,764.0,76.4,%
+Lüneburger Heide (sand),10.05,53.05,sand,30-60cm,Q0.95,924.0,92.4,%
+Lüneburger Heide (sand),10.05,53.05,sand,30-60cm,mean,684.0,68.4,%
+Lüneburger Heide (sand),10.05,53.05,sand,30-60cm,uncertainty,10.0,1.0,%
+Lüneburger Heide (sand),10.05,53.05,sand,60-100cm,Q0.05,95.0,9.5,%
+Lüneburger Heide (sand),10.05,53.05,sand,60-100cm,Q0.5,769.0,76.9,%
+Lüneburger Heide (sand),10.05,53.05,sand,60-100cm,Q0.95,957.0,95.7,%
+Lüneburger Heide (sand),10.05,53.05,sand,60-100cm,mean,699.0,69.9,%
+Lüneburger Heide (sand),10.05,53.05,sand,60-100cm,uncertainty,11.0,1.1,%
+Lüneburger Heide (sand),10.05,53.05,sand,100-200cm,Q0.05,106.0,10.6,%
+Lüneburger Heide (sand),10.05,53.05,sand,100-200cm,Q0.5,772.0,77.2,%
+Lüneburger Heide (sand),10.05,53.05,sand,100-200cm,Q0.95,961.0,96.1,%
+Lüneburger Heide (sand),10.05,53.05,sand,100-200cm,mean,696.0,69.6,%
+Lüneburger Heide (sand),10.05,53.05,sand,100-200cm,uncertainty,11.0,1.1,%
+Lüneburger Heide (sand),10.05,53.05,silt,0-5cm,Q0.05,48.0,4.8,%
+Lüneburger Heide (sand),10.05,53.05,silt,0-5cm,Q0.5,157.0,15.7,%
+Lüneburger Heide (sand),10.05,53.05,silt,0-5cm,Q0.95,801.0,80.1,%
+Lüneburger Heide (sand),10.05,53.05,silt,0-5cm,mean,206.0,20.6,%
+Lüneburger Heide (sand),10.05,53.05,silt,0-5cm,uncertainty,48.0,4.8,%
+Lüneburger Heide (sand),10.05,53.05,silt,5-15cm,Q0.05,49.0,4.9,%
+Lüneburger Heide (sand),10.05,53.05,silt,5-15cm,Q0.5,162.0,16.2,%
+Lüneburger Heide (sand),10.05,53.05,silt,5-15cm,Q0.95,801.0,80.1,%
+Lüneburger Heide (sand),10.05,53.05,silt,5-15cm,mean,210.0,21.0,%
+Lüneburger Heide (sand),10.05,53.05,silt,5-15cm,uncertainty,46.0,4.6,%
+Lüneburger Heide (sand),10.05,53.05,silt,15-30cm,Q0.05,19.0,1.9,%
+Lüneburger Heide (sand),10.05,53.05,silt,15-30cm,Q0.5,153.0,15.3,%
+Lüneburger Heide (sand),10.05,53.05,silt,15-30cm,Q0.95,801.0,80.1,%
+Lüneburger Heide (sand),10.05,53.05,silt,15-30cm,mean,201.0,20.1,%
+Lüneburger Heide (sand),10.05,53.05,silt,15-30cm,uncertainty,51.0,5.1,%
+Lüneburger Heide (sand),10.05,53.05,silt,30-60cm,Q0.05,10.0,1.0,%
+Lüneburger Heide (sand),10.05,53.05,silt,30-60cm,Q0.5,137.0,13.7,%
+Lüneburger Heide (sand),10.05,53.05,silt,30-60cm,Q0.95,710.0,71.0,%
+Lüneburger Heide (sand),10.05,53.05,silt,30-60cm,mean,189.0,18.9,%
+Lüneburger Heide (sand),10.05,53.05,silt,30-60cm,uncertainty,51.0,5.1,%
+Lüneburger Heide (sand),10.05,53.05,silt,60-100cm,Q0.05,10.0,1.0,%
+Lüneburger Heide (sand),10.05,53.05,silt,60-100cm,Q0.5,123.0,12.3,%
+Lüneburger Heide (sand),10.05,53.05,silt,60-100cm,Q0.95,687.0,68.7,%
+Lüneburger Heide (sand),10.05,53.05,silt,60-100cm,mean,184.0,18.4,%
+Lüneburger Heide (sand),10.05,53.05,silt,60-100cm,uncertainty,55.0,5.5,%
+Lüneburger Heide (sand),10.05,53.05,silt,100-200cm,Q0.05,10.0,1.0,%
+Lüneburger Heide (sand),10.05,53.05,silt,100-200cm,Q0.5,121.0,12.1,%
+Lüneburger Heide (sand),10.05,53.05,silt,100-200cm,Q0.95,726.0,72.6,%
+Lüneburger Heide (sand),10.05,53.05,silt,100-200cm,mean,193.0,19.3,%
+Lüneburger Heide (sand),10.05,53.05,silt,100-200cm,uncertainty,59.0,5.9,%
+Lüneburger Heide (sand),10.05,53.05,soc,0-5cm,Q0.05,85.0,8.5,g/kg
+Lüneburger Heide (sand),10.05,53.05,soc,0-5cm,Q0.5,367.0,36.7,g/kg
+Lüneburger Heide (sand),10.05,53.05,soc,0-5cm,Q0.95,3927.0,392.7,g/kg
+Lüneburger Heide (sand),10.05,53.05,soc,0-5cm,mean,856.0,85.6,g/kg
+Lüneburger Heide (sand),10.05,53.05,soc,0-5cm,uncertainty,105.0,10.5,g/kg
+Lüneburger Heide (sand),10.05,53.05,soc,5-15cm,Q0.05,84.0,8.4,g/kg
+Lüneburger Heide (sand),10.05,53.05,soc,5-15cm,Q0.5,261.0,26.1,g/kg
+Lüneburger Heide (sand),10.05,53.05,soc,5-15cm,Q0.95,2433.0,243.3,g/kg
+Lüneburger Heide (sand),10.05,53.05,soc,5-15cm,mean,532.0,53.2,g/kg
+Lüneburger Heide (sand),10.05,53.05,soc,5-15cm,uncertainty,90.0,9.0,g/kg
+Lüneburger Heide (sand),10.05,53.05,soc,15-30cm,Q0.05,28.0,2.8,g/kg
+Lüneburger Heide (sand),10.05,53.05,soc,15-30cm,Q0.5,113.0,11.3,g/kg
+Lüneburger Heide (sand),10.05,53.05,soc,15-30cm,Q0.95,708.0,70.8,g/kg
+Lüneburger Heide (sand),10.05,53.05,soc,15-30cm,mean,238.0,23.8,g/kg
+Lüneburger Heide (sand),10.05,53.05,soc,15-30cm,uncertainty,60.0,6.0,g/kg
+Lüneburger Heide (sand),10.05,53.05,soc,30-60cm,Q0.05,8.0,0.8,g/kg
+Lüneburger Heide (sand),10.05,53.05,soc,30-60cm,Q0.5,49.0,4.9,g/kg
+Lüneburger Heide (sand),10.05,53.05,soc,30-60cm,Q0.95,434.0,43.4,g/kg
+Lüneburger Heide (sand),10.05,53.05,soc,30-60cm,mean,159.0,15.9,g/kg
+Lüneburger Heide (sand),10.05,53.05,soc,30-60cm,uncertainty,87.0,8.7,g/kg
+Lüneburger Heide (sand),10.05,53.05,soc,60-100cm,Q0.05,6.0,0.6,g/kg
+Lüneburger Heide (sand),10.05,53.05,soc,60-100cm,Q0.5,30.0,3.0,g/kg
+Lüneburger Heide (sand),10.05,53.05,soc,60-100cm,Q0.95,387.0,38.7,g/kg
+Lüneburger Heide (sand),10.05,53.05,soc,60-100cm,mean,133.0,13.3,g/kg
+Lüneburger Heide (sand),10.05,53.05,soc,60-100cm,uncertainty,127.0,12.7,g/kg
+Lüneburger Heide (sand),10.05,53.05,soc,100-200cm,Q0.05,4.0,0.4,g/kg
+Lüneburger Heide (sand),10.05,53.05,soc,100-200cm,Q0.5,24.0,2.4,g/kg
+Lüneburger Heide (sand),10.05,53.05,soc,100-200cm,Q0.95,401.0,40.1,g/kg
+Lüneburger Heide (sand),10.05,53.05,soc,100-200cm,mean,154.0,15.4,g/kg
+Lüneburger Heide (sand),10.05,53.05,soc,100-200cm,uncertainty,165.0,16.5,g/kg
+Lüneburger Heide (sand),10.05,53.05,wv0010,0-5cm,Q0.05,320.0,32.0,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0010,0-5cm,Q0.5,492.0,49.2,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0010,0-5cm,Q0.95,700.0,70.0,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0010,0-5cm,mean,505.0,50.5,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0010,0-5cm,uncertainty,8.0,0.8,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0010,5-15cm,Q0.05,300.0,30.0,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0010,5-15cm,Q0.5,407.0,40.7,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0010,5-15cm,Q0.95,560.0,56.0,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0010,5-15cm,mean,414.0,41.4,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0010,5-15cm,uncertainty,6.0,0.6,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0010,15-30cm,Q0.05,207.0,20.7,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0010,15-30cm,Q0.5,370.0,37.0,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0010,15-30cm,Q0.95,537.0,53.7,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0010,15-30cm,mean,367.0,36.7,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0010,15-30cm,uncertainty,9.0,0.9,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0010,30-60cm,Q0.05,237.0,23.7,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0010,30-60cm,Q0.5,367.0,36.7,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0010,30-60cm,Q0.95,490.0,49.0,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0010,30-60cm,mean,357.0,35.7,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0010,30-60cm,uncertainty,7.0,0.7,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0010,60-100cm,Q0.05,236.0,23.6,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0010,60-100cm,Q0.5,368.0,36.8,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0010,60-100cm,Q0.95,455.0,45.5,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0010,60-100cm,mean,350.0,35.0,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0010,60-100cm,uncertainty,6.0,0.6,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0010,100-200cm,Q0.05,207.0,20.7,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0010,100-200cm,Q0.5,327.0,32.7,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0010,100-200cm,Q0.95,438.0,43.8,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0010,100-200cm,mean,331.0,33.1,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0010,100-200cm,uncertainty,7.0,0.7,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0033,0-5cm,Q0.05,227.0,22.7,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0033,0-5cm,Q0.5,388.0,38.8,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0033,0-5cm,Q0.95,521.0,52.1,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0033,0-5cm,mean,386.0,38.6,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0033,0-5cm,uncertainty,8.0,0.8,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0033,5-15cm,Q0.05,209.0,20.9,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0033,5-15cm,Q0.5,345.0,34.5,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0033,5-15cm,Q0.95,551.0,55.1,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0033,5-15cm,mean,346.0,34.6,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0033,5-15cm,uncertainty,10.0,1.0,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0033,15-30cm,Q0.05,189.0,18.9,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0033,15-30cm,Q0.5,330.0,33.0,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0033,15-30cm,Q0.95,490.0,49.0,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0033,15-30cm,mean,320.0,32.0,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0033,15-30cm,uncertainty,9.0,0.9,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0033,30-60cm,Q0.05,189.0,18.9,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0033,30-60cm,Q0.5,298.0,29.8,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0033,30-60cm,Q0.95,466.0,46.6,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0033,30-60cm,mean,306.0,30.6,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0033,30-60cm,uncertainty,9.0,0.9,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0033,60-100cm,Q0.05,189.0,18.9,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0033,60-100cm,Q0.5,300.0,30.0,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0033,60-100cm,Q0.95,434.0,43.4,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0033,60-100cm,mean,308.0,30.8,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0033,60-100cm,uncertainty,8.0,0.8,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0033,100-200cm,Q0.05,133.0,13.3,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0033,100-200cm,Q0.5,295.0,29.5,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0033,100-200cm,Q0.95,413.0,41.3,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0033,100-200cm,mean,296.0,29.6,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv0033,100-200cm,uncertainty,9.0,0.9,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv1500,0-5cm,Q0.05,40.0,4.0,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv1500,0-5cm,Q0.5,93.0,9.3,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv1500,0-5cm,Q0.95,156.0,15.6,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv1500,0-5cm,mean,95.0,9.5,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv1500,0-5cm,uncertainty,12.0,1.2,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv1500,5-15cm,Q0.05,40.0,4.0,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv1500,5-15cm,Q0.5,93.0,9.3,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv1500,5-15cm,Q0.95,156.0,15.6,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv1500,5-15cm,mean,95.0,9.5,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv1500,5-15cm,uncertainty,12.0,1.2,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv1500,15-30cm,Q0.05,37.0,3.7,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv1500,15-30cm,Q0.5,93.0,9.3,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv1500,15-30cm,Q0.95,198.0,19.8,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv1500,15-30cm,mean,96.0,9.6,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv1500,15-30cm,uncertainty,17.0,1.7,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv1500,30-60cm,Q0.05,14.0,1.4,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv1500,30-60cm,Q0.5,87.0,8.7,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv1500,30-60cm,Q0.95,275.0,27.5,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv1500,30-60cm,mean,102.0,10.2,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv1500,30-60cm,uncertainty,30.0,3.0,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv1500,60-100cm,Q0.05,12.0,1.2,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv1500,60-100cm,Q0.5,89.0,8.9,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv1500,60-100cm,Q0.95,304.0,30.4,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv1500,60-100cm,mean,103.0,10.3,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv1500,60-100cm,uncertainty,33.0,3.3,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv1500,100-200cm,Q0.05,3.0,0.3,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv1500,100-200cm,Q0.5,86.0,8.6,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv1500,100-200cm,Q0.95,304.0,30.4,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv1500,100-200cm,mean,102.0,10.2,10-2 cm³/cm³
+Lüneburger Heide (sand),10.05,53.05,wv1500,100-200cm,uncertainty,35.0,3.5,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,bdod,0-5cm,Q0.05,10.0,0.1,kg/dm³
+Emsland (sand/peat),7.35,52.75,bdod,0-5cm,Q0.5,114.0,1.14,kg/dm³
+Emsland (sand/peat),7.35,52.75,bdod,0-5cm,Q0.95,150.0,1.5,kg/dm³
+Emsland (sand/peat),7.35,52.75,bdod,0-5cm,mean,98.0,0.98,kg/dm³
+Emsland (sand/peat),7.35,52.75,bdod,0-5cm,uncertainty,12.0,1.2,kg/dm³
+Emsland (sand/peat),7.35,52.75,bdod,5-15cm,Q0.05,45.0,0.45,kg/dm³
+Emsland (sand/peat),7.35,52.75,bdod,5-15cm,Q0.5,128.0,1.28,kg/dm³
+Emsland (sand/peat),7.35,52.75,bdod,5-15cm,Q0.95,164.0,1.64,kg/dm³
+Emsland (sand/peat),7.35,52.75,bdod,5-15cm,mean,122.0,1.22,kg/dm³
+Emsland (sand/peat),7.35,52.75,bdod,5-15cm,uncertainty,9.0,0.9,kg/dm³
+Emsland (sand/peat),7.35,52.75,bdod,15-30cm,Q0.05,36.0,0.36,kg/dm³
+Emsland (sand/peat),7.35,52.75,bdod,15-30cm,Q0.5,142.0,1.42,kg/dm³
+Emsland (sand/peat),7.35,52.75,bdod,15-30cm,Q0.95,170.0,1.7,kg/dm³
+Emsland (sand/peat),7.35,52.75,bdod,15-30cm,mean,131.0,1.31,kg/dm³
+Emsland (sand/peat),7.35,52.75,bdod,15-30cm,uncertainty,9.0,0.9,kg/dm³
+Emsland (sand/peat),7.35,52.75,bdod,30-60cm,Q0.05,11.0,0.11,kg/dm³
+Emsland (sand/peat),7.35,52.75,bdod,30-60cm,Q0.5,150.0,1.5,kg/dm³
+Emsland (sand/peat),7.35,52.75,bdod,30-60cm,Q0.95,180.0,1.8,kg/dm³
+Emsland (sand/peat),7.35,52.75,bdod,30-60cm,mean,136.0,1.36,kg/dm³
+Emsland (sand/peat),7.35,52.75,bdod,30-60cm,uncertainty,11.0,1.1,kg/dm³
+Emsland (sand/peat),7.35,52.75,bdod,60-100cm,Q0.05,12.0,0.12,kg/dm³
+Emsland (sand/peat),7.35,52.75,bdod,60-100cm,Q0.5,158.0,1.58,kg/dm³
+Emsland (sand/peat),7.35,52.75,bdod,60-100cm,Q0.95,190.0,1.9,kg/dm³
+Emsland (sand/peat),7.35,52.75,bdod,60-100cm,mean,147.0,1.47,kg/dm³
+Emsland (sand/peat),7.35,52.75,bdod,60-100cm,uncertainty,11.0,1.1,kg/dm³
+Emsland (sand/peat),7.35,52.75,bdod,100-200cm,Q0.05,12.0,0.12,kg/dm³
+Emsland (sand/peat),7.35,52.75,bdod,100-200cm,Q0.5,160.0,1.6,kg/dm³
+Emsland (sand/peat),7.35,52.75,bdod,100-200cm,Q0.95,190.0,1.9,kg/dm³
+Emsland (sand/peat),7.35,52.75,bdod,100-200cm,mean,149.0,1.49,kg/dm³
+Emsland (sand/peat),7.35,52.75,bdod,100-200cm,uncertainty,11.0,1.1,kg/dm³
+Emsland (sand/peat),7.35,52.75,cec,0-5cm,Q0.05,54.0,5.4,cmol(c)/kg
+Emsland (sand/peat),7.35,52.75,cec,0-5cm,Q0.5,208.0,20.8,cmol(c)/kg
+Emsland (sand/peat),7.35,52.75,cec,0-5cm,Q0.95,550.0,55.0,cmol(c)/kg
+Emsland (sand/peat),7.35,52.75,cec,0-5cm,mean,236.0,23.6,cmol(c)/kg
+Emsland (sand/peat),7.35,52.75,cec,0-5cm,uncertainty,24.0,2.4,cmol(c)/kg
+Emsland (sand/peat),7.35,52.75,cec,5-15cm,Q0.05,9.0,0.9,cmol(c)/kg
+Emsland (sand/peat),7.35,52.75,cec,5-15cm,Q0.5,114.0,11.4,cmol(c)/kg
+Emsland (sand/peat),7.35,52.75,cec,5-15cm,Q0.95,447.0,44.7,cmol(c)/kg
+Emsland (sand/peat),7.35,52.75,cec,5-15cm,mean,158.0,15.8,cmol(c)/kg
+Emsland (sand/peat),7.35,52.75,cec,5-15cm,uncertainty,38.0,3.8,cmol(c)/kg
+Emsland (sand/peat),7.35,52.75,cec,15-30cm,Q0.05,8.0,0.8,cmol(c)/kg
+Emsland (sand/peat),7.35,52.75,cec,15-30cm,Q0.5,99.0,9.9,cmol(c)/kg
+Emsland (sand/peat),7.35,52.75,cec,15-30cm,Q0.95,410.0,41.0,cmol(c)/kg
+Emsland (sand/peat),7.35,52.75,cec,15-30cm,mean,138.0,13.8,cmol(c)/kg
+Emsland (sand/peat),7.35,52.75,cec,15-30cm,uncertainty,41.0,4.1,cmol(c)/kg
+Emsland (sand/peat),7.35,52.75,cec,30-60cm,Q0.05,7.0,0.7,cmol(c)/kg
+Emsland (sand/peat),7.35,52.75,cec,30-60cm,Q0.5,88.0,8.8,cmol(c)/kg
+Emsland (sand/peat),7.35,52.75,cec,30-60cm,Q0.95,353.0,35.3,cmol(c)/kg
+Emsland (sand/peat),7.35,52.75,cec,30-60cm,mean,115.0,11.5,cmol(c)/kg
+Emsland (sand/peat),7.35,52.75,cec,30-60cm,uncertainty,39.0,3.9,cmol(c)/kg
+Emsland (sand/peat),7.35,52.75,cec,60-100cm,Q0.05,5.0,0.5,cmol(c)/kg
+Emsland (sand/peat),7.35,52.75,cec,60-100cm,Q0.5,71.0,7.1,cmol(c)/kg
+Emsland (sand/peat),7.35,52.75,cec,60-100cm,Q0.95,261.0,26.1,cmol(c)/kg
+Emsland (sand/peat),7.35,52.75,cec,60-100cm,mean,95.0,9.5,cmol(c)/kg
+Emsland (sand/peat),7.35,52.75,cec,60-100cm,uncertainty,36.0,3.6,cmol(c)/kg
+Emsland (sand/peat),7.35,52.75,cec,100-200cm,Q0.05,5.0,0.5,cmol(c)/kg
+Emsland (sand/peat),7.35,52.75,cec,100-200cm,Q0.5,79.0,7.9,cmol(c)/kg
+Emsland (sand/peat),7.35,52.75,cec,100-200cm,Q0.95,230.0,23.0,cmol(c)/kg
+Emsland (sand/peat),7.35,52.75,cec,100-200cm,mean,95.0,9.5,cmol(c)/kg
+Emsland (sand/peat),7.35,52.75,cec,100-200cm,uncertainty,28.0,2.8,cmol(c)/kg
+Emsland (sand/peat),7.35,52.75,cfvo,0-5cm,Q0.05,0.0,0.0,cm³/100cm³
+Emsland (sand/peat),7.35,52.75,cfvo,0-5cm,Q0.5,30.0,3.0,cm³/100cm³
+Emsland (sand/peat),7.35,52.75,cfvo,0-5cm,Q0.95,150.0,15.0,cm³/100cm³
+Emsland (sand/peat),7.35,52.75,cfvo,0-5cm,mean,50.0,5.0,cm³/100cm³
+Emsland (sand/peat),7.35,52.75,cfvo,0-5cm,uncertainty,50.0,5.0,cm³/100cm³
+Emsland (sand/peat),7.35,52.75,cfvo,5-15cm,Q0.05,10.0,1.0,cm³/100cm³
+Emsland (sand/peat),7.35,52.75,cfvo,5-15cm,Q0.5,40.0,4.0,cm³/100cm³
+Emsland (sand/peat),7.35,52.75,cfvo,5-15cm,Q0.95,230.0,23.0,cm³/100cm³
+Emsland (sand/peat),7.35,52.75,cfvo,5-15cm,mean,55.0,5.5,cm³/100cm³
+Emsland (sand/peat),7.35,52.75,cfvo,5-15cm,uncertainty,55.0,5.5,cm³/100cm³
+Emsland (sand/peat),7.35,52.75,cfvo,15-30cm,Q0.05,0.0,0.0,cm³/100cm³
+Emsland (sand/peat),7.35,52.75,cfvo,15-30cm,Q0.5,30.0,3.0,cm³/100cm³
+Emsland (sand/peat),7.35,52.75,cfvo,15-30cm,Q0.95,230.0,23.0,cm³/100cm³
+Emsland (sand/peat),7.35,52.75,cfvo,15-30cm,mean,58.0,5.8,cm³/100cm³
+Emsland (sand/peat),7.35,52.75,cfvo,15-30cm,uncertainty,77.0,7.7,cm³/100cm³
+Emsland (sand/peat),7.35,52.75,cfvo,30-60cm,Q0.05,0.0,0.0,cm³/100cm³
+Emsland (sand/peat),7.35,52.75,cfvo,30-60cm,Q0.5,30.0,3.0,cm³/100cm³
+Emsland (sand/peat),7.35,52.75,cfvo,30-60cm,Q0.95,260.0,26.0,cm³/100cm³
+Emsland (sand/peat),7.35,52.75,cfvo,30-60cm,mean,66.0,6.6,cm³/100cm³
+Emsland (sand/peat),7.35,52.75,cfvo,30-60cm,uncertainty,87.0,8.7,cm³/100cm³
+Emsland (sand/peat),7.35,52.75,cfvo,60-100cm,Q0.05,0.0,0.0,cm³/100cm³
+Emsland (sand/peat),7.35,52.75,cfvo,60-100cm,Q0.5,30.0,3.0,cm³/100cm³
+Emsland (sand/peat),7.35,52.75,cfvo,60-100cm,Q0.95,400.0,40.0,cm³/100cm³
+Emsland (sand/peat),7.35,52.75,cfvo,60-100cm,mean,98.0,9.8,cm³/100cm³
+Emsland (sand/peat),7.35,52.75,cfvo,60-100cm,uncertainty,133.0,13.3,cm³/100cm³
+Emsland (sand/peat),7.35,52.75,cfvo,100-200cm,Q0.05,0.0,0.0,cm³/100cm³
+Emsland (sand/peat),7.35,52.75,cfvo,100-200cm,Q0.5,40.0,4.0,cm³/100cm³
+Emsland (sand/peat),7.35,52.75,cfvo,100-200cm,Q0.95,480.0,48.0,cm³/100cm³
+Emsland (sand/peat),7.35,52.75,cfvo,100-200cm,mean,128.0,12.8,cm³/100cm³
+Emsland (sand/peat),7.35,52.75,cfvo,100-200cm,uncertainty,120.0,12.0,cm³/100cm³
+Emsland (sand/peat),7.35,52.75,clay,0-5cm,Q0.05,18.0,1.8,%
+Emsland (sand/peat),7.35,52.75,clay,0-5cm,Q0.5,34.0,3.4,%
+Emsland (sand/peat),7.35,52.75,clay,0-5cm,Q0.95,166.0,16.6,%
+Emsland (sand/peat),7.35,52.75,clay,0-5cm,mean,55.0,5.5,%
+Emsland (sand/peat),7.35,52.75,clay,0-5cm,uncertainty,44.0,4.4,%
+Emsland (sand/peat),7.35,52.75,clay,5-15cm,Q0.05,17.0,1.7,%
+Emsland (sand/peat),7.35,52.75,clay,5-15cm,Q0.5,32.0,3.2,%
+Emsland (sand/peat),7.35,52.75,clay,5-15cm,Q0.95,105.0,10.5,%
+Emsland (sand/peat),7.35,52.75,clay,5-15cm,mean,46.0,4.6,%
+Emsland (sand/peat),7.35,52.75,clay,5-15cm,uncertainty,28.0,2.8,%
+Emsland (sand/peat),7.35,52.75,clay,15-30cm,Q0.05,11.0,1.1,%
+Emsland (sand/peat),7.35,52.75,clay,15-30cm,Q0.5,32.0,3.2,%
+Emsland (sand/peat),7.35,52.75,clay,15-30cm,Q0.95,108.0,10.8,%
+Emsland (sand/peat),7.35,52.75,clay,15-30cm,mean,46.0,4.6,%
+Emsland (sand/peat),7.35,52.75,clay,15-30cm,uncertainty,30.0,3.0,%
+Emsland (sand/peat),7.35,52.75,clay,30-60cm,Q0.05,10.0,1.0,%
+Emsland (sand/peat),7.35,52.75,clay,30-60cm,Q0.5,31.0,3.1,%
+Emsland (sand/peat),7.35,52.75,clay,30-60cm,Q0.95,122.0,12.2,%
+Emsland (sand/peat),7.35,52.75,clay,30-60cm,mean,49.0,4.9,%
+Emsland (sand/peat),7.35,52.75,clay,30-60cm,uncertainty,36.0,3.6,%
+Emsland (sand/peat),7.35,52.75,clay,60-100cm,Q0.05,9.0,0.9,%
+Emsland (sand/peat),7.35,52.75,clay,60-100cm,Q0.5,31.0,3.1,%
+Emsland (sand/peat),7.35,52.75,clay,60-100cm,Q0.95,162.0,16.2,%
+Emsland (sand/peat),7.35,52.75,clay,60-100cm,mean,55.0,5.5,%
+Emsland (sand/peat),7.35,52.75,clay,60-100cm,uncertainty,49.0,4.9,%
+Emsland (sand/peat),7.35,52.75,clay,100-200cm,Q0.05,9.0,0.9,%
+Emsland (sand/peat),7.35,52.75,clay,100-200cm,Q0.5,32.0,3.2,%
+Emsland (sand/peat),7.35,52.75,clay,100-200cm,Q0.95,249.0,24.9,%
+Emsland (sand/peat),7.35,52.75,clay,100-200cm,mean,75.0,7.5,%
+Emsland (sand/peat),7.35,52.75,clay,100-200cm,uncertainty,75.0,7.5,%
+Emsland (sand/peat),7.35,52.75,nitrogen,0-5cm,Q0.05,70.0,0.7,g/kg
+Emsland (sand/peat),7.35,52.75,nitrogen,0-5cm,Q0.5,200.0,2.0,g/kg
+Emsland (sand/peat),7.35,52.75,nitrogen,0-5cm,Q0.95,1802.0,18.02,g/kg
+Emsland (sand/peat),7.35,52.75,nitrogen,0-5cm,mean,522.0,5.22,g/kg
+Emsland (sand/peat),7.35,52.75,nitrogen,0-5cm,uncertainty,87.0,8.7,g/kg
+Emsland (sand/peat),7.35,52.75,nitrogen,5-15cm,Q0.05,70.0,0.7,g/kg
+Emsland (sand/peat),7.35,52.75,nitrogen,5-15cm,Q0.5,130.0,1.3,g/kg
+Emsland (sand/peat),7.35,52.75,nitrogen,5-15cm,Q0.95,464.0,4.64,g/kg
+Emsland (sand/peat),7.35,52.75,nitrogen,5-15cm,mean,201.0,2.01,g/kg
+Emsland (sand/peat),7.35,52.75,nitrogen,5-15cm,uncertainty,30.0,3.0,g/kg
+Emsland (sand/peat),7.35,52.75,nitrogen,15-30cm,Q0.05,20.0,0.2,g/kg
+Emsland (sand/peat),7.35,52.75,nitrogen,15-30cm,Q0.5,100.0,1.0,g/kg
+Emsland (sand/peat),7.35,52.75,nitrogen,15-30cm,Q0.95,1200.0,12.0,g/kg
+Emsland (sand/peat),7.35,52.75,nitrogen,15-30cm,mean,261.0,2.61,g/kg
+Emsland (sand/peat),7.35,52.75,nitrogen,15-30cm,uncertainty,118.0,11.8,g/kg
+Emsland (sand/peat),7.35,52.75,nitrogen,30-60cm,Q0.05,12.0,0.12,g/kg
+Emsland (sand/peat),7.35,52.75,nitrogen,30-60cm,Q0.5,100.0,1.0,g/kg
+Emsland (sand/peat),7.35,52.75,nitrogen,30-60cm,Q0.95,1205.0,12.05,g/kg
+Emsland (sand/peat),7.35,52.75,nitrogen,30-60cm,mean,274.0,2.74,g/kg
+Emsland (sand/peat),7.35,52.75,nitrogen,30-60cm,uncertainty,119.0,11.9,g/kg
+Emsland (sand/peat),7.35,52.75,nitrogen,60-100cm,Q0.05,9.0,0.09,g/kg
+Emsland (sand/peat),7.35,52.75,nitrogen,60-100cm,Q0.5,74.0,0.74,g/kg
+Emsland (sand/peat),7.35,52.75,nitrogen,60-100cm,Q0.95,1300.0,13.0,g/kg
+Emsland (sand/peat),7.35,52.75,nitrogen,60-100cm,mean,256.0,2.56,g/kg
+Emsland (sand/peat),7.35,52.75,nitrogen,60-100cm,uncertainty,173.0,17.3,g/kg
+Emsland (sand/peat),7.35,52.75,nitrogen,100-200cm,Q0.05,9.0,0.09,g/kg
+Emsland (sand/peat),7.35,52.75,nitrogen,100-200cm,Q0.5,68.0,0.68,g/kg
+Emsland (sand/peat),7.35,52.75,nitrogen,100-200cm,Q0.95,1300.0,13.0,g/kg
+Emsland (sand/peat),7.35,52.75,nitrogen,100-200cm,mean,245.0,2.45,g/kg
+Emsland (sand/peat),7.35,52.75,nitrogen,100-200cm,uncertainty,191.0,19.1,g/kg
+Emsland (sand/peat),7.35,52.75,ocd,0-5cm,Q0.05,120.0,12.0,hg/m³
+Emsland (sand/peat),7.35,52.75,ocd,0-5cm,Q0.5,433.0,43.3,hg/m³
+Emsland (sand/peat),7.35,52.75,ocd,0-5cm,Q0.95,1007.0,100.7,hg/m³
+Emsland (sand/peat),7.35,52.75,ocd,0-5cm,mean,523.0,52.3,hg/m³
+Emsland (sand/peat),7.35,52.75,ocd,0-5cm,uncertainty,20.0,2.0,hg/m³
+Emsland (sand/peat),7.35,52.75,ocd,5-15cm,Q0.05,64.0,6.4,hg/m³
+Emsland (sand/peat),7.35,52.75,ocd,5-15cm,Q0.5,326.0,32.6,hg/m³
+Emsland (sand/peat),7.35,52.75,ocd,5-15cm,Q0.95,555.0,55.5,hg/m³
+Emsland (sand/peat),7.35,52.75,ocd,5-15cm,mean,295.0,29.5,hg/m³
+Emsland (sand/peat),7.35,52.75,ocd,5-15cm,uncertainty,15.0,1.5,hg/m³
+Emsland (sand/peat),7.35,52.75,ocd,15-30cm,Q0.05,58.0,5.8,hg/m³
+Emsland (sand/peat),7.35,52.75,ocd,15-30cm,Q0.5,198.0,19.8,hg/m³
+Emsland (sand/peat),7.35,52.75,ocd,15-30cm,Q0.95,625.0,62.5,hg/m³
+Emsland (sand/peat),7.35,52.75,ocd,15-30cm,mean,249.0,24.9,hg/m³
+Emsland (sand/peat),7.35,52.75,ocd,15-30cm,uncertainty,29.0,2.9,hg/m³
+Emsland (sand/peat),7.35,52.75,ocd,30-60cm,Q0.05,32.0,3.2,hg/m³
+Emsland (sand/peat),7.35,52.75,ocd,30-60cm,Q0.5,73.0,7.3,hg/m³
+Emsland (sand/peat),7.35,52.75,ocd,30-60cm,Q0.95,564.0,56.4,hg/m³
+Emsland (sand/peat),7.35,52.75,ocd,30-60cm,mean,143.0,14.3,hg/m³
+Emsland (sand/peat),7.35,52.75,ocd,30-60cm,uncertainty,73.0,7.3,hg/m³
+Emsland (sand/peat),7.35,52.75,ocd,60-100cm,Q0.05,21.0,2.1,hg/m³
+Emsland (sand/peat),7.35,52.75,ocd,60-100cm,Q0.5,41.0,4.1,hg/m³
+Emsland (sand/peat),7.35,52.75,ocd,60-100cm,Q0.95,734.0,73.4,hg/m³
+Emsland (sand/peat),7.35,52.75,ocd,60-100cm,mean,122.0,12.2,hg/m³
+Emsland (sand/peat),7.35,52.75,ocd,60-100cm,uncertainty,174.0,17.4,hg/m³
+Emsland (sand/peat),7.35,52.75,ocd,100-200cm,Q0.05,11.0,1.1,hg/m³
+Emsland (sand/peat),7.35,52.75,ocd,100-200cm,Q0.5,28.0,2.8,hg/m³
+Emsland (sand/peat),7.35,52.75,ocd,100-200cm,Q0.95,411.0,41.1,hg/m³
+Emsland (sand/peat),7.35,52.75,ocd,100-200cm,mean,70.0,7.0,hg/m³
+Emsland (sand/peat),7.35,52.75,ocd,100-200cm,uncertainty,143.0,14.3,hg/m³
+Emsland (sand/peat),7.35,52.75,ocs,0-30cm,Q0.05,11.0,1.1,kg/m²
+Emsland (sand/peat),7.35,52.75,ocs,0-30cm,Q0.5,63.0,6.3,kg/m²
+Emsland (sand/peat),7.35,52.75,ocs,0-30cm,Q0.95,121.0,12.1,kg/m²
+Emsland (sand/peat),7.35,52.75,ocs,0-30cm,mean,56.0,5.6,kg/m²
+Emsland (sand/peat),7.35,52.75,ocs,0-30cm,uncertainty,17.0,1.7,kg/m²
+Emsland (sand/peat),7.35,52.75,phh2o,0-5cm,Q0.05,36.0,3.6,-
+Emsland (sand/peat),7.35,52.75,phh2o,0-5cm,Q0.5,47.0,4.7,-
+Emsland (sand/peat),7.35,52.75,phh2o,0-5cm,Q0.95,64.0,6.4,-
+Emsland (sand/peat),7.35,52.75,phh2o,0-5cm,mean,49.0,4.9,-
+Emsland (sand/peat),7.35,52.75,phh2o,0-5cm,uncertainty,6.0,0.6,-
+Emsland (sand/peat),7.35,52.75,phh2o,5-15cm,Q0.05,39.0,3.9,-
+Emsland (sand/peat),7.35,52.75,phh2o,5-15cm,Q0.5,50.0,5.0,-
+Emsland (sand/peat),7.35,52.75,phh2o,5-15cm,Q0.95,70.0,7.0,-
+Emsland (sand/peat),7.35,52.75,phh2o,5-15cm,mean,52.0,5.2,-
+Emsland (sand/peat),7.35,52.75,phh2o,5-15cm,uncertainty,6.0,0.6,-
+Emsland (sand/peat),7.35,52.75,phh2o,15-30cm,Q0.05,39.0,3.9,-
+Emsland (sand/peat),7.35,52.75,phh2o,15-30cm,Q0.5,50.0,5.0,-
+Emsland (sand/peat),7.35,52.75,phh2o,15-30cm,Q0.95,70.0,7.0,-
+Emsland (sand/peat),7.35,52.75,phh2o,15-30cm,mean,52.0,5.2,-
+Emsland (sand/peat),7.35,52.75,phh2o,15-30cm,uncertainty,6.0,0.6,-
+Emsland (sand/peat),7.35,52.75,phh2o,30-60cm,Q0.05,39.0,3.9,-
+Emsland (sand/peat),7.35,52.75,phh2o,30-60cm,Q0.5,50.0,5.0,-
+Emsland (sand/peat),7.35,52.75,phh2o,30-60cm,Q0.95,74.0,7.4,-
+Emsland (sand/peat),7.35,52.75,phh2o,30-60cm,mean,52.0,5.2,-
+Emsland (sand/peat),7.35,52.75,phh2o,30-60cm,uncertainty,7.0,0.7,-
+Emsland (sand/peat),7.35,52.75,phh2o,60-100cm,Q0.05,39.0,3.9,-
+Emsland (sand/peat),7.35,52.75,phh2o,60-100cm,Q0.5,50.0,5.0,-
+Emsland (sand/peat),7.35,52.75,phh2o,60-100cm,Q0.95,76.0,7.6,-
+Emsland (sand/peat),7.35,52.75,phh2o,60-100cm,mean,53.0,5.3,-
+Emsland (sand/peat),7.35,52.75,phh2o,60-100cm,uncertainty,7.0,0.7,-
+Emsland (sand/peat),7.35,52.75,phh2o,100-200cm,Q0.05,39.0,3.9,-
+Emsland (sand/peat),7.35,52.75,phh2o,100-200cm,Q0.5,50.0,5.0,-
+Emsland (sand/peat),7.35,52.75,phh2o,100-200cm,Q0.95,78.0,7.8,-
+Emsland (sand/peat),7.35,52.75,phh2o,100-200cm,mean,53.0,5.3,-
+Emsland (sand/peat),7.35,52.75,phh2o,100-200cm,uncertainty,8.0,0.8,-
+Emsland (sand/peat),7.35,52.75,sand,0-5cm,Q0.05,624.0,62.4,%
+Emsland (sand/peat),7.35,52.75,sand,0-5cm,Q0.5,845.0,84.5,%
+Emsland (sand/peat),7.35,52.75,sand,0-5cm,Q0.95,939.0,93.9,%
+Emsland (sand/peat),7.35,52.75,sand,0-5cm,mean,822.0,82.2,%
+Emsland (sand/peat),7.35,52.75,sand,0-5cm,uncertainty,4.0,0.4,%
+Emsland (sand/peat),7.35,52.75,sand,5-15cm,Q0.05,646.0,64.6,%
+Emsland (sand/peat),7.35,52.75,sand,5-15cm,Q0.5,860.0,86.0,%
+Emsland (sand/peat),7.35,52.75,sand,5-15cm,Q0.95,941.0,94.1,%
+Emsland (sand/peat),7.35,52.75,sand,5-15cm,mean,835.0,83.5,%
+Emsland (sand/peat),7.35,52.75,sand,5-15cm,uncertainty,3.0,0.3,%
+Emsland (sand/peat),7.35,52.75,sand,15-30cm,Q0.05,565.0,56.5,%
+Emsland (sand/peat),7.35,52.75,sand,15-30cm,Q0.5,856.0,85.6,%
+Emsland (sand/peat),7.35,52.75,sand,15-30cm,Q0.95,941.0,94.1,%
+Emsland (sand/peat),7.35,52.75,sand,15-30cm,mean,824.0,82.4,%
+Emsland (sand/peat),7.35,52.75,sand,15-30cm,uncertainty,4.0,0.4,%
+Emsland (sand/peat),7.35,52.75,sand,30-60cm,Q0.05,615.0,61.5,%
+Emsland (sand/peat),7.35,52.75,sand,30-60cm,Q0.5,858.0,85.8,%
+Emsland (sand/peat),7.35,52.75,sand,30-60cm,Q0.95,950.0,95.0,%
+Emsland (sand/peat),7.35,52.75,sand,30-60cm,mean,831.0,83.1,%
+Emsland (sand/peat),7.35,52.75,sand,30-60cm,uncertainty,4.0,0.4,%
+Emsland (sand/peat),7.35,52.75,sand,60-100cm,Q0.05,609.0,60.9,%
+Emsland (sand/peat),7.35,52.75,sand,60-100cm,Q0.5,853.0,85.3,%
+Emsland (sand/peat),7.35,52.75,sand,60-100cm,Q0.95,957.0,95.7,%
+Emsland (sand/peat),7.35,52.75,sand,60-100cm,mean,821.0,82.1,%
+Emsland (sand/peat),7.35,52.75,sand,60-100cm,uncertainty,4.0,0.4,%
+Emsland (sand/peat),7.35,52.75,sand,100-200cm,Q0.05,552.0,55.2,%
+Emsland (sand/peat),7.35,52.75,sand,100-200cm,Q0.5,834.0,83.4,%
+Emsland (sand/peat),7.35,52.75,sand,100-200cm,Q0.95,960.0,96.0,%
+Emsland (sand/peat),7.35,52.75,sand,100-200cm,mean,795.0,79.5,%
+Emsland (sand/peat),7.35,52.75,sand,100-200cm,uncertainty,5.0,0.5,%
+Emsland (sand/peat),7.35,52.75,silt,0-5cm,Q0.05,29.0,2.9,%
+Emsland (sand/peat),7.35,52.75,silt,0-5cm,Q0.5,96.0,9.6,%
+Emsland (sand/peat),7.35,52.75,silt,0-5cm,Q0.95,252.0,25.2,%
+Emsland (sand/peat),7.35,52.75,silt,0-5cm,mean,123.0,12.3,%
+Emsland (sand/peat),7.35,52.75,silt,0-5cm,uncertainty,23.0,2.3,%
+Emsland (sand/peat),7.35,52.75,silt,5-15cm,Q0.05,30.0,3.0,%
+Emsland (sand/peat),7.35,52.75,silt,5-15cm,Q0.5,90.0,9.0,%
+Emsland (sand/peat),7.35,52.75,silt,5-15cm,Q0.95,230.0,23.0,%
+Emsland (sand/peat),7.35,52.75,silt,5-15cm,mean,119.0,11.9,%
+Emsland (sand/peat),7.35,52.75,silt,5-15cm,uncertainty,22.0,2.2,%
+Emsland (sand/peat),7.35,52.75,silt,15-30cm,Q0.05,28.0,2.8,%
+Emsland (sand/peat),7.35,52.75,silt,15-30cm,Q0.5,95.0,9.5,%
+Emsland (sand/peat),7.35,52.75,silt,15-30cm,Q0.95,276.0,27.6,%
+Emsland (sand/peat),7.35,52.75,silt,15-30cm,mean,130.0,13.0,%
+Emsland (sand/peat),7.35,52.75,silt,15-30cm,uncertainty,26.0,2.6,%
+Emsland (sand/peat),7.35,52.75,silt,30-60cm,Q0.05,22.0,2.2,%
+Emsland (sand/peat),7.35,52.75,silt,30-60cm,Q0.5,90.0,9.0,%
+Emsland (sand/peat),7.35,52.75,silt,30-60cm,Q0.95,276.0,27.6,%
+Emsland (sand/peat),7.35,52.75,silt,30-60cm,mean,120.0,12.0,%
+Emsland (sand/peat),7.35,52.75,silt,30-60cm,uncertainty,28.0,2.8,%
+Emsland (sand/peat),7.35,52.75,silt,60-100cm,Q0.05,14.0,1.4,%
+Emsland (sand/peat),7.35,52.75,silt,60-100cm,Q0.5,90.0,9.0,%
+Emsland (sand/peat),7.35,52.75,silt,60-100cm,Q0.95,333.0,33.3,%
+Emsland (sand/peat),7.35,52.75,silt,60-100cm,mean,124.0,12.4,%
+Emsland (sand/peat),7.35,52.75,silt,60-100cm,uncertainty,35.0,3.5,%
+Emsland (sand/peat),7.35,52.75,silt,100-200cm,Q0.05,12.0,1.2,%
+Emsland (sand/peat),7.35,52.75,silt,100-200cm,Q0.5,89.0,8.9,%
+Emsland (sand/peat),7.35,52.75,silt,100-200cm,Q0.95,397.0,39.7,%
+Emsland (sand/peat),7.35,52.75,silt,100-200cm,mean,130.0,13.0,%
+Emsland (sand/peat),7.35,52.75,silt,100-200cm,uncertainty,43.0,4.3,%
+Emsland (sand/peat),7.35,52.75,soc,0-5cm,Q0.05,103.0,10.3,g/kg
+Emsland (sand/peat),7.35,52.75,soc,0-5cm,Q0.5,444.0,44.4,g/kg
+Emsland (sand/peat),7.35,52.75,soc,0-5cm,Q0.95,4503.0,450.3,g/kg
+Emsland (sand/peat),7.35,52.75,soc,0-5cm,mean,1092.0,109.2,g/kg
+Emsland (sand/peat),7.35,52.75,soc,0-5cm,uncertainty,99.0,9.9,g/kg
+Emsland (sand/peat),7.35,52.75,soc,5-15cm,Q0.05,90.0,9.0,g/kg
+Emsland (sand/peat),7.35,52.75,soc,5-15cm,Q0.5,246.0,24.6,g/kg
+Emsland (sand/peat),7.35,52.75,soc,5-15cm,Q0.95,711.0,71.1,g/kg
+Emsland (sand/peat),7.35,52.75,soc,5-15cm,mean,375.0,37.5,g/kg
+Emsland (sand/peat),7.35,52.75,soc,5-15cm,uncertainty,25.0,2.5,g/kg
+Emsland (sand/peat),7.35,52.75,soc,15-30cm,Q0.05,30.0,3.0,g/kg
+Emsland (sand/peat),7.35,52.75,soc,15-30cm,Q0.5,127.0,12.7,g/kg
+Emsland (sand/peat),7.35,52.75,soc,15-30cm,Q0.95,4200.0,420.0,g/kg
+Emsland (sand/peat),7.35,52.75,soc,15-30cm,mean,475.0,47.5,g/kg
+Emsland (sand/peat),7.35,52.75,soc,15-30cm,uncertainty,328.0,32.8,g/kg
+Emsland (sand/peat),7.35,52.75,soc,30-60cm,Q0.05,10.0,1.0,g/kg
+Emsland (sand/peat),7.35,52.75,soc,30-60cm,Q0.5,60.0,6.0,g/kg
+Emsland (sand/peat),7.35,52.75,soc,30-60cm,Q0.95,4248.0,424.8,g/kg
+Emsland (sand/peat),7.35,52.75,soc,30-60cm,mean,453.0,45.3,g/kg
+Emsland (sand/peat),7.35,52.75,soc,30-60cm,uncertainty,706.0,70.6,g/kg
+Emsland (sand/peat),7.35,52.75,soc,60-100cm,Q0.05,5.0,0.5,g/kg
+Emsland (sand/peat),7.35,52.75,soc,60-100cm,Q0.5,30.0,3.0,g/kg
+Emsland (sand/peat),7.35,52.75,soc,60-100cm,Q0.95,4248.0,424.8,g/kg
+Emsland (sand/peat),7.35,52.75,soc,60-100cm,mean,465.0,46.5,g/kg
+Emsland (sand/peat),7.35,52.75,soc,60-100cm,uncertainty,1414.0,141.4,g/kg
+Emsland (sand/peat),7.35,52.75,soc,100-200cm,Q0.05,4.0,0.4,g/kg
+Emsland (sand/peat),7.35,52.75,soc,100-200cm,Q0.5,30.0,3.0,g/kg
+Emsland (sand/peat),7.35,52.75,soc,100-200cm,Q0.95,4210.0,421.0,g/kg
+Emsland (sand/peat),7.35,52.75,soc,100-200cm,mean,411.0,41.1,g/kg
+Emsland (sand/peat),7.35,52.75,soc,100-200cm,uncertainty,1402.0,140.2,g/kg
+Emsland (sand/peat),7.35,52.75,wv0010,0-5cm,Q0.05,311.0,31.1,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0010,0-5cm,Q0.5,446.0,44.6,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0010,0-5cm,Q0.95,698.0,69.8,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0010,0-5cm,mean,469.0,46.9,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0010,0-5cm,uncertainty,9.0,0.9,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0010,5-15cm,Q0.05,239.0,23.9,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0010,5-15cm,Q0.5,386.0,38.6,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0010,5-15cm,Q0.95,537.0,53.7,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0010,5-15cm,mean,400.0,40.0,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0010,5-15cm,uncertainty,8.0,0.8,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0010,15-30cm,Q0.05,152.0,15.2,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0010,15-30cm,Q0.5,377.0,37.7,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0010,15-30cm,Q0.95,515.0,51.5,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0010,15-30cm,mean,353.0,35.3,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0010,15-30cm,uncertainty,10.0,1.0,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0010,30-60cm,Q0.05,210.0,21.0,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0010,30-60cm,Q0.5,357.0,35.7,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0010,30-60cm,Q0.95,495.0,49.5,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0010,30-60cm,mean,348.0,34.8,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0010,30-60cm,uncertainty,8.0,0.8,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0010,60-100cm,Q0.05,184.0,18.4,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0010,60-100cm,Q0.5,340.0,34.0,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0010,60-100cm,Q0.95,483.0,48.3,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0010,60-100cm,mean,334.0,33.4,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0010,60-100cm,uncertainty,9.0,0.9,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0010,100-200cm,Q0.05,156.0,15.6,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0010,100-200cm,Q0.5,318.0,31.8,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0010,100-200cm,Q0.95,455.0,45.5,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0010,100-200cm,mean,314.0,31.4,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0010,100-200cm,uncertainty,9.0,0.9,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0033,0-5cm,Q0.05,237.0,23.7,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0033,0-5cm,Q0.5,388.0,38.8,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0033,0-5cm,Q0.95,500.0,50.0,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0033,0-5cm,mean,374.0,37.4,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0033,0-5cm,uncertainty,7.0,0.7,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0033,5-15cm,Q0.05,168.0,16.8,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0033,5-15cm,Q0.5,327.0,32.7,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0033,5-15cm,Q0.95,463.0,46.3,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0033,5-15cm,mean,326.0,32.6,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0033,5-15cm,uncertainty,9.0,0.9,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0033,15-30cm,Q0.05,145.0,14.5,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0033,15-30cm,Q0.5,314.0,31.4,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0033,15-30cm,Q0.95,417.0,41.7,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0033,15-30cm,mean,300.0,30.0,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0033,15-30cm,uncertainty,9.0,0.9,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0033,30-60cm,Q0.05,159.0,15.9,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0033,30-60cm,Q0.5,312.0,31.2,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0033,30-60cm,Q0.95,463.0,46.3,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0033,30-60cm,mean,304.0,30.4,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0033,30-60cm,uncertainty,10.0,1.0,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0033,60-100cm,Q0.05,145.0,14.5,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0033,60-100cm,Q0.5,287.0,28.7,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0033,60-100cm,Q0.95,414.0,41.4,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0033,60-100cm,mean,293.0,29.3,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0033,60-100cm,uncertainty,9.0,0.9,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0033,100-200cm,Q0.05,82.0,8.2,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0033,100-200cm,Q0.5,275.0,27.5,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0033,100-200cm,Q0.95,419.0,41.9,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0033,100-200cm,mean,282.0,28.2,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv0033,100-200cm,uncertainty,12.0,1.2,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv1500,0-5cm,Q0.05,30.0,3.0,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv1500,0-5cm,Q0.5,55.0,5.5,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv1500,0-5cm,Q0.95,139.0,13.9,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv1500,0-5cm,mean,70.0,7.0,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv1500,0-5cm,uncertainty,20.0,2.0,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv1500,5-15cm,Q0.05,30.0,3.0,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv1500,5-15cm,Q0.5,54.0,5.4,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv1500,5-15cm,Q0.95,139.0,13.9,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv1500,5-15cm,mean,67.0,6.7,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv1500,5-15cm,uncertainty,20.0,2.0,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv1500,15-30cm,Q0.05,14.0,1.4,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv1500,15-30cm,Q0.5,52.0,5.2,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv1500,15-30cm,Q0.95,143.0,14.3,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv1500,15-30cm,mean,62.0,6.2,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv1500,15-30cm,uncertainty,25.0,2.5,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv1500,30-60cm,Q0.05,1.0,0.1,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv1500,30-60cm,Q0.5,40.0,4.0,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv1500,30-60cm,Q0.95,198.0,19.8,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv1500,30-60cm,mean,64.0,6.4,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv1500,30-60cm,uncertainty,49.0,4.9,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv1500,60-100cm,Q0.05,1.0,0.1,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv1500,60-100cm,Q0.5,40.0,4.0,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv1500,60-100cm,Q0.95,198.0,19.8,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv1500,60-100cm,mean,65.0,6.5,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv1500,60-100cm,uncertainty,49.0,4.9,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv1500,100-200cm,Q0.05,7.0,0.7,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv1500,100-200cm,Q0.5,37.0,3.7,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv1500,100-200cm,Q0.95,198.0,19.8,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv1500,100-200cm,mean,62.0,6.2,10-2 cm³/cm³
+Emsland (sand/peat),7.35,52.75,wv1500,100-200cm,uncertainty,52.0,5.2,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,bdod,0-5cm,Q0.05,21.0,0.21,kg/dm³
+Wesermarsch (marsh clay),8.4,53.35,bdod,0-5cm,Q0.5,115.0,1.15,kg/dm³
+Wesermarsch (marsh clay),8.4,53.35,bdod,0-5cm,Q0.95,165.0,1.65,kg/dm³
+Wesermarsch (marsh clay),8.4,53.35,bdod,0-5cm,mean,109.0,1.09,kg/dm³
+Wesermarsch (marsh clay),8.4,53.35,bdod,0-5cm,uncertainty,13.0,1.3,kg/dm³
+Wesermarsch (marsh clay),8.4,53.35,bdod,5-15cm,Q0.05,41.0,0.41,kg/dm³
+Wesermarsch (marsh clay),8.4,53.35,bdod,5-15cm,Q0.5,130.0,1.3,kg/dm³
+Wesermarsch (marsh clay),8.4,53.35,bdod,5-15cm,Q0.95,165.0,1.65,kg/dm³
+Wesermarsch (marsh clay),8.4,53.35,bdod,5-15cm,mean,118.0,1.18,kg/dm³
+Wesermarsch (marsh clay),8.4,53.35,bdod,5-15cm,uncertainty,10.0,1.0,kg/dm³
+Wesermarsch (marsh clay),8.4,53.35,bdod,15-30cm,Q0.05,20.0,0.2,kg/dm³
+Wesermarsch (marsh clay),8.4,53.35,bdod,15-30cm,Q0.5,134.0,1.34,kg/dm³
+Wesermarsch (marsh clay),8.4,53.35,bdod,15-30cm,Q0.95,173.0,1.73,kg/dm³
+Wesermarsch (marsh clay),8.4,53.35,bdod,15-30cm,mean,126.0,1.26,kg/dm³
+Wesermarsch (marsh clay),8.4,53.35,bdod,15-30cm,uncertainty,11.0,1.1,kg/dm³
+Wesermarsch (marsh clay),8.4,53.35,bdod,30-60cm,Q0.05,11.0,0.11,kg/dm³
+Wesermarsch (marsh clay),8.4,53.35,bdod,30-60cm,Q0.5,133.0,1.33,kg/dm³
+Wesermarsch (marsh clay),8.4,53.35,bdod,30-60cm,Q0.95,180.0,1.8,kg/dm³
+Wesermarsch (marsh clay),8.4,53.35,bdod,30-60cm,mean,119.0,1.19,kg/dm³
+Wesermarsch (marsh clay),8.4,53.35,bdod,30-60cm,uncertainty,13.0,1.3,kg/dm³
+Wesermarsch (marsh clay),8.4,53.35,bdod,60-100cm,Q0.05,11.0,0.11,kg/dm³
+Wesermarsch (marsh clay),8.4,53.35,bdod,60-100cm,Q0.5,148.0,1.48,kg/dm³
+Wesermarsch (marsh clay),8.4,53.35,bdod,60-100cm,Q0.95,183.0,1.83,kg/dm³
+Wesermarsch (marsh clay),8.4,53.35,bdod,60-100cm,mean,123.0,1.23,kg/dm³
+Wesermarsch (marsh clay),8.4,53.35,bdod,60-100cm,uncertainty,12.0,1.2,kg/dm³
+Wesermarsch (marsh clay),8.4,53.35,bdod,100-200cm,Q0.05,11.0,0.11,kg/dm³
+Wesermarsch (marsh clay),8.4,53.35,bdod,100-200cm,Q0.5,150.0,1.5,kg/dm³
+Wesermarsch (marsh clay),8.4,53.35,bdod,100-200cm,Q0.95,183.0,1.83,kg/dm³
+Wesermarsch (marsh clay),8.4,53.35,bdod,100-200cm,mean,125.0,1.25,kg/dm³
+Wesermarsch (marsh clay),8.4,53.35,bdod,100-200cm,uncertainty,11.0,1.1,kg/dm³
+Wesermarsch (marsh clay),8.4,53.35,cec,0-5cm,Q0.05,80.0,8.0,cmol(c)/kg
+Wesermarsch (marsh clay),8.4,53.35,cec,0-5cm,Q0.5,256.0,25.6,cmol(c)/kg
+Wesermarsch (marsh clay),8.4,53.35,cec,0-5cm,Q0.95,593.0,59.3,cmol(c)/kg
+Wesermarsch (marsh clay),8.4,53.35,cec,0-5cm,mean,293.0,29.3,cmol(c)/kg
+Wesermarsch (marsh clay),8.4,53.35,cec,0-5cm,uncertainty,20.0,2.0,cmol(c)/kg
+Wesermarsch (marsh clay),8.4,53.35,cec,5-15cm,Q0.05,71.0,7.1,cmol(c)/kg
+Wesermarsch (marsh clay),8.4,53.35,cec,5-15cm,Q0.5,218.0,21.8,cmol(c)/kg
+Wesermarsch (marsh clay),8.4,53.35,cec,5-15cm,Q0.95,454.0,45.4,cmol(c)/kg
+Wesermarsch (marsh clay),8.4,53.35,cec,5-15cm,mean,246.0,24.6,cmol(c)/kg
+Wesermarsch (marsh clay),8.4,53.35,cec,5-15cm,uncertainty,18.0,1.8,cmol(c)/kg
+Wesermarsch (marsh clay),8.4,53.35,cec,15-30cm,Q0.05,57.0,5.7,cmol(c)/kg
+Wesermarsch (marsh clay),8.4,53.35,cec,15-30cm,Q0.5,220.0,22.0,cmol(c)/kg
+Wesermarsch (marsh clay),8.4,53.35,cec,15-30cm,Q0.95,426.0,42.6,cmol(c)/kg
+Wesermarsch (marsh clay),8.4,53.35,cec,15-30cm,mean,235.0,23.5,cmol(c)/kg
+Wesermarsch (marsh clay),8.4,53.35,cec,15-30cm,uncertainty,17.0,1.7,cmol(c)/kg
+Wesermarsch (marsh clay),8.4,53.35,cec,30-60cm,Q0.05,58.0,5.8,cmol(c)/kg
+Wesermarsch (marsh clay),8.4,53.35,cec,30-60cm,Q0.5,207.0,20.7,cmol(c)/kg
+Wesermarsch (marsh clay),8.4,53.35,cec,30-60cm,Q0.95,471.0,47.1,cmol(c)/kg
+Wesermarsch (marsh clay),8.4,53.35,cec,30-60cm,mean,224.0,22.4,cmol(c)/kg
+Wesermarsch (marsh clay),8.4,53.35,cec,30-60cm,uncertainty,20.0,2.0,cmol(c)/kg
+Wesermarsch (marsh clay),8.4,53.35,cec,60-100cm,Q0.05,56.0,5.6,cmol(c)/kg
+Wesermarsch (marsh clay),8.4,53.35,cec,60-100cm,Q0.5,199.0,19.9,cmol(c)/kg
+Wesermarsch (marsh clay),8.4,53.35,cec,60-100cm,Q0.95,480.0,48.0,cmol(c)/kg
+Wesermarsch (marsh clay),8.4,53.35,cec,60-100cm,mean,218.0,21.8,cmol(c)/kg
+Wesermarsch (marsh clay),8.4,53.35,cec,60-100cm,uncertainty,21.0,2.1,cmol(c)/kg
+Wesermarsch (marsh clay),8.4,53.35,cec,100-200cm,Q0.05,34.0,3.4,cmol(c)/kg
+Wesermarsch (marsh clay),8.4,53.35,cec,100-200cm,Q0.5,158.0,15.8,cmol(c)/kg
+Wesermarsch (marsh clay),8.4,53.35,cec,100-200cm,Q0.95,471.0,47.1,cmol(c)/kg
+Wesermarsch (marsh clay),8.4,53.35,cec,100-200cm,mean,199.0,19.9,cmol(c)/kg
+Wesermarsch (marsh clay),8.4,53.35,cec,100-200cm,uncertainty,28.0,2.8,cmol(c)/kg
+Wesermarsch (marsh clay),8.4,53.35,cfvo,0-5cm,Q0.05,0.0,0.0,cm³/100cm³
+Wesermarsch (marsh clay),8.4,53.35,cfvo,0-5cm,Q0.5,40.0,4.0,cm³/100cm³
+Wesermarsch (marsh clay),8.4,53.35,cfvo,0-5cm,Q0.95,230.0,23.0,cm³/100cm³
+Wesermarsch (marsh clay),8.4,53.35,cfvo,0-5cm,mean,61.0,6.1,cm³/100cm³
+Wesermarsch (marsh clay),8.4,53.35,cfvo,0-5cm,uncertainty,58.0,5.8,cm³/100cm³
+Wesermarsch (marsh clay),8.4,53.35,cfvo,5-15cm,Q0.05,10.0,1.0,cm³/100cm³
+Wesermarsch (marsh clay),8.4,53.35,cfvo,5-15cm,Q0.5,50.0,5.0,cm³/100cm³
+Wesermarsch (marsh clay),8.4,53.35,cfvo,5-15cm,Q0.95,230.0,23.0,cm³/100cm³
+Wesermarsch (marsh clay),8.4,53.35,cfvo,5-15cm,mean,68.0,6.8,cm³/100cm³
+Wesermarsch (marsh clay),8.4,53.35,cfvo,5-15cm,uncertainty,44.0,4.4,cm³/100cm³
+Wesermarsch (marsh clay),8.4,53.35,cfvo,15-30cm,Q0.05,0.0,0.0,cm³/100cm³
+Wesermarsch (marsh clay),8.4,53.35,cfvo,15-30cm,Q0.5,40.0,4.0,cm³/100cm³
+Wesermarsch (marsh clay),8.4,53.35,cfvo,15-30cm,Q0.95,400.0,40.0,cm³/100cm³
+Wesermarsch (marsh clay),8.4,53.35,cfvo,15-30cm,mean,76.0,7.6,cm³/100cm³
+Wesermarsch (marsh clay),8.4,53.35,cfvo,15-30cm,uncertainty,100.0,10.0,cm³/100cm³
+Wesermarsch (marsh clay),8.4,53.35,cfvo,30-60cm,Q0.05,0.0,0.0,cm³/100cm³
+Wesermarsch (marsh clay),8.4,53.35,cfvo,30-60cm,Q0.5,40.0,4.0,cm³/100cm³
+Wesermarsch (marsh clay),8.4,53.35,cfvo,30-60cm,Q0.95,400.0,40.0,cm³/100cm³
+Wesermarsch (marsh clay),8.4,53.35,cfvo,30-60cm,mean,83.0,8.3,cm³/100cm³
+Wesermarsch (marsh clay),8.4,53.35,cfvo,30-60cm,uncertainty,100.0,10.0,cm³/100cm³
+Wesermarsch (marsh clay),8.4,53.35,cfvo,60-100cm,Q0.05,0.0,0.0,cm³/100cm³
+Wesermarsch (marsh clay),8.4,53.35,cfvo,60-100cm,Q0.5,40.0,4.0,cm³/100cm³
+Wesermarsch (marsh clay),8.4,53.35,cfvo,60-100cm,Q0.95,400.0,40.0,cm³/100cm³
+Wesermarsch (marsh clay),8.4,53.35,cfvo,60-100cm,mean,119.0,11.9,cm³/100cm³
+Wesermarsch (marsh clay),8.4,53.35,cfvo,60-100cm,uncertainty,100.0,10.0,cm³/100cm³
+Wesermarsch (marsh clay),8.4,53.35,cfvo,100-200cm,Q0.05,0.0,0.0,cm³/100cm³
+Wesermarsch (marsh clay),8.4,53.35,cfvo,100-200cm,Q0.5,80.0,8.0,cm³/100cm³
+Wesermarsch (marsh clay),8.4,53.35,cfvo,100-200cm,Q0.95,480.0,48.0,cm³/100cm³
+Wesermarsch (marsh clay),8.4,53.35,cfvo,100-200cm,mean,179.0,17.9,cm³/100cm³
+Wesermarsch (marsh clay),8.4,53.35,cfvo,100-200cm,uncertainty,60.0,6.0,cm³/100cm³
+Wesermarsch (marsh clay),8.4,53.35,clay,0-5cm,Q0.05,5.0,0.5,%
+Wesermarsch (marsh clay),8.4,53.35,clay,0-5cm,Q0.5,192.0,19.2,%
+Wesermarsch (marsh clay),8.4,53.35,clay,0-5cm,Q0.95,831.0,83.1,%
+Wesermarsch (marsh clay),8.4,53.35,clay,0-5cm,mean,295.0,29.5,%
+Wesermarsch (marsh clay),8.4,53.35,clay,0-5cm,uncertainty,43.0,4.3,%
+Wesermarsch (marsh clay),8.4,53.35,clay,5-15cm,Q0.05,5.0,0.5,%
+Wesermarsch (marsh clay),8.4,53.35,clay,5-15cm,Q0.5,169.0,16.9,%
+Wesermarsch (marsh clay),8.4,53.35,clay,5-15cm,Q0.95,856.0,85.6,%
+Wesermarsch (marsh clay),8.4,53.35,clay,5-15cm,mean,298.0,29.8,%
+Wesermarsch (marsh clay),8.4,53.35,clay,5-15cm,uncertainty,50.0,5.0,%
+Wesermarsch (marsh clay),8.4,53.35,clay,15-30cm,Q0.05,5.0,0.5,%
+Wesermarsch (marsh clay),8.4,53.35,clay,15-30cm,Q0.5,212.0,21.2,%
+Wesermarsch (marsh clay),8.4,53.35,clay,15-30cm,Q0.95,862.0,86.2,%
+Wesermarsch (marsh clay),8.4,53.35,clay,15-30cm,mean,315.0,31.5,%
+Wesermarsch (marsh clay),8.4,53.35,clay,15-30cm,uncertainty,40.0,4.0,%
+Wesermarsch (marsh clay),8.4,53.35,clay,30-60cm,Q0.05,3.0,0.3,%
+Wesermarsch (marsh clay),8.4,53.35,clay,30-60cm,Q0.5,204.0,20.4,%
+Wesermarsch (marsh clay),8.4,53.35,clay,30-60cm,Q0.95,879.0,87.9,%
+Wesermarsch (marsh clay),8.4,53.35,clay,30-60cm,mean,324.0,32.4,%
+Wesermarsch (marsh clay),8.4,53.35,clay,30-60cm,uncertainty,43.0,4.3,%
+Wesermarsch (marsh clay),8.4,53.35,clay,60-100cm,Q0.05,2.0,0.2,%
+Wesermarsch (marsh clay),8.4,53.35,clay,60-100cm,Q0.5,201.0,20.1,%
+Wesermarsch (marsh clay),8.4,53.35,clay,60-100cm,Q0.95,879.0,87.9,%
+Wesermarsch (marsh clay),8.4,53.35,clay,60-100cm,mean,306.0,30.6,%
+Wesermarsch (marsh clay),8.4,53.35,clay,60-100cm,uncertainty,44.0,4.4,%
+Wesermarsch (marsh clay),8.4,53.35,clay,100-200cm,Q0.05,1.0,0.1,%
+Wesermarsch (marsh clay),8.4,53.35,clay,100-200cm,Q0.5,171.0,17.1,%
+Wesermarsch (marsh clay),8.4,53.35,clay,100-200cm,Q0.95,889.0,88.9,%
+Wesermarsch (marsh clay),8.4,53.35,clay,100-200cm,mean,296.0,29.6,%
+Wesermarsch (marsh clay),8.4,53.35,clay,100-200cm,uncertainty,52.0,5.2,%
+Wesermarsch (marsh clay),8.4,53.35,nitrogen,0-5cm,Q0.05,100.0,1.0,g/kg
+Wesermarsch (marsh clay),8.4,53.35,nitrogen,0-5cm,Q0.5,400.0,4.0,g/kg
+Wesermarsch (marsh clay),8.4,53.35,nitrogen,0-5cm,Q0.95,1709.0,17.09,g/kg
+Wesermarsch (marsh clay),8.4,53.35,nitrogen,0-5cm,mean,628.0,6.28,g/kg
+Wesermarsch (marsh clay),8.4,53.35,nitrogen,0-5cm,uncertainty,40.0,4.0,g/kg
+Wesermarsch (marsh clay),8.4,53.35,nitrogen,5-15cm,Q0.05,100.0,1.0,g/kg
+Wesermarsch (marsh clay),8.4,53.35,nitrogen,5-15cm,Q0.5,290.0,2.9,g/kg
+Wesermarsch (marsh clay),8.4,53.35,nitrogen,5-15cm,Q0.95,1600.0,16.0,g/kg
+Wesermarsch (marsh clay),8.4,53.35,nitrogen,5-15cm,mean,492.0,4.92,g/kg
+Wesermarsch (marsh clay),8.4,53.35,nitrogen,5-15cm,uncertainty,52.0,5.2,g/kg
+Wesermarsch (marsh clay),8.4,53.35,nitrogen,15-30cm,Q0.05,60.0,0.6,g/kg
+Wesermarsch (marsh clay),8.4,53.35,nitrogen,15-30cm,Q0.5,200.0,2.0,g/kg
+Wesermarsch (marsh clay),8.4,53.35,nitrogen,15-30cm,Q0.95,1600.0,16.0,g/kg
+Wesermarsch (marsh clay),8.4,53.35,nitrogen,15-30cm,mean,428.0,4.28,g/kg
+Wesermarsch (marsh clay),8.4,53.35,nitrogen,15-30cm,uncertainty,77.0,7.7,g/kg
+Wesermarsch (marsh clay),8.4,53.35,nitrogen,30-60cm,Q0.05,50.0,0.5,g/kg
+Wesermarsch (marsh clay),8.4,53.35,nitrogen,30-60cm,Q0.5,200.0,2.0,g/kg
+Wesermarsch (marsh clay),8.4,53.35,nitrogen,30-60cm,Q0.95,1313.0,13.13,g/kg
+Wesermarsch (marsh clay),8.4,53.35,nitrogen,30-60cm,mean,399.0,3.99,g/kg
+Wesermarsch (marsh clay),8.4,53.35,nitrogen,30-60cm,uncertainty,63.0,6.3,g/kg
+Wesermarsch (marsh clay),8.4,53.35,nitrogen,60-100cm,Q0.05,20.0,0.2,g/kg
+Wesermarsch (marsh clay),8.4,53.35,nitrogen,60-100cm,Q0.5,200.0,2.0,g/kg
+Wesermarsch (marsh clay),8.4,53.35,nitrogen,60-100cm,Q0.95,1313.0,13.13,g/kg
+Wesermarsch (marsh clay),8.4,53.35,nitrogen,60-100cm,mean,404.0,4.04,g/kg
+Wesermarsch (marsh clay),8.4,53.35,nitrogen,60-100cm,uncertainty,65.0,6.5,g/kg
+Wesermarsch (marsh clay),8.4,53.35,nitrogen,100-200cm,Q0.05,20.0,0.2,g/kg
+Wesermarsch (marsh clay),8.4,53.35,nitrogen,100-200cm,Q0.5,200.0,2.0,g/kg
+Wesermarsch (marsh clay),8.4,53.35,nitrogen,100-200cm,Q0.95,1469.0,14.69,g/kg
+Wesermarsch (marsh clay),8.4,53.35,nitrogen,100-200cm,mean,406.0,4.06,g/kg
+Wesermarsch (marsh clay),8.4,53.35,nitrogen,100-200cm,uncertainty,72.0,7.2,g/kg
+Wesermarsch (marsh clay),8.4,53.35,ocd,0-5cm,Q0.05,103.0,10.3,hg/m³
+Wesermarsch (marsh clay),8.4,53.35,ocd,0-5cm,Q0.5,397.0,39.7,hg/m³
+Wesermarsch (marsh clay),8.4,53.35,ocd,0-5cm,Q0.95,1151.0,115.1,hg/m³
+Wesermarsch (marsh clay),8.4,53.35,ocd,0-5cm,mean,504.0,50.4,hg/m³
+Wesermarsch (marsh clay),8.4,53.35,ocd,0-5cm,uncertainty,26.0,2.6,hg/m³
+Wesermarsch (marsh clay),8.4,53.35,ocd,5-15cm,Q0.05,90.0,9.0,hg/m³
+Wesermarsch (marsh clay),8.4,53.35,ocd,5-15cm,Q0.5,335.0,33.5,hg/m³
+Wesermarsch (marsh clay),8.4,53.35,ocd,5-15cm,Q0.95,700.0,70.0,hg/m³
+Wesermarsch (marsh clay),8.4,53.35,ocd,5-15cm,mean,379.0,37.9,hg/m³
+Wesermarsch (marsh clay),8.4,53.35,ocd,5-15cm,uncertainty,18.0,1.8,hg/m³
+Wesermarsch (marsh clay),8.4,53.35,ocd,15-30cm,Q0.05,62.0,6.2,hg/m³
+Wesermarsch (marsh clay),8.4,53.35,ocd,15-30cm,Q0.5,300.0,30.0,hg/m³
+Wesermarsch (marsh clay),8.4,53.35,ocd,15-30cm,Q0.95,764.0,76.4,hg/m³
+Wesermarsch (marsh clay),8.4,53.35,ocd,15-30cm,mean,312.0,31.2,hg/m³
+Wesermarsch (marsh clay),8.4,53.35,ocd,15-30cm,uncertainty,23.0,2.3,hg/m³
+Wesermarsch (marsh clay),8.4,53.35,ocd,30-60cm,Q0.05,35.0,3.5,hg/m³
+Wesermarsch (marsh clay),8.4,53.35,ocd,30-60cm,Q0.5,96.0,9.6,hg/m³
+Wesermarsch (marsh clay),8.4,53.35,ocd,30-60cm,Q0.95,423.0,42.3,hg/m³
+Wesermarsch (marsh clay),8.4,53.35,ocd,30-60cm,mean,165.0,16.5,hg/m³
+Wesermarsch (marsh clay),8.4,53.35,ocd,30-60cm,uncertainty,40.0,4.0,hg/m³
+Wesermarsch (marsh clay),8.4,53.35,ocd,60-100cm,Q0.05,19.0,1.9,hg/m³
+Wesermarsch (marsh clay),8.4,53.35,ocd,60-100cm,Q0.5,58.0,5.8,hg/m³
+Wesermarsch (marsh clay),8.4,53.35,ocd,60-100cm,Q0.95,880.0,88.0,hg/m³
+Wesermarsch (marsh clay),8.4,53.35,ocd,60-100cm,mean,172.0,17.2,hg/m³
+Wesermarsch (marsh clay),8.4,53.35,ocd,60-100cm,uncertainty,148.0,14.8,hg/m³
+Wesermarsch (marsh clay),8.4,53.35,ocd,100-200cm,Q0.05,11.0,1.1,hg/m³
+Wesermarsch (marsh clay),8.4,53.35,ocd,100-200cm,Q0.5,33.0,3.3,hg/m³
+Wesermarsch (marsh clay),8.4,53.35,ocd,100-200cm,Q0.95,879.0,87.9,hg/m³
+Wesermarsch (marsh clay),8.4,53.35,ocd,100-200cm,mean,140.0,14.0,hg/m³
+Wesermarsch (marsh clay),8.4,53.35,ocd,100-200cm,uncertainty,263.0,26.3,hg/m³
+Wesermarsch (marsh clay),8.4,53.35,ocs,0-30cm,Q0.05,14.0,1.4,kg/m²
+Wesermarsch (marsh clay),8.4,53.35,ocs,0-30cm,Q0.5,67.0,6.7,kg/m²
+Wesermarsch (marsh clay),8.4,53.35,ocs,0-30cm,Q0.95,252.0,25.2,kg/m²
+Wesermarsch (marsh clay),8.4,53.35,ocs,0-30cm,mean,81.0,8.1,kg/m²
+Wesermarsch (marsh clay),8.4,53.35,ocs,0-30cm,uncertainty,36.0,3.6,kg/m²
+Wesermarsch (marsh clay),8.4,53.35,phh2o,0-5cm,Q0.05,42.0,4.2,-
+Wesermarsch (marsh clay),8.4,53.35,phh2o,0-5cm,Q0.5,53.0,5.3,-
+Wesermarsch (marsh clay),8.4,53.35,phh2o,0-5cm,Q0.95,71.0,7.1,-
+Wesermarsch (marsh clay),8.4,53.35,phh2o,0-5cm,mean,55.0,5.5,-
+Wesermarsch (marsh clay),8.4,53.35,phh2o,0-5cm,uncertainty,5.0,0.5,-
+Wesermarsch (marsh clay),8.4,53.35,phh2o,5-15cm,Q0.05,45.0,4.5,-
+Wesermarsch (marsh clay),8.4,53.35,phh2o,5-15cm,Q0.5,53.0,5.3,-
+Wesermarsch (marsh clay),8.4,53.35,phh2o,5-15cm,Q0.95,70.0,7.0,-
+Wesermarsch (marsh clay),8.4,53.35,phh2o,5-15cm,mean,55.0,5.5,-
+Wesermarsch (marsh clay),8.4,53.35,phh2o,5-15cm,uncertainty,5.0,0.5,-
+Wesermarsch (marsh clay),8.4,53.35,phh2o,15-30cm,Q0.05,45.0,4.5,-
+Wesermarsch (marsh clay),8.4,53.35,phh2o,15-30cm,Q0.5,53.0,5.3,-
+Wesermarsch (marsh clay),8.4,53.35,phh2o,15-30cm,Q0.95,78.0,7.8,-
+Wesermarsch (marsh clay),8.4,53.35,phh2o,15-30cm,mean,57.0,5.7,-
+Wesermarsch (marsh clay),8.4,53.35,phh2o,15-30cm,uncertainty,6.0,0.6,-
+Wesermarsch (marsh clay),8.4,53.35,phh2o,30-60cm,Q0.05,45.0,4.5,-
+Wesermarsch (marsh clay),8.4,53.35,phh2o,30-60cm,Q0.5,54.0,5.4,-
+Wesermarsch (marsh clay),8.4,53.35,phh2o,30-60cm,Q0.95,81.0,8.1,-
+Wesermarsch (marsh clay),8.4,53.35,phh2o,30-60cm,mean,59.0,5.9,-
+Wesermarsch (marsh clay),8.4,53.35,phh2o,30-60cm,uncertainty,7.0,0.7,-
+Wesermarsch (marsh clay),8.4,53.35,phh2o,60-100cm,Q0.05,45.0,4.5,-
+Wesermarsch (marsh clay),8.4,53.35,phh2o,60-100cm,Q0.5,57.0,5.7,-
+Wesermarsch (marsh clay),8.4,53.35,phh2o,60-100cm,Q0.95,83.0,8.3,-
+Wesermarsch (marsh clay),8.4,53.35,phh2o,60-100cm,mean,60.0,6.0,-
+Wesermarsch (marsh clay),8.4,53.35,phh2o,60-100cm,uncertainty,7.0,0.7,-
+Wesermarsch (marsh clay),8.4,53.35,phh2o,100-200cm,Q0.05,45.0,4.5,-
+Wesermarsch (marsh clay),8.4,53.35,phh2o,100-200cm,Q0.5,58.0,5.8,-
+Wesermarsch (marsh clay),8.4,53.35,phh2o,100-200cm,Q0.95,84.0,8.4,-
+Wesermarsch (marsh clay),8.4,53.35,phh2o,100-200cm,mean,61.0,6.1,-
+Wesermarsch (marsh clay),8.4,53.35,phh2o,100-200cm,uncertainty,7.0,0.7,-
+Wesermarsch (marsh clay),8.4,53.35,sand,0-5cm,Q0.05,32.0,3.2,%
+Wesermarsch (marsh clay),8.4,53.35,sand,0-5cm,Q0.5,117.0,11.7,%
+Wesermarsch (marsh clay),8.4,53.35,sand,0-5cm,Q0.95,812.0,81.2,%
+Wesermarsch (marsh clay),8.4,53.35,sand,0-5cm,mean,214.0,21.4,%
+Wesermarsch (marsh clay),8.4,53.35,sand,0-5cm,uncertainty,67.0,6.7,%
+Wesermarsch (marsh clay),8.4,53.35,sand,5-15cm,Q0.05,31.0,3.1,%
+Wesermarsch (marsh clay),8.4,53.35,sand,5-15cm,Q0.5,116.0,11.6,%
+Wesermarsch (marsh clay),8.4,53.35,sand,5-15cm,Q0.95,807.0,80.7,%
+Wesermarsch (marsh clay),8.4,53.35,sand,5-15cm,mean,214.0,21.4,%
+Wesermarsch (marsh clay),8.4,53.35,sand,5-15cm,uncertainty,67.0,6.7,%
+Wesermarsch (marsh clay),8.4,53.35,sand,15-30cm,Q0.05,26.0,2.6,%
+Wesermarsch (marsh clay),8.4,53.35,sand,15-30cm,Q0.5,107.0,10.7,%
+Wesermarsch (marsh clay),8.4,53.35,sand,15-30cm,Q0.95,761.0,76.1,%
+Wesermarsch (marsh clay),8.4,53.35,sand,15-30cm,mean,179.0,17.9,%
+Wesermarsch (marsh clay),8.4,53.35,sand,15-30cm,uncertainty,69.0,6.9,%
+Wesermarsch (marsh clay),8.4,53.35,sand,30-60cm,Q0.05,22.0,2.2,%
+Wesermarsch (marsh clay),8.4,53.35,sand,30-60cm,Q0.5,96.0,9.6,%
+Wesermarsch (marsh clay),8.4,53.35,sand,30-60cm,Q0.95,776.0,77.6,%
+Wesermarsch (marsh clay),8.4,53.35,sand,30-60cm,mean,171.0,17.1,%
+Wesermarsch (marsh clay),8.4,53.35,sand,30-60cm,uncertainty,79.0,7.9,%
+Wesermarsch (marsh clay),8.4,53.35,sand,60-100cm,Q0.05,17.0,1.7,%
+Wesermarsch (marsh clay),8.4,53.35,sand,60-100cm,Q0.5,92.0,9.2,%
+Wesermarsch (marsh clay),8.4,53.35,sand,60-100cm,Q0.95,729.0,72.9,%
+Wesermarsch (marsh clay),8.4,53.35,sand,60-100cm,mean,167.0,16.7,%
+Wesermarsch (marsh clay),8.4,53.35,sand,60-100cm,uncertainty,77.0,7.7,%
+Wesermarsch (marsh clay),8.4,53.35,sand,100-200cm,Q0.05,15.0,1.5,%
+Wesermarsch (marsh clay),8.4,53.35,sand,100-200cm,Q0.5,83.0,8.3,%
+Wesermarsch (marsh clay),8.4,53.35,sand,100-200cm,Q0.95,761.0,76.1,%
+Wesermarsch (marsh clay),8.4,53.35,sand,100-200cm,mean,173.0,17.3,%
+Wesermarsch (marsh clay),8.4,53.35,sand,100-200cm,uncertainty,90.0,9.0,%
+Wesermarsch (marsh clay),8.4,53.35,silt,0-5cm,Q0.05,24.0,2.4,%
+Wesermarsch (marsh clay),8.4,53.35,silt,0-5cm,Q0.5,524.0,52.4,%
+Wesermarsch (marsh clay),8.4,53.35,silt,0-5cm,Q0.95,914.0,91.4,%
+Wesermarsch (marsh clay),8.4,53.35,silt,0-5cm,mean,490.0,49.0,%
+Wesermarsch (marsh clay),8.4,53.35,silt,0-5cm,uncertainty,17.0,1.7,%
+Wesermarsch (marsh clay),8.4,53.35,silt,5-15cm,Q0.05,20.0,2.0,%
+Wesermarsch (marsh clay),8.4,53.35,silt,5-15cm,Q0.5,513.0,51.3,%
+Wesermarsch (marsh clay),8.4,53.35,silt,5-15cm,Q0.95,914.0,91.4,%
+Wesermarsch (marsh clay),8.4,53.35,silt,5-15cm,mean,488.0,48.8,%
+Wesermarsch (marsh clay),8.4,53.35,silt,5-15cm,uncertainty,17.0,1.7,%
+Wesermarsch (marsh clay),8.4,53.35,silt,15-30cm,Q0.05,18.0,1.8,%
+Wesermarsch (marsh clay),8.4,53.35,silt,15-30cm,Q0.5,548.0,54.8,%
+Wesermarsch (marsh clay),8.4,53.35,silt,15-30cm,Q0.95,923.0,92.3,%
+Wesermarsch (marsh clay),8.4,53.35,silt,15-30cm,mean,507.0,50.7,%
+Wesermarsch (marsh clay),8.4,53.35,silt,15-30cm,uncertainty,17.0,1.7,%
+Wesermarsch (marsh clay),8.4,53.35,silt,30-60cm,Q0.05,14.0,1.4,%
+Wesermarsch (marsh clay),8.4,53.35,silt,30-60cm,Q0.5,536.0,53.6,%
+Wesermarsch (marsh clay),8.4,53.35,silt,30-60cm,Q0.95,937.0,93.7,%
+Wesermarsch (marsh clay),8.4,53.35,silt,30-60cm,mean,505.0,50.5,%
+Wesermarsch (marsh clay),8.4,53.35,silt,30-60cm,uncertainty,17.0,1.7,%
+Wesermarsch (marsh clay),8.4,53.35,silt,60-100cm,Q0.05,16.0,1.6,%
+Wesermarsch (marsh clay),8.4,53.35,silt,60-100cm,Q0.5,583.0,58.3,%
+Wesermarsch (marsh clay),8.4,53.35,silt,60-100cm,Q0.95,951.0,95.1,%
+Wesermarsch (marsh clay),8.4,53.35,silt,60-100cm,mean,527.0,52.7,%
+Wesermarsch (marsh clay),8.4,53.35,silt,60-100cm,uncertainty,16.0,1.6,%
+Wesermarsch (marsh clay),8.4,53.35,silt,100-200cm,Q0.05,14.0,1.4,%
+Wesermarsch (marsh clay),8.4,53.35,silt,100-200cm,Q0.5,583.0,58.3,%
+Wesermarsch (marsh clay),8.4,53.35,silt,100-200cm,Q0.95,965.0,96.5,%
+Wesermarsch (marsh clay),8.4,53.35,silt,100-200cm,mean,531.0,53.1,%
+Wesermarsch (marsh clay),8.4,53.35,silt,100-200cm,uncertainty,16.0,1.6,%
+Wesermarsch (marsh clay),8.4,53.35,soc,0-5cm,Q0.05,150.0,15.0,g/kg
+Wesermarsch (marsh clay),8.4,53.35,soc,0-5cm,Q0.5,610.0,61.0,g/kg
+Wesermarsch (marsh clay),8.4,53.35,soc,0-5cm,Q0.95,4350.0,435.0,g/kg
+Wesermarsch (marsh clay),8.4,53.35,soc,0-5cm,mean,1227.0,122.7,g/kg
+Wesermarsch (marsh clay),8.4,53.35,soc,0-5cm,uncertainty,69.0,6.9,g/kg
+Wesermarsch (marsh clay),8.4,53.35,soc,5-15cm,Q0.05,112.0,11.2,g/kg
+Wesermarsch (marsh clay),8.4,53.35,soc,5-15cm,Q0.5,434.0,43.4,g/kg
+Wesermarsch (marsh clay),8.4,53.35,soc,5-15cm,Q0.95,4297.0,429.7,g/kg
+Wesermarsch (marsh clay),8.4,53.35,soc,5-15cm,mean,947.0,94.7,g/kg
+Wesermarsch (marsh clay),8.4,53.35,soc,5-15cm,uncertainty,96.0,9.6,g/kg
+Wesermarsch (marsh clay),8.4,53.35,soc,15-30cm,Q0.05,21.0,2.1,g/kg
+Wesermarsch (marsh clay),8.4,53.35,soc,15-30cm,Q0.5,208.0,20.8,g/kg
+Wesermarsch (marsh clay),8.4,53.35,soc,15-30cm,Q0.95,4838.0,483.8,g/kg
+Wesermarsch (marsh clay),8.4,53.35,soc,15-30cm,mean,865.0,86.5,g/kg
+Wesermarsch (marsh clay),8.4,53.35,soc,15-30cm,uncertainty,232.0,23.2,g/kg
+Wesermarsch (marsh clay),8.4,53.35,soc,30-60cm,Q0.05,20.0,2.0,g/kg
+Wesermarsch (marsh clay),8.4,53.35,soc,30-60cm,Q0.5,120.0,12.0,g/kg
+Wesermarsch (marsh clay),8.4,53.35,soc,30-60cm,Q0.95,4846.0,484.6,g/kg
+Wesermarsch (marsh clay),8.4,53.35,soc,30-60cm,mean,717.0,71.7,g/kg
+Wesermarsch (marsh clay),8.4,53.35,soc,30-60cm,uncertainty,402.0,40.2,g/kg
+Wesermarsch (marsh clay),8.4,53.35,soc,60-100cm,Q0.05,10.0,1.0,g/kg
+Wesermarsch (marsh clay),8.4,53.35,soc,60-100cm,Q0.5,105.0,10.5,g/kg
+Wesermarsch (marsh clay),8.4,53.35,soc,60-100cm,Q0.95,5010.0,501.0,g/kg
+Wesermarsch (marsh clay),8.4,53.35,soc,60-100cm,mean,677.0,67.7,g/kg
+Wesermarsch (marsh clay),8.4,53.35,soc,60-100cm,uncertainty,476.0,47.6,g/kg
+Wesermarsch (marsh clay),8.4,53.35,soc,100-200cm,Q0.05,10.0,1.0,g/kg
+Wesermarsch (marsh clay),8.4,53.35,soc,100-200cm,Q0.5,120.0,12.0,g/kg
+Wesermarsch (marsh clay),8.4,53.35,soc,100-200cm,Q0.95,5017.0,501.7,g/kg
+Wesermarsch (marsh clay),8.4,53.35,soc,100-200cm,mean,682.0,68.2,g/kg
+Wesermarsch (marsh clay),8.4,53.35,soc,100-200cm,uncertainty,417.0,41.7,g/kg
+Wesermarsch (marsh clay),8.4,53.35,wv0010,0-5cm,Q0.05,315.0,31.5,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0010,0-5cm,Q0.5,449.0,44.9,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0010,0-5cm,Q0.95,698.0,69.8,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0010,0-5cm,mean,470.0,47.0,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0010,0-5cm,uncertainty,9.0,0.9,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0010,5-15cm,Q0.05,152.0,15.2,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0010,5-15cm,Q0.5,386.0,38.6,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0010,5-15cm,Q0.95,540.0,54.0,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0010,5-15cm,mean,394.0,39.4,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0010,5-15cm,uncertainty,10.0,1.0,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0010,15-30cm,Q0.05,101.0,10.1,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0010,15-30cm,Q0.5,366.0,36.6,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0010,15-30cm,Q0.95,490.0,49.0,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0010,15-30cm,mean,342.0,34.2,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0010,15-30cm,uncertainty,11.0,1.1,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0010,30-60cm,Q0.05,184.0,18.4,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0010,30-60cm,Q0.5,347.0,34.7,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0010,30-60cm,Q0.95,490.0,49.0,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0010,30-60cm,mean,347.0,34.7,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0010,30-60cm,uncertainty,9.0,0.9,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0010,60-100cm,Q0.05,184.0,18.4,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0010,60-100cm,Q0.5,324.0,32.4,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0010,60-100cm,Q0.95,487.0,48.7,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0010,60-100cm,mean,331.0,33.1,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0010,60-100cm,uncertainty,9.0,0.9,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0010,100-200cm,Q0.05,156.0,15.6,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0010,100-200cm,Q0.5,309.0,30.9,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0010,100-200cm,Q0.95,486.0,48.6,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0010,100-200cm,mean,318.0,31.8,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0010,100-200cm,uncertainty,11.0,1.1,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0033,0-5cm,Q0.05,213.0,21.3,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0033,0-5cm,Q0.5,388.0,38.8,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0033,0-5cm,Q0.95,525.0,52.5,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0033,0-5cm,mean,375.0,37.5,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0033,0-5cm,uncertainty,8.0,0.8,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0033,5-15cm,Q0.05,197.0,19.7,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0033,5-15cm,Q0.5,321.0,32.1,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0033,5-15cm,Q0.95,506.0,50.6,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0033,5-15cm,mean,330.0,33.0,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0033,5-15cm,uncertainty,10.0,1.0,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0033,15-30cm,Q0.05,165.0,16.5,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0033,15-30cm,Q0.5,295.0,29.5,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0033,15-30cm,Q0.95,460.0,46.0,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0033,15-30cm,mean,303.0,30.3,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0033,15-30cm,uncertainty,10.0,1.0,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0033,30-60cm,Q0.05,178.0,17.8,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0033,30-60cm,Q0.5,287.0,28.7,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0033,30-60cm,Q0.95,479.0,47.9,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0033,30-60cm,mean,303.0,30.3,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0033,30-60cm,uncertainty,10.0,1.0,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0033,60-100cm,Q0.05,178.0,17.8,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0033,60-100cm,Q0.5,278.0,27.8,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0033,60-100cm,Q0.95,463.0,46.3,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0033,60-100cm,mean,293.0,29.3,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0033,60-100cm,uncertainty,10.0,1.0,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0033,100-200cm,Q0.05,138.0,13.8,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0033,100-200cm,Q0.5,276.0,27.6,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0033,100-200cm,Q0.95,449.0,44.9,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0033,100-200cm,mean,288.0,28.8,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv0033,100-200cm,uncertainty,11.0,1.1,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv1500,0-5cm,Q0.05,50.0,5.0,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv1500,0-5cm,Q0.5,169.0,16.9,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv1500,0-5cm,Q0.95,329.0,32.9,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv1500,0-5cm,mean,185.0,18.5,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv1500,0-5cm,uncertainty,17.0,1.7,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv1500,5-15cm,Q0.05,51.0,5.1,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv1500,5-15cm,Q0.5,168.0,16.8,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv1500,5-15cm,Q0.95,329.0,32.9,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv1500,5-15cm,mean,186.0,18.6,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv1500,5-15cm,uncertainty,17.0,1.7,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv1500,15-30cm,Q0.05,23.0,2.3,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv1500,15-30cm,Q0.5,155.0,15.5,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv1500,15-30cm,Q0.95,329.0,32.9,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv1500,15-30cm,mean,173.0,17.3,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv1500,15-30cm,uncertainty,20.0,2.0,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv1500,30-60cm,Q0.05,1.0,0.1,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv1500,30-60cm,Q0.5,135.0,13.5,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv1500,30-60cm,Q0.95,342.0,34.2,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv1500,30-60cm,mean,146.0,14.6,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv1500,30-60cm,uncertainty,25.0,2.5,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv1500,60-100cm,Q0.05,1.0,0.1,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv1500,60-100cm,Q0.5,119.0,11.9,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv1500,60-100cm,Q0.95,339.0,33.9,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv1500,60-100cm,mean,143.0,14.3,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv1500,60-100cm,uncertainty,28.0,2.8,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv1500,100-200cm,Q0.05,2.0,0.2,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv1500,100-200cm,Q0.5,115.0,11.5,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv1500,100-200cm,Q0.95,342.0,34.2,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv1500,100-200cm,mean,143.0,14.3,10-2 cm³/cm³
+Wesermarsch (marsh clay),8.4,53.35,wv1500,100-200cm,uncertainty,30.0,3.0,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,bdod,0-5cm,Q0.05,15.0,0.15,kg/dm³
+Teufelsmoor (bog),8.9,53.25,bdod,0-5cm,Q0.5,123.0,1.23,kg/dm³
+Teufelsmoor (bog),8.9,53.25,bdod,0-5cm,Q0.95,160.0,1.6,kg/dm³
+Teufelsmoor (bog),8.9,53.25,bdod,0-5cm,mean,107.0,1.07,kg/dm³
+Teufelsmoor (bog),8.9,53.25,bdod,0-5cm,uncertainty,12.0,1.2,kg/dm³
+Teufelsmoor (bog),8.9,53.25,bdod,5-15cm,Q0.05,58.0,0.58,kg/dm³
+Teufelsmoor (bog),8.9,53.25,bdod,5-15cm,Q0.5,136.0,1.36,kg/dm³
+Teufelsmoor (bog),8.9,53.25,bdod,5-15cm,Q0.95,165.0,1.65,kg/dm³
+Teufelsmoor (bog),8.9,53.25,bdod,5-15cm,mean,126.0,1.26,kg/dm³
+Teufelsmoor (bog),8.9,53.25,bdod,5-15cm,uncertainty,8.0,0.8,kg/dm³
+Teufelsmoor (bog),8.9,53.25,bdod,15-30cm,Q0.05,74.0,0.74,kg/dm³
+Teufelsmoor (bog),8.9,53.25,bdod,15-30cm,Q0.5,142.0,1.42,kg/dm³
+Teufelsmoor (bog),8.9,53.25,bdod,15-30cm,Q0.95,173.0,1.73,kg/dm³
+Teufelsmoor (bog),8.9,53.25,bdod,15-30cm,mean,138.0,1.38,kg/dm³
+Teufelsmoor (bog),8.9,53.25,bdod,15-30cm,uncertainty,7.0,0.7,kg/dm³
+Teufelsmoor (bog),8.9,53.25,bdod,30-60cm,Q0.05,39.0,0.39,kg/dm³
+Teufelsmoor (bog),8.9,53.25,bdod,30-60cm,Q0.5,150.0,1.5,kg/dm³
+Teufelsmoor (bog),8.9,53.25,bdod,30-60cm,Q0.95,181.0,1.81,kg/dm³
+Teufelsmoor (bog),8.9,53.25,bdod,30-60cm,mean,138.0,1.38,kg/dm³
+Teufelsmoor (bog),8.9,53.25,bdod,30-60cm,uncertainty,9.0,0.9,kg/dm³
+Teufelsmoor (bog),8.9,53.25,bdod,60-100cm,Q0.05,29.0,0.29,kg/dm³
+Teufelsmoor (bog),8.9,53.25,bdod,60-100cm,Q0.5,158.0,1.58,kg/dm³
+Teufelsmoor (bog),8.9,53.25,bdod,60-100cm,Q0.95,183.0,1.83,kg/dm³
+Teufelsmoor (bog),8.9,53.25,bdod,60-100cm,mean,142.0,1.42,kg/dm³
+Teufelsmoor (bog),8.9,53.25,bdod,60-100cm,uncertainty,10.0,1.0,kg/dm³
+Teufelsmoor (bog),8.9,53.25,bdod,100-200cm,Q0.05,29.0,0.29,kg/dm³
+Teufelsmoor (bog),8.9,53.25,bdod,100-200cm,Q0.5,158.0,1.58,kg/dm³
+Teufelsmoor (bog),8.9,53.25,bdod,100-200cm,Q0.95,183.0,1.83,kg/dm³
+Teufelsmoor (bog),8.9,53.25,bdod,100-200cm,mean,144.0,1.44,kg/dm³
+Teufelsmoor (bog),8.9,53.25,bdod,100-200cm,uncertainty,10.0,1.0,kg/dm³
+Teufelsmoor (bog),8.9,53.25,cec,0-5cm,Q0.05,80.0,8.0,cmol(c)/kg
+Teufelsmoor (bog),8.9,53.25,cec,0-5cm,Q0.5,287.0,28.7,cmol(c)/kg
+Teufelsmoor (bog),8.9,53.25,cec,0-5cm,Q0.95,609.0,60.9,cmol(c)/kg
+Teufelsmoor (bog),8.9,53.25,cec,0-5cm,mean,305.0,30.5,cmol(c)/kg
+Teufelsmoor (bog),8.9,53.25,cec,0-5cm,uncertainty,18.0,1.8,cmol(c)/kg
+Teufelsmoor (bog),8.9,53.25,cec,5-15cm,Q0.05,57.0,5.7,cmol(c)/kg
+Teufelsmoor (bog),8.9,53.25,cec,5-15cm,Q0.5,208.0,20.8,cmol(c)/kg
+Teufelsmoor (bog),8.9,53.25,cec,5-15cm,Q0.95,465.0,46.5,cmol(c)/kg
+Teufelsmoor (bog),8.9,53.25,cec,5-15cm,mean,230.0,23.0,cmol(c)/kg
+Teufelsmoor (bog),8.9,53.25,cec,5-15cm,uncertainty,20.0,2.0,cmol(c)/kg
+Teufelsmoor (bog),8.9,53.25,cec,15-30cm,Q0.05,69.0,6.9,cmol(c)/kg
+Teufelsmoor (bog),8.9,53.25,cec,15-30cm,Q0.5,207.0,20.7,cmol(c)/kg
+Teufelsmoor (bog),8.9,53.25,cec,15-30cm,Q0.95,465.0,46.5,cmol(c)/kg
+Teufelsmoor (bog),8.9,53.25,cec,15-30cm,mean,225.0,22.5,cmol(c)/kg
+Teufelsmoor (bog),8.9,53.25,cec,15-30cm,uncertainty,19.0,1.9,cmol(c)/kg
+Teufelsmoor (bog),8.9,53.25,cec,30-60cm,Q0.05,58.0,5.8,cmol(c)/kg
+Teufelsmoor (bog),8.9,53.25,cec,30-60cm,Q0.5,206.0,20.6,cmol(c)/kg
+Teufelsmoor (bog),8.9,53.25,cec,30-60cm,Q0.95,465.0,46.5,cmol(c)/kg
+Teufelsmoor (bog),8.9,53.25,cec,30-60cm,mean,210.0,21.0,cmol(c)/kg
+Teufelsmoor (bog),8.9,53.25,cec,30-60cm,uncertainty,20.0,2.0,cmol(c)/kg
+Teufelsmoor (bog),8.9,53.25,cec,60-100cm,Q0.05,55.0,5.5,cmol(c)/kg
+Teufelsmoor (bog),8.9,53.25,cec,60-100cm,Q0.5,158.0,15.8,cmol(c)/kg
+Teufelsmoor (bog),8.9,53.25,cec,60-100cm,Q0.95,466.0,46.6,cmol(c)/kg
+Teufelsmoor (bog),8.9,53.25,cec,60-100cm,mean,206.0,20.6,cmol(c)/kg
+Teufelsmoor (bog),8.9,53.25,cec,60-100cm,uncertainty,26.0,2.6,cmol(c)/kg
+Teufelsmoor (bog),8.9,53.25,cec,100-200cm,Q0.05,29.0,2.9,cmol(c)/kg
+Teufelsmoor (bog),8.9,53.25,cec,100-200cm,Q0.5,128.0,12.8,cmol(c)/kg
+Teufelsmoor (bog),8.9,53.25,cec,100-200cm,Q0.95,520.0,52.0,cmol(c)/kg
+Teufelsmoor (bog),8.9,53.25,cec,100-200cm,mean,192.0,19.2,cmol(c)/kg
+Teufelsmoor (bog),8.9,53.25,cec,100-200cm,uncertainty,38.0,3.8,cmol(c)/kg
+Teufelsmoor (bog),8.9,53.25,cfvo,0-5cm,Q0.05,0.0,0.0,cm³/100cm³
+Teufelsmoor (bog),8.9,53.25,cfvo,0-5cm,Q0.5,50.0,5.0,cm³/100cm³
+Teufelsmoor (bog),8.9,53.25,cfvo,0-5cm,Q0.95,200.0,20.0,cm³/100cm³
+Teufelsmoor (bog),8.9,53.25,cfvo,0-5cm,mean,69.0,6.9,cm³/100cm³
+Teufelsmoor (bog),8.9,53.25,cfvo,0-5cm,uncertainty,40.0,4.0,cm³/100cm³
+Teufelsmoor (bog),8.9,53.25,cfvo,5-15cm,Q0.05,10.0,1.0,cm³/100cm³
+Teufelsmoor (bog),8.9,53.25,cfvo,5-15cm,Q0.5,50.0,5.0,cm³/100cm³
+Teufelsmoor (bog),8.9,53.25,cfvo,5-15cm,Q0.95,200.0,20.0,cm³/100cm³
+Teufelsmoor (bog),8.9,53.25,cfvo,5-15cm,mean,77.0,7.7,cm³/100cm³
+Teufelsmoor (bog),8.9,53.25,cfvo,5-15cm,uncertainty,38.0,3.8,cm³/100cm³
+Teufelsmoor (bog),8.9,53.25,cfvo,15-30cm,Q0.05,0.0,0.0,cm³/100cm³
+Teufelsmoor (bog),8.9,53.25,cfvo,15-30cm,Q0.5,50.0,5.0,cm³/100cm³
+Teufelsmoor (bog),8.9,53.25,cfvo,15-30cm,Q0.95,343.0,34.3,cm³/100cm³
+Teufelsmoor (bog),8.9,53.25,cfvo,15-30cm,mean,79.0,7.9,cm³/100cm³
+Teufelsmoor (bog),8.9,53.25,cfvo,15-30cm,uncertainty,69.0,6.9,cm³/100cm³
+Teufelsmoor (bog),8.9,53.25,cfvo,30-60cm,Q0.05,0.0,0.0,cm³/100cm³
+Teufelsmoor (bog),8.9,53.25,cfvo,30-60cm,Q0.5,40.0,4.0,cm³/100cm³
+Teufelsmoor (bog),8.9,53.25,cfvo,30-60cm,Q0.95,400.0,40.0,cm³/100cm³
+Teufelsmoor (bog),8.9,53.25,cfvo,30-60cm,mean,89.0,8.9,cm³/100cm³
+Teufelsmoor (bog),8.9,53.25,cfvo,30-60cm,uncertainty,100.0,10.0,cm³/100cm³
+Teufelsmoor (bog),8.9,53.25,cfvo,60-100cm,Q0.05,0.0,0.0,cm³/100cm³
+Teufelsmoor (bog),8.9,53.25,cfvo,60-100cm,Q0.5,50.0,5.0,cm³/100cm³
+Teufelsmoor (bog),8.9,53.25,cfvo,60-100cm,Q0.95,400.0,40.0,cm³/100cm³
+Teufelsmoor (bog),8.9,53.25,cfvo,60-100cm,mean,120.0,12.0,cm³/100cm³
+Teufelsmoor (bog),8.9,53.25,cfvo,60-100cm,uncertainty,80.0,8.0,cm³/100cm³
+Teufelsmoor (bog),8.9,53.25,cfvo,100-200cm,Q0.05,0.0,0.0,cm³/100cm³
+Teufelsmoor (bog),8.9,53.25,cfvo,100-200cm,Q0.5,65.0,6.5,cm³/100cm³
+Teufelsmoor (bog),8.9,53.25,cfvo,100-200cm,Q0.95,480.0,48.0,cm³/100cm³
+Teufelsmoor (bog),8.9,53.25,cfvo,100-200cm,mean,163.0,16.3,cm³/100cm³
+Teufelsmoor (bog),8.9,53.25,cfvo,100-200cm,uncertainty,74.0,7.4,cm³/100cm³
+Teufelsmoor (bog),8.9,53.25,clay,0-5cm,Q0.05,8.0,0.8,%
+Teufelsmoor (bog),8.9,53.25,clay,0-5cm,Q0.5,334.0,33.4,%
+Teufelsmoor (bog),8.9,53.25,clay,0-5cm,Q0.95,854.0,85.4,%
+Teufelsmoor (bog),8.9,53.25,clay,0-5cm,mean,363.0,36.3,%
+Teufelsmoor (bog),8.9,53.25,clay,0-5cm,uncertainty,25.0,2.5,%
+Teufelsmoor (bog),8.9,53.25,clay,5-15cm,Q0.05,7.0,0.7,%
+Teufelsmoor (bog),8.9,53.25,clay,5-15cm,Q0.5,325.0,32.5,%
+Teufelsmoor (bog),8.9,53.25,clay,5-15cm,Q0.95,854.0,85.4,%
+Teufelsmoor (bog),8.9,53.25,clay,5-15cm,mean,361.0,36.1,%
+Teufelsmoor (bog),8.9,53.25,clay,5-15cm,uncertainty,26.0,2.6,%
+Teufelsmoor (bog),8.9,53.25,clay,15-30cm,Q0.05,6.0,0.6,%
+Teufelsmoor (bog),8.9,53.25,clay,15-30cm,Q0.5,357.0,35.7,%
+Teufelsmoor (bog),8.9,53.25,clay,15-30cm,Q0.95,870.0,87.0,%
+Teufelsmoor (bog),8.9,53.25,clay,15-30cm,mean,384.0,38.4,%
+Teufelsmoor (bog),8.9,53.25,clay,15-30cm,uncertainty,24.0,2.4,%
+Teufelsmoor (bog),8.9,53.25,clay,30-60cm,Q0.05,5.0,0.5,%
+Teufelsmoor (bog),8.9,53.25,clay,30-60cm,Q0.5,362.0,36.2,%
+Teufelsmoor (bog),8.9,53.25,clay,30-60cm,Q0.95,881.0,88.1,%
+Teufelsmoor (bog),8.9,53.25,clay,30-60cm,mean,390.0,39.0,%
+Teufelsmoor (bog),8.9,53.25,clay,30-60cm,uncertainty,24.0,2.4,%
+Teufelsmoor (bog),8.9,53.25,clay,60-100cm,Q0.05,5.0,0.5,%
+Teufelsmoor (bog),8.9,53.25,clay,60-100cm,Q0.5,292.0,29.2,%
+Teufelsmoor (bog),8.9,53.25,clay,60-100cm,Q0.95,892.0,89.2,%
+Teufelsmoor (bog),8.9,53.25,clay,60-100cm,mean,375.0,37.5,%
+Teufelsmoor (bog),8.9,53.25,clay,60-100cm,uncertainty,30.0,3.0,%
+Teufelsmoor (bog),8.9,53.25,clay,100-200cm,Q0.05,3.0,0.3,%
+Teufelsmoor (bog),8.9,53.25,clay,100-200cm,Q0.5,263.0,26.3,%
+Teufelsmoor (bog),8.9,53.25,clay,100-200cm,Q0.95,902.0,90.2,%
+Teufelsmoor (bog),8.9,53.25,clay,100-200cm,mean,364.0,36.4,%
+Teufelsmoor (bog),8.9,53.25,clay,100-200cm,uncertainty,34.0,3.4,%
+Teufelsmoor (bog),8.9,53.25,nitrogen,0-5cm,Q0.05,80.0,0.8,g/kg
+Teufelsmoor (bog),8.9,53.25,nitrogen,0-5cm,Q0.5,446.0,4.46,g/kg
+Teufelsmoor (bog),8.9,53.25,nitrogen,0-5cm,Q0.95,2340.0,23.4,g/kg
+Teufelsmoor (bog),8.9,53.25,nitrogen,0-5cm,mean,727.0,7.27,g/kg
+Teufelsmoor (bog),8.9,53.25,nitrogen,0-5cm,uncertainty,51.0,5.1,g/kg
+Teufelsmoor (bog),8.9,53.25,nitrogen,5-15cm,Q0.05,120.0,1.2,g/kg
+Teufelsmoor (bog),8.9,53.25,nitrogen,5-15cm,Q0.5,420.0,4.2,g/kg
+Teufelsmoor (bog),8.9,53.25,nitrogen,5-15cm,Q0.95,2340.0,23.4,g/kg
+Teufelsmoor (bog),8.9,53.25,nitrogen,5-15cm,mean,707.0,7.07,g/kg
+Teufelsmoor (bog),8.9,53.25,nitrogen,5-15cm,uncertainty,53.0,5.3,g/kg
+Teufelsmoor (bog),8.9,53.25,nitrogen,15-30cm,Q0.05,40.0,0.4,g/kg
+Teufelsmoor (bog),8.9,53.25,nitrogen,15-30cm,Q0.5,300.0,3.0,g/kg
+Teufelsmoor (bog),8.9,53.25,nitrogen,15-30cm,Q0.95,2340.0,23.4,g/kg
+Teufelsmoor (bog),8.9,53.25,nitrogen,15-30cm,mean,697.0,6.97,g/kg
+Teufelsmoor (bog),8.9,53.25,nitrogen,15-30cm,uncertainty,77.0,7.7,g/kg
+Teufelsmoor (bog),8.9,53.25,nitrogen,30-60cm,Q0.05,30.0,0.3,g/kg
+Teufelsmoor (bog),8.9,53.25,nitrogen,30-60cm,Q0.5,275.0,2.75,g/kg
+Teufelsmoor (bog),8.9,53.25,nitrogen,30-60cm,Q0.95,2349.0,23.49,g/kg
+Teufelsmoor (bog),8.9,53.25,nitrogen,30-60cm,mean,688.0,6.88,g/kg
+Teufelsmoor (bog),8.9,53.25,nitrogen,30-60cm,uncertainty,84.0,8.4,g/kg
+Teufelsmoor (bog),8.9,53.25,nitrogen,60-100cm,Q0.05,20.0,0.2,g/kg
+Teufelsmoor (bog),8.9,53.25,nitrogen,60-100cm,Q0.5,260.0,2.6,g/kg
+Teufelsmoor (bog),8.9,53.25,nitrogen,60-100cm,Q0.95,2400.0,24.0,g/kg
+Teufelsmoor (bog),8.9,53.25,nitrogen,60-100cm,mean,665.0,6.65,g/kg
+Teufelsmoor (bog),8.9,53.25,nitrogen,60-100cm,uncertainty,92.0,9.2,g/kg
+Teufelsmoor (bog),8.9,53.25,nitrogen,100-200cm,Q0.05,20.0,0.2,g/kg
+Teufelsmoor (bog),8.9,53.25,nitrogen,100-200cm,Q0.5,254.0,2.54,g/kg
+Teufelsmoor (bog),8.9,53.25,nitrogen,100-200cm,Q0.95,2349.0,23.49,g/kg
+Teufelsmoor (bog),8.9,53.25,nitrogen,100-200cm,mean,648.0,6.48,g/kg
+Teufelsmoor (bog),8.9,53.25,nitrogen,100-200cm,uncertainty,92.0,9.2,g/kg
+Teufelsmoor (bog),8.9,53.25,ocd,0-5cm,Q0.05,115.0,11.5,hg/m³
+Teufelsmoor (bog),8.9,53.25,ocd,0-5cm,Q0.5,418.0,41.8,hg/m³
+Teufelsmoor (bog),8.9,53.25,ocd,0-5cm,Q0.95,1277.0,127.7,hg/m³
+Teufelsmoor (bog),8.9,53.25,ocd,0-5cm,mean,535.0,53.5,hg/m³
+Teufelsmoor (bog),8.9,53.25,ocd,0-5cm,uncertainty,28.0,2.8,hg/m³
+Teufelsmoor (bog),8.9,53.25,ocd,5-15cm,Q0.05,93.0,9.3,hg/m³
+Teufelsmoor (bog),8.9,53.25,ocd,5-15cm,Q0.5,367.0,36.7,hg/m³
+Teufelsmoor (bog),8.9,53.25,ocd,5-15cm,Q0.95,1370.0,137.0,hg/m³
+Teufelsmoor (bog),8.9,53.25,ocd,5-15cm,mean,529.0,52.9,hg/m³
+Teufelsmoor (bog),8.9,53.25,ocd,5-15cm,uncertainty,35.0,3.5,hg/m³
+Teufelsmoor (bog),8.9,53.25,ocd,15-30cm,Q0.05,62.0,6.2,hg/m³
+Teufelsmoor (bog),8.9,53.25,ocd,15-30cm,Q0.5,304.0,30.4,hg/m³
+Teufelsmoor (bog),8.9,53.25,ocd,15-30cm,Q0.95,1138.0,113.8,hg/m³
+Teufelsmoor (bog),8.9,53.25,ocd,15-30cm,mean,376.0,37.6,hg/m³
+Teufelsmoor (bog),8.9,53.25,ocd,15-30cm,uncertainty,35.0,3.5,hg/m³
+Teufelsmoor (bog),8.9,53.25,ocd,30-60cm,Q0.05,37.0,3.7,hg/m³
+Teufelsmoor (bog),8.9,53.25,ocd,30-60cm,Q0.5,87.0,8.7,hg/m³
+Teufelsmoor (bog),8.9,53.25,ocd,30-60cm,Q0.95,611.0,61.1,hg/m³
+Teufelsmoor (bog),8.9,53.25,ocd,30-60cm,mean,159.0,15.9,hg/m³
+Teufelsmoor (bog),8.9,53.25,ocd,30-60cm,uncertainty,66.0,6.6,hg/m³
+Teufelsmoor (bog),8.9,53.25,ocd,60-100cm,Q0.05,21.0,2.1,hg/m³
+Teufelsmoor (bog),8.9,53.25,ocd,60-100cm,Q0.5,58.0,5.8,hg/m³
+Teufelsmoor (bog),8.9,53.25,ocd,60-100cm,Q0.95,788.0,78.8,hg/m³
+Teufelsmoor (bog),8.9,53.25,ocd,60-100cm,mean,152.0,15.2,hg/m³
+Teufelsmoor (bog),8.9,53.25,ocd,60-100cm,uncertainty,132.0,13.2,hg/m³
+Teufelsmoor (bog),8.9,53.25,ocd,100-200cm,Q0.05,11.0,1.1,hg/m³
+Teufelsmoor (bog),8.9,53.25,ocd,100-200cm,Q0.5,32.0,3.2,hg/m³
+Teufelsmoor (bog),8.9,53.25,ocd,100-200cm,Q0.95,724.0,72.4,hg/m³
+Teufelsmoor (bog),8.9,53.25,ocd,100-200cm,mean,116.0,11.6,hg/m³
+Teufelsmoor (bog),8.9,53.25,ocd,100-200cm,uncertainty,223.0,22.3,hg/m³
+Teufelsmoor (bog),8.9,53.25,ocs,0-30cm,Q0.05,14.0,1.4,kg/m²
+Teufelsmoor (bog),8.9,53.25,ocs,0-30cm,Q0.5,66.0,6.6,kg/m²
+Teufelsmoor (bog),8.9,53.25,ocs,0-30cm,Q0.95,276.0,27.6,kg/m²
+Teufelsmoor (bog),8.9,53.25,ocs,0-30cm,mean,88.0,8.8,kg/m²
+Teufelsmoor (bog),8.9,53.25,ocs,0-30cm,uncertainty,40.0,4.0,kg/m²
+Teufelsmoor (bog),8.9,53.25,phh2o,0-5cm,Q0.05,39.0,3.9,-
+Teufelsmoor (bog),8.9,53.25,phh2o,0-5cm,Q0.5,53.0,5.3,-
+Teufelsmoor (bog),8.9,53.25,phh2o,0-5cm,Q0.95,73.0,7.3,-
+Teufelsmoor (bog),8.9,53.25,phh2o,0-5cm,mean,54.0,5.4,-
+Teufelsmoor (bog),8.9,53.25,phh2o,0-5cm,uncertainty,6.0,0.6,-
+Teufelsmoor (bog),8.9,53.25,phh2o,5-15cm,Q0.05,40.0,4.0,-
+Teufelsmoor (bog),8.9,53.25,phh2o,5-15cm,Q0.5,53.0,5.3,-
+Teufelsmoor (bog),8.9,53.25,phh2o,5-15cm,Q0.95,72.0,7.2,-
+Teufelsmoor (bog),8.9,53.25,phh2o,5-15cm,mean,54.0,5.4,-
+Teufelsmoor (bog),8.9,53.25,phh2o,5-15cm,uncertainty,6.0,0.6,-
+Teufelsmoor (bog),8.9,53.25,phh2o,15-30cm,Q0.05,40.0,4.0,-
+Teufelsmoor (bog),8.9,53.25,phh2o,15-30cm,Q0.5,53.0,5.3,-
+Teufelsmoor (bog),8.9,53.25,phh2o,15-30cm,Q0.95,75.0,7.5,-
+Teufelsmoor (bog),8.9,53.25,phh2o,15-30cm,mean,55.0,5.5,-
+Teufelsmoor (bog),8.9,53.25,phh2o,15-30cm,uncertainty,7.0,0.7,-
+Teufelsmoor (bog),8.9,53.25,phh2o,30-60cm,Q0.05,40.0,4.0,-
+Teufelsmoor (bog),8.9,53.25,phh2o,30-60cm,Q0.5,54.0,5.4,-
+Teufelsmoor (bog),8.9,53.25,phh2o,30-60cm,Q0.95,78.0,7.8,-
+Teufelsmoor (bog),8.9,53.25,phh2o,30-60cm,mean,57.0,5.7,-
+Teufelsmoor (bog),8.9,53.25,phh2o,30-60cm,uncertainty,7.0,0.7,-
+Teufelsmoor (bog),8.9,53.25,phh2o,60-100cm,Q0.05,39.0,3.9,-
+Teufelsmoor (bog),8.9,53.25,phh2o,60-100cm,Q0.5,56.0,5.6,-
+Teufelsmoor (bog),8.9,53.25,phh2o,60-100cm,Q0.95,82.0,8.2,-
+Teufelsmoor (bog),8.9,53.25,phh2o,60-100cm,mean,59.0,5.9,-
+Teufelsmoor (bog),8.9,53.25,phh2o,60-100cm,uncertainty,8.0,0.8,-
+Teufelsmoor (bog),8.9,53.25,phh2o,100-200cm,Q0.05,40.0,4.0,-
+Teufelsmoor (bog),8.9,53.25,phh2o,100-200cm,Q0.5,56.0,5.6,-
+Teufelsmoor (bog),8.9,53.25,phh2o,100-200cm,Q0.95,83.0,8.3,-
+Teufelsmoor (bog),8.9,53.25,phh2o,100-200cm,mean,59.0,5.9,-
+Teufelsmoor (bog),8.9,53.25,phh2o,100-200cm,uncertainty,8.0,0.8,-
+Teufelsmoor (bog),8.9,53.25,sand,0-5cm,Q0.05,43.0,4.3,%
+Teufelsmoor (bog),8.9,53.25,sand,0-5cm,Q0.5,124.0,12.4,%
+Teufelsmoor (bog),8.9,53.25,sand,0-5cm,Q0.95,814.0,81.4,%
+Teufelsmoor (bog),8.9,53.25,sand,0-5cm,mean,233.0,23.3,%
+Teufelsmoor (bog),8.9,53.25,sand,0-5cm,uncertainty,62.0,6.2,%
+Teufelsmoor (bog),8.9,53.25,sand,5-15cm,Q0.05,44.0,4.4,%
+Teufelsmoor (bog),8.9,53.25,sand,5-15cm,Q0.5,125.0,12.5,%
+Teufelsmoor (bog),8.9,53.25,sand,5-15cm,Q0.95,814.0,81.4,%
+Teufelsmoor (bog),8.9,53.25,sand,5-15cm,mean,232.0,23.2,%
+Teufelsmoor (bog),8.9,53.25,sand,5-15cm,uncertainty,62.0,6.2,%
+Teufelsmoor (bog),8.9,53.25,sand,15-30cm,Q0.05,37.0,3.7,%
+Teufelsmoor (bog),8.9,53.25,sand,15-30cm,Q0.5,118.0,11.8,%
+Teufelsmoor (bog),8.9,53.25,sand,15-30cm,Q0.95,790.0,79.0,%
+Teufelsmoor (bog),8.9,53.25,sand,15-30cm,mean,214.0,21.4,%
+Teufelsmoor (bog),8.9,53.25,sand,15-30cm,uncertainty,64.0,6.4,%
+Teufelsmoor (bog),8.9,53.25,sand,30-60cm,Q0.05,35.0,3.5,%
+Teufelsmoor (bog),8.9,53.25,sand,30-60cm,Q0.5,111.0,11.1,%
+Teufelsmoor (bog),8.9,53.25,sand,30-60cm,Q0.95,740.0,74.0,%
+Teufelsmoor (bog),8.9,53.25,sand,30-60cm,mean,205.0,20.5,%
+Teufelsmoor (bog),8.9,53.25,sand,30-60cm,uncertainty,64.0,6.4,%
+Teufelsmoor (bog),8.9,53.25,sand,60-100cm,Q0.05,28.0,2.8,%
+Teufelsmoor (bog),8.9,53.25,sand,60-100cm,Q0.5,114.0,11.4,%
+Teufelsmoor (bog),8.9,53.25,sand,60-100cm,Q0.95,728.0,72.8,%
+Teufelsmoor (bog),8.9,53.25,sand,60-100cm,mean,208.0,20.8,%
+Teufelsmoor (bog),8.9,53.25,sand,60-100cm,uncertainty,61.0,6.1,%
+Teufelsmoor (bog),8.9,53.25,sand,100-200cm,Q0.05,19.0,1.9,%
+Teufelsmoor (bog),8.9,53.25,sand,100-200cm,Q0.5,101.0,10.1,%
+Teufelsmoor (bog),8.9,53.25,sand,100-200cm,Q0.95,745.0,74.5,%
+Teufelsmoor (bog),8.9,53.25,sand,100-200cm,mean,202.0,20.2,%
+Teufelsmoor (bog),8.9,53.25,sand,100-200cm,uncertainty,72.0,7.2,%
+Teufelsmoor (bog),8.9,53.25,silt,0-5cm,Q0.05,23.0,2.3,%
+Teufelsmoor (bog),8.9,53.25,silt,0-5cm,Q0.5,373.0,37.3,%
+Teufelsmoor (bog),8.9,53.25,silt,0-5cm,Q0.95,878.0,87.8,%
+Teufelsmoor (bog),8.9,53.25,silt,0-5cm,mean,404.0,40.4,%
+Teufelsmoor (bog),8.9,53.25,silt,0-5cm,uncertainty,23.0,2.3,%
+Teufelsmoor (bog),8.9,53.25,silt,5-15cm,Q0.05,23.0,2.3,%
+Teufelsmoor (bog),8.9,53.25,silt,5-15cm,Q0.5,376.0,37.6,%
+Teufelsmoor (bog),8.9,53.25,silt,5-15cm,Q0.95,881.0,88.1,%
+Teufelsmoor (bog),8.9,53.25,silt,5-15cm,mean,407.0,40.7,%
+Teufelsmoor (bog),8.9,53.25,silt,5-15cm,uncertainty,23.0,2.3,%
+Teufelsmoor (bog),8.9,53.25,silt,15-30cm,Q0.05,15.0,1.5,%
+Teufelsmoor (bog),8.9,53.25,silt,15-30cm,Q0.5,373.0,37.3,%
+Teufelsmoor (bog),8.9,53.25,silt,15-30cm,Q0.95,878.0,87.8,%
+Teufelsmoor (bog),8.9,53.25,silt,15-30cm,mean,402.0,40.2,%
+Teufelsmoor (bog),8.9,53.25,silt,15-30cm,uncertainty,23.0,2.3,%
+Teufelsmoor (bog),8.9,53.25,silt,30-60cm,Q0.05,13.0,1.3,%
+Teufelsmoor (bog),8.9,53.25,silt,30-60cm,Q0.5,343.0,34.3,%
+Teufelsmoor (bog),8.9,53.25,silt,30-60cm,Q0.95,888.0,88.8,%
+Teufelsmoor (bog),8.9,53.25,silt,30-60cm,mean,405.0,40.5,%
+Teufelsmoor (bog),8.9,53.25,silt,30-60cm,uncertainty,26.0,2.6,%
+Teufelsmoor (bog),8.9,53.25,silt,60-100cm,Q0.05,10.0,1.0,%
+Teufelsmoor (bog),8.9,53.25,silt,60-100cm,Q0.5,374.0,37.4,%
+Teufelsmoor (bog),8.9,53.25,silt,60-100cm,Q0.95,933.0,93.3,%
+Teufelsmoor (bog),8.9,53.25,silt,60-100cm,mean,416.0,41.6,%
+Teufelsmoor (bog),8.9,53.25,silt,60-100cm,uncertainty,25.0,2.5,%
+Teufelsmoor (bog),8.9,53.25,silt,100-200cm,Q0.05,10.0,1.0,%
+Teufelsmoor (bog),8.9,53.25,silt,100-200cm,Q0.5,368.0,36.8,%
+Teufelsmoor (bog),8.9,53.25,silt,100-200cm,Q0.95,938.0,93.8,%
+Teufelsmoor (bog),8.9,53.25,silt,100-200cm,mean,435.0,43.5,%
+Teufelsmoor (bog),8.9,53.25,silt,100-200cm,uncertainty,25.0,2.5,%
+Teufelsmoor (bog),8.9,53.25,soc,0-5cm,Q0.05,105.0,10.5,g/kg
+Teufelsmoor (bog),8.9,53.25,soc,0-5cm,Q0.5,760.0,76.0,g/kg
+Teufelsmoor (bog),8.9,53.25,soc,0-5cm,Q0.95,4503.0,450.3,g/kg
+Teufelsmoor (bog),8.9,53.25,soc,0-5cm,mean,1426.0,142.6,g/kg
+Teufelsmoor (bog),8.9,53.25,soc,0-5cm,uncertainty,58.0,5.8,g/kg
+Teufelsmoor (bog),8.9,53.25,soc,5-15cm,Q0.05,103.0,10.3,g/kg
+Teufelsmoor (bog),8.9,53.25,soc,5-15cm,Q0.5,460.0,46.0,g/kg
+Teufelsmoor (bog),8.9,53.25,soc,5-15cm,Q0.95,4239.0,423.9,g/kg
+Teufelsmoor (bog),8.9,53.25,soc,5-15cm,mean,987.0,98.7,g/kg
+Teufelsmoor (bog),8.9,53.25,soc,5-15cm,uncertainty,90.0,9.0,g/kg
+Teufelsmoor (bog),8.9,53.25,soc,15-30cm,Q0.05,30.0,3.0,g/kg
+Teufelsmoor (bog),8.9,53.25,soc,15-30cm,Q0.5,184.0,18.4,g/kg
+Teufelsmoor (bog),8.9,53.25,soc,15-30cm,Q0.95,4802.0,480.2,g/kg
+Teufelsmoor (bog),8.9,53.25,soc,15-30cm,mean,857.0,85.7,g/kg
+Teufelsmoor (bog),8.9,53.25,soc,15-30cm,uncertainty,259.0,25.9,g/kg
+Teufelsmoor (bog),8.9,53.25,soc,30-60cm,Q0.05,10.0,1.0,g/kg
+Teufelsmoor (bog),8.9,53.25,soc,30-60cm,Q0.5,119.0,11.9,g/kg
+Teufelsmoor (bog),8.9,53.25,soc,30-60cm,Q0.95,5049.0,504.9,g/kg
+Teufelsmoor (bog),8.9,53.25,soc,30-60cm,mean,789.0,78.9,g/kg
+Teufelsmoor (bog),8.9,53.25,soc,30-60cm,uncertainty,423.0,42.3,g/kg
+Teufelsmoor (bog),8.9,53.25,soc,60-100cm,Q0.05,10.0,1.0,g/kg
+Teufelsmoor (bog),8.9,53.25,soc,60-100cm,Q0.5,98.0,9.8,g/kg
+Teufelsmoor (bog),8.9,53.25,soc,60-100cm,Q0.95,4812.0,481.2,g/kg
+Teufelsmoor (bog),8.9,53.25,soc,60-100cm,mean,742.0,74.2,g/kg
+Teufelsmoor (bog),8.9,53.25,soc,60-100cm,uncertainty,490.0,49.0,g/kg
+Teufelsmoor (bog),8.9,53.25,soc,100-200cm,Q0.05,9.0,0.9,g/kg
+Teufelsmoor (bog),8.9,53.25,soc,100-200cm,Q0.5,120.0,12.0,g/kg
+Teufelsmoor (bog),8.9,53.25,soc,100-200cm,Q0.95,4783.0,478.3,g/kg
+Teufelsmoor (bog),8.9,53.25,soc,100-200cm,mean,751.0,75.1,g/kg
+Teufelsmoor (bog),8.9,53.25,soc,100-200cm,uncertainty,398.0,39.8,g/kg
+Teufelsmoor (bog),8.9,53.25,wv0010,0-5cm,Q0.05,308.0,30.8,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0010,0-5cm,Q0.5,451.0,45.1,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0010,0-5cm,Q0.95,681.0,68.1,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0010,0-5cm,mean,467.0,46.7,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0010,0-5cm,uncertainty,8.0,0.8,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0010,5-15cm,Q0.05,210.0,21.0,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0010,5-15cm,Q0.5,397.0,39.7,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0010,5-15cm,Q0.95,560.0,56.0,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0010,5-15cm,mean,403.0,40.3,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0010,5-15cm,uncertainty,9.0,0.9,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0010,15-30cm,Q0.05,152.0,15.2,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0010,15-30cm,Q0.5,377.0,37.7,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0010,15-30cm,Q0.95,495.0,49.5,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0010,15-30cm,mean,362.0,36.2,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0010,15-30cm,uncertainty,9.0,0.9,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0010,30-60cm,Q0.05,237.0,23.7,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0010,30-60cm,Q0.5,356.0,35.6,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0010,30-60cm,Q0.95,495.0,49.5,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0010,30-60cm,mean,359.0,35.9,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0010,30-60cm,uncertainty,7.0,0.7,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0010,60-100cm,Q0.05,210.0,21.0,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0010,60-100cm,Q0.5,324.0,32.4,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0010,60-100cm,Q0.95,486.0,48.6,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0010,60-100cm,mean,337.0,33.7,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0010,60-100cm,uncertainty,9.0,0.9,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0010,100-200cm,Q0.05,156.0,15.6,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0010,100-200cm,Q0.5,309.0,30.9,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0010,100-200cm,Q0.95,486.0,48.6,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0010,100-200cm,mean,320.0,32.0,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0010,100-200cm,uncertainty,11.0,1.1,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0033,0-5cm,Q0.05,213.0,21.3,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0033,0-5cm,Q0.5,388.0,38.8,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0033,0-5cm,Q0.95,521.0,52.1,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0033,0-5cm,mean,377.0,37.7,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0033,0-5cm,uncertainty,8.0,0.8,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0033,5-15cm,Q0.05,180.0,18.0,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0033,5-15cm,Q0.5,332.0,33.2,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0033,5-15cm,Q0.95,510.0,51.0,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0033,5-15cm,mean,336.0,33.6,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0033,5-15cm,uncertainty,10.0,1.0,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0033,15-30cm,Q0.05,145.0,14.5,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0033,15-30cm,Q0.5,321.0,32.1,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0033,15-30cm,Q0.95,480.0,48.0,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0033,15-30cm,mean,311.0,31.1,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0033,15-30cm,uncertainty,10.0,1.0,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0033,30-60cm,Q0.05,136.0,13.6,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0033,30-60cm,Q0.5,288.0,28.8,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0033,30-60cm,Q0.95,476.0,47.6,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0033,30-60cm,mean,301.0,30.1,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0033,30-60cm,uncertainty,12.0,1.2,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0033,60-100cm,Q0.05,110.0,11.0,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0033,60-100cm,Q0.5,288.0,28.8,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0033,60-100cm,Q0.95,485.0,48.5,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0033,60-100cm,mean,298.0,29.8,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0033,60-100cm,uncertainty,13.0,1.3,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0033,100-200cm,Q0.05,98.0,9.8,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0033,100-200cm,Q0.5,287.0,28.7,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0033,100-200cm,Q0.95,467.0,46.7,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0033,100-200cm,mean,293.0,29.3,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv0033,100-200cm,uncertainty,13.0,1.3,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv1500,0-5cm,Q0.05,41.0,4.1,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv1500,0-5cm,Q0.5,136.0,13.6,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv1500,0-5cm,Q0.95,323.0,32.3,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv1500,0-5cm,mean,155.0,15.5,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv1500,0-5cm,uncertainty,21.0,2.1,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv1500,5-15cm,Q0.05,46.0,4.6,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv1500,5-15cm,Q0.5,136.0,13.6,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv1500,5-15cm,Q0.95,323.0,32.3,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv1500,5-15cm,mean,158.0,15.8,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv1500,5-15cm,uncertainty,20.0,2.0,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv1500,15-30cm,Q0.05,32.0,3.2,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv1500,15-30cm,Q0.5,132.0,13.2,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv1500,15-30cm,Q0.95,323.0,32.3,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv1500,15-30cm,mean,154.0,15.4,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv1500,15-30cm,uncertainty,22.0,2.2,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv1500,30-60cm,Q0.05,7.0,0.7,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv1500,30-60cm,Q0.5,113.0,11.3,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv1500,30-60cm,Q0.95,326.0,32.6,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv1500,30-60cm,mean,135.0,13.5,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv1500,30-60cm,uncertainty,28.0,2.8,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv1500,60-100cm,Q0.05,1.0,0.1,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv1500,60-100cm,Q0.5,110.0,11.0,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv1500,60-100cm,Q0.95,325.0,32.5,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv1500,60-100cm,mean,132.0,13.2,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv1500,60-100cm,uncertainty,29.0,2.9,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv1500,100-200cm,Q0.05,2.0,0.2,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv1500,100-200cm,Q0.5,109.0,10.9,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv1500,100-200cm,Q0.95,325.0,32.5,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv1500,100-200cm,mean,132.0,13.2,10-2 cm³/cm³
+Teufelsmoor (bog),8.9,53.25,wv1500,100-200cm,uncertainty,30.0,3.0,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,bdod,0-5cm,Q0.05,16.0,0.16,kg/dm³
+Solling (upland forest),9.55,51.75,bdod,0-5cm,Q0.5,100.0,1.0,kg/dm³
+Solling (upland forest),9.55,51.75,bdod,0-5cm,Q0.95,149.0,1.49,kg/dm³
+Solling (upland forest),9.55,51.75,bdod,0-5cm,mean,90.0,0.9,kg/dm³
+Solling (upland forest),9.55,51.75,bdod,0-5cm,uncertainty,13.0,1.3,kg/dm³
+Solling (upland forest),9.55,51.75,bdod,5-15cm,Q0.05,50.0,0.5,kg/dm³
+Solling (upland forest),9.55,51.75,bdod,5-15cm,Q0.5,110.0,1.1,kg/dm³
+Solling (upland forest),9.55,51.75,bdod,5-15cm,Q0.95,155.0,1.55,kg/dm³
+Solling (upland forest),9.55,51.75,bdod,5-15cm,mean,106.0,1.06,kg/dm³
+Solling (upland forest),9.55,51.75,bdod,5-15cm,uncertainty,10.0,1.0,kg/dm³
+Solling (upland forest),9.55,51.75,bdod,15-30cm,Q0.05,55.0,0.55,kg/dm³
+Solling (upland forest),9.55,51.75,bdod,15-30cm,Q0.5,114.0,1.14,kg/dm³
+Solling (upland forest),9.55,51.75,bdod,15-30cm,Q0.95,160.0,1.6,kg/dm³
+Solling (upland forest),9.55,51.75,bdod,15-30cm,mean,113.0,1.13,kg/dm³
+Solling (upland forest),9.55,51.75,bdod,15-30cm,uncertainty,9.0,0.9,kg/dm³
+Solling (upland forest),9.55,51.75,bdod,30-60cm,Q0.05,50.0,0.5,kg/dm³
+Solling (upland forest),9.55,51.75,bdod,30-60cm,Q0.5,146.0,1.46,kg/dm³
+Solling (upland forest),9.55,51.75,bdod,30-60cm,Q0.95,186.0,1.86,kg/dm³
+Solling (upland forest),9.55,51.75,bdod,30-60cm,mean,136.0,1.36,kg/dm³
+Solling (upland forest),9.55,51.75,bdod,30-60cm,uncertainty,9.0,0.9,kg/dm³
+Solling (upland forest),9.55,51.75,bdod,60-100cm,Q0.05,62.0,0.62,kg/dm³
+Solling (upland forest),9.55,51.75,bdod,60-100cm,Q0.5,156.0,1.56,kg/dm³
+Solling (upland forest),9.55,51.75,bdod,60-100cm,Q0.95,195.0,1.95,kg/dm³
+Solling (upland forest),9.55,51.75,bdod,60-100cm,mean,149.0,1.49,kg/dm³
+Solling (upland forest),9.55,51.75,bdod,60-100cm,uncertainty,9.0,0.9,kg/dm³
+Solling (upland forest),9.55,51.75,bdod,100-200cm,Q0.05,77.0,0.77,kg/dm³
+Solling (upland forest),9.55,51.75,bdod,100-200cm,Q0.5,159.0,1.59,kg/dm³
+Solling (upland forest),9.55,51.75,bdod,100-200cm,Q0.95,195.0,1.95,kg/dm³
+Solling (upland forest),9.55,51.75,bdod,100-200cm,mean,154.0,1.54,kg/dm³
+Solling (upland forest),9.55,51.75,bdod,100-200cm,uncertainty,7.0,0.7,kg/dm³
+Solling (upland forest),9.55,51.75,cec,0-5cm,Q0.05,54.0,5.4,cmol(c)/kg
+Solling (upland forest),9.55,51.75,cec,0-5cm,Q0.5,280.0,28.0,cmol(c)/kg
+Solling (upland forest),9.55,51.75,cec,0-5cm,Q0.95,713.0,71.3,cmol(c)/kg
+Solling (upland forest),9.55,51.75,cec,0-5cm,mean,287.0,28.7,cmol(c)/kg
+Solling (upland forest),9.55,51.75,cec,0-5cm,uncertainty,24.0,2.4,cmol(c)/kg
+Solling (upland forest),9.55,51.75,cec,5-15cm,Q0.05,50.0,5.0,cmol(c)/kg
+Solling (upland forest),9.55,51.75,cec,5-15cm,Q0.5,190.0,19.0,cmol(c)/kg
+Solling (upland forest),9.55,51.75,cec,5-15cm,Q0.95,779.0,77.9,cmol(c)/kg
+Solling (upland forest),9.55,51.75,cec,5-15cm,mean,254.0,25.4,cmol(c)/kg
+Solling (upland forest),9.55,51.75,cec,5-15cm,uncertainty,38.0,3.8,cmol(c)/kg
+Solling (upland forest),9.55,51.75,cec,15-30cm,Q0.05,21.0,2.1,cmol(c)/kg
+Solling (upland forest),9.55,51.75,cec,15-30cm,Q0.5,134.0,13.4,cmol(c)/kg
+Solling (upland forest),9.55,51.75,cec,15-30cm,Q0.95,555.0,55.5,cmol(c)/kg
+Solling (upland forest),9.55,51.75,cec,15-30cm,mean,206.0,20.6,cmol(c)/kg
+Solling (upland forest),9.55,51.75,cec,15-30cm,uncertainty,40.0,4.0,cmol(c)/kg
+Solling (upland forest),9.55,51.75,cec,30-60cm,Q0.05,18.0,1.8,cmol(c)/kg
+Solling (upland forest),9.55,51.75,cec,30-60cm,Q0.5,99.0,9.9,cmol(c)/kg
+Solling (upland forest),9.55,51.75,cec,30-60cm,Q0.95,319.0,31.9,cmol(c)/kg
+Solling (upland forest),9.55,51.75,cec,30-60cm,mean,126.0,12.6,cmol(c)/kg
+Solling (upland forest),9.55,51.75,cec,30-60cm,uncertainty,30.0,3.0,cmol(c)/kg
+Solling (upland forest),9.55,51.75,cec,60-100cm,Q0.05,21.0,2.1,cmol(c)/kg
+Solling (upland forest),9.55,51.75,cec,60-100cm,Q0.5,94.0,9.4,cmol(c)/kg
+Solling (upland forest),9.55,51.75,cec,60-100cm,Q0.95,315.0,31.5,cmol(c)/kg
+Solling (upland forest),9.55,51.75,cec,60-100cm,mean,123.0,12.3,cmol(c)/kg
+Solling (upland forest),9.55,51.75,cec,60-100cm,uncertainty,31.0,3.1,cmol(c)/kg
+Solling (upland forest),9.55,51.75,cec,100-200cm,Q0.05,22.0,2.2,cmol(c)/kg
+Solling (upland forest),9.55,51.75,cec,100-200cm,Q0.5,94.0,9.4,cmol(c)/kg
+Solling (upland forest),9.55,51.75,cec,100-200cm,Q0.95,315.0,31.5,cmol(c)/kg
+Solling (upland forest),9.55,51.75,cec,100-200cm,mean,124.0,12.4,cmol(c)/kg
+Solling (upland forest),9.55,51.75,cec,100-200cm,uncertainty,31.0,3.1,cmol(c)/kg
+Solling (upland forest),9.55,51.75,cfvo,0-5cm,Q0.05,0.0,0.0,cm³/100cm³
+Solling (upland forest),9.55,51.75,cfvo,0-5cm,Q0.5,110.0,11.0,cm³/100cm³
+Solling (upland forest),9.55,51.75,cfvo,0-5cm,Q0.95,410.0,41.0,cm³/100cm³
+Solling (upland forest),9.55,51.75,cfvo,0-5cm,mean,148.0,14.8,cm³/100cm³
+Solling (upland forest),9.55,51.75,cfvo,0-5cm,uncertainty,37.0,3.7,cm³/100cm³
+Solling (upland forest),9.55,51.75,cfvo,5-15cm,Q0.05,30.0,3.0,cm³/100cm³
+Solling (upland forest),9.55,51.75,cfvo,5-15cm,Q0.5,145.0,14.5,cm³/100cm³
+Solling (upland forest),9.55,51.75,cfvo,5-15cm,Q0.95,420.0,42.0,cm³/100cm³
+Solling (upland forest),9.55,51.75,cfvo,5-15cm,mean,173.0,17.3,cm³/100cm³
+Solling (upland forest),9.55,51.75,cfvo,5-15cm,uncertainty,27.0,2.7,cm³/100cm³
+Solling (upland forest),9.55,51.75,cfvo,15-30cm,Q0.05,20.0,2.0,cm³/100cm³
+Solling (upland forest),9.55,51.75,cfvo,15-30cm,Q0.5,150.0,15.0,cm³/100cm³
+Solling (upland forest),9.55,51.75,cfvo,15-30cm,Q0.95,451.0,45.1,cm³/100cm³
+Solling (upland forest),9.55,51.75,cfvo,15-30cm,mean,185.0,18.5,cm³/100cm³
+Solling (upland forest),9.55,51.75,cfvo,15-30cm,uncertainty,29.0,2.9,cm³/100cm³
+Solling (upland forest),9.55,51.75,cfvo,30-60cm,Q0.05,10.0,1.0,cm³/100cm³
+Solling (upland forest),9.55,51.75,cfvo,30-60cm,Q0.5,180.0,18.0,cm³/100cm³
+Solling (upland forest),9.55,51.75,cfvo,30-60cm,Q0.95,702.0,70.2,cm³/100cm³
+Solling (upland forest),9.55,51.75,cfvo,30-60cm,mean,231.0,23.1,cm³/100cm³
+Solling (upland forest),9.55,51.75,cfvo,30-60cm,uncertainty,38.0,3.8,cm³/100cm³
+Solling (upland forest),9.55,51.75,cfvo,60-100cm,Q0.05,0.0,0.0,cm³/100cm³
+Solling (upland forest),9.55,51.75,cfvo,60-100cm,Q0.5,195.0,19.5,cm³/100cm³
+Solling (upland forest),9.55,51.75,cfvo,60-100cm,Q0.95,750.0,75.0,cm³/100cm³
+Solling (upland forest),9.55,51.75,cfvo,60-100cm,mean,252.0,25.2,cm³/100cm³
+Solling (upland forest),9.55,51.75,cfvo,60-100cm,uncertainty,38.0,3.8,cm³/100cm³
+Solling (upland forest),9.55,51.75,cfvo,100-200cm,Q0.05,0.0,0.0,cm³/100cm³
+Solling (upland forest),9.55,51.75,cfvo,100-200cm,Q0.5,245.0,24.5,cm³/100cm³
+Solling (upland forest),9.55,51.75,cfvo,100-200cm,Q0.95,750.0,75.0,cm³/100cm³
+Solling (upland forest),9.55,51.75,cfvo,100-200cm,mean,279.0,27.9,cm³/100cm³
+Solling (upland forest),9.55,51.75,cfvo,100-200cm,uncertainty,31.0,3.1,cm³/100cm³
+Solling (upland forest),9.55,51.75,clay,0-5cm,Q0.05,16.0,1.6,%
+Solling (upland forest),9.55,51.75,clay,0-5cm,Q0.5,212.0,21.2,%
+Solling (upland forest),9.55,51.75,clay,0-5cm,Q0.95,674.0,67.4,%
+Solling (upland forest),9.55,51.75,clay,0-5cm,mean,264.0,26.4,%
+Solling (upland forest),9.55,51.75,clay,0-5cm,uncertainty,31.0,3.1,%
+Solling (upland forest),9.55,51.75,clay,5-15cm,Q0.05,33.0,3.3,%
+Solling (upland forest),9.55,51.75,clay,5-15cm,Q0.5,221.0,22.1,%
+Solling (upland forest),9.55,51.75,clay,5-15cm,Q0.95,665.0,66.5,%
+Solling (upland forest),9.55,51.75,clay,5-15cm,mean,264.0,26.4,%
+Solling (upland forest),9.55,51.75,clay,5-15cm,uncertainty,29.0,2.9,%
+Solling (upland forest),9.55,51.75,clay,15-30cm,Q0.05,22.0,2.2,%
+Solling (upland forest),9.55,51.75,clay,15-30cm,Q0.5,252.0,25.2,%
+Solling (upland forest),9.55,51.75,clay,15-30cm,Q0.95,701.0,70.1,%
+Solling (upland forest),9.55,51.75,clay,15-30cm,mean,297.0,29.7,%
+Solling (upland forest),9.55,51.75,clay,15-30cm,uncertainty,27.0,2.7,%
+Solling (upland forest),9.55,51.75,clay,30-60cm,Q0.05,19.0,1.9,%
+Solling (upland forest),9.55,51.75,clay,30-60cm,Q0.5,252.0,25.2,%
+Solling (upland forest),9.55,51.75,clay,30-60cm,Q0.95,666.0,66.6,%
+Solling (upland forest),9.55,51.75,clay,30-60cm,mean,290.0,29.0,%
+Solling (upland forest),9.55,51.75,clay,30-60cm,uncertainty,26.0,2.6,%
+Solling (upland forest),9.55,51.75,clay,60-100cm,Q0.05,20.0,2.0,%
+Solling (upland forest),9.55,51.75,clay,60-100cm,Q0.5,261.0,26.1,%
+Solling (upland forest),9.55,51.75,clay,60-100cm,Q0.95,701.0,70.1,%
+Solling (upland forest),9.55,51.75,clay,60-100cm,mean,298.0,29.8,%
+Solling (upland forest),9.55,51.75,clay,60-100cm,uncertainty,26.0,2.6,%
+Solling (upland forest),9.55,51.75,clay,100-200cm,Q0.05,13.0,1.3,%
+Solling (upland forest),9.55,51.75,clay,100-200cm,Q0.5,248.0,24.8,%
+Solling (upland forest),9.55,51.75,clay,100-200cm,Q0.95,719.0,71.9,%
+Solling (upland forest),9.55,51.75,clay,100-200cm,mean,295.0,29.5,%
+Solling (upland forest),9.55,51.75,clay,100-200cm,uncertainty,28.0,2.8,%
+Solling (upland forest),9.55,51.75,nitrogen,0-5cm,Q0.05,40.0,0.4,g/kg
+Solling (upland forest),9.55,51.75,nitrogen,0-5cm,Q0.5,400.0,4.0,g/kg
+Solling (upland forest),9.55,51.75,nitrogen,0-5cm,Q0.95,1583.0,15.83,g/kg
+Solling (upland forest),9.55,51.75,nitrogen,0-5cm,mean,580.0,5.8,g/kg
+Solling (upland forest),9.55,51.75,nitrogen,0-5cm,uncertainty,39.0,3.9,g/kg
+Solling (upland forest),9.55,51.75,nitrogen,5-15cm,Q0.05,150.0,1.5,g/kg
+Solling (upland forest),9.55,51.75,nitrogen,5-15cm,Q0.5,305.0,3.05,g/kg
+Solling (upland forest),9.55,51.75,nitrogen,5-15cm,Q0.95,993.0,9.93,g/kg
+Solling (upland forest),9.55,51.75,nitrogen,5-15cm,mean,422.0,4.22,g/kg
+Solling (upland forest),9.55,51.75,nitrogen,5-15cm,uncertainty,28.0,2.8,g/kg
+Solling (upland forest),9.55,51.75,nitrogen,15-30cm,Q0.05,30.0,0.3,g/kg
+Solling (upland forest),9.55,51.75,nitrogen,15-30cm,Q0.5,130.0,1.3,g/kg
+Solling (upland forest),9.55,51.75,nitrogen,15-30cm,Q0.95,1624.0,16.24,g/kg
+Solling (upland forest),9.55,51.75,nitrogen,15-30cm,mean,353.0,3.53,g/kg
+Solling (upland forest),9.55,51.75,nitrogen,15-30cm,uncertainty,123.0,12.3,g/kg
+Solling (upland forest),9.55,51.75,nitrogen,30-60cm,Q0.05,20.0,0.2,g/kg
+Solling (upland forest),9.55,51.75,nitrogen,30-60cm,Q0.5,100.0,1.0,g/kg
+Solling (upland forest),9.55,51.75,nitrogen,30-60cm,Q0.95,1311.0,13.11,g/kg
+Solling (upland forest),9.55,51.75,nitrogen,30-60cm,mean,291.0,2.91,g/kg
+Solling (upland forest),9.55,51.75,nitrogen,30-60cm,uncertainty,129.0,12.9,g/kg
+Solling (upland forest),9.55,51.75,nitrogen,60-100cm,Q0.05,10.0,0.1,g/kg
+Solling (upland forest),9.55,51.75,nitrogen,60-100cm,Q0.5,80.0,0.8,g/kg
+Solling (upland forest),9.55,51.75,nitrogen,60-100cm,Q0.95,1473.0,14.73,g/kg
+Solling (upland forest),9.55,51.75,nitrogen,60-100cm,mean,259.0,2.59,g/kg
+Solling (upland forest),9.55,51.75,nitrogen,60-100cm,uncertainty,183.0,18.3,g/kg
+Solling (upland forest),9.55,51.75,nitrogen,100-200cm,Q0.05,10.0,0.1,g/kg
+Solling (upland forest),9.55,51.75,nitrogen,100-200cm,Q0.5,70.0,0.7,g/kg
+Solling (upland forest),9.55,51.75,nitrogen,100-200cm,Q0.95,1547.0,15.47,g/kg
+Solling (upland forest),9.55,51.75,nitrogen,100-200cm,mean,268.0,2.68,g/kg
+Solling (upland forest),9.55,51.75,nitrogen,100-200cm,uncertainty,220.0,22.0,g/kg
+Solling (upland forest),9.55,51.75,ocd,0-5cm,Q0.05,152.0,15.2,hg/m³
+Solling (upland forest),9.55,51.75,ocd,0-5cm,Q0.5,499.0,49.9,hg/m³
+Solling (upland forest),9.55,51.75,ocd,0-5cm,Q0.95,1095.0,109.5,hg/m³
+Solling (upland forest),9.55,51.75,ocd,0-5cm,mean,557.0,55.7,hg/m³
+Solling (upland forest),9.55,51.75,ocd,0-5cm,uncertainty,19.0,1.9,hg/m³
+Solling (upland forest),9.55,51.75,ocd,5-15cm,Q0.05,173.0,17.3,hg/m³
+Solling (upland forest),9.55,51.75,ocd,5-15cm,Q0.5,330.0,33.0,hg/m³
+Solling (upland forest),9.55,51.75,ocd,5-15cm,Q0.95,874.0,87.4,hg/m³
+Solling (upland forest),9.55,51.75,ocd,5-15cm,mean,419.0,41.9,hg/m³
+Solling (upland forest),9.55,51.75,ocd,5-15cm,uncertainty,21.0,2.1,hg/m³
+Solling (upland forest),9.55,51.75,ocd,15-30cm,Q0.05,64.0,6.4,hg/m³
+Solling (upland forest),9.55,51.75,ocd,15-30cm,Q0.5,286.0,28.6,hg/m³
+Solling (upland forest),9.55,51.75,ocd,15-30cm,Q0.95,871.0,87.1,hg/m³
+Solling (upland forest),9.55,51.75,ocd,15-30cm,mean,331.0,33.1,hg/m³
+Solling (upland forest),9.55,51.75,ocd,15-30cm,uncertainty,28.0,2.8,hg/m³
+Solling (upland forest),9.55,51.75,ocd,30-60cm,Q0.05,32.0,3.2,hg/m³
+Solling (upland forest),9.55,51.75,ocd,30-60cm,Q0.5,67.0,6.7,hg/m³
+Solling (upland forest),9.55,51.75,ocd,30-60cm,Q0.95,649.0,64.9,hg/m³
+Solling (upland forest),9.55,51.75,ocd,30-60cm,mean,152.0,15.2,hg/m³
+Solling (upland forest),9.55,51.75,ocd,30-60cm,uncertainty,92.0,9.2,hg/m³
+Solling (upland forest),9.55,51.75,ocd,60-100cm,Q0.05,8.0,0.8,hg/m³
+Solling (upland forest),9.55,51.75,ocd,60-100cm,Q0.5,41.0,4.1,hg/m³
+Solling (upland forest),9.55,51.75,ocd,60-100cm,Q0.95,397.0,39.7,hg/m³
+Solling (upland forest),9.55,51.75,ocd,60-100cm,mean,113.0,11.3,hg/m³
+Solling (upland forest),9.55,51.75,ocd,60-100cm,uncertainty,95.0,9.5,hg/m³
+Solling (upland forest),9.55,51.75,ocd,100-200cm,Q0.05,8.0,0.8,hg/m³
+Solling (upland forest),9.55,51.75,ocd,100-200cm,Q0.5,26.0,2.6,hg/m³
+Solling (upland forest),9.55,51.75,ocd,100-200cm,Q0.95,291.0,29.1,hg/m³
+Solling (upland forest),9.55,51.75,ocd,100-200cm,mean,70.0,7.0,hg/m³
+Solling (upland forest),9.55,51.75,ocd,100-200cm,uncertainty,109.0,10.9,hg/m³
+Solling (upland forest),9.55,51.75,ocs,0-30cm,Q0.05,35.0,3.5,kg/m²
+Solling (upland forest),9.55,51.75,ocs,0-30cm,Q0.5,64.0,6.4,kg/m²
+Solling (upland forest),9.55,51.75,ocs,0-30cm,Q0.95,174.0,17.4,kg/m²
+Solling (upland forest),9.55,51.75,ocs,0-30cm,mean,81.0,8.1,kg/m²
+Solling (upland forest),9.55,51.75,ocs,0-30cm,uncertainty,22.0,2.2,kg/m²
+Solling (upland forest),9.55,51.75,phh2o,0-5cm,Q0.05,36.0,3.6,-
+Solling (upland forest),9.55,51.75,phh2o,0-5cm,Q0.5,43.0,4.3,-
+Solling (upland forest),9.55,51.75,phh2o,0-5cm,Q0.95,57.0,5.7,-
+Solling (upland forest),9.55,51.75,phh2o,0-5cm,mean,44.0,4.4,-
+Solling (upland forest),9.55,51.75,phh2o,0-5cm,uncertainty,5.0,0.5,-
+Solling (upland forest),9.55,51.75,phh2o,5-15cm,Q0.05,37.0,3.7,-
+Solling (upland forest),9.55,51.75,phh2o,5-15cm,Q0.5,44.0,4.4,-
+Solling (upland forest),9.55,51.75,phh2o,5-15cm,Q0.95,57.0,5.7,-
+Solling (upland forest),9.55,51.75,phh2o,5-15cm,mean,45.0,4.5,-
+Solling (upland forest),9.55,51.75,phh2o,5-15cm,uncertainty,5.0,0.5,-
+Solling (upland forest),9.55,51.75,phh2o,15-30cm,Q0.05,37.0,3.7,-
+Solling (upland forest),9.55,51.75,phh2o,15-30cm,Q0.5,45.0,4.5,-
+Solling (upland forest),9.55,51.75,phh2o,15-30cm,Q0.95,57.0,5.7,-
+Solling (upland forest),9.55,51.75,phh2o,15-30cm,mean,45.0,4.5,-
+Solling (upland forest),9.55,51.75,phh2o,15-30cm,uncertainty,4.0,0.4,-
+Solling (upland forest),9.55,51.75,phh2o,30-60cm,Q0.05,38.0,3.8,-
+Solling (upland forest),9.55,51.75,phh2o,30-60cm,Q0.5,46.0,4.6,-
+Solling (upland forest),9.55,51.75,phh2o,30-60cm,Q0.95,68.0,6.8,-
+Solling (upland forest),9.55,51.75,phh2o,30-60cm,mean,48.0,4.8,-
+Solling (upland forest),9.55,51.75,phh2o,30-60cm,uncertainty,7.0,0.7,-
+Solling (upland forest),9.55,51.75,phh2o,60-100cm,Q0.05,38.0,3.8,-
+Solling (upland forest),9.55,51.75,phh2o,60-100cm,Q0.5,48.0,4.8,-
+Solling (upland forest),9.55,51.75,phh2o,60-100cm,Q0.95,68.0,6.8,-
+Solling (upland forest),9.55,51.75,phh2o,60-100cm,mean,49.0,4.9,-
+Solling (upland forest),9.55,51.75,phh2o,60-100cm,uncertainty,6.0,0.6,-
+Solling (upland forest),9.55,51.75,phh2o,100-200cm,Q0.05,38.0,3.8,-
+Solling (upland forest),9.55,51.75,phh2o,100-200cm,Q0.5,48.0,4.8,-
+Solling (upland forest),9.55,51.75,phh2o,100-200cm,Q0.95,70.0,7.0,-
+Solling (upland forest),9.55,51.75,phh2o,100-200cm,mean,49.0,4.9,-
+Solling (upland forest),9.55,51.75,phh2o,100-200cm,uncertainty,7.0,0.7,-
+Solling (upland forest),9.55,51.75,sand,0-5cm,Q0.05,56.0,5.6,%
+Solling (upland forest),9.55,51.75,sand,0-5cm,Q0.5,204.0,20.4,%
+Solling (upland forest),9.55,51.75,sand,0-5cm,Q0.95,433.0,43.3,%
+Solling (upland forest),9.55,51.75,sand,0-5cm,mean,219.0,21.9,%
+Solling (upland forest),9.55,51.75,sand,0-5cm,uncertainty,18.0,1.8,%
+Solling (upland forest),9.55,51.75,sand,5-15cm,Q0.05,57.0,5.7,%
+Solling (upland forest),9.55,51.75,sand,5-15cm,Q0.5,200.0,20.0,%
+Solling (upland forest),9.55,51.75,sand,5-15cm,Q0.95,399.0,39.9,%
+Solling (upland forest),9.55,51.75,sand,5-15cm,mean,210.0,21.0,%
+Solling (upland forest),9.55,51.75,sand,5-15cm,uncertainty,17.0,1.7,%
+Solling (upland forest),9.55,51.75,sand,15-30cm,Q0.05,56.0,5.6,%
+Solling (upland forest),9.55,51.75,sand,15-30cm,Q0.5,221.0,22.1,%
+Solling (upland forest),9.55,51.75,sand,15-30cm,Q0.95,511.0,51.1,%
+Solling (upland forest),9.55,51.75,sand,15-30cm,mean,242.0,24.2,%
+Solling (upland forest),9.55,51.75,sand,15-30cm,uncertainty,21.0,2.1,%
+Solling (upland forest),9.55,51.75,sand,30-60cm,Q0.05,61.0,6.1,%
+Solling (upland forest),9.55,51.75,sand,30-60cm,Q0.5,232.0,23.2,%
+Solling (upland forest),9.55,51.75,sand,30-60cm,Q0.95,592.0,59.2,%
+Solling (upland forest),9.55,51.75,sand,30-60cm,mean,264.0,26.4,%
+Solling (upland forest),9.55,51.75,sand,30-60cm,uncertainty,23.0,2.3,%
+Solling (upland forest),9.55,51.75,sand,60-100cm,Q0.05,60.0,6.0,%
+Solling (upland forest),9.55,51.75,sand,60-100cm,Q0.5,228.0,22.8,%
+Solling (upland forest),9.55,51.75,sand,60-100cm,Q0.95,592.0,59.2,%
+Solling (upland forest),9.55,51.75,sand,60-100cm,mean,262.0,26.2,%
+Solling (upland forest),9.55,51.75,sand,60-100cm,uncertainty,23.0,2.3,%
+Solling (upland forest),9.55,51.75,sand,100-200cm,Q0.05,61.0,6.1,%
+Solling (upland forest),9.55,51.75,sand,100-200cm,Q0.5,233.0,23.3,%
+Solling (upland forest),9.55,51.75,sand,100-200cm,Q0.95,632.0,63.2,%
+Solling (upland forest),9.55,51.75,sand,100-200cm,mean,272.0,27.2,%
+Solling (upland forest),9.55,51.75,sand,100-200cm,uncertainty,25.0,2.5,%
+Solling (upland forest),9.55,51.75,silt,0-5cm,Q0.05,136.0,13.6,%
+Solling (upland forest),9.55,51.75,silt,0-5cm,Q0.5,517.0,51.7,%
+Solling (upland forest),9.55,51.75,silt,0-5cm,Q0.95,870.0,87.0,%
+Solling (upland forest),9.55,51.75,silt,0-5cm,mean,517.0,51.7,%
+Solling (upland forest),9.55,51.75,silt,0-5cm,uncertainty,14.0,1.4,%
+Solling (upland forest),9.55,51.75,silt,5-15cm,Q0.05,155.0,15.5,%
+Solling (upland forest),9.55,51.75,silt,5-15cm,Q0.5,523.0,52.3,%
+Solling (upland forest),9.55,51.75,silt,5-15cm,Q0.95,870.0,87.0,%
+Solling (upland forest),9.55,51.75,silt,5-15cm,mean,526.0,52.6,%
+Solling (upland forest),9.55,51.75,silt,5-15cm,uncertainty,14.0,1.4,%
+Solling (upland forest),9.55,51.75,silt,15-30cm,Q0.05,60.0,6.0,%
+Solling (upland forest),9.55,51.75,silt,15-30cm,Q0.5,457.0,45.7,%
+Solling (upland forest),9.55,51.75,silt,15-30cm,Q0.95,872.0,87.2,%
+Solling (upland forest),9.55,51.75,silt,15-30cm,mean,461.0,46.1,%
+Solling (upland forest),9.55,51.75,silt,15-30cm,uncertainty,18.0,1.8,%
+Solling (upland forest),9.55,51.75,silt,30-60cm,Q0.05,41.0,4.1,%
+Solling (upland forest),9.55,51.75,silt,30-60cm,Q0.5,444.0,44.4,%
+Solling (upland forest),9.55,51.75,silt,30-60cm,Q0.95,850.0,85.0,%
+Solling (upland forest),9.55,51.75,silt,30-60cm,mean,445.0,44.5,%
+Solling (upland forest),9.55,51.75,silt,30-60cm,uncertainty,18.0,1.8,%
+Solling (upland forest),9.55,51.75,silt,60-100cm,Q0.05,33.0,3.3,%
+Solling (upland forest),9.55,51.75,silt,60-100cm,Q0.5,435.0,43.5,%
+Solling (upland forest),9.55,51.75,silt,60-100cm,Q0.95,850.0,85.0,%
+Solling (upland forest),9.55,51.75,silt,60-100cm,mean,440.0,44.0,%
+Solling (upland forest),9.55,51.75,silt,60-100cm,uncertainty,19.0,1.9,%
+Solling (upland forest),9.55,51.75,silt,100-200cm,Q0.05,15.0,1.5,%
+Solling (upland forest),9.55,51.75,silt,100-200cm,Q0.5,441.0,44.1,%
+Solling (upland forest),9.55,51.75,silt,100-200cm,Q0.95,849.0,84.9,%
+Solling (upland forest),9.55,51.75,silt,100-200cm,mean,433.0,43.3,%
+Solling (upland forest),9.55,51.75,silt,100-200cm,uncertainty,19.0,1.9,%
+Solling (upland forest),9.55,51.75,soc,0-5cm,Q0.05,72.0,7.2,g/kg
+Solling (upland forest),9.55,51.75,soc,0-5cm,Q0.5,682.0,68.2,g/kg
+Solling (upland forest),9.55,51.75,soc,0-5cm,Q0.95,4355.0,435.5,g/kg
+Solling (upland forest),9.55,51.75,soc,0-5cm,mean,1345.0,134.5,g/kg
+Solling (upland forest),9.55,51.75,soc,0-5cm,uncertainty,63.0,6.3,g/kg
+Solling (upland forest),9.55,51.75,soc,5-15cm,Q0.05,139.0,13.9,g/kg
+Solling (upland forest),9.55,51.75,soc,5-15cm,Q0.5,682.0,68.2,g/kg
+Solling (upland forest),9.55,51.75,soc,5-15cm,Q0.95,2416.0,241.6,g/kg
+Solling (upland forest),9.55,51.75,soc,5-15cm,mean,976.0,97.6,g/kg
+Solling (upland forest),9.55,51.75,soc,5-15cm,uncertainty,33.0,3.3,g/kg
+Solling (upland forest),9.55,51.75,soc,15-30cm,Q0.05,30.0,3.0,g/kg
+Solling (upland forest),9.55,51.75,soc,15-30cm,Q0.5,230.0,23.0,g/kg
+Solling (upland forest),9.55,51.75,soc,15-30cm,Q0.95,1676.0,167.6,g/kg
+Solling (upland forest),9.55,51.75,soc,15-30cm,mean,444.0,44.4,g/kg
+Solling (upland forest),9.55,51.75,soc,15-30cm,uncertainty,72.0,7.2,g/kg
+Solling (upland forest),9.55,51.75,soc,30-60cm,Q0.05,12.0,1.2,g/kg
+Solling (upland forest),9.55,51.75,soc,30-60cm,Q0.5,87.0,8.7,g/kg
+Solling (upland forest),9.55,51.75,soc,30-60cm,Q0.95,863.0,86.3,g/kg
+Solling (upland forest),9.55,51.75,soc,30-60cm,mean,254.0,25.4,g/kg
+Solling (upland forest),9.55,51.75,soc,30-60cm,uncertainty,98.0,9.8,g/kg
+Solling (upland forest),9.55,51.75,soc,60-100cm,Q0.05,5.0,0.5,g/kg
+Solling (upland forest),9.55,51.75,soc,60-100cm,Q0.5,40.0,4.0,g/kg
+Solling (upland forest),9.55,51.75,soc,60-100cm,Q0.95,685.0,68.5,g/kg
+Solling (upland forest),9.55,51.75,soc,60-100cm,mean,201.0,20.1,g/kg
+Solling (upland forest),9.55,51.75,soc,60-100cm,uncertainty,170.0,17.0,g/kg
+Solling (upland forest),9.55,51.75,soc,100-200cm,Q0.05,5.0,0.5,g/kg
+Solling (upland forest),9.55,51.75,soc,100-200cm,Q0.5,36.0,3.6,g/kg
+Solling (upland forest),9.55,51.75,soc,100-200cm,Q0.95,685.0,68.5,g/kg
+Solling (upland forest),9.55,51.75,soc,100-200cm,mean,199.0,19.9,g/kg
+Solling (upland forest),9.55,51.75,soc,100-200cm,uncertainty,189.0,18.9,g/kg
+Solling (upland forest),9.55,51.75,wv0010,0-5cm,Q0.05,335.0,33.5,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0010,0-5cm,Q0.5,480.0,48.0,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0010,0-5cm,Q0.95,711.0,71.1,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0010,0-5cm,mean,500.0,50.0,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0010,0-5cm,uncertainty,8.0,0.8,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0010,5-15cm,Q0.05,349.0,34.9,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0010,5-15cm,Q0.5,430.0,43.0,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0010,5-15cm,Q0.95,613.0,61.3,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0010,5-15cm,mean,451.0,45.1,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0010,5-15cm,uncertainty,6.0,0.6,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0010,15-30cm,Q0.05,224.0,22.4,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0010,15-30cm,Q0.5,412.0,41.2,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0010,15-30cm,Q0.95,551.0,55.1,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0010,15-30cm,mean,407.0,40.7,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0010,15-30cm,uncertainty,8.0,0.8,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0010,30-60cm,Q0.05,237.0,23.7,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0010,30-60cm,Q0.5,406.0,40.6,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0010,30-60cm,Q0.95,519.0,51.9,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0010,30-60cm,mean,392.0,39.2,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0010,30-60cm,uncertainty,7.0,0.7,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0010,60-100cm,Q0.05,224.0,22.4,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0010,60-100cm,Q0.5,395.0,39.5,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0010,60-100cm,Q0.95,509.0,50.9,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0010,60-100cm,mean,377.0,37.7,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0010,60-100cm,uncertainty,7.0,0.7,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0010,100-200cm,Q0.05,207.0,20.7,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0010,100-200cm,Q0.5,392.0,39.2,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0010,100-200cm,Q0.95,483.0,48.3,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0010,100-200cm,mean,364.0,36.4,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0010,100-200cm,uncertainty,7.0,0.7,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0033,0-5cm,Q0.05,165.0,16.5,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0033,0-5cm,Q0.5,397.0,39.7,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0033,0-5cm,Q0.95,525.0,52.5,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0033,0-5cm,mean,391.0,39.1,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0033,0-5cm,uncertainty,9.0,0.9,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0033,5-15cm,Q0.05,183.0,18.3,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0033,5-15cm,Q0.5,398.0,39.8,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0033,5-15cm,Q0.95,499.0,49.9,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0033,5-15cm,mean,375.0,37.5,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0033,5-15cm,uncertainty,8.0,0.8,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0033,15-30cm,Q0.05,165.0,16.5,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0033,15-30cm,Q0.5,367.0,36.7,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0033,15-30cm,Q0.95,504.0,50.4,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0033,15-30cm,mean,355.0,35.5,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0033,15-30cm,uncertainty,9.0,0.9,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0033,30-60cm,Q0.05,169.0,16.9,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0033,30-60cm,Q0.5,360.0,36.0,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0033,30-60cm,Q0.95,505.0,50.5,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0033,30-60cm,mean,351.0,35.1,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0033,30-60cm,uncertainty,9.0,0.9,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0033,60-100cm,Q0.05,169.0,16.9,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0033,60-100cm,Q0.5,361.0,36.1,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0033,60-100cm,Q0.95,480.0,48.0,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0033,60-100cm,mean,345.0,34.5,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0033,60-100cm,uncertainty,9.0,0.9,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0033,100-200cm,Q0.05,155.0,15.5,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0033,100-200cm,Q0.5,333.0,33.3,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0033,100-200cm,Q0.95,462.0,46.2,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0033,100-200cm,mean,321.0,32.1,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv0033,100-200cm,uncertainty,9.0,0.9,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv1500,0-5cm,Q0.05,109.0,10.9,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv1500,0-5cm,Q0.5,186.0,18.6,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv1500,0-5cm,Q0.95,290.0,29.0,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv1500,0-5cm,mean,191.0,19.1,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv1500,0-5cm,uncertainty,10.0,1.0,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv1500,5-15cm,Q0.05,110.0,11.0,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv1500,5-15cm,Q0.5,183.0,18.3,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv1500,5-15cm,Q0.95,290.0,29.0,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv1500,5-15cm,mean,188.0,18.8,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv1500,5-15cm,uncertainty,10.0,1.0,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv1500,15-30cm,Q0.05,74.0,7.4,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv1500,15-30cm,Q0.5,166.0,16.6,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv1500,15-30cm,Q0.95,287.0,28.7,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv1500,15-30cm,mean,169.0,16.9,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv1500,15-30cm,uncertainty,13.0,1.3,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv1500,30-60cm,Q0.05,40.0,4.0,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv1500,30-60cm,Q0.5,122.0,12.2,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv1500,30-60cm,Q0.95,263.0,26.3,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv1500,30-60cm,mean,134.0,13.4,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv1500,30-60cm,uncertainty,18.0,1.8,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv1500,60-100cm,Q0.05,40.0,4.0,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv1500,60-100cm,Q0.5,126.0,12.6,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv1500,60-100cm,Q0.95,253.0,25.3,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv1500,60-100cm,mean,131.0,13.1,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv1500,60-100cm,uncertainty,17.0,1.7,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv1500,100-200cm,Q0.05,33.0,3.3,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv1500,100-200cm,Q0.5,124.0,12.4,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv1500,100-200cm,Q0.95,257.0,25.7,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv1500,100-200cm,mean,132.0,13.2,10-2 cm³/cm³
+Solling (upland forest),9.55,51.75,wv1500,100-200cm,uncertainty,18.0,1.8,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,bdod,0-5cm,Q0.5,,,kg/dm³
+Hannover centre (urban),9.73,52.37,bdod,0-5cm,Q0.05,,,kg/dm³
+Hannover centre (urban),9.73,52.37,bdod,0-5cm,Q0.95,,,kg/dm³
+Hannover centre (urban),9.73,52.37,bdod,0-5cm,mean,,,kg/dm³
+Hannover centre (urban),9.73,52.37,bdod,0-5cm,uncertainty,,,kg/dm³
+Hannover centre (urban),9.73,52.37,bdod,5-15cm,Q0.05,,,kg/dm³
+Hannover centre (urban),9.73,52.37,bdod,5-15cm,Q0.5,,,kg/dm³
+Hannover centre (urban),9.73,52.37,bdod,5-15cm,Q0.95,,,kg/dm³
+Hannover centre (urban),9.73,52.37,bdod,5-15cm,mean,,,kg/dm³
+Hannover centre (urban),9.73,52.37,bdod,5-15cm,uncertainty,,,kg/dm³
+Hannover centre (urban),9.73,52.37,bdod,15-30cm,Q0.05,,,kg/dm³
+Hannover centre (urban),9.73,52.37,bdod,15-30cm,Q0.5,,,kg/dm³
+Hannover centre (urban),9.73,52.37,bdod,15-30cm,Q0.95,,,kg/dm³
+Hannover centre (urban),9.73,52.37,bdod,15-30cm,mean,,,kg/dm³
+Hannover centre (urban),9.73,52.37,bdod,15-30cm,uncertainty,,,kg/dm³
+Hannover centre (urban),9.73,52.37,bdod,30-60cm,Q0.05,,,kg/dm³
+Hannover centre (urban),9.73,52.37,bdod,30-60cm,Q0.5,,,kg/dm³
+Hannover centre (urban),9.73,52.37,bdod,30-60cm,Q0.95,,,kg/dm³
+Hannover centre (urban),9.73,52.37,bdod,30-60cm,mean,,,kg/dm³
+Hannover centre (urban),9.73,52.37,bdod,30-60cm,uncertainty,,,kg/dm³
+Hannover centre (urban),9.73,52.37,bdod,60-100cm,Q0.5,,,kg/dm³
+Hannover centre (urban),9.73,52.37,bdod,60-100cm,Q0.05,,,kg/dm³
+Hannover centre (urban),9.73,52.37,bdod,60-100cm,Q0.95,,,kg/dm³
+Hannover centre (urban),9.73,52.37,bdod,60-100cm,mean,,,kg/dm³
+Hannover centre (urban),9.73,52.37,bdod,60-100cm,uncertainty,,,kg/dm³
+Hannover centre (urban),9.73,52.37,bdod,100-200cm,Q0.05,,,kg/dm³
+Hannover centre (urban),9.73,52.37,bdod,100-200cm,Q0.5,,,kg/dm³
+Hannover centre (urban),9.73,52.37,bdod,100-200cm,Q0.95,,,kg/dm³
+Hannover centre (urban),9.73,52.37,bdod,100-200cm,mean,,,kg/dm³
+Hannover centre (urban),9.73,52.37,bdod,100-200cm,uncertainty,,,kg/dm³
+Hannover centre (urban),9.73,52.37,cec,0-5cm,Q0.05,,,cmol(c)/kg
+Hannover centre (urban),9.73,52.37,cec,0-5cm,Q0.5,,,cmol(c)/kg
+Hannover centre (urban),9.73,52.37,cec,0-5cm,Q0.95,,,cmol(c)/kg
+Hannover centre (urban),9.73,52.37,cec,0-5cm,mean,,,cmol(c)/kg
+Hannover centre (urban),9.73,52.37,cec,0-5cm,uncertainty,,,cmol(c)/kg
+Hannover centre (urban),9.73,52.37,cec,5-15cm,Q0.05,,,cmol(c)/kg
+Hannover centre (urban),9.73,52.37,cec,5-15cm,Q0.5,,,cmol(c)/kg
+Hannover centre (urban),9.73,52.37,cec,5-15cm,Q0.95,,,cmol(c)/kg
+Hannover centre (urban),9.73,52.37,cec,5-15cm,mean,,,cmol(c)/kg
+Hannover centre (urban),9.73,52.37,cec,5-15cm,uncertainty,,,cmol(c)/kg
+Hannover centre (urban),9.73,52.37,cec,15-30cm,Q0.05,,,cmol(c)/kg
+Hannover centre (urban),9.73,52.37,cec,15-30cm,Q0.5,,,cmol(c)/kg
+Hannover centre (urban),9.73,52.37,cec,15-30cm,Q0.95,,,cmol(c)/kg
+Hannover centre (urban),9.73,52.37,cec,15-30cm,mean,,,cmol(c)/kg
+Hannover centre (urban),9.73,52.37,cec,15-30cm,uncertainty,,,cmol(c)/kg
+Hannover centre (urban),9.73,52.37,cec,30-60cm,Q0.5,,,cmol(c)/kg
+Hannover centre (urban),9.73,52.37,cec,30-60cm,Q0.05,,,cmol(c)/kg
+Hannover centre (urban),9.73,52.37,cec,30-60cm,Q0.95,,,cmol(c)/kg
+Hannover centre (urban),9.73,52.37,cec,30-60cm,mean,,,cmol(c)/kg
+Hannover centre (urban),9.73,52.37,cec,30-60cm,uncertainty,,,cmol(c)/kg
+Hannover centre (urban),9.73,52.37,cec,60-100cm,Q0.05,,,cmol(c)/kg
+Hannover centre (urban),9.73,52.37,cec,60-100cm,Q0.5,,,cmol(c)/kg
+Hannover centre (urban),9.73,52.37,cec,60-100cm,Q0.95,,,cmol(c)/kg
+Hannover centre (urban),9.73,52.37,cec,60-100cm,mean,,,cmol(c)/kg
+Hannover centre (urban),9.73,52.37,cec,60-100cm,uncertainty,,,cmol(c)/kg
+Hannover centre (urban),9.73,52.37,cec,100-200cm,Q0.05,,,cmol(c)/kg
+Hannover centre (urban),9.73,52.37,cec,100-200cm,Q0.5,,,cmol(c)/kg
+Hannover centre (urban),9.73,52.37,cec,100-200cm,Q0.95,,,cmol(c)/kg
+Hannover centre (urban),9.73,52.37,cec,100-200cm,mean,,,cmol(c)/kg
+Hannover centre (urban),9.73,52.37,cec,100-200cm,uncertainty,,,cmol(c)/kg
+Hannover centre (urban),9.73,52.37,cfvo,0-5cm,Q0.5,,,cm³/100cm³
+Hannover centre (urban),9.73,52.37,cfvo,0-5cm,Q0.05,,,cm³/100cm³
+Hannover centre (urban),9.73,52.37,cfvo,0-5cm,Q0.95,,,cm³/100cm³
+Hannover centre (urban),9.73,52.37,cfvo,0-5cm,mean,,,cm³/100cm³
+Hannover centre (urban),9.73,52.37,cfvo,0-5cm,uncertainty,,,cm³/100cm³
+Hannover centre (urban),9.73,52.37,cfvo,5-15cm,Q0.05,,,cm³/100cm³
+Hannover centre (urban),9.73,52.37,cfvo,5-15cm,Q0.5,,,cm³/100cm³
+Hannover centre (urban),9.73,52.37,cfvo,5-15cm,Q0.95,,,cm³/100cm³
+Hannover centre (urban),9.73,52.37,cfvo,5-15cm,mean,,,cm³/100cm³
+Hannover centre (urban),9.73,52.37,cfvo,5-15cm,uncertainty,,,cm³/100cm³
+Hannover centre (urban),9.73,52.37,cfvo,15-30cm,Q0.05,,,cm³/100cm³
+Hannover centre (urban),9.73,52.37,cfvo,15-30cm,Q0.5,,,cm³/100cm³
+Hannover centre (urban),9.73,52.37,cfvo,15-30cm,Q0.95,,,cm³/100cm³
+Hannover centre (urban),9.73,52.37,cfvo,15-30cm,mean,,,cm³/100cm³
+Hannover centre (urban),9.73,52.37,cfvo,15-30cm,uncertainty,,,cm³/100cm³
+Hannover centre (urban),9.73,52.37,cfvo,30-60cm,Q0.05,,,cm³/100cm³
+Hannover centre (urban),9.73,52.37,cfvo,30-60cm,Q0.5,,,cm³/100cm³
+Hannover centre (urban),9.73,52.37,cfvo,30-60cm,Q0.95,,,cm³/100cm³
+Hannover centre (urban),9.73,52.37,cfvo,30-60cm,mean,,,cm³/100cm³
+Hannover centre (urban),9.73,52.37,cfvo,30-60cm,uncertainty,,,cm³/100cm³
+Hannover centre (urban),9.73,52.37,cfvo,60-100cm,Q0.5,,,cm³/100cm³
+Hannover centre (urban),9.73,52.37,cfvo,60-100cm,Q0.05,,,cm³/100cm³
+Hannover centre (urban),9.73,52.37,cfvo,60-100cm,Q0.95,,,cm³/100cm³
+Hannover centre (urban),9.73,52.37,cfvo,60-100cm,mean,,,cm³/100cm³
+Hannover centre (urban),9.73,52.37,cfvo,60-100cm,uncertainty,,,cm³/100cm³
+Hannover centre (urban),9.73,52.37,cfvo,100-200cm,Q0.05,,,cm³/100cm³
+Hannover centre (urban),9.73,52.37,cfvo,100-200cm,Q0.5,,,cm³/100cm³
+Hannover centre (urban),9.73,52.37,cfvo,100-200cm,Q0.95,,,cm³/100cm³
+Hannover centre (urban),9.73,52.37,cfvo,100-200cm,mean,,,cm³/100cm³
+Hannover centre (urban),9.73,52.37,cfvo,100-200cm,uncertainty,,,cm³/100cm³
+Hannover centre (urban),9.73,52.37,clay,0-5cm,Q0.5,,,%
+Hannover centre (urban),9.73,52.37,clay,0-5cm,Q0.05,,,%
+Hannover centre (urban),9.73,52.37,clay,0-5cm,Q0.95,,,%
+Hannover centre (urban),9.73,52.37,clay,0-5cm,mean,,,%
+Hannover centre (urban),9.73,52.37,clay,0-5cm,uncertainty,,,%
+Hannover centre (urban),9.73,52.37,clay,5-15cm,Q0.5,,,%
+Hannover centre (urban),9.73,52.37,clay,5-15cm,Q0.05,,,%
+Hannover centre (urban),9.73,52.37,clay,5-15cm,Q0.95,,,%
+Hannover centre (urban),9.73,52.37,clay,5-15cm,mean,,,%
+Hannover centre (urban),9.73,52.37,clay,5-15cm,uncertainty,,,%
+Hannover centre (urban),9.73,52.37,clay,15-30cm,Q0.05,,,%
+Hannover centre (urban),9.73,52.37,clay,15-30cm,Q0.5,,,%
+Hannover centre (urban),9.73,52.37,clay,15-30cm,Q0.95,,,%
+Hannover centre (urban),9.73,52.37,clay,15-30cm,mean,,,%
+Hannover centre (urban),9.73,52.37,clay,15-30cm,uncertainty,,,%
+Hannover centre (urban),9.73,52.37,clay,30-60cm,Q0.05,,,%
+Hannover centre (urban),9.73,52.37,clay,30-60cm,Q0.5,,,%
+Hannover centre (urban),9.73,52.37,clay,30-60cm,Q0.95,,,%
+Hannover centre (urban),9.73,52.37,clay,30-60cm,mean,,,%
+Hannover centre (urban),9.73,52.37,clay,30-60cm,uncertainty,,,%
+Hannover centre (urban),9.73,52.37,clay,60-100cm,Q0.5,,,%
+Hannover centre (urban),9.73,52.37,clay,60-100cm,Q0.05,,,%
+Hannover centre (urban),9.73,52.37,clay,60-100cm,Q0.95,,,%
+Hannover centre (urban),9.73,52.37,clay,60-100cm,mean,,,%
+Hannover centre (urban),9.73,52.37,clay,60-100cm,uncertainty,,,%
+Hannover centre (urban),9.73,52.37,clay,100-200cm,Q0.05,,,%
+Hannover centre (urban),9.73,52.37,clay,100-200cm,Q0.5,,,%
+Hannover centre (urban),9.73,52.37,clay,100-200cm,Q0.95,,,%
+Hannover centre (urban),9.73,52.37,clay,100-200cm,mean,,,%
+Hannover centre (urban),9.73,52.37,clay,100-200cm,uncertainty,,,%
+Hannover centre (urban),9.73,52.37,nitrogen,0-5cm,Q0.05,,,g/kg
+Hannover centre (urban),9.73,52.37,nitrogen,0-5cm,Q0.5,,,g/kg
+Hannover centre (urban),9.73,52.37,nitrogen,0-5cm,Q0.95,,,g/kg
+Hannover centre (urban),9.73,52.37,nitrogen,0-5cm,mean,,,g/kg
+Hannover centre (urban),9.73,52.37,nitrogen,0-5cm,uncertainty,,,g/kg
+Hannover centre (urban),9.73,52.37,nitrogen,5-15cm,Q0.5,,,g/kg
+Hannover centre (urban),9.73,52.37,nitrogen,5-15cm,Q0.05,,,g/kg
+Hannover centre (urban),9.73,52.37,nitrogen,5-15cm,Q0.95,,,g/kg
+Hannover centre (urban),9.73,52.37,nitrogen,5-15cm,mean,,,g/kg
+Hannover centre (urban),9.73,52.37,nitrogen,5-15cm,uncertainty,,,g/kg
+Hannover centre (urban),9.73,52.37,nitrogen,15-30cm,Q0.05,,,g/kg
+Hannover centre (urban),9.73,52.37,nitrogen,15-30cm,Q0.5,,,g/kg
+Hannover centre (urban),9.73,52.37,nitrogen,15-30cm,Q0.95,,,g/kg
+Hannover centre (urban),9.73,52.37,nitrogen,15-30cm,mean,,,g/kg
+Hannover centre (urban),9.73,52.37,nitrogen,15-30cm,uncertainty,,,g/kg
+Hannover centre (urban),9.73,52.37,nitrogen,30-60cm,Q0.05,,,g/kg
+Hannover centre (urban),9.73,52.37,nitrogen,30-60cm,Q0.5,,,g/kg
+Hannover centre (urban),9.73,52.37,nitrogen,30-60cm,Q0.95,,,g/kg
+Hannover centre (urban),9.73,52.37,nitrogen,30-60cm,mean,,,g/kg
+Hannover centre (urban),9.73,52.37,nitrogen,30-60cm,uncertainty,,,g/kg
+Hannover centre (urban),9.73,52.37,nitrogen,60-100cm,Q0.05,,,g/kg
+Hannover centre (urban),9.73,52.37,nitrogen,60-100cm,Q0.5,,,g/kg
+Hannover centre (urban),9.73,52.37,nitrogen,60-100cm,Q0.95,,,g/kg
+Hannover centre (urban),9.73,52.37,nitrogen,60-100cm,mean,,,g/kg
+Hannover centre (urban),9.73,52.37,nitrogen,60-100cm,uncertainty,,,g/kg
+Hannover centre (urban),9.73,52.37,nitrogen,100-200cm,Q0.05,,,g/kg
+Hannover centre (urban),9.73,52.37,nitrogen,100-200cm,Q0.5,,,g/kg
+Hannover centre (urban),9.73,52.37,nitrogen,100-200cm,Q0.95,,,g/kg
+Hannover centre (urban),9.73,52.37,nitrogen,100-200cm,mean,,,g/kg
+Hannover centre (urban),9.73,52.37,nitrogen,100-200cm,uncertainty,,,g/kg
+Hannover centre (urban),9.73,52.37,ocd,0-5cm,Q0.05,,,hg/m³
+Hannover centre (urban),9.73,52.37,ocd,0-5cm,Q0.5,,,hg/m³
+Hannover centre (urban),9.73,52.37,ocd,0-5cm,Q0.95,,,hg/m³
+Hannover centre (urban),9.73,52.37,ocd,0-5cm,mean,,,hg/m³
+Hannover centre (urban),9.73,52.37,ocd,0-5cm,uncertainty,,,hg/m³
+Hannover centre (urban),9.73,52.37,ocd,5-15cm,Q0.5,,,hg/m³
+Hannover centre (urban),9.73,52.37,ocd,5-15cm,Q0.05,,,hg/m³
+Hannover centre (urban),9.73,52.37,ocd,5-15cm,Q0.95,,,hg/m³
+Hannover centre (urban),9.73,52.37,ocd,5-15cm,mean,,,hg/m³
+Hannover centre (urban),9.73,52.37,ocd,5-15cm,uncertainty,,,hg/m³
+Hannover centre (urban),9.73,52.37,ocd,15-30cm,Q0.05,,,hg/m³
+Hannover centre (urban),9.73,52.37,ocd,15-30cm,Q0.5,,,hg/m³
+Hannover centre (urban),9.73,52.37,ocd,15-30cm,Q0.95,,,hg/m³
+Hannover centre (urban),9.73,52.37,ocd,15-30cm,mean,,,hg/m³
+Hannover centre (urban),9.73,52.37,ocd,15-30cm,uncertainty,,,hg/m³
+Hannover centre (urban),9.73,52.37,ocd,30-60cm,Q0.5,,,hg/m³
+Hannover centre (urban),9.73,52.37,ocd,30-60cm,Q0.05,,,hg/m³
+Hannover centre (urban),9.73,52.37,ocd,30-60cm,Q0.95,,,hg/m³
+Hannover centre (urban),9.73,52.37,ocd,30-60cm,mean,,,hg/m³
+Hannover centre (urban),9.73,52.37,ocd,30-60cm,uncertainty,,,hg/m³
+Hannover centre (urban),9.73,52.37,ocd,60-100cm,Q0.05,,,hg/m³
+Hannover centre (urban),9.73,52.37,ocd,60-100cm,Q0.5,,,hg/m³
+Hannover centre (urban),9.73,52.37,ocd,60-100cm,Q0.95,,,hg/m³
+Hannover centre (urban),9.73,52.37,ocd,60-100cm,mean,,,hg/m³
+Hannover centre (urban),9.73,52.37,ocd,60-100cm,uncertainty,,,hg/m³
+Hannover centre (urban),9.73,52.37,ocd,100-200cm,Q0.5,,,hg/m³
+Hannover centre (urban),9.73,52.37,ocd,100-200cm,Q0.05,,,hg/m³
+Hannover centre (urban),9.73,52.37,ocd,100-200cm,Q0.95,,,hg/m³
+Hannover centre (urban),9.73,52.37,ocd,100-200cm,mean,,,hg/m³
+Hannover centre (urban),9.73,52.37,ocd,100-200cm,uncertainty,,,hg/m³
+Hannover centre (urban),9.73,52.37,ocs,0-30cm,Q0.5,,,kg/m²
+Hannover centre (urban),9.73,52.37,ocs,0-30cm,Q0.05,,,kg/m²
+Hannover centre (urban),9.73,52.37,ocs,0-30cm,Q0.95,,,kg/m²
+Hannover centre (urban),9.73,52.37,ocs,0-30cm,mean,,,kg/m²
+Hannover centre (urban),9.73,52.37,ocs,0-30cm,uncertainty,,,kg/m²
+Hannover centre (urban),9.73,52.37,phh2o,0-5cm,Q0.05,,,-
+Hannover centre (urban),9.73,52.37,phh2o,0-5cm,Q0.5,,,-
+Hannover centre (urban),9.73,52.37,phh2o,0-5cm,Q0.95,,,-
+Hannover centre (urban),9.73,52.37,phh2o,0-5cm,mean,,,-
+Hannover centre (urban),9.73,52.37,phh2o,0-5cm,uncertainty,,,-
+Hannover centre (urban),9.73,52.37,phh2o,5-15cm,Q0.05,,,-
+Hannover centre (urban),9.73,52.37,phh2o,5-15cm,Q0.5,,,-
+Hannover centre (urban),9.73,52.37,phh2o,5-15cm,Q0.95,,,-
+Hannover centre (urban),9.73,52.37,phh2o,5-15cm,mean,,,-
+Hannover centre (urban),9.73,52.37,phh2o,5-15cm,uncertainty,,,-
+Hannover centre (urban),9.73,52.37,phh2o,15-30cm,Q0.5,,,-
+Hannover centre (urban),9.73,52.37,phh2o,15-30cm,Q0.05,,,-
+Hannover centre (urban),9.73,52.37,phh2o,15-30cm,Q0.95,,,-
+Hannover centre (urban),9.73,52.37,phh2o,15-30cm,mean,,,-
+Hannover centre (urban),9.73,52.37,phh2o,15-30cm,uncertainty,,,-
+Hannover centre (urban),9.73,52.37,phh2o,30-60cm,Q0.05,,,-
+Hannover centre (urban),9.73,52.37,phh2o,30-60cm,Q0.5,,,-
+Hannover centre (urban),9.73,52.37,phh2o,30-60cm,Q0.95,,,-
+Hannover centre (urban),9.73,52.37,phh2o,30-60cm,mean,,,-
+Hannover centre (urban),9.73,52.37,phh2o,30-60cm,uncertainty,,,-
+Hannover centre (urban),9.73,52.37,phh2o,60-100cm,Q0.05,,,-
+Hannover centre (urban),9.73,52.37,phh2o,60-100cm,Q0.5,,,-
+Hannover centre (urban),9.73,52.37,phh2o,60-100cm,Q0.95,,,-
+Hannover centre (urban),9.73,52.37,phh2o,60-100cm,mean,,,-
+Hannover centre (urban),9.73,52.37,phh2o,60-100cm,uncertainty,,,-
+Hannover centre (urban),9.73,52.37,phh2o,100-200cm,Q0.05,,,-
+Hannover centre (urban),9.73,52.37,phh2o,100-200cm,Q0.5,,,-
+Hannover centre (urban),9.73,52.37,phh2o,100-200cm,Q0.95,,,-
+Hannover centre (urban),9.73,52.37,phh2o,100-200cm,mean,,,-
+Hannover centre (urban),9.73,52.37,phh2o,100-200cm,uncertainty,,,-
+Hannover centre (urban),9.73,52.37,sand,0-5cm,Q0.05,,,%
+Hannover centre (urban),9.73,52.37,sand,0-5cm,Q0.5,,,%
+Hannover centre (urban),9.73,52.37,sand,0-5cm,Q0.95,,,%
+Hannover centre (urban),9.73,52.37,sand,0-5cm,mean,,,%
+Hannover centre (urban),9.73,52.37,sand,0-5cm,uncertainty,,,%
+Hannover centre (urban),9.73,52.37,sand,5-15cm,Q0.5,,,%
+Hannover centre (urban),9.73,52.37,sand,5-15cm,Q0.05,,,%
+Hannover centre (urban),9.73,52.37,sand,5-15cm,Q0.95,,,%
+Hannover centre (urban),9.73,52.37,sand,5-15cm,mean,,,%
+Hannover centre (urban),9.73,52.37,sand,5-15cm,uncertainty,,,%
+Hannover centre (urban),9.73,52.37,sand,15-30cm,Q0.05,,,%
+Hannover centre (urban),9.73,52.37,sand,15-30cm,Q0.5,,,%
+Hannover centre (urban),9.73,52.37,sand,15-30cm,Q0.95,,,%
+Hannover centre (urban),9.73,52.37,sand,15-30cm,mean,,,%
+Hannover centre (urban),9.73,52.37,sand,15-30cm,uncertainty,,,%
+Hannover centre (urban),9.73,52.37,sand,30-60cm,Q0.05,,,%
+Hannover centre (urban),9.73,52.37,sand,30-60cm,Q0.5,,,%
+Hannover centre (urban),9.73,52.37,sand,30-60cm,Q0.95,,,%
+Hannover centre (urban),9.73,52.37,sand,30-60cm,mean,,,%
+Hannover centre (urban),9.73,52.37,sand,30-60cm,uncertainty,,,%
+Hannover centre (urban),9.73,52.37,sand,60-100cm,Q0.05,,,%
+Hannover centre (urban),9.73,52.37,sand,60-100cm,Q0.5,,,%
+Hannover centre (urban),9.73,52.37,sand,60-100cm,Q0.95,,,%
+Hannover centre (urban),9.73,52.37,sand,60-100cm,mean,,,%
+Hannover centre (urban),9.73,52.37,sand,60-100cm,uncertainty,,,%
+Hannover centre (urban),9.73,52.37,sand,100-200cm,Q0.05,,,%
+Hannover centre (urban),9.73,52.37,sand,100-200cm,Q0.5,,,%
+Hannover centre (urban),9.73,52.37,sand,100-200cm,Q0.95,,,%
+Hannover centre (urban),9.73,52.37,sand,100-200cm,mean,,,%
+Hannover centre (urban),9.73,52.37,sand,100-200cm,uncertainty,,,%
+Hannover centre (urban),9.73,52.37,silt,0-5cm,Q0.05,,,%
+Hannover centre (urban),9.73,52.37,silt,0-5cm,Q0.5,,,%
+Hannover centre (urban),9.73,52.37,silt,0-5cm,Q0.95,,,%
+Hannover centre (urban),9.73,52.37,silt,0-5cm,mean,,,%
+Hannover centre (urban),9.73,52.37,silt,0-5cm,uncertainty,,,%
+Hannover centre (urban),9.73,52.37,silt,5-15cm,Q0.5,,,%
+Hannover centre (urban),9.73,52.37,silt,5-15cm,Q0.05,,,%
+Hannover centre (urban),9.73,52.37,silt,5-15cm,Q0.95,,,%
+Hannover centre (urban),9.73,52.37,silt,5-15cm,mean,,,%
+Hannover centre (urban),9.73,52.37,silt,5-15cm,uncertainty,,,%
+Hannover centre (urban),9.73,52.37,silt,15-30cm,Q0.05,,,%
+Hannover centre (urban),9.73,52.37,silt,15-30cm,Q0.5,,,%
+Hannover centre (urban),9.73,52.37,silt,15-30cm,Q0.95,,,%
+Hannover centre (urban),9.73,52.37,silt,15-30cm,mean,,,%
+Hannover centre (urban),9.73,52.37,silt,15-30cm,uncertainty,,,%
+Hannover centre (urban),9.73,52.37,silt,30-60cm,Q0.05,,,%
+Hannover centre (urban),9.73,52.37,silt,30-60cm,Q0.5,,,%
+Hannover centre (urban),9.73,52.37,silt,30-60cm,Q0.95,,,%
+Hannover centre (urban),9.73,52.37,silt,30-60cm,mean,,,%
+Hannover centre (urban),9.73,52.37,silt,30-60cm,uncertainty,,,%
+Hannover centre (urban),9.73,52.37,silt,60-100cm,Q0.05,,,%
+Hannover centre (urban),9.73,52.37,silt,60-100cm,Q0.5,,,%
+Hannover centre (urban),9.73,52.37,silt,60-100cm,Q0.95,,,%
+Hannover centre (urban),9.73,52.37,silt,60-100cm,mean,,,%
+Hannover centre (urban),9.73,52.37,silt,60-100cm,uncertainty,,,%
+Hannover centre (urban),9.73,52.37,silt,100-200cm,Q0.05,,,%
+Hannover centre (urban),9.73,52.37,silt,100-200cm,Q0.5,,,%
+Hannover centre (urban),9.73,52.37,silt,100-200cm,Q0.95,,,%
+Hannover centre (urban),9.73,52.37,silt,100-200cm,mean,,,%
+Hannover centre (urban),9.73,52.37,silt,100-200cm,uncertainty,,,%
+Hannover centre (urban),9.73,52.37,soc,0-5cm,Q0.5,,,g/kg
+Hannover centre (urban),9.73,52.37,soc,0-5cm,Q0.05,,,g/kg
+Hannover centre (urban),9.73,52.37,soc,0-5cm,Q0.95,,,g/kg
+Hannover centre (urban),9.73,52.37,soc,0-5cm,mean,,,g/kg
+Hannover centre (urban),9.73,52.37,soc,0-5cm,uncertainty,,,g/kg
+Hannover centre (urban),9.73,52.37,soc,5-15cm,Q0.05,,,g/kg
+Hannover centre (urban),9.73,52.37,soc,5-15cm,Q0.5,,,g/kg
+Hannover centre (urban),9.73,52.37,soc,5-15cm,Q0.95,,,g/kg
+Hannover centre (urban),9.73,52.37,soc,5-15cm,mean,,,g/kg
+Hannover centre (urban),9.73,52.37,soc,5-15cm,uncertainty,,,g/kg
+Hannover centre (urban),9.73,52.37,soc,15-30cm,Q0.5,,,g/kg
+Hannover centre (urban),9.73,52.37,soc,15-30cm,Q0.05,,,g/kg
+Hannover centre (urban),9.73,52.37,soc,15-30cm,Q0.95,,,g/kg
+Hannover centre (urban),9.73,52.37,soc,15-30cm,mean,,,g/kg
+Hannover centre (urban),9.73,52.37,soc,15-30cm,uncertainty,,,g/kg
+Hannover centre (urban),9.73,52.37,soc,30-60cm,Q0.5,,,g/kg
+Hannover centre (urban),9.73,52.37,soc,30-60cm,Q0.05,,,g/kg
+Hannover centre (urban),9.73,52.37,soc,30-60cm,Q0.95,,,g/kg
+Hannover centre (urban),9.73,52.37,soc,30-60cm,mean,,,g/kg
+Hannover centre (urban),9.73,52.37,soc,30-60cm,uncertainty,,,g/kg
+Hannover centre (urban),9.73,52.37,soc,60-100cm,Q0.05,,,g/kg
+Hannover centre (urban),9.73,52.37,soc,60-100cm,Q0.5,,,g/kg
+Hannover centre (urban),9.73,52.37,soc,60-100cm,Q0.95,,,g/kg
+Hannover centre (urban),9.73,52.37,soc,60-100cm,mean,,,g/kg
+Hannover centre (urban),9.73,52.37,soc,60-100cm,uncertainty,,,g/kg
+Hannover centre (urban),9.73,52.37,soc,100-200cm,Q0.05,,,g/kg
+Hannover centre (urban),9.73,52.37,soc,100-200cm,Q0.5,,,g/kg
+Hannover centre (urban),9.73,52.37,soc,100-200cm,Q0.95,,,g/kg
+Hannover centre (urban),9.73,52.37,soc,100-200cm,mean,,,g/kg
+Hannover centre (urban),9.73,52.37,soc,100-200cm,uncertainty,,,g/kg
+Hannover centre (urban),9.73,52.37,wv0010,0-5cm,Q0.05,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0010,0-5cm,Q0.5,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0010,0-5cm,Q0.95,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0010,0-5cm,mean,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0010,0-5cm,uncertainty,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0010,5-15cm,Q0.05,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0010,5-15cm,Q0.5,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0010,5-15cm,Q0.95,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0010,5-15cm,mean,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0010,5-15cm,uncertainty,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0010,15-30cm,Q0.5,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0010,15-30cm,Q0.05,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0010,15-30cm,Q0.95,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0010,15-30cm,mean,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0010,15-30cm,uncertainty,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0010,30-60cm,Q0.05,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0010,30-60cm,Q0.5,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0010,30-60cm,Q0.95,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0010,30-60cm,mean,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0010,30-60cm,uncertainty,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0010,60-100cm,Q0.05,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0010,60-100cm,Q0.5,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0010,60-100cm,Q0.95,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0010,60-100cm,mean,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0010,60-100cm,uncertainty,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0010,100-200cm,Q0.05,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0010,100-200cm,Q0.5,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0010,100-200cm,Q0.95,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0010,100-200cm,mean,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0010,100-200cm,uncertainty,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0033,0-5cm,Q0.5,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0033,0-5cm,Q0.05,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0033,0-5cm,Q0.95,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0033,0-5cm,mean,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0033,0-5cm,uncertainty,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0033,5-15cm,Q0.05,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0033,5-15cm,Q0.5,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0033,5-15cm,Q0.95,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0033,5-15cm,mean,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0033,5-15cm,uncertainty,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0033,15-30cm,Q0.05,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0033,15-30cm,Q0.5,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0033,15-30cm,Q0.95,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0033,15-30cm,mean,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0033,15-30cm,uncertainty,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0033,30-60cm,Q0.05,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0033,30-60cm,Q0.5,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0033,30-60cm,Q0.95,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0033,30-60cm,mean,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0033,30-60cm,uncertainty,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0033,60-100cm,Q0.05,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0033,60-100cm,Q0.5,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0033,60-100cm,Q0.95,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0033,60-100cm,mean,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0033,60-100cm,uncertainty,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0033,100-200cm,Q0.05,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0033,100-200cm,Q0.5,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0033,100-200cm,Q0.95,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0033,100-200cm,mean,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv0033,100-200cm,uncertainty,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv1500,0-5cm,Q0.05,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv1500,0-5cm,Q0.5,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv1500,0-5cm,Q0.95,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv1500,0-5cm,mean,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv1500,0-5cm,uncertainty,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv1500,5-15cm,Q0.05,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv1500,5-15cm,Q0.5,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv1500,5-15cm,Q0.95,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv1500,5-15cm,mean,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv1500,5-15cm,uncertainty,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv1500,15-30cm,Q0.5,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv1500,15-30cm,Q0.05,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv1500,15-30cm,Q0.95,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv1500,15-30cm,mean,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv1500,15-30cm,uncertainty,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv1500,30-60cm,Q0.5,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv1500,30-60cm,Q0.05,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv1500,30-60cm,Q0.95,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv1500,30-60cm,mean,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv1500,30-60cm,uncertainty,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv1500,60-100cm,Q0.05,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv1500,60-100cm,Q0.5,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv1500,60-100cm,Q0.95,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv1500,60-100cm,mean,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv1500,60-100cm,uncertainty,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv1500,100-200cm,Q0.05,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv1500,100-200cm,Q0.5,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv1500,100-200cm,Q0.95,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv1500,100-200cm,mean,,,10-2 cm³/cm³
+Hannover centre (urban),9.73,52.37,wv1500,100-200cm,uncertainty,,,10-2 cm³/cm³

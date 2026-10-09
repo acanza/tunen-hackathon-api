@@ -1,0 +1,9 @@
+what,copies,n,identical,same_grid,note
+"SoilGrids WCS tiles, seggerde/raw/soilgrids vs seggerde/soilgrids/raw",2,268,0.0,0.0,"268 vs 395 files, the new folder adds the 'uncertainty' statistic; WCS resampled each pull to a slightly different grid; at matching pixels 49.9% of values are equal, mean |diff| 14.08 raw units"
+"SoilGrids raw vs soilgrids_fixed (same tiles, CRS + nodata added)",2,40,40.0,40.0,values equal except 0 -> NaN; sample of 40 tiles
+LuF-Seggerde-Dev-fields.geojson archived vs active features,2,174,86.0,,86 of 87 archived features copy an active field (clean/fields_audit.csv)
+fields_active.geojson vs clean/fields_clean.geojson,2,87,80.0,,"7 fields differ by >1 m² (1.89 ha in total); soilgrids/buek200/dem/openmeteo stats use fields_active, Sentinel-2 uses fields_clean"
+field_coverage.csv elev_mean_m vs dem_fields.csv elev_mean,2,87,87.0,,"field_coverage.csv repeats columns from soilgrids_fields, buek200_fields, dem_fields, openmeteo_fields"
+guek200_dominant.csv ⊂ guek200_fields.csv,2,87,87.0,,"farm data stored under guek200_eda/, not seggerde/"
+sentinel2 field_summary.csv cv_<year> vs field_season_peaks.csv peak_cv,2,640,640.0,,per-season peak statistics repeated in the wide summary
+openmeteo_eda/compare_soilgrids_fc_wp.csv copies SoilGrids wv0033/wv1500,2,20,,,SoilGrids values copied into the Open-Meteo comparison table

@@ -1,0 +1,13 @@
+BK50 - Karte
+
+# 1
+FL_NR	:562250
+NRKART	:200582
+PRONUM	:258236
+BOTYP	:HHv5
+BOTYP_KLARTEXT	:Sehr tiefes Erdhochmoor
+PSONST	:MHGW wurde abgesenkt. MNGW wurde abgesenkt.
+MHGW	:4
+MNGW	:9
+NUTZUNG	:G
+GEOTYP	:Hh/Hn_f(qw)

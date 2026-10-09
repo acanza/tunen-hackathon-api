@@ -1,0 +1,784 @@
+{
+ "texture_by_buek_unit": [
+  {
+   "TKLE_NR": 392606,
+   "buek_texture": "Sl2",
+   "buek_humus": "h2",
+   "fields": 15,
+   "ha": 345.12,
+   "sg_clay_min": 5.59,
+   "sg_clay_med": 9.74,
+   "sg_clay_max": 14.12,
+   "sg_sand_med": 58.67,
+   "sg_soc_med": 14.85,
+   "sg_bdod_med": 1.45,
+   "buek_clay": "5–8",
+   "buek_soc": "5.8–11.6",
+   "buek_ld": "Ld2",
+   "clay_agree_share": 0.2,
+   "soc_agree_share": 0.0
+  },
+  {
+   "TKLE_NR": 392611,
+   "buek_texture": "Su2",
+   "buek_humus": "h2",
+   "fields": 26,
+   "ha": 203.54,
+   "sg_clay_min": 4.83,
+   "sg_clay_med": 6.79,
+   "sg_clay_max": 10.05,
+   "sg_sand_med": 63.53,
+   "sg_soc_med": 15.39,
+   "sg_bdod_med": 1.45,
+   "buek_clay": "0–5",
+   "buek_soc": "5.8–11.6",
+   "buek_ld": "Ld2",
+   "clay_agree_share": 0.19,
+   "soc_agree_share": 0.0
+  },
+  {
+   "TKLE_NR": 392630,
+   "buek_texture": "Sl3",
+   "buek_humus": "h5",
+   "fields": 12,
+   "ha": 153.98,
+   "sg_clay_min": 5.77,
+   "sg_clay_med": 8.95,
+   "sg_clay_max": 9.63,
+   "sg_sand_med": 60.98,
+   "sg_soc_med": 14.77,
+   "sg_bdod_med": 1.44,
+   "buek_clay": "8–12",
+   "buek_soc": "46.5–87.2",
+   "buek_ld": "Ld2",
+   "clay_agree_share": 0.92,
+   "soc_agree_share": 0.0
+  },
+  {
+   "TKLE_NR": 392603,
+   "buek_texture": "Ls3",
+   "buek_humus": "h4",
+   "fields": 22,
+   "ha": 129.99,
+   "sg_clay_min": 4.83,
+   "sg_clay_med": 9.32,
+   "sg_clay_max": 13.83,
+   "sg_sand_med": 59.25,
+   "sg_soc_med": 15.45,
+   "sg_bdod_med": 1.45,
+   "buek_clay": "17–25",
+   "buek_soc": "23.3–46.5",
+   "buek_ld": "Ld2",
+   "clay_agree_share": 0.0,
+   "soc_agree_share": 0.0
+  },
+  {
+   "TKLE_NR": 392621,
+   "buek_texture": "Uls",
+   "buek_humus": "h3",
+   "fields": 7,
+   "ha": 33.74,
+   "sg_clay_min": 4.79,
+   "sg_clay_med": 5.65,
+   "sg_clay_max": 6.84,
+   "sg_sand_med": 66.0,
+   "sg_soc_med": 14.48,
+   "sg_bdod_med": 1.44,
+   "buek_clay": "8–17",
+   "buek_soc": "11.6–23.3",
+   "buek_ld": "Ld2",
+   "clay_agree_share": 0.0,
+   "soc_agree_share": 1.0
+  },
+  {
+   "TKLE_NR": 392604,
+   "buek_texture": "Ls3",
+   "buek_humus": "h3",
+   "fields": 2,
+   "ha": 10.23,
+   "sg_clay_min": 6.65,
+   "sg_clay_med": 7.17,
+   "sg_clay_max": 7.69,
+   "sg_sand_med": 61.96,
+   "sg_soc_med": 18.17,
+   "sg_bdod_med": 1.44,
+   "buek_clay": "17–25",
+   "buek_soc": "11.6–23.3",
+   "buek_ld": "Ld2",
+   "clay_agree_share": 0.0,
+   "soc_agree_share": 1.0
+  },
+  {
+   "TKLE_NR": 392636,
+   "buek_texture": "Sl3",
+   "buek_humus": "h3",
+   "fields": 2,
+   "ha": 6.03,
+   "sg_clay_min": 11.99,
+   "sg_clay_med": 12.76,
+   "sg_clay_max": 13.53,
+   "sg_sand_med": 54.57,
+   "sg_soc_med": 17.82,
+   "sg_bdod_med": 1.42,
+   "buek_clay": "8–12",
+   "buek_soc": "11.6–23.3",
+   "buek_ld": "Ld2",
+   "clay_agree_share": 0.5,
+   "soc_agree_share": 1.0
+  },
+  {
+   "TKLE_NR": 392637,
+   "buek_texture": "Sl4",
+   "buek_humus": "h3",
+   "fields": 1,
+   "ha": 0.87,
+   "sg_clay_min": 11.92,
+   "sg_clay_med": 11.92,
+   "sg_clay_max": 11.92,
+   "sg_sand_med": 55.25,
+   "sg_soc_med": 14.18,
+   "sg_bdod_med": 1.42,
+   "buek_clay": "12–17",
+   "buek_soc": "11.6–23.3",
+   "buek_ld": "Ld2",
+   "clay_agree_share": 0.0,
+   "soc_agree_share": 1.0
+  }
+ ],
+ "agreement_all_fields": {
+  "clay_agrees": {
+   "agree": 20,
+   "disagree": 67
+  },
+  "soc_agrees": {
+   "agree": 12,
+   "disagree": 75
+  },
+  "bdod_agrees": {
+   "agree": 87,
+   "disagree": 0
+  }
+ },
+ "guek_vs_buek": [
+  {
+   "guek_unit": "D,,Lg",
+   "TKLE_NR": 392606,
+   "area_geom_ha": 310.3
+  },
+  {
+   "guek_unit": "D,,gf",
+   "TKLE_NR": 392611,
+   "area_geom_ha": 169.4
+  },
+  {
+   "guek_unit": "w,,f",
+   "TKLE_NR": 392630,
+   "area_geom_ha": 97.6
+  },
+  {
+   "guek_unit": ",,f",
+   "TKLE_NR": 392603,
+   "area_geom_ha": 84.4
+  },
+  {
+   "guek_unit": "D,,Lg",
+   "TKLE_NR": 392630,
+   "area_geom_ha": 32.5
+  },
+  {
+   "guek_unit": "su",
+   "TKLE_NR": 392606,
+   "area_geom_ha": 26.2
+  },
+  {
+   "guek_unit": "D,,Lg",
+   "TKLE_NR": 392611,
+   "area_geom_ha": 24.3
+  },
+  {
+   "guek_unit": "D,,gf",
+   "TKLE_NR": 392630,
+   "area_geom_ha": 23.9
+  },
+  {
+   "guek_unit": "D,,Lg",
+   "TKLE_NR": 392603,
+   "area_geom_ha": 20.9
+  },
+  {
+   "guek_unit": "w,,f",
+   "TKLE_NR": 392603,
+   "area_geom_ha": 20.8
+  },
+  {
+   "guek_unit": "w,,f",
+   "TKLE_NR": 392621,
+   "area_geom_ha": 17.4
+  },
+  {
+   "guek_unit": "D,,gf",
+   "TKLE_NR": 392621,
+   "area_geom_ha": 16.3
+  },
+  {
+   "guek_unit": ",,f",
+   "TKLE_NR": 392604,
+   "area_geom_ha": 10.2
+  },
+  {
+   "guek_unit": "w,,f",
+   "TKLE_NR": 392611,
+   "area_geom_ha": 9.8
+  },
+  {
+   "guek_unit": ",,f",
+   "TKLE_NR": 392606,
+   "area_geom_ha": 8.7
+  },
+  {
+   "guek_unit": "D,,Lg",
+   "TKLE_NR": 392636,
+   "area_geom_ha": 4.4
+  },
+  {
+   "guek_unit": "ol",
+   "TKLE_NR": 392603,
+   "area_geom_ha": 2.4
+  },
+  {
+   "guek_unit": "r,R",
+   "TKLE_NR": 392636,
+   "area_geom_ha": 1.6
+  },
+  {
+   "guek_unit": "D,,gf",
+   "TKLE_NR": 392603,
+   "area_geom_ha": 1.5
+  },
+  {
+   "guek_unit": "D,,Lg",
+   "TKLE_NR": 392637,
+   "area_geom_ha": 0.9
+  }
+ ],
+ "nibis_fields": [
+  {
+   "fieldName": "Altenaer Weg",
+   "TKLE_NR": 392611,
+   "buek_legend": "11 BBn: p-ls/fg-s",
+   "buek_texture": "Su2",
+   "sg_clay": 6.844,
+   "sg_sand": 65.365,
+   "nibis_BOTYP_KLARTEXT": "Tiefer Podsol-Gley",
+   "nibis_KLASSENZEICHEN": "Sl3D",
+   "nibis_fines_range": "10–14",
+   "nibis_BODENZ": 37.0,
+   "guek_unit": "D,,gf"
+  },
+  {
+   "fieldName": "Berg",
+   "TKLE_NR": 392630,
+   "buek_legend": "30 GNn, GGn, GMn: u-ls,u-l/f-s",
+   "buek_texture": "Sl3",
+   "sg_clay": 8.235,
+   "sg_sand": 62.3,
+   "nibis_BOTYP_KLARTEXT": NaN,
+   "nibis_KLASSENZEICHEN": NaN,
+   "nibis_fines_range": "",
+   "nibis_BODENZ": NaN,
+   "guek_unit": "D,,gf"
+  },
+  {
+   "fieldName": "Kantorplan",
+   "TKLE_NR": 392603,
+   "buek_legend": "03 GG-AT: fo-l; fo-u",
+   "buek_texture": "Ls3",
+   "sg_clay": 10.0,
+   "sg_sand": 58.17,
+   "nibis_BOTYP_KLARTEXT": NaN,
+   "nibis_KLASSENZEICHEN": NaN,
+   "nibis_fines_range": "",
+   "nibis_BODENZ": NaN,
+   "guek_unit": "D,,Lg"
+  },
+  {
+   "fieldName": "Krautstemme",
+   "TKLE_NR": 392606,
+   "buek_legend": "06 SS-BB, SS-BB-LF: p-ls/g-l; SSn: p-l/g-l",
+   "buek_texture": "Sl2",
+   "sg_clay": 5.591,
+   "sg_sand": 61.841,
+   "nibis_BOTYP_KLARTEXT": NaN,
+   "nibis_KLASSENZEICHEN": NaN,
+   "nibis_fines_range": "",
+   "nibis_BODENZ": NaN,
+   "guek_unit": ",,f"
+  },
+  {
+   "fieldName": "Krügerbreite",
+   "TKLE_NR": 392630,
+   "buek_legend": "30 GNn, GGn, GMn: u-ls,u-l/f-s",
+   "buek_texture": "Sl3",
+   "sg_clay": 8.875,
+   "sg_sand": 60.11,
+   "nibis_BOTYP_KLARTEXT": NaN,
+   "nibis_KLASSENZEICHEN": NaN,
+   "nibis_fines_range": "",
+   "nibis_BODENZ": NaN,
+   "guek_unit": "D,,Lg"
+  },
+  {
+   "fieldName": "Kurze Enden vor Biogas",
+   "TKLE_NR": 392611,
+   "buek_legend": "11 BBn: p-ls/fg-s",
+   "buek_texture": "Su2",
+   "sg_clay": 4.833,
+   "sg_sand": 67.767,
+   "nibis_BOTYP_KLARTEXT": "Mittlere Podsol-Braunerde",
+   "nibis_KLASSENZEICHEN": "S5D",
+   "nibis_fines_range": "0–10",
+   "nibis_BODENZ": 17.0,
+   "guek_unit": "D,,gf"
+  },
+  {
+   "fieldName": "Kälbergehege Brache",
+   "TKLE_NR": 392606,
+   "buek_legend": "06 SS-BB, SS-BB-LF: p-ls/g-l; SSn: p-l/g-l",
+   "buek_texture": "Sl2",
+   "sg_clay": 7.244,
+   "sg_sand": 60.222,
+   "nibis_BOTYP_KLARTEXT": NaN,
+   "nibis_KLASSENZEICHEN": NaN,
+   "nibis_fines_range": "",
+   "nibis_BODENZ": NaN,
+   "guek_unit": "D,,Lg"
+  },
+  {
+   "fieldName": "Mühlenbreite (+)",
+   "TKLE_NR": 392606,
+   "buek_legend": "06 SS-BB, SS-BB-LF: p-ls/g-l; SSn: p-l/g-l",
+   "buek_texture": "Sl2",
+   "sg_clay": 13.227,
+   "sg_sand": 54.531,
+   "nibis_BOTYP_KLARTEXT": NaN,
+   "nibis_KLASSENZEICHEN": NaN,
+   "nibis_fines_range": "",
+   "nibis_BODENZ": NaN,
+   "guek_unit": "su"
+  },
+  {
+   "fieldName": "Nachthude 2",
+   "TKLE_NR": 392603,
+   "buek_legend": "03 GG-AT: fo-l; fo-u",
+   "buek_texture": "Ls3",
+   "sg_clay": 5.746,
+   "sg_sand": 62.182,
+   "nibis_BOTYP_KLARTEXT": "Tiefer Gley",
+   "nibis_KLASSENZEICHEN": "lS4Al",
+   "nibis_fines_range": "14–19",
+   "nibis_BODENZ": 48.0,
+   "guek_unit": ",,f"
+  },
+  {
+   "fieldName": "Ribbensdorf",
+   "TKLE_NR": 392606,
+   "buek_legend": "06 SS-BB, SS-BB-LF: p-ls/g-l; SSn: p-l/g-l",
+   "buek_texture": "Sl2",
+   "sg_clay": 12.876,
+   "sg_sand": 53.489,
+   "nibis_BOTYP_KLARTEXT": NaN,
+   "nibis_KLASSENZEICHEN": NaN,
+   "nibis_fines_range": "",
+   "nibis_BODENZ": NaN,
+   "guek_unit": "D,,Lg"
+  },
+  {
+   "fieldName": "Ribbensdorf Grünland",
+   "TKLE_NR": 392603,
+   "buek_legend": "03 GG-AT: fo-l; fo-u",
+   "buek_texture": "Ls3",
+   "sg_clay": 13.827,
+   "sg_sand": 55.141,
+   "nibis_BOTYP_KLARTEXT": NaN,
+   "nibis_KLASSENZEICHEN": NaN,
+   "nibis_fines_range": "",
+   "nibis_BODENZ": NaN,
+   "guek_unit": "ol"
+  },
+  {
+   "fieldName": "Specksbreite Groß",
+   "TKLE_NR": 392603,
+   "buek_legend": "03 GG-AT: fo-l; fo-u",
+   "buek_texture": "Ls3",
+   "sg_clay": 10.153,
+   "sg_sand": 59.045,
+   "nibis_BOTYP_KLARTEXT": NaN,
+   "nibis_KLASSENZEICHEN": NaN,
+   "nibis_fines_range": "",
+   "nibis_BODENZ": NaN,
+   "guek_unit": "w,,f"
+  },
+  {
+   "fieldName": "Umfeldwiese",
+   "TKLE_NR": 392604,
+   "buek_legend": "04 ABn, GG-AB: fo-l; fo-l//f-s; GG-SS: fo-sl/fo-l",
+   "buek_texture": "Ls3",
+   "sg_clay": 7.689,
+   "sg_sand": 60.584,
+   "nibis_BOTYP_KLARTEXT": "Tiefer Gley",
+   "nibis_KLASSENZEICHEN": "lS4Al",
+   "nibis_fines_range": "14–19",
+   "nibis_BODENZ": 42.0,
+   "guek_unit": ",,f"
+  }
+ ],
+ "sg_distinct_clay_values": 82,
+ "sg_fields_below_one_pixel": 44,
+ "elevation": {
+  "fields": 87,
+  "mean_diff": 0.18,
+  "median_abs_diff": 0.65,
+  "max_abs_diff": 8.16,
+  "p90_abs_diff": 1.82,
+  "share_within_field_range": 0.966,
+  "distinct_om_values": 26
+ },
+ "elevation_eda_sites": [
+  {
+   "label": "Hildesheimer Börde (loess)",
+   "elev_bilinear_m": 76.68,
+   "elev_dem90_m": 76.0,
+   "diff_dem90": -0.7,
+   "elev_cellmean_m": 90.0
+  },
+  {
+   "label": "Lüneburger Heide (sand)",
+   "elev_bilinear_m": 98.15,
+   "elev_dem90_m": 99.0,
+   "diff_dem90": 0.8,
+   "elev_cellmean_m": 96.0
+  },
+  {
+   "label": "Emsland (sand/peat)",
+   "elev_bilinear_m": 27.95,
+   "elev_dem90_m": 35.0,
+   "diff_dem90": 7.0,
+   "elev_cellmean_m": 22.0
+  },
+  {
+   "label": "Wesermarsch (marsh clay)",
+   "elev_bilinear_m": -0.39,
+   "elev_dem90_m": 0.0,
+   "diff_dem90": 0.4,
+   "elev_cellmean_m": -4.0
+  },
+  {
+   "label": "Teufelsmoor (bog)",
+   "elev_bilinear_m": 0.6,
+   "elev_dem90_m": 1.0,
+   "diff_dem90": 0.4,
+   "elev_cellmean_m": 14.0
+  },
+  {
+   "label": "Solling (upland forest)",
+   "elev_bilinear_m": 512.61,
+   "elev_dem90_m": 520.0,
+   "diff_dem90": 7.4,
+   "elev_cellmean_m": 299.0
+  },
+  {
+   "label": "Hannover centre (urban)",
+   "elev_bilinear_m": 56.04,
+   "elev_dem90_m": 56.0,
+   "diff_dem90": -0.0,
+   "elev_cellmean_m": 48.0
+  },
+  {
+   "label": "Hamburg",
+   "elev_bilinear_m": 31.07,
+   "elev_dem90_m": 27.0,
+   "diff_dem90": -4.1,
+   "elev_cellmean_m": 12.0
+  }
+ ],
+ "moisture_by_cell": [
+  {
+   "cell": "52.30,11.00",
+   "depth": "0_to_7cm",
+   "fields": 1,
+   "era5_median": 25.6,
+   "era5_min": 23.1,
+   "era5_max": 32.5,
+   "sg_fc_min": 33.8,
+   "sg_fc_max": 33.8,
+   "sg_wp_min": 12.14,
+   "sg_wp_max": 12.14,
+   "share_above_fc": 0.0,
+   "share_below_wp": 0.0
+  },
+  {
+   "cell": "52.30,11.00",
+   "depth": "7_to_28cm",
+   "fields": 1,
+   "era5_median": 22.4,
+   "era5_min": 21.6,
+   "era5_max": 23.4,
+   "sg_fc_min": 33.8,
+   "sg_fc_max": 33.8,
+   "sg_wp_min": 12.14,
+   "sg_wp_max": 12.14,
+   "share_above_fc": 0.0,
+   "share_below_wp": 0.0
+  },
+  {
+   "cell": "52.30,11.10",
+   "depth": "0_to_7cm",
+   "fields": 34,
+   "era5_median": 25.9,
+   "era5_min": 23.3,
+   "era5_max": 33.7,
+   "sg_fc_min": 33.02,
+   "sg_fc_max": 33.93,
+   "sg_wp_min": 10.5,
+   "sg_wp_max": 14.2,
+   "share_above_fc": 0.0,
+   "share_below_wp": 0.0
+  },
+  {
+   "cell": "52.30,11.10",
+   "depth": "7_to_28cm",
+   "fields": 34,
+   "era5_median": 22.7,
+   "era5_min": 22.0,
+   "era5_max": 23.9,
+   "sg_fc_min": 33.02,
+   "sg_fc_max": 33.93,
+   "sg_wp_min": 10.5,
+   "sg_wp_max": 14.2,
+   "share_above_fc": 0.0,
+   "share_below_wp": 0.0
+  },
+  {
+   "cell": "52.40,11.00",
+   "depth": "0_to_7cm",
+   "fields": 25,
+   "era5_median": 23.0,
+   "era5_min": 19.7,
+   "era5_max": 30.7,
+   "sg_fc_min": 31.9,
+   "sg_fc_max": 33.58,
+   "sg_wp_min": 8.09,
+   "sg_wp_max": 11.6,
+   "share_above_fc": 0.0,
+   "share_below_wp": 0.0
+  },
+  {
+   "cell": "52.40,11.00",
+   "depth": "7_to_28cm",
+   "fields": 25,
+   "era5_median": 19.5,
+   "era5_min": 19.0,
+   "era5_max": 20.5,
+   "sg_fc_min": 31.9,
+   "sg_fc_max": 33.58,
+   "sg_wp_min": 8.09,
+   "sg_wp_max": 11.6,
+   "share_above_fc": 0.0,
+   "share_below_wp": 0.0
+  },
+  {
+   "cell": "52.40,11.10",
+   "depth": "0_to_7cm",
+   "fields": 27,
+   "era5_median": 22.7,
+   "era5_min": 19.1,
+   "era5_max": 31.2,
+   "sg_fc_min": 31.4,
+   "sg_fc_max": 34.12,
+   "sg_wp_min": 7.99,
+   "sg_wp_max": 13.36,
+   "share_above_fc": 0.0,
+   "share_below_wp": 0.0
+  },
+  {
+   "cell": "52.40,11.10",
+   "depth": "7_to_28cm",
+   "fields": 27,
+   "era5_median": 19.0,
+   "era5_min": 18.6,
+   "era5_max": 20.2,
+   "sg_fc_min": 31.4,
+   "sg_fc_max": 34.12,
+   "sg_wp_min": 7.99,
+   "sg_wp_max": 13.36,
+   "share_above_fc": 0.0,
+   "share_below_wp": 0.0
+  }
+ ],
+ "openmeteo_time_overlap": {
+  "archive": [
+   "2026-09-03T00:00",
+   "2026-10-02T23:00"
+  ],
+  "forecast": [
+   "2026-10-03T00:00",
+   "2026-10-09T23:00"
+  ],
+  "archive_depths": [
+   "soil_moisture_0_to_7cm",
+   "soil_moisture_7_to_28cm",
+   "soil_moisture_28_to_100cm",
+   "soil_moisture_100_to_255cm"
+  ],
+  "forecast_vars": [
+   "soil_moisture_0_to_1cm",
+   "soil_moisture_9_to_27cm",
+   "soil_temperature_6cm"
+  ]
+ },
+ "openmeteo_distinct": {
+  "sm0_7_mean": 4,
+  "precip_30d_mm": 2,
+  "et0_30d_mm": 34
+ },
+ "soilgrids_pulls_by_prop": [
+  {
+   "prop": "bdod",
+   "share_equal": 0.595,
+   "mean_abs_diff": 1.555,
+   "max_abs_diff": 18.333
+  },
+  {
+   "prop": "cec",
+   "share_equal": 0.472,
+   "mean_abs_diff": 7.85,
+   "max_abs_diff": 118.417
+  },
+  {
+   "prop": "cfvo",
+   "share_equal": 0.586,
+   "mean_abs_diff": 8.614,
+   "max_abs_diff": 113.25
+  },
+  {
+   "prop": "clay",
+   "share_equal": 0.455,
+   "mean_abs_diff": 6.957,
+   "max_abs_diff": 76.875
+  },
+  {
+   "prop": "nitrogen",
+   "share_equal": 0.554,
+   "mean_abs_diff": 66.339,
+   "max_abs_diff": 745.417
+  },
+  {
+   "prop": "ocs",
+   "share_equal": 0.518,
+   "mean_abs_diff": 3.173,
+   "max_abs_diff": 42.25
+  },
+  {
+   "prop": "phh2o",
+   "share_equal": 0.568,
+   "mean_abs_diff": 1.294,
+   "max_abs_diff": 13.417
+  },
+  {
+   "prop": "sand",
+   "share_equal": 0.427,
+   "mean_abs_diff": 7.233,
+   "max_abs_diff": 85.292
+  },
+  {
+   "prop": "silt",
+   "share_equal": 0.44,
+   "mean_abs_diff": 6.028,
+   "max_abs_diff": 91.708
+  },
+  {
+   "prop": "soc",
+   "share_equal": 0.452,
+   "mean_abs_diff": 43.219,
+   "max_abs_diff": 1018.75
+  },
+  {
+   "prop": "wv0033",
+   "share_equal": 0.484,
+   "mean_abs_diff": 3.91,
+   "max_abs_diff": 37.5
+  },
+  {
+   "prop": "wv1500",
+   "share_equal": 0.473,
+   "mean_abs_diff": 2.786,
+   "max_abs_diff": 32.458
+  }
+ ],
+ "file_duplicates": [
+  {
+   "what": "SoilGrids WCS tiles, seggerde/raw/soilgrids vs seggerde/soilgrids/raw",
+   "copies": 2,
+   "n": 268,
+   "identical": 0.0,
+   "same_grid": 0.0,
+   "note": "268 vs 395 files, the new folder adds the 'uncertainty' statistic; WCS resampled each pull to a slightly different grid; at matching pixels 49.9% of values are equal, mean |diff| 14.08 raw units"
+  },
+  {
+   "what": "SoilGrids raw vs soilgrids_fixed (same tiles, CRS + nodata added)",
+   "copies": 2,
+   "n": 40,
+   "identical": 40.0,
+   "same_grid": 40.0,
+   "note": "values equal except 0 -> NaN; sample of 40 tiles"
+  },
+  {
+   "what": "LuF-Seggerde-Dev-fields.geojson archived vs active features",
+   "copies": 2,
+   "n": 174,
+   "identical": 86.0,
+   "same_grid": NaN,
+   "note": "86 of 87 archived features copy an active field (clean/fields_audit.csv)"
+  },
+  {
+   "what": "fields_active.geojson vs clean/fields_clean.geojson",
+   "copies": 2,
+   "n": 87,
+   "identical": 80.0,
+   "same_grid": NaN,
+   "note": "7 fields differ by >1 m² (1.89 ha in total); soilgrids/buek200/dem/openmeteo stats use fields_active, Sentinel-2 uses fields_clean"
+  },
+  {
+   "what": "field_coverage.csv elev_mean_m vs dem_fields.csv elev_mean",
+   "copies": 2,
+   "n": 87,
+   "identical": 87.0,
+   "same_grid": NaN,
+   "note": "field_coverage.csv repeats columns from soilgrids_fields, buek200_fields, dem_fields, openmeteo_fields"
+  },
+  {
+   "what": "guek200_dominant.csv ⊂ guek200_fields.csv",
+   "copies": 2,
+   "n": 87,
+   "identical": 87.0,
+   "same_grid": NaN,
+   "note": "farm data stored under guek200_eda/, not seggerde/"
+  },
+  {
+   "what": "sentinel2 field_summary.csv cv_<year> vs field_season_peaks.csv peak_cv",
+   "copies": 2,
+   "n": 640,
+   "identical": 640.0,
+   "same_grid": NaN,
+   "note": "per-season peak statistics repeated in the wide summary"
+  },
+  {
+   "what": "openmeteo_eda/compare_soilgrids_fc_wp.csv copies SoilGrids wv0033/wv1500",
+   "copies": 2,
+   "n": 20,
+   "identical": NaN,
+   "same_grid": NaN,
+   "note": "SoilGrids values copied into the Open-Meteo comparison table"
+  }
+ ]
+}

@@ -1,0 +1,46 @@
+@import 'tailwindcss';
+@import 'leaflet/dist/leaflet.css';
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Hatch swatches matching the map masking (low: dark stripes on grey; medium: faint stripes). */
+@utility bg-hatch {
+  background-color: #bdbdbd;
+  background-image: repeating-linear-gradient(135deg, #505050 0 2px, transparent 2px 8px);
+}
+@utility bg-hatch-medium {
+  background-color: #a6d96a;
+  background-image: repeating-linear-gradient(135deg, rgb(255 255 255 / 0.55) 0 1px, transparent 1px 10px);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+body {
+  background: #fafaf9;
+  color: #1c1917;
+}
+
+.pixelated {
+  image-rendering: pixelated;
+}
+.leaflet-container {
+  font: inherit;
+  background: #e7e5e4;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  .print-break {
+    break-before: page;
+  }
+  body {
+    background: white;
+  }
+}

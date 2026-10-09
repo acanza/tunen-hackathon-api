@@ -1,0 +1,519 @@
+{
+ "cells": [
+  {
+   "cell": "52.4_11.1",
+   "rep_field": "Mittelbreite",
+   "rep_lon": 11.092906,
+   "rep_lat": 52.350808,
+   "era5_cell_lat": 52.40001,
+   "era5_cell_lon": 11.100006,
+   "fields": 27,
+   "area_ha": 249.6233,
+   "grid_lat": 52.40001,
+   "grid_lon": 11.100006,
+   "elevation": 89.0
+  },
+  {
+   "cell": "52.3_11.1",
+   "rep_field": "Spraken",
+   "rep_lon": 11.095279,
+   "rep_lat": 52.339246,
+   "era5_cell_lat": 52.300003,
+   "era5_cell_lon": 11.100006,
+   "fields": 34,
+   "area_ha": 414.4846,
+   "grid_lat": 52.300003,
+   "grid_lon": 11.100006,
+   "elevation": 85.0
+  },
+  {
+   "cell": "52.4_11.0",
+   "rep_field": "Umfeld Groß",
+   "rep_lon": 11.041277,
+   "rep_lat": 52.381995,
+   "era5_cell_lat": 52.40001,
+   "era5_cell_lon": 11.0,
+   "fields": 25,
+   "area_ha": 193.6725,
+   "grid_lat": 52.40001,
+   "grid_lon": 11.0,
+   "elevation": 73.0
+  }
+ ],
+ "dry_threshold_sm_0_100": 0.2648,
+ "last_date": "2026-09-26",
+ "trends": [
+  {
+   "indicator": "sm_0_100_gs",
+   "first_year": 1950,
+   "last_year": 2025,
+   "sen_slope_per_decade": -0.0041,
+   "sen_lo": -0.0069,
+   "sen_hi": -0.0015,
+   "ols_slope_per_decade": -0.0042,
+   "mk_tau": -0.2351,
+   "mk_p": 0.0027,
+   "mean_1961_1990": 0.3226,
+   "mean_1996_2025": 0.3022,
+   "mean_2016_2025": 0.288,
+   "change_recent_vs_base": -0.0204
+  },
+  {
+   "indicator": "sm_0_7_gs",
+   "first_year": 1950,
+   "last_year": 2025,
+   "sen_slope_per_decade": -0.0041,
+   "sen_lo": -0.0074,
+   "sen_hi": -0.0013,
+   "ols_slope_per_decade": -0.0044,
+   "mk_tau": -0.226,
+   "mk_p": 0.0039,
+   "mean_1961_1990": 0.3278,
+   "mean_1996_2025": 0.3049,
+   "mean_2016_2025": 0.2869,
+   "change_recent_vs_base": -0.0228
+  },
+  {
+   "indicator": "sm_100_255_year",
+   "first_year": 1950,
+   "last_year": 2025,
+   "sen_slope_per_decade": -0.0009,
+   "sen_lo": -0.0023,
+   "sen_hi": 0.0007,
+   "ols_slope_per_decade": -0.0006,
+   "mk_tau": -0.087,
+   "mk_p": 0.266,
+   "mean_1961_1990": 0.36,
+   "mean_1996_2025": 0.3529,
+   "mean_2016_2025": 0.3469,
+   "change_recent_vs_base": -0.0071
+  },
+  {
+   "indicator": "sm_0_100_gs_min",
+   "first_year": 1950,
+   "last_year": 2025,
+   "sen_slope_per_decade": -0.0044,
+   "sen_lo": -0.008,
+   "sen_hi": -0.0016,
+   "ols_slope_per_decade": -0.0046,
+   "mk_tau": -0.2351,
+   "mk_p": 0.0027,
+   "mean_1961_1990": 0.2729,
+   "mean_1996_2025": 0.25,
+   "mean_2016_2025": 0.2364,
+   "change_recent_vs_base": -0.0229
+  },
+  {
+   "indicator": "dry_days_gs",
+   "first_year": 1950,
+   "last_year": 2025,
+   "sen_slope_per_decade": -0.0,
+   "sen_lo": -0.0,
+   "sen_hi": 3.8889,
+   "ols_slope_per_decade": 4.6942,
+   "mk_tau": 0.1745,
+   "mk_p": 0.0363,
+   "mean_1961_1990": 18.3,
+   "mean_1996_2025": 40.0333,
+   "mean_2016_2025": 64.2,
+   "change_recent_vs_base": 21.7333
+  },
+  {
+   "indicator": "st_0_7_year",
+   "first_year": 1950,
+   "last_year": 2025,
+   "sen_slope_per_decade": 0.2961,
+   "sen_lo": 0.2198,
+   "sen_hi": 0.3724,
+   "ols_slope_per_decade": 0.2864,
+   "mk_tau": 0.5011,
+   "mk_p": 0.0,
+   "mean_1961_1990": 9.2375,
+   "mean_1996_2025": 10.398,
+   "mean_2016_2025": 11.1496,
+   "change_recent_vs_base": 1.1605
+  },
+  {
+   "indicator": "st_28_100_year",
+   "first_year": 1950,
+   "last_year": 2025,
+   "sen_slope_per_decade": 0.2922,
+   "sen_lo": 0.2142,
+   "sen_hi": 0.3592,
+   "ols_slope_per_decade": 0.2801,
+   "mk_tau": 0.4975,
+   "mk_p": 0.0,
+   "mean_1961_1990": 9.1664,
+   "mean_1996_2025": 10.2879,
+   "mean_2016_2025": 11.0644,
+   "change_recent_vs_base": 1.1215
+  },
+  {
+   "indicator": "frost_days_topsoil",
+   "first_year": 1950,
+   "last_year": 2025,
+   "sen_slope_per_decade": -2.6077,
+   "sen_lo": -4.3478,
+   "sen_hi": -0.9804,
+   "ols_slope_per_decade": -3.1792,
+   "mk_tau": -0.2473,
+   "mk_p": 0.0017,
+   "mean_1961_1990": 30.7333,
+   "mean_1996_2025": 22.1,
+   "mean_2016_2025": 10.9,
+   "change_recent_vs_base": -8.6333
+  },
+  {
+   "indicator": "t2m_year",
+   "first_year": 1950,
+   "last_year": 2025,
+   "sen_slope_per_decade": 0.3247,
+   "sen_lo": 0.2347,
+   "sen_hi": 0.4127,
+   "ols_slope_per_decade": 0.3084,
+   "mk_tau": 0.4835,
+   "mk_p": 0.0,
+   "mean_1961_1990": 8.9497,
+   "mean_1996_2025": 10.2155,
+   "mean_2016_2025": 10.9633,
+   "change_recent_vs_base": 1.2658
+  },
+  {
+   "indicator": "precip_year",
+   "first_year": 1950,
+   "last_year": 2025,
+   "sen_slope_per_decade": -0.354,
+   "sen_lo": -11.6281,
+   "sen_hi": 10.6213,
+   "ols_slope_per_decade": 0.5366,
+   "mk_tau": -0.0056,
+   "mk_p": 0.9428,
+   "mean_1961_1990": 646.0107,
+   "mean_1996_2025": 640.1849,
+   "mean_2016_2025": 639.148,
+   "change_recent_vs_base": -5.8258
+  },
+  {
+   "indicator": "et0_year",
+   "first_year": 1950,
+   "last_year": 2025,
+   "sen_slope_per_decade": 15.4712,
+   "sen_lo": 10.5055,
+   "sen_hi": 20.66,
+   "ols_slope_per_decade": 15.6047,
+   "mk_tau": 0.4063,
+   "mk_p": 0.0,
+   "mean_1961_1990": 659.373,
+   "mean_1996_2025": 733.307,
+   "mean_2016_2025": 775.2117,
+   "change_recent_vs_base": 73.9339
+  },
+  {
+   "indicator": "precip_gs",
+   "first_year": 1950,
+   "last_year": 2025,
+   "sen_slope_per_decade": -5.2138,
+   "sen_lo": -11.9199,
+   "sen_hi": 1.7848,
+   "ols_slope_per_decade": -4.5326,
+   "mk_tau": -0.1256,
+   "mk_p": 0.1084,
+   "mean_1961_1990": 359.6462,
+   "mean_1996_2025": 341.6965,
+   "mean_2016_2025": 320.2195,
+   "change_recent_vs_base": -17.9497
+  },
+  {
+   "indicator": "et0_gs",
+   "first_year": 1950,
+   "last_year": 2025,
+   "sen_slope_per_decade": 13.4001,
+   "sen_lo": 8.2311,
+   "sen_hi": 17.7329,
+   "ols_slope_per_decade": 13.193,
+   "mk_tau": 0.3832,
+   "mk_p": 0.0,
+   "mean_1961_1990": 517.986,
+   "mean_1996_2025": 581.9809,
+   "mean_2016_2025": 617.6274,
+   "change_recent_vs_base": 63.9948
+  },
+  {
+   "indicator": "cwb_year",
+   "first_year": 1950,
+   "last_year": 2025,
+   "sen_slope_per_decade": -15.49,
+   "sen_lo": -30.2897,
+   "sen_hi": 0.1302,
+   "ols_slope_per_decade": -15.0681,
+   "mk_tau": -0.153,
+   "mk_p": 0.0505,
+   "mean_1961_1990": -13.3623,
+   "mean_1996_2025": -93.1221,
+   "mean_2016_2025": -136.0637,
+   "change_recent_vs_base": -79.7598
+  },
+  {
+   "indicator": "cwb_gs",
+   "first_year": 1950,
+   "last_year": 2025,
+   "sen_slope_per_decade": -16.8536,
+   "sen_lo": -28.5771,
+   "sen_hi": -6.9251,
+   "ols_slope_per_decade": -17.7255,
+   "mk_tau": -0.2365,
+   "mk_p": 0.0025,
+   "mean_1961_1990": -158.3398,
+   "mean_1996_2025": -240.2844,
+   "mean_2016_2025": -297.408,
+   "change_recent_vs_base": -81.9446
+  }
+ ],
+ "trend_by_cell": [
+  {
+   "cell": "52.3_11.1",
+   "sm_0_100_gs": -0.0041,
+   "dry_days_gs": -0.0,
+   "st_0_7_year": 0.2912
+  },
+  {
+   "cell": "52.4_11.0",
+   "sm_0_100_gs": -0.0041,
+   "dry_days_gs": -0.0,
+   "st_0_7_year": 0.2985
+  },
+  {
+   "cell": "52.4_11.1",
+   "sm_0_100_gs": -0.0043,
+   "dry_days_gs": -0.0,
+   "st_0_7_year": 0.2969
+  }
+ ],
+ "driest_years_gs": {
+  "2018": 0.2498,
+  "2003": 0.253,
+  "2022": 0.2576,
+  "2025": 0.2656,
+  "1959": 0.267,
+  "2019": 0.2732,
+  "2020": 0.2768,
+  "2016": 0.2773,
+  "2011": 0.281,
+  "1989": 0.2847
+ },
+ "wettest_years_gs": {
+  "1965": 0.3565,
+  "1972": 0.3542,
+  "2007": 0.3513,
+  "1984": 0.3499,
+  "1955": 0.3488
+ },
+ "most_dry_days": {
+  "2018": 127,
+  "2022": 119,
+  "2003": 118,
+  "2025": 109,
+  "1959": 107,
+  "2019": 93,
+  "1989": 90,
+  "1976": 89,
+  "2016": 82,
+  "1957": 71
+ },
+ "decades": [
+  {
+   "decade": 1950,
+   "sm_0_100_gs": 0.315,
+   "dry_days_gs": 33.5,
+   "st_0_7_year": 9.174,
+   "frost_days_topsoil": 34.0,
+   "cwb_gs": -188.868,
+   "precip_year": 606.576,
+   "et0_year": 681.856
+  },
+  {
+   "decade": 1960,
+   "sm_0_100_gs": 0.327,
+   "dry_days_gs": 7.9,
+   "st_0_7_year": 9.073,
+   "frost_days_topsoil": 45.4,
+   "cwb_gs": -116.423,
+   "precip_year": 696.676,
+   "et0_year": 649.483
+  },
+  {
+   "decade": 1970,
+   "sm_0_100_gs": 0.321,
+   "dry_days_gs": 17.8,
+   "st_0_7_year": 9.191,
+   "frost_days_topsoil": 20.8,
+   "cwb_gs": -168.322,
+   "precip_year": 629.219,
+   "et0_year": 653.106
+  },
+  {
+   "decade": 1980,
+   "sm_0_100_gs": 0.319,
+   "dry_days_gs": 27.8,
+   "st_0_7_year": 9.345,
+   "frost_days_topsoil": 28.0,
+   "cwb_gs": -188.29,
+   "precip_year": 621.126,
+   "et0_year": 668.601
+  },
+  {
+   "decade": 1990,
+   "sm_0_100_gs": 0.309,
+   "dry_days_gs": 25.3,
+   "st_0_7_year": 9.664,
+   "frost_days_topsoil": 30.3,
+   "cwb_gs": -220.166,
+   "precip_year": 610.286,
+   "et0_year": 703.714
+  },
+  {
+   "decade": 2000,
+   "sm_0_100_gs": 0.308,
+   "dry_days_gs": 34.5,
+   "st_0_7_year": 10.204,
+   "frost_days_topsoil": 25.8,
+   "cwb_gs": -229.462,
+   "precip_year": 644.382,
+   "et0_year": 719.599
+  },
+  {
+   "decade": 2010,
+   "sm_0_100_gs": 0.3,
+   "dry_days_gs": 44.2,
+   "st_0_7_year": 10.527,
+   "frost_days_topsoil": 21.0,
+   "cwb_gs": -248.028,
+   "precip_year": 620.461,
+   "et0_year": 744.442
+  },
+  {
+   "decade": 2020,
+   "sm_0_100_gs": 0.289,
+   "dry_days_gs": 56.667,
+   "st_0_7_year": 11.22,
+   "frost_days_topsoil": 6.5,
+   "cwb_gs": -265.039,
+   "precip_year": 688.438,
+   "et0_year": 771.044
+  }
+ ],
+ "dry_years_per_decade": {
+  "1950": 1,
+  "1970": 1,
+  "1980": 3,
+  "1990": 1,
+  "2000": 3,
+  "2010": 4,
+  "2020": 3
+ },
+ "monthly_sm_change_volpct": {
+  "1": -0.07,
+  "2": 0.1,
+  "3": -0.37,
+  "4": -1.63,
+  "5": -2.25,
+  "6": -2.61,
+  "7": -2.28,
+  "8": -1.86,
+  "9": -1.61,
+  "10": -0.17,
+  "11": 0.33,
+  "12": -0.33
+ },
+ "monthly_st_change_c": {
+  "1": 0.77,
+  "2": 1.01,
+  "3": 1.18,
+  "4": 1.54,
+  "5": 1.26,
+  "6": 1.51,
+  "7": 1.65,
+  "8": 1.69,
+  "9": 1.05,
+  "10": 0.56,
+  "11": 0.93,
+  "12": 0.79
+ },
+ "gs_2026_to_date": {
+  "sm_0_100": 0.2834,
+  "base_same_window": 0.3237,
+  "rank_driest_of": 10,
+  "years": 77
+ },
+ "ndvi_vs_soil": [
+  {
+   "year": 2019,
+   "ndvi_peak_p90_farm_median": 0.855,
+   "sm_0_100_gs_anom_volpct": -4.945,
+   "dry_days_gs": 93,
+   "cwb_gs": -356.806,
+   "complete_year": true
+  },
+  {
+   "year": 2020,
+   "ndvi_peak_p90_farm_median": 0.843,
+   "sm_0_100_gs_anom_volpct": -4.577,
+   "dry_days_gs": 67,
+   "cwb_gs": -328.964,
+   "complete_year": true
+  },
+  {
+   "year": 2021,
+   "ndvi_peak_p90_farm_median": 0.862,
+   "sm_0_100_gs_anom_volpct": 1.379,
+   "dry_days_gs": 0,
+   "cwb_gs": -112.939,
+   "complete_year": true
+  },
+  {
+   "year": 2022,
+   "ndvi_peak_p90_farm_median": 0.818,
+   "sm_0_100_gs_anom_volpct": -6.505,
+   "dry_days_gs": 119,
+   "cwb_gs": -346.099,
+   "complete_year": true
+  },
+  {
+   "year": 2023,
+   "ndvi_peak_p90_farm_median": 0.854,
+   "sm_0_100_gs_anom_volpct": -2.51,
+   "dry_days_gs": 40,
+   "cwb_gs": -289.895,
+   "complete_year": true
+  },
+  {
+   "year": 2024,
+   "ndvi_peak_p90_farm_median": 0.843,
+   "sm_0_100_gs_anom_volpct": -1.997,
+   "dry_days_gs": 5,
+   "cwb_gs": -184.482,
+   "complete_year": true
+  },
+  {
+   "year": 2025,
+   "ndvi_peak_p90_farm_median": 0.804,
+   "sm_0_100_gs_anom_volpct": -5.705,
+   "dry_days_gs": 109,
+   "cwb_gs": -327.858,
+   "complete_year": true
+  },
+  {
+   "year": 2026,
+   "ndvi_peak_p90_farm_median": 0.866,
+   "sm_0_100_gs_anom_volpct": -3.925,
+   "dry_days_gs": 79,
+   "cwb_gs": -365.128,
+   "complete_year": false
+  }
+ ],
+ "ndvi_soil_spearman": {
+  "rho": 0.59,
+  "p": 0.126,
+  "n": 8
+ }
+}

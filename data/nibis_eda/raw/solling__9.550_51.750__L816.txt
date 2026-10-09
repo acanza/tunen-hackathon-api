@@ -1,0 +1,13 @@
+BK50 - Karte
+
+# 1
+FL_NR	:609665
+NRKART	:400148
+PRONUM	:457430
+BOTYP	:pB3
+BOTYP_KLARTEXT	:Mittlere podsolierte Braunerde
+PSONST	:
+MHGW	:
+MNGW	:
+NUTZUNG	:FN
+GEOTYP	:p//vw=sm

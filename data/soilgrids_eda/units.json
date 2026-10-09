@@ -1,0 +1,86 @@
+{
+ "bdod": {
+  "d_factor": 100,
+  "mapped_units": "cg/cm\u00b3",
+  "target_units": "kg/dm\u00b3",
+  "uncertainty_unit": ""
+ },
+ "cec": {
+  "d_factor": 10,
+  "mapped_units": "mmol(c)/kg",
+  "target_units": "cmol(c)/kg",
+  "uncertainty_unit": ""
+ },
+ "cfvo": {
+  "d_factor": 10,
+  "mapped_units": "cm\u00b3/dm\u00b3",
+  "target_units": "cm\u00b3/100cm\u00b3",
+  "uncertainty_unit": ""
+ },
+ "clay": {
+  "d_factor": 10,
+  "mapped_units": "g/kg",
+  "target_units": "%",
+  "uncertainty_unit": ""
+ },
+ "nitrogen": {
+  "d_factor": 100,
+  "mapped_units": "cg/kg",
+  "target_units": "g/kg",
+  "uncertainty_unit": ""
+ },
+ "ocd": {
+  "d_factor": 10,
+  "mapped_units": "dg/dm\u00b3",
+  "target_units": "hg/m\u00b3",
+  "uncertainty_unit": ""
+ },
+ "ocs": {
+  "d_factor": 10,
+  "mapped_units": "t/ha",
+  "target_units": "kg/m\u00b2",
+  "uncertainty_unit": ""
+ },
+ "phh2o": {
+  "d_factor": 10,
+  "mapped_units": "pH*10",
+  "target_units": "-",
+  "uncertainty_unit": ""
+ },
+ "sand": {
+  "d_factor": 10,
+  "mapped_units": "g/kg",
+  "target_units": "%",
+  "uncertainty_unit": ""
+ },
+ "silt": {
+  "d_factor": 10,
+  "mapped_units": "g/kg",
+  "target_units": "%",
+  "uncertainty_unit": ""
+ },
+ "soc": {
+  "d_factor": 10,
+  "mapped_units": "dg/kg",
+  "target_units": "g/kg",
+  "uncertainty_unit": ""
+ },
+ "wv0010": {
+  "d_factor": 10,
+  "mapped_units": "(10-2 cm\u00b3/cm\u00b3)*10",
+  "target_units": "10-2 cm\u00b3/cm\u00b3",
+  "uncertainty_unit": ""
+ },
+ "wv0033": {
+  "d_factor": 10,
+  "mapped_units": "(10-2 cm\u00b3/cm\u00b3)*10",
+  "target_units": "10-2 cm\u00b3/cm\u00b3",
+  "uncertainty_unit": ""
+ },
+ "wv1500": {
+  "d_factor": 10,
+  "mapped_units": "(10-2 cm\u00b3/cm\u00b3)*10",
+  "target_units": "10-2 cm\u00b3/cm\u00b3",
+  "uncertainty_unit": ""
+ }
+}

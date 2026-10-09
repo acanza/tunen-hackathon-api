@@ -1,0 +1,34 @@
+{
+ "fields_file": "clean/fields_clean.geojson",
+ "n_fields": 87,
+ "n_use_for_stats": 80,
+ "full_field_fallback": [
+  "Eichenkoppel",
+  "Lange Wiese Schonfläche",
+  "Lehmkuhle",
+  "Nachthude 1",
+  "Papenberg Brache",
+  "Parkwiese",
+  "Sandberg - 2"
+ ],
+ "inner_buffer_m": 20,
+ "min_field_valid": 0.5,
+ "min_season_peak": 0.4,
+ "min_peak_obs": 2,
+ "min_seasons": 3,
+ "unstable_sd_z": 1.0,
+ "zone_inner_m": 10,
+ "min_zone_px": 20,
+ "sd_floor": 0.02,
+ "seasons": [
+  2019,
+  2020,
+  2021,
+  2022,
+  2023,
+  2024,
+  2025,
+  2026
+ ],
+ "run": "2026-10-03T13:38:18"
+}

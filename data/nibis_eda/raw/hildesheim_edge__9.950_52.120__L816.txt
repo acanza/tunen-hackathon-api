@@ -1,0 +1,13 @@
+BK50 - Karte
+
+# 1
+FL_NR	:469130
+NRKART	:100184
+PRONUM	:156862
+BOTYP	:S-L3
+BOTYP_KLARTEXT	:Mittlere Pseudogley-Parabraunerde
+PSONST	:
+MHGW	:
+MNGW	:
+NUTZUNG	:A
+GEOTYP	:Lol

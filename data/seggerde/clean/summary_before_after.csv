@@ -1,0 +1,4 @@
+layer,features,sum_geom_ha,union_geom_ha,double_counted_ha,overlap_pairs,overlap_ha,invalid,multipolygon_type,parts_total,fields_lt_0.1ha,dup_vertices,sum_declared_ha,use_for_stats_true
+"input, all 174 features",174,1773.008,886.588,886.42,114,892.101,1,87,174,4,232,1756.073,
+"input, 87 active features",87,885.392,883.498,1.894,7,1.894,1,1,87,2,116,876.925,
+"clean, 87 active features",87,883.499,883.499,0.0,0,0.0,0,0,87,2,0,876.925,80

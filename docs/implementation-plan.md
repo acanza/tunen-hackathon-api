@@ -1,278 +1,137 @@
-# Soil Aggregation REST API: Architecture and Implementation Milestones
+# Soil API POC implementation plan
 
 Date: 2026-10-03
 
-Status: M0 / unit 0A and M1 / units 1A and 1B verified on 2026-10-03; see the
-[feasibility evidence](verification/0a/README.md) and the
-[domain-contract evidence](verification/1a/README.md) and [layer evidence](verification/1b/README.md).
-M1 is complete. M2–M5 remain planned, and no public API routes exist yet.
+## Decision
 
-## Objective and scope
+The current assignment is a read-only POC over the precomputed store described
+in [`docs/poc/API_BRIEF.md`](poc/API_BRIEF.md). The API does not retrieve from
+SoilGrids or LBEG, recompute soil data, or refresh the store during a request.
+The frozen run `poc-2026-10-03` is the data contract for this delivery.
 
-Build a single FastAPI application that accepts GeoJSON farm fields and returns
-soil layers by field, parameter, and source. Start with one field and one real
-layer, then expand to the backend MVP required by the
-[project specification](project-raw-specs.md).
+The previous M0–M5 architecture is retired as an implementation path for this
+POC. Its completed feasibility and domain work remains historical evidence, but
+it does not create additional POC tasks or public routes.
 
-The backend MVP covers texture, pH, soil organic carbon, plant-available water
-(nFK), and Bodenzahl, using SoilGrids and the necessary LBEG sources. Not every
-source must supply every parameter. Missing or unsupported combinations must be
-explicit rather than fabricated.
+## POC objective
 
-Frontend implementation and public deployment are outside this plan. The API
-support required by the frontend v1 specification is in scope: confidence-aware
-property maps, source discrepancy, sampling plans, management signals, and
-farmer/audit parcel datasheets. Crop suitability and dynamic soil/weather layers
-remain explicitly out of scope. Therefore, completing the data-layer MVP does
-not by itself complete the frontend-supporting API. The source requirements are
-recorded in [Frontend application specifications](frontend_application_specs.md).
+Implement one small FastAPI application that:
+
+1. Reads metadata from `poc/store/soil.sqlite` in read-only mode.
+2. Reads the precomputed PNG, confidence PNG, and GeoTIFF files from
+   `poc/store/`.
+3. Exposes `POST /soil/layers` for the request and response in the API brief.
+4. Serves referenced files below `/static/`.
+5. Returns an explicit result for every requested parameter/source pair,
+   including `not_applicable`, `unavailable`, and `partial`.
+6. Makes no outbound network calls during a request.
+
+## Public POC surface
+
+Only these routes are in scope:
+
+| Route | Purpose |
+| --- | --- |
+| `POST /soil/layers` | Match submitted fields and return precomputed layers. |
+| `GET /static/{path}` | Serve allow-listed files below `poc/store/`. |
+
+The following routes are explicitly out of scope: `/soil/analyses`,
+`/soil/fields`, `/soil/runs/current`, `/soil/capabilities`, `/rasters/*`,
+`/health`, refresh endpoints, sampling plans, parcel datasheets, management
+signals, and artifact indirection endpoints.
 
 ## Minimal architecture
 
-```mermaid
-flowchart TD
-    A[Client] --> B[FastAPI: validation and endpoints]
-    B --> C[Layer service]
-    C --> D[SoilGrids adapter]
-    C --> E[LBEG adapters]
-    D --> F[Normalized data]
-    E --> F
-    F --> G[Clipping, statistics, and rendering]
-    G --> H[Local files: PNG and values]
-    H --> B
+```text
+FastAPI request
+  -> Pydantic validation
+  -> read-only SQLite metadata
+  -> field matching
+  -> response assembly from precomputed metadata and file paths
+  -> static file serving
 ```
 
-All components are modules within one application:
+No provider adapters, raster processing pipeline, database writes, cache, queue,
+background job, or live-service client is needed for this POC.
 
-| Component | Responsibility |
-| --- | --- |
-| API | Validate GeoJSON, parameters, and sources; return results and errors. |
-| Layer service | Coordinate queries and retain successful results when a source fails. |
-| Adapters | Retrieve data and translate it into a common representation with metadata. |
-| Geospatial processing | Normalize, clip, calculate statistics, and generate PNGs. |
-| Storage | Save images, values, and metadata; reuse results. |
-| Product services | Build versioned confidence, discrepancy, sampling, signal, and datasheet products from a coherent analysis snapshot. |
+## Delivery units
 
-Each adapter declares its capabilities and provides an operation to retrieve
-data for an area. Provider-specific protocols and attribute names remain inside
-the adapters.
+The bounded units and their evidence are defined in
+[`docs/implementation-units.md`](implementation-units.md).
 
-Initial simplifications:
-
-- One application instance; requests wait for completion within explicit timeouts.
-- Local files for artifacts; no database, Redis, or job queue.
-- PNG and JSON grids as initial outputs. Downloadable GeoTIFF is a later option;
-  this does not prevent reading raster formats internally.
-- A fixed target depth of 0–30 cm, with explicit exceptions where the source
-  cannot represent it.
-- A local demo using fields within verified LBEG coverage.
-- Intensive raster processing runs outside the asynchronous event loop.
-- Rule-based products use versioned, reviewable rules and input snapshots; an
-  LLM is not part of calculation or user-facing evidence.
-
-Introduce background jobs only if measured processing times make direct requests
-insufficient. Set limits on fields, area, vertices, pixels, concurrency, and
-provider calls before accepting larger workloads.
-
-## Public REST contract (M5 only)
-
-Use JSON `camelCase` at the public boundary and `snake_case` in Python, with one
-global Pydantic alias policy. Identifiers are opaque strings, timestamps use
-RFC 3339 UTC, GeoJSON follows RFC 7946 longitude/latitude order, and errors use
-one documented problem-details shape. Do not put access tokens or arbitrary
-provider URLs in requests.
-
-M0–M4 define internal services, data products, and verification evidence; they
-do not define public endpoints. The routes below are the complete public HTTP
-surface planned for M5. In particular, the suggested `/soil/layers`, `/rasters/*`,
-and refresh routes in the raw brief are not part of the public contract.
-
-| Endpoint | Purpose |
-| --- | --- |
-| `POST /soil/analyses` | Synchronously create or refresh an immutable, versioned analysis snapshot for submitted fields and requested products. |
-| `GET /soil/analyses/{analysis_id}` | Retrieve the snapshot, product statuses, provenance, warnings, and links. |
-| `POST /soil/analyses/{analysis_id}/sampling-plans` | Create a sampling plan with a bounded `sampleCount` and explicit decision context. |
-| `GET /soil/analyses/{analysis_id}/sampling-plans/{sampling_plan_id}` | Retrieve a sampling plan and its GeoJSON/CSV artifact links. |
-| `GET /soil/analyses/{analysis_id}/parcel-datasheets/{field_id}` | Return the farmer and audit representations of the same evidence. |
-| `GET /soil/analyses/{analysis_id}/management-signals` | Return versioned categorical signals and rationale per field or zone. |
-| `GET /artifacts/{artifact_id}` | Retrieve an allow-listed immutable PNG, JSON grid, GeoJSON, or CSV artifact with its media type. |
-
-Endpoint success semantics are fixed as follows: analysis creation returns
-`201 Created` with `Location`; analysis, datasheet, and signal retrieval return
-`200 OK`; sampling-plan creation returns `201 Created` with a `Location` pointing
-to its retrieval endpoint; artifact retrieval returns `200 OK` with the registered
-media type and supports conditional GET. Missing resources return the shared
-problem-details `404`; validation and limit failures return `422`; idempotency-key
-reuse with a different payload returns `409`; temporary upstream failure is
-represented in product status unless no analysis resource can be created, in
-which case the API returns `503`.
-
-`POST /soil/analyses` is idempotent when the client supplies an idempotency key.
-Creation returns `201 Created` and `Location` on a new snapshot, or the existing
-snapshot for a replay. Invalid input is rejected before provider work; a valid
-analysis with mixed product outcomes remains retrievable and reports status per
-product. If measured latency exceeds the synchronous budget, asynchronous jobs
-require a separately authorized extension rather than an undocumented timeout.
-The request owns `fields`, `parameters`, `sources`, requested `products`, and an
-optional `refresh` boolean. Refresh creates a new immutable snapshot, links it to
-the superseded analysis, and never mutates or mislabels the old snapshot.
-
-Every product response carries `schemaVersion`, `methodVersion`, `analysisId`,
-input layer identities, `generatedAt`, and status. Artifact links are relative
-API URLs, not storage paths. Product status distinguishes `available`,
-`insufficientData`, `unsupported`, `outsideCoverage`, and `failed`; warnings do
-not silently turn missing evidence into a value.
-
-The analysis request uses `fields`, `parameters`, and `sources`. Expand `texture`
-into `clay`, `sand`, and `silt` when numeric percentages are available. Identify
-categorical texture classes separately.
-
-Each result includes:
-
-- Status per field, parameter, and source.
-- Image and data URLs, unit, statistics, and legend.
-- Bounds ordered as `[west, south, east, north]` in geographic coordinates.
-- Grid CRS, dimensions, and spatial transform.
-- Represented depth, source resolution, and output resolution.
-- Source, retrieval date, available dataset version/date, and transformation method.
-
-For frontend-ready property maps, each numeric cell or zone also exposes a
-central estimate, lower and upper bounds with their statistical meaning, and a
-confidence category from a versioned method. Confidence is not inferred from a
-red color or from between-source spread alone. Unknown/invalid pixels remain
-masked and receive an explicit hatch style hint; PNG alpha, JSON masks, values,
-legend, and style categories must agree. Categorical texture and Bodenzahl
-semantics are not forced into numeric confidence intervals.
-
-Discrepancy products retain the comparable participating sources and provide a
-documented difference/dispersion metric, source count, unit, and sufficiency
-status per cell. They are separate from provider uncertainty and confidence.
-
-Sampling plans return ranked GeoJSON points within the field, stable point IDs,
-longitude/latitude coordinates, target parameter, priority score, decision
-rationale, supporting uncertainty/range, and method version. A downloadable CSV
-uses WGS 84 longitude and latitude columns. Ranking must measure expected
-decision value against explicit, verified thresholds; it must not merely select
-the largest uncertainty. Calibration from collected laboratory samples is a
-separate future capability and is not implied by exporting points.
-
-Management signals use the enum `probable | possible | unlikely | no | unknown`
-for lime, drought, erosion, compaction, and nitrate. Each result cites its inputs,
-rule version, spatial/temporal applicability, rationale, and missing evidence.
-They never return application rates. `unknown` is mandatory when required inputs
-or validated rules are absent; soil properties alone must not be presented as a
-current nitrate condition.
-
-Parcel datasheets are two projections of the same immutable analysis: concise
-farmer wording and an audit view with ranges, source citations, dataset/version,
-retrieval dates, licenses/attribution, transformations, rules, and limitations.
-Human-readable wording never replaces machine-readable values and provenance.
-
-Missing grid values are `null`, never zero. Partial failures retain valid layers.
-A total provider outage must not become an empty success response. Distinguish
-unsupported parameters, missing coverage, missing data, and provider failures.
-
-Finalize domain schemas, grid orientation, and numeric request limits in unit 1A,
-before the first integration. Enforce initial limits and timeouts in 1B; extend
-workload budgets before enabling multiple fields in 2A. Unit 5A maps those
-verified internal contracts to the public endpoint list above and finalizes HTTP
-status codes and problem details.
-
-## Source feasibility and expected coverage
-
-The official SoilGrids access documentation reviewed for this plan reports a
-temporary pause of its REST API and recommends alternatives, including WCS for
-map subsets. The architecture must support raster access without depending on
-REST point queries. Unit 0A subsequently verified live WCS clay retrieval at
-three depths. Its [record](verification/0a/README.md) documents omitted TIFF
-metadata and the official VRT metadata used to interpret it. REST was not tested.
-Recheck availability for each relevant 0B check.
-
-LBEG publishes WMS services, but usable attributes and coverage must be verified
-for each required layer. A rendered map alone does not establish access to
-underlying numeric values.
-
-| Parameter | Candidate source | Decision to verify |
+| Unit | Scope | Depends on |
 | --- | --- | --- |
-| Numeric texture | SoilGrids | Unit conversions and depth aggregation. |
-| pH | SoilGrids | A documented method for representing 0–30 cm. |
-| Soil organic carbon | SoilGrids | Unit and depth weighting. |
-| nFK | Derived from SoilGrids; BK50 as additional data | Do not equate root-zone values with 0–30 cm values. |
-| Bodenzahl | LBEG Bodenschätzung | Access to the actual value and geographic coverage. |
+| P1.1 | Application package, settings, and read-only SQLite connection | None |
+| P1.2 | Store metadata query functions | P1.1 |
+| P1.3 | GeoJSON request validation and request models | P1.1 |
+| P1.4 | Response and layer models | P1.1 |
+| P2.1 | Requested parameter/source matrix expansion | P1.2, P1.3, P1.4 |
+| P2.2 | `plotId` and geometry field matching | P1.2, P1.3 |
+| P2.3 | Coverage classification and match metadata | P2.2 |
+| P2.4 | Stored layer metadata and URL mapping | P1.2, P1.4 |
+| P2.5 | `POST /soil/layers` orchestration | P2.1, P2.3, P2.4 |
+| P3.1 | Safe artifact path resolution | P1.1 |
+| P3.2 | Static artifact route and immutable headers | P3.1 |
+| P4.1 | Exact sample request/response regression | P2.5, P3.2 |
+| P4.2 | Matching, status, and missing-value regressions | P2.5 |
+| P4.3 | Static safety and read-only store regressions | P3.2 |
+| P4.4 | No-network verification and startup documentation | P4.1, P4.2, P4.3 |
 
-This matrix remains a working hypothesis except for clay, verified for the
-reference field in [0A](verification/0a/README.md). Units 0A and 0B resolve access to values, formats, units,
-depths, coverage, restrictions, and attribution requirements before the
-corresponding integration. Do not infer values from
-map colors or silently substitute fixtures if access fails.
+### Delivery status
 
-Official references consulted:
-
-- [SoilGrids access documentation](https://docs.isric.org/globaldata/soilgrids/SoilGrids_faqs_02.html)
-- [LBEG official WMS services](https://www.lbeg.niedersachsen.de/kartenserver/web_map_services_wms/kartendienste-web-map-services-des-lbeg-91769.html)
-
-## Implementation milestones
-
-The former phases are milestones, not single implementation tasks. Their
-bounded work units, dependencies, and evidence requirements are defined in
-[Implementation units](implementation-units.md). Unit 0A is complete with
-[recorded live evidence](verification/0a/README.md); all other units remain planned.
-
-| Milestone | Required units | Acceptance gate |
+| Unit | Status | Evidence |
 | --- | --- | --- |
-| M0: Initial data feasibility | 0A | One real source/parameter has reproducible spatial value access and sufficient metadata for the first integration. |
-| M1: First end-to-end integration | 1A, 1B after M0 | One field and one real layer yield downloadable PNG and JSON, correct clipping, statistics, provenance, and enforced limits. This is a technical demonstration. |
-| M2: Functional backend MVP | 2A–2F and their 0B checks, after M1 | Multiple fields and all five parameters work through SoilGrids and the necessary LBEG sources; capabilities, provenance, and partial failures are verified. Any missing required parameter keeps M2 incomplete. |
-| M3: Reproducible demo and freshness | 3A–3C after M2 | Cache reuse, explicit refresh, and a clean-environment demo are verified; failures remain visible. |
-| M4: Cross-source derived layers | 4A–4C after M2 | Compatible aggregation, source counts, spread, and separately identified provider uncertainty meet their documented data requirements and tests. |
-| M5: Frontend-supporting API v1 | 5A–5F after M3; discrepancy/confidence units also depend on relevant M4 evidence | One coherent analysis supports the five frontend v1 products with explicit insufficiency, immutable artifacts, traceable methods, and verified frontend-oriented examples. |
+| P1.1 | Approved | Validated on 2026-10-03: `soil_api.app` imports; settings resolve the repository store and reject an external root; `soil_api.database` queries `sqlite_master`, rejects writes with SQLite read-only mode, and closes connections; no `/soil/*` routes are registered. Startup command is documented in `README.md`. |
+| P1.2 | Approved | Validated on 2026-10-03: `soil_api.store` returns the current run, all supported source/parameter pairs, colormaps, field records by plot ID or geometry hash, field layer metadata, and farm coverage from the frozen SQLite store; JSON metadata is parsed into typed records and the module performs no writes or client-path access. |
+| P1.3 | Approved | Validated on 2026-10-03: `soil_api.models` accepts the sample FeatureCollection, validates Polygon/MultiPolygon GeoJSON in EPSG:4326 longitude/latitude order, rejects unsupported types and filters, duplicate filters, malformed geometries, and more than 200 features without store or file access. |
+| P1.4 | Approved | Validated on 2026-10-03: `soil_api.models` validates the sample response with typed run, field, layer, status, match, confidence, and metadata models; preserves stored `null` values and round-trips `poc/samples/response.json` exactly, including status-specific optional fields. |
+| P2.1 | Approved | Validated on 2026-10-03: `soil_api.matrix.expand_requested_layer_pairs` expands omitted filters from the frozen `source_parameters` order, preserves explicit filter order, emits the complete parameter-major Cartesian matrix exactly once, and marks unsupported pairs as `not_applicable` with `source_does_not_provide_parameter`. |
+| P2.2 | Approved | Validated on 2026-10-03: `soil_api.matching.match_feature` applies plot ID precedence, store-compatible geometry hashes, and best IoU matching at the 0.95 threshold; known IDs with materially different geometry are reported as `plot_id_geometry_differs`, and unmatched features return an explicit empty match record. |
+| P2.3 | Approved | Validated on 2026-10-03: `soil_api.matching.classify_field_match` preserves known-field metadata and stored bounds, classifies unmatched polygons covered by `farm_raster_extent` as `clipped` with documented latitude/longitude bounds, and classifies external polygons as `outside_coverage_area` with null bounds. |
+| P2.4 | Approved | Validated on 2026-10-03: `soil_api.layers.map_field_layer` maps all 696 stored layers with status-specific metadata, colormaps, statistics, provenance, confidence artifact URLs, and run-relative static URLs; stored paths are rejected if absolute or traversing outside the store-relative namespace. |
+| P2.5 | Approved | Validated on 2026-10-03: `POST /soil/layers` validates requests, reads the current run read-only, expands every requested pair, applies matching and coverage classification, maps stored layers, preserves the exact sample response, returns 413 above 200 features, and returns 422 for unknown filters without provider or network calls. |
+| P3.1 | Approved | Validated on 2026-10-03: `soil_api.artifacts.resolve_store_artifact` resolves existing store-relative files, rejects absolute paths, traversal, backslashes, NUL bytes, and missing files, and confirms the resolved path remains inside the configured store after symlink resolution. |
+| P3.2 | Approved | Validated on 2026-10-03: `GET /static/{path}` serves all 32 unique sample PNG/GeoTIFF artifacts with correct media types and `Cache-Control: public, max-age=31536000, immutable`; missing, traversal, unsupported-extension, and database paths return 404. |
+| P4.1 | Approved | Validated on 2026-10-03: `tests.test_contract` posts `poc/samples/request.json`, compares the complete JSON response with `poc/samples/response.json`, and retrieves every referenced PNG/GeoTIFF URL successfully. |
+| P4.2 | Approved | Validated on 2026-10-03: `tests.test_matching_statuses` verifies the complete requested matrix, western LBEG availability, eastern missing coverage, sliver yield unavailability and fallback stats, outside-coverage behavior, and a real stored partial layer without fabricated values or URLs. |
+| P4.3 | Approved | Validated on 2026-10-03: `tests.test_static_safety` verifies MIME/cache headers, missing and traversal rejection, unsupported-extension rejection, SQLite write failure in read-only mode, and byte-for-byte preservation of the database and served artifact after requests. |
+| P4.4 | Approved | Validated on 2026-10-03: `tests.test_no_network` completes the sample request while socket connection methods are blocked; the README documents the uvicorn startup command, focused contract command, and complete `unittest` discovery command. |
 
-0B is a repeatable feasibility gate for each expansion, not a requirement to
-verify every source before M1. A blocked combination blocks its dependent unit,
-not unrelated work. M2 still requires every necessary integration gate to pass.
-M3 and M4 are independent after M2; cache integration for derived layers must be
-checked when both are present.
+## Completion gate
 
-M5 consumes M2–M4 evidence rather than redefining source semantics. A feature
-may return `unknown` or `insufficientData` honestly, but M5 is not complete until
-each advertised available product has the evidence required by its unit. The
-frontend must not reconstruct confidence, discrepancy, agronomic rules, or
-citations from raw layers.
+The POC is complete when P1–P4 pass and the exact sample request produces the
+sample response, allowing only documented JSON key-order and float-tolerance
+normalization. The contract must also demonstrate:
 
-Capabilities, provenance, and startup instructions begin in M1 and evolve with
-each unit. Parameter-specific nFK derivation belongs to M2; cross-source
-aggregation belongs to M4. Limits and timeouts are prerequisites for querying
-providers, not additions deferred until the demo milestone.
+- a western field with available LBEG data;
+- an eastern field without LBEG coverage;
+- a sliver with unavailable yield potential and fallback statistics;
+- a polygon outside the farm coverage area;
+- no outbound network calls during request handling.
 
-### Former Phase 5: Evidence-driven extension backlog
+## Deferred backlog
 
-Downloadable GeoTIFF, asynchronous jobs, remote storage, ingestion/calibration
-from laboratory samples, crop suitability, dynamic soil/weather products, and
-additional sources are candidates, not a scheduled milestone or a condition for
-completing M2–M4.
-Before starting an authorized extension, define a separate bounded unit with a
-demonstrated need, dependencies, exclusions, and measurable acceptance evidence.
-Split extensions that contain multiple independently verifiable behaviors.
+These items are not dependencies of the POC:
 
-## Validation and delivery
+- **B1 — New polygons:** implement the API brief's Phase B clipping of
+  `regional_rasters`, including `geom_hash` caching.
+- **B2 — Convenience packaging:** add `run_id` selection, an OpenAPI example,
+  and a Dockerfile.
+- **B3 — Frontend demo:** add the optional Leaflet page.
+- **B4 — Live or versioned analysis API:** design a separate contract for live
+  providers, refresh, immutable analyses, derived products, or asynchronous
+  work. None of those concepts should be mixed into this POC.
 
-Add meaningful checks during each unit: conversions, georeferencing, masks,
-PNG/value correspondence, and external failure handling. Keep deterministic
-fixture tests separate from real-provider integration checks.
+Each backlog item requires a new bounded plan and acceptance evidence before
+implementation.
 
-Use the agent's [acceptance criteria](../.agents/skills/soil-api-engineer/references/acceptance.md)
-for implementation reviews and delivery. Report what was tested and any remaining
-limitations, rather than treating mocked results as proof of provider availability.
+## Operational constraints
 
-The recommended first delivery is M0 plus M1. M2 is the functional backend MVP;
-M3 verifies a reproducible demo and freshness. Use the unit completion record in
-[Implementation units](implementation-units.md#completion-record) to distinguish
-local test results, real-provider evidence, blockers, and pending verification.
-
-## Maintaining this plan
-
-Use this document as shared architectural context, not as evidence that a phase
-has been completed or as authorization to start implementation. Reconcile it with
-the current user request and repository state. Record justified architectural
-changes and verified provider findings here when relevant to authorized work;
-do not silently broaden the scope or mark unverified milestones complete.
+- Keep the SQLite connection read-only.
+- Resolve file paths only under `poc/store/`; never accept arbitrary client
+  filesystem paths or provider URLs.
+- Preserve the frozen run identifier and data-as-of metadata.
+- Return explicit reasons for missing coverage, unsupported pairs, and missing
+  data; never turn them into empty success values.
+- Keep GeoJSON input in longitude/latitude order and return the documented
+  bounds order from the API brief.

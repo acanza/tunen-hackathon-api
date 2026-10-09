@@ -1,2 +1,1 @@
-"""Internal soil analysis application package."""
-
+"""Frozen-store soil layers application package."""

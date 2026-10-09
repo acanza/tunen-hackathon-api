@@ -1,3 +1,5 @@
+fastapi>=0.115,<1
+httpx>=0.27,<1
 requests
 owslib
 rasterio
@@ -10,5 +12,5 @@ pyproj
 stac-client
 jsonlines
 pydantic>=2.10,<3
-pyproj>=3.6,<4
 shapely>=2.0,<3
+uvicorn>=0.30,<1

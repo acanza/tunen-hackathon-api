@@ -1,7 +1,7 @@
 # Tunen Soil API
 
 This project was developed to participate in the **Tunen** track challenge at
-the **Madrid Open Vol. 1** hackathon, organized by **Tunen Labs, Reversa, and
+the **Madrid Open Vol. 1** hackathon, organized by companies **Tunen Labs, Reversa, and
 Talky**.
 
 ## What does it do?
@@ -61,6 +61,11 @@ introducing infrastructure that was not needed for the challenge objective.
 The main constraint was having **only 10 hours** to complete a demonstrable
 submission. The most important decisions were:
 
+- **Data preparation across heterogeneous sources.** One of the major
+  challenges was extracting data from aggregated sources such as SoilGrids and
+  LBEG, cleaning and normalizing their different formats and semantics, and
+  storing the resulting metadata and artifacts in a structure that the API
+  could consume efficiently and consistently.
 - **Reliability and reproducibility over real-time data.** A frozen store and
   precomputed artifacts avoid making the submission dependent on the
   availability, limits, formats, or changes of external services.
